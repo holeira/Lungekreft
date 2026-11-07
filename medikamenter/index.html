@@ -57,7 +57,7 @@ body.sok .ttoc{display:none}
 @media (prefers-color-scheme:dark){.lis-box,p.lisline{background:#183126}}
 .note{background:var(--warn-soft);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px}
 @media print{.bar,.ttoc{display:none}.tab[hidden]{display:block!important}.tab{border:none;padding:0}}
-</style>
+#kurark{max-width:900px;margin:0 auto;padding:8px 16px 40px}.ark-head h2{font-family:var(--display);font-size:28px;margin:4px 0 6px}.ark-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.ark-nav{font-size:14px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.ark-nav button{font:inherit;font-size:13px;padding:3px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer}.ark-sec{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:14px 0}.ark-sec>h3{margin:0 0 8px;color:var(--accent)}.ark-sec .blk{border:0;padding:0;margin:0;background:none}mark.ark-io{background:var(--mark);padding:0 2px;border-radius:2px}.ark-det{border-top:1px solid var(--line);padding:6px 0}.ark-det summary{cursor:pointer;font-weight:600}.ark-liste{background:var(--accent-soft);border-radius:8px;padding:8px 12px;margin:8px 0;font-size:14px;line-height:1.7}@media print{.arkmodus .ark-nav,.arkmodus .sitenav,.arkmodus header.ph{display:none!important}.ark-det{display:block}.ark-det>*{display:block}}</style>
 </head>
 <body>
 <nav class="sitenav" aria-label="Sider"><style>
@@ -78,6 +78,7 @@ body.sok .ttoc{display:none}
 </header>
 <div class="bar"><input id="q" type="search" placeholder="Søk i alle faner, for eksempel pneumonitt, CYP3A4, lorlatinib …" aria-label="Søk i alle faner">
 <div class="tabs" role="tablist"><button class="tb" role="tab" data-tab="medikamenter" aria-selected="true">Medikamenter og Nye metoder</button><button class="tb" role="tab" data-tab="malrettet" aria-selected="false">Målrettet behandling</button><button class="tb" role="tab" data-tab="immunterapi" aria-selected="false">Immunterapi</button><button class="tb" role="tab" data-tab="kombi" aria-selected="false">Kombinasjonskurer</button><button class="tb" role="tab" data-tab="lis" aria-selected="false">Beslutningsforum og LIS</button></div><div id="treff" aria-live="polite"></div></div>
+<div id="kurark" hidden></div>
 <main><div class="tab" id="tab-medikamenter" data-name="Medikamenter og Nye metoder"><details class="ttoc"><summary>Innhold i fanen</summary><nav><a class="l2" href="#medikamenter-1">Viktige lenker</a><a class="l2" href="#medikamenter-2">Del A – Medikamenter og kurer i handlingsprogrammet</a><a class="l3" href="#medikamenter-3">A1. Kurative NSCLC: neoadjuvant og perioperativ kjemoimmunterapi (kap. 7.3)</a><a class="l3" href="#medikamenter-4">A2. Kurative NSCLC: adjuvant behandling (kap. 7.3)</a><a class="l3" href="#medikamenter-5">A3. Kurative NSCLC: ikke-kirurgisk stadium II–III og Pancoast (kap. 7.4 og 7.5)</a><a class="l3" href="#medikamenter-6">A4. Ikke-kurativ NSCLC uten driver: førstelinje (kap. 8.3)</a><a class="l3" href="#medikamenter-7">A5. Målrettet behandling (kap. 8.4)</a><a class="l3" href="#medikamenter-8">A6. Progresjon etter førstelinje, angiogenesehemmere og beinresorpsjonshemmere (kap. 8.5, 8.7, 8.8)</a><a class="l3" href="#medikamenter-9">A7. Immunterapi: bivirkningsbehandling, varighet og kontroller (kap. 8.6, 8.10)</a><a class="l3" href="#medikamenter-10">A8. Småcellet lungekreft (kap. 9–10)</a><a class="l3" href="#medikamenter-11">A9. Nevroendokrine svulster (kap. 11)</a><a class="l3" href="#medikamenter-12">A10. Mesoteliom (kap. 12)</a><a class="l3" href="#medikamenter-13">A11. Thymussvulster (kap. 13.6)</a><a class="l3" href="#medikamenter-14">A12. Komplikasjoner og støttebehandling (kap. 14)</a><a class="l2" href="#medikamenter-15">Del B – Beslutninger i Nye metoder</a><a class="l3" href="#medikamenter-16">B1. Innført 2025–2026 (siste 18 måneder)</a><a class="l3" href="#medikamenter-17">B2. Ikke innført (gjeldende)</a><a class="l3" href="#medikamenter-18">B3. Under vurdering, eller med MT uten vurdering</a><a class="l3" href="#medikamenter-19">B4. Åpne punkter i Nye metoder</a><a class="l2" href="#medikamenter-20">Kilder</a></nav></details><section class="blk" id="medikamenter-0"><h2 class="tabtitle">Medikamentell behandling av lungekreft – kontroller og bivirkninger</h2>
 <p class="meta">1. november 2026 · Håkon Olav Leira</p>
 <p>Oppslagsverk for Dagposten, Lungemedisinsk avdeling, St. Olavs hospital. Det er overført fra fem Word- og Markdown-filer fra 31. oktober 2026, og dette er nå den levende versjonen. Fanene er: Medikamenter og Nye metoder (denne), Målrettet behandling, Immunterapi, Kombinasjonskurer og Beslutningsforum og LIS. Doser og terskler må kontrolleres mot gjeldende preparatomtale før klinisk bruk. Når et nytt legemiddel kommer, følges huskelisten for oppslagsverk legemidler.</p>
@@ -1775,10 +1776,44 @@ body.sok .ttoc{display:none}
 </div>
 <script>
 (function(){
+const P='https://holeira.github.io/Lungekreft/';
+const ARK={
+ 'ark-pem-pembrolizumab':{t:'Karboplatin + pemetreksed + pembrolizumab',bruk:'Adenokarsinom (ikke-plateepitel) uten driver, PD-L1 < 1 % (LIS 2026/27)',kur:'kur-karbo-pemetreksed',io:'Pembrolizumab'},
+ 'ark-pem-cemiplimab':{t:'Karboplatin + pemetreksed + cemiplimab',bruk:'Adenokarsinom (ikke-plateepitel) uten driver, PD-L1 1–49 % (LIS 2026/27)',kur:'kur-karbo-pemetreksed',io:'Cemiplimab'},
+ 'ark-pem-tislelizumab':{t:'Karboplatin + pemetreksed + tislelizumab',bruk:'Adenokarsinom (ikke-plateepitel) uten driver, PD-L1 ≥ 50 % (LIS 2026/27)',kur:'kur-karbo-pemetreksed',io:'Tislelizumab'},
+ 'ark-pakl-tislelizumab':{t:'Karboplatin + paklitaksel/nab-paklitaksel + tislelizumab',bruk:'Plateepitelkarsinom uten driver (LIS 2026/27)',kur:'kur-karbo-paklitaksel',io:'Tislelizumab'},
+ 'ark-etop-tislelizumab':{t:'Karboplatin + etoposid + tislelizumab',bruk:'SCLC utbredt sykdom, og inoperabel/metastatisk LCNEC (LIS 2026/27)',kur:'kur-karbo-etoposid',io:'Tislelizumab'},
+ 'ark-atezolizumab':{t:'Atezolizumab monoterapi',bruk:'NSCLC uten driver, PD-L1 ≥ 50 % (LIS-førstevalg), eller ikke egnet for platinum uavhengig av PD-L1',kur:null,io:'Atezolizumab'}
+};
+const box=document.getElementById('kurark'),bar=document.querySelector('.bar'),main=document.querySelector('main');
+function strip(n){n.removeAttribute('id');n.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));return n}
+function blk(anchor){const a=document.getElementById(anchor);return a?strip(a.closest('.blk').cloneNode(true)):null}
+function det(title,anchor,open){const b=blk(anchor);if(!b)return '';const d=document.createElement('details');if(open)d.open=true;d.className='ark-det';d.innerHTML='<summary>'+title+'</summary>';b.querySelector('h3')&&b.querySelector('h3').remove();d.append(b);return d}
+function ioRow(name){const t=document.getElementById('io-legemidler').closest('.blk').querySelector('table');const r=[...t.tBodies[0].rows].find(r=>(r.cells[0].textContent||'').trim().startsWith(name));if(!r)return null;const tb=document.createElement('table');tb.append(t.tHead.cloneNode(true));const bo=document.createElement('tbody');bo.append(strip(r.cloneNode(true)));tb.append(bo);return tb}
+function mark(root,word){const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const ns=[];while(w.nextNode())ns.push(w.currentNode);const re=new RegExp('('+word+')','gi');ns.forEach(n=>{if(!re.test(n.nodeValue))return;re.lastIndex=0;const sp=document.createElement('span');sp.innerHTML=n.nodeValue.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(re,'<mark class="ark-io">$1</mark>');n.replaceWith(...sp.childNodes)})}
+window.visArk=function(id){const k=ARK[id];if(!k)return false;
+ box.innerHTML='';
+ const h=document.createElement('div');h.className='ark-head';
+ h.innerHTML='<div class="ark-nav"><a href="'+P+'#uten-driver">← Arbeidsportal kap. 9.2</a> · <a href="#kombi">Alle kombinasjonskurer</a> · <button type="button" onclick="window.print()">Skriv ut</button></div><div class="ark-kicker">Kurark</div><h2>'+k.t+'</h2><p><strong>Brukes ved:</strong> '+k.bruk+'</p>';
+ box.append(h);
+ if(k.kur){const s=document.createElement('section');s.className='ark-sec';s.innerHTML='<h3>1. Kurskjema, prøver, bivirkninger og fallgruver</h3>';const b=blk(k.kur);b.querySelector('h3').remove();mark(b,k.io);s.append(b);box.append(s)}
+ const s2=document.createElement('section');s2.className='ark-sec';s2.innerHTML='<h3>'+(k.kur?'2':'1')+'. '+k.io+': dosering</h3>';const r=ioRow(k.io);if(r)s2.append(r);
+ s2.insertAdjacentHTML('beforeend','<p class="note">Immunterapi dosereduseres aldri. Den gis eller settes på pause. Valg av preparat: <a href="#lis-oversikt">LIS-rangering</a>.</p>');box.append(s2);
+ const s3=document.createElement('section');s3.className='ark-sec';s3.innerHTML='<h3>'+(k.kur?'3':'2')+'. Immunrelaterte bivirkninger og kontroller</h3><p>Samlet i ett oppslagsverk: <a href="'+P+'immunterapi/#prover">Prøver og kontroller</a> · <a href="'+P+'immunterapi/#vakt">Vakt (hastegrad)</a> · <a href="'+P+'immunterapi/#organ">Organ for organ</a> · <a href="'+P+'immunterapi/#steroider">Steroider</a> · <a href="'+P+'immunterapi/#pasient">Pasientinformasjon</a></p>';box.append(s3);
+ if(k.kur){const s4=document.createElement('section');s4.className='ark-sec';s4.innerHTML='<h3>4. Felles for kombinasjonskurene</h3><p class="note">Klikk for å åpne. Kurforløp og risikouka for nøytropen feber: <a href="'+P+'#kurforlop">arbeidsportal 11.3</a>.</p>';
+  [['Prøver før hver kur, utsettelse og dosereduksjon','dosejustering'],['Kvalmeprofylakse','kvalme'],['Hvem forårsaker hva? (overlappende toksisitet)','hvem-forarsaker-hva'],['Støttebehandling – sjekkliste','stottebehandling']].forEach(([t,a])=>{const d=det(t,a);if(d)s4.append(d)});box.append(s4)}
+ box.hidden=false;bar.style.display='none';main.hidden=true;document.body.classList.add('arkmodus');document.title=k.t+' – kurark';window.scrollTo({top:0});return true};
+window.skjulArk=function(){if(box.hidden)return;box.hidden=true;bar.style.display='';main.hidden=false;document.body.classList.remove('arkmodus');document.title=document.querySelector('h1').textContent};
+// oversikt over kurark i fanen Kombinasjonskurer
+const ov=document.getElementById('kurer-oversikt');if(ov){const d=document.createElement('div');d.className='ark-liste';d.innerHTML='<strong>Kurark (alt for én kur på ett ark):</strong> '+Object.entries(ARK).map(([id,k])=>'<a href="#'+id+'">'+k.t+'</a>').join(' · ');ov.closest('.blk').querySelector('h3').after(d)}
+})();
+</script>
+<script>
+(function(){
 const tabs=[...document.querySelectorAll('.tab')], btns=[...document.querySelectorAll('.tb')], q=document.getElementById('q'), tr=document.getElementById('treff');
 tabs.forEach(t=>{const d=document.createElement('div');d.className='tabname';d.textContent=t.dataset.name;t.prepend(d)});
 let cur=tabs[0].id.slice(4);
-function show(k,push){cur=k;btns.forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===k));tabs.forEach(t=>t.hidden=t.id!=='tab-'+k);if(push)history.replaceState(null,'','#'+k)}
+function show(k,push){if(window.skjulArk)skjulArk();cur=k;btns.forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===k));tabs.forEach(t=>t.hidden=t.id!=='tab-'+k);if(push)history.replaceState(null,'','#'+k)}
 btns.forEach(b=>b.addEventListener('click',()=>{if(q.value){q.value='';run()}show(b.dataset.tab,true);window.scrollTo({top:0})}));
 function clear(){document.querySelectorAll('mark.hit').forEach(m=>{const p=m.parentNode;p.replaceChild(document.createTextNode(m.textContent),m);p.normalize()})}
 function run(){clear();const s=q.value.trim().toLowerCase();btns.forEach(b=>{const n=b.querySelector('.n');if(n)n.remove()});
@@ -1790,7 +1825,7 @@ function run(){clear();const s=q.value.trim().toLowerCase();btns.forEach(b=>{con
  tr.textContent=tot?tot+' treff. Trykk Esc for å tømme søket.':'Ingen treff.'}
 let tm;q.addEventListener('input',()=>{clearTimeout(tm);tm=setTimeout(run,200)});
 q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run()}});
-function fromHash(){const h=location.hash.slice(1);if(h){const t=tabs.find(x=>x.id==='tab-'+h);if(t)show(h);else{const el=document.getElementById(h);if(el){const tt=el.closest('.tab');if(tt)show(tt.id.slice(4));setTimeout(()=>el.scrollIntoView(),50)}}}}
+function fromHash(){const h=location.hash.slice(1);if(h.startsWith('ark-')&&window.visArk&&visArk(h))return;if(window.skjulArk)skjulArk();if(h){const t=tabs.find(x=>x.id==='tab-'+h);if(t)show(h);else{const el=document.getElementById(h);if(el){const tt=el.closest('.tab');if(tt)show(tt.id.slice(4));setTimeout(()=>el.scrollIntoView(),50)}}}}
 fromHash();window.addEventListener('hashchange',()=>{if(!q.value)fromHash()});
 document.querySelectorAll('a[data-goto]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();show(a.dataset.goto,true);window.scrollTo({top:0})}));
 document.querySelectorAll('a[href^="#"]:not([data-goto])').forEach(a=>a.addEventListener('click',e=>{const el=document.getElementById(a.getAttribute('href').slice(1));if(el){e.preventDefault();const tt=el.closest('.tab');if(tt&&tt.hidden&&!q.value)show(tt.id.slice(4));el.scrollIntoView({behavior:'smooth'})}}));
