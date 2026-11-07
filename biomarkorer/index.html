@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biomarkører ved lungekreft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Oppslagsverktøy: søk øverst, ett kort per markør, detaljer folder seg ut */
+  --bg:#f6f7f8; --surface:#ffffff; --ink:#1b2430; --muted:#5b6673; --line:#d9dee3;
+  --accent:#1f5f8b; --accent-soft:#e3eef6;
+  --ok:#2e7d4f; --ok-soft:#e2f2e8; --warn:#9a6a00; --warn-soft:#fbf0d6; --none:#6b7480; --none-soft:#eceff2;
+  --tr:#7a2e6b; --tr-soft:#f4e6f1;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12161b; --surface:#1a2027; --ink:#e6eaee; --muted:#9aa5b1; --line:#2e3741;
+    --accent:#7fb6dd; --accent-soft:#1d3142;
+    --ok:#7fcf9c; --ok-soft:#183126; --warn:#e6c26a; --warn-soft:#352b12; --none:#a2acb7; --none-soft:#252d36;
+    --tr:#e3a2d4; --tr-soft:#352030; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12161b; --surface:#1a2027; --ink:#e6eaee; --muted:#9aa5b1; --line:#2e3741;
+  --accent:#7fb6dd; --accent-soft:#1d3142;
+  --ok:#7fcf9c; --ok-soft:#183126; --warn:#e6c26a; --warn-soft:#352b12; --none:#a2acb7; --none-soft:#252d36;
+  --tr:#e3a2d4; --tr-soft:#352030; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 16px 48px;display:flex;flex-direction:column;gap:20px}
+header h1{font-family:var(--display);font-size:clamp(26px,4vw,34px);margin:0;text-wrap:balance}
+header p{margin:4px 0 0;color:var(--muted);max-width:70ch}
+.meta{font-size:13px;color:var(--muted)}
+.tools{display:flex;flex-direction:column;gap:10px;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:2;border-bottom:1px solid var(--line)}
+#q{width:100%;padding:11px 14px;font:inherit;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.count{font-size:13px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));;gap:12px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column}
+.card summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.card summary::-webkit-details-marker{display:none}
+.card[open]{grid-column:1/-1}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
+.name{font-family:var(--display);font-weight:700;font-size:19px}
+.freq{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:12px;padding:2px 8px;border-radius:999px;font-weight:500}
+.p-ok{background:var(--ok-soft);color:var(--ok)}
+.p-warn{background:var(--warn-soft);color:var(--warn)}
+.p-none{background:var(--none-soft);color:var(--none)}
+.p-tr{background:var(--tr-soft);color:var(--tr)}
+.short{font-size:14px;color:var(--muted);margin:0}
+.more{font-size:12px;color:var(--accent)}
+.card[open] .more{display:none}
+.body{padding:0 16px 16px;display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:14px}
+.fact{background:var(--bg);border-radius:8px;padding:10px 12px}
+.fact h4{margin:0 0 4px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
+.fact p{margin:0;font-size:14px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:620px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
+.note{font-size:14px;margin:0;max-width:75ch}
+section.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+section.panel h2{font-family:var(--display);font-size:21px;margin:0 0 10px}
+section.panel h3{font-size:15px;margin:14px 0 6px}
+.empty{color:var(--muted);padding:20px;text-align:center;grid-column:1/-1}
+footer{font-size:13px;color:var(--muted)}
+footer ul{padding-left:18px;margin:6px 0}
+@media (prefers-reduced-motion: no-preference){.card{transition:border-color .15s}.card:hover{border-color:var(--accent)}}
+
+.tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line)}
+.tab{font:inherit;font-weight:500;font-size:14px;padding:8px 14px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.p-acc{background:var(--accent-soft);color:var(--accent)}
+.links{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.lbl{color:var(--muted)}
+.dl{padding:3px 10px;border:1px solid var(--line);border-radius:6px;text-decoration:none;background:var(--bg)}
+.dl:hover{border-color:var(--accent)}
+.tag{font-size:12px;padding:2px 8px;border-radius:999px;background:var(--warn-soft);color:var(--warn);text-decoration:none}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.body h3{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 6px;font-weight:600}
+.body ul{margin:0;padding-left:18px;font-size:14px}
+table.slim{min-width:0}
+table.slim th{text-transform:none;letter-spacing:0;font-size:14px;color:var(--ink);font-weight:500;width:42%}
+table.plan td{font-size:14px}
+.sub{font-size:13px;color:var(--muted)}
+.aecard{padding:14px 16px}
+.aebody{display:flex;flex-direction:column;gap:8px}
+.linkbtn{font:inherit;font-size:13px;background:none;border:0;color:var(--accent);text-decoration:underline;cursor:pointer;padding:0}
+#hint{font-size:13px;color:var(--muted);min-height:1em}
+.view[hidden]{display:none}
+.lead{font-size:14px;color:var(--muted);margin:0 0 10px;max-width:75ch}
+[hidden]{display:none!important}
+.card,.panel{scroll-margin-top:200px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Biomarkører ved lungekreft</h1>
+  <p>Markører, behandling, kontroller og bivirkninger på ett sted. Alle NSCLC unntatt rene plateepitelkarsinom skal testes molekylært, og alle NSCLC skal ha PD-L1.</p>
+  <div class="meta">Sist oppdatert 6. november 2026 · Håkon Olav Leira, Lungemedisinsk avdeling, St. Olavs hospital. Doser og kontroller kontrollert mot Felleskatalogen 2. november 2026. Studiestatus per 3. november 2026: bekreft med kontaktperson.</div>
+  <div class="meta">Egen side: <a href="../immunterapi/">Immunterapibivirkninger ved lungekreft</a> (prøver, gradering, steroider, vakt).</div>
+</header>
+<div class="tools">
+  <div class="tabs" role="tablist">
+    <button class="tab" type="button" role="tab" data-v="markorer">Markører</button>
+    <button class="tab" type="button" role="tab" data-v="legemidler">Legemidler</button>
+    <button class="tab" type="button" role="tab" data-v="kontroller">Kontrollplan</button>
+    <button class="tab" type="button" role="tab" data-v="bivirkninger">Bivirkninger</button>
+    <button class="tab" type="button" role="tab" data-v="testing">Testing og studier</button>
+  </div>
+  <label for="q" class="meta">Søk i alle faner: markør, legemiddel, studie, bivirkning eller prøve</label>
+  <input id="q" type="search" placeholder="F.eks. KRAS, lorlatinib, SUNRAY, QTc, CK …" autocomplete="off">
+  <div id="chips" class="chips" role="group" aria-label="Filtre">
+    <button class="chip" type="button" data-f="all" aria-pressed="true">Alle</button>
+    <button class="chip" type="button" data-f="l1" aria-pressed="false">Innført i 1. linje</button>
+    <button class="chip" type="button" data-f="l2" aria-pressed="false">Innført i senere linjer</button>
+    <button class="chip" type="button" data-f="study" aria-pressed="false">Studie i Norge</button>
+    <button class="chip" type="button" data-f="trd" aria-pressed="false">Studie i Trondheim</button>
+  </div>
+  <div class="legend"><span class="count" id="count"></span><span id="hint"></span></div>
+</div>
+
+<section class="view" id="v-markorer">
+  <p class="lead">Ett kort per markør. <span class="pill p-ok">1L</span> og <span class="pill p-ok">2L+</span> er innført behandling, <span class="pill p-warn">Studie</span> rekrutterer i Norge, <span class="pill p-tr">Trondheim</span> er åpen ved St. Olavs. Hvert kort lenker til legemiddelkortene.</p>
+  <div class="grid" id="gm" aria-live="polite"></div>
+</section>
+<section class="view" id="v-legemidler" hidden>
+  <p class="lead">Dose, dosereduksjon, prøver før oppstart, kontroller, bivirkninger, håndtering og interaksjoner. Felles pakke før alle TKI: hematologi, kreatinin/eGFR, Na, K, Ca, Mg, ALAT, ASAT, ALP, bilirubin, albumin, EKG med QTc, graviditetstest, gjennomgang av legemiddellisten (CYP3A4, P-gp, QT, bradykardi), baseline-CT, blodtrykk, puls, vekt og SpO₂.</p>
+  <div class="grid" id="gd" aria-live="polite"></div>
+</section>
+<section class="view" id="v-kontroller" hidden>
+  <p class="lead">Kontrollene i tillegg til CT og klinisk kontroll hver 3. måned etter handlingsprogrammet. Forslag er merket og må avklares lokalt. Hovedregel ved bivirkninger: grad ≥ 3 → pause til grad ≤ 1, gjenoppta ett nivå ned. Den første måneden er mest sårbar.</p>
+  <div id="gc"></div>
+</section>
+<section class="view" id="v-bivirkninger" hidden>
+  <p class="lead">Slå opp en bivirkning og se hvilke legemidler som gir den og hva som er hovedregelen. Detaljene står på legemiddelkortet.</p>
+  <div class="grid" id="ga"></div>
+</section>
+<section class="view" id="v-testing" hidden>
+<section class="panel" id="testing">
+  <h2>Testing</h2>
+  <p class="note">NGS anbefales fremfor enkeltgenanalyser. Svarene skal foreligge før behandlingsstart. Ved aktuell neoadjuvant eller perioperativ kjemoimmunterapi må EGFR, ALK og PD-L1 foreligge før beslutning.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Analyse</th><th>Hvem</th><th>Metode</th><th>Merknad</th></tr></thead>
+    <tbody>
+      <tr><td>PD-L1</td><td>Alle NSCLC</td><td>IHK, andel tumorceller</td><td>&lt; 1 %, 1–49 %, 50–74 %, 75–100 %</td></tr>
+      <tr><td>ALK, ROS1</td><td>Alle unntatt rene plateepitelkarsinom</td><td>IHK-screening, bekreftes med FISH eller NGS</td><td>Refleks ved første vurdering av biopsi</td></tr>
+      <tr><td>EGFR, KRAS, BRAF, HER2, MET ekson 14</td><td>Som over</td><td>DNA-sekvensering (NGS)</td><td>Ved EGFR- eller KRAS-mutasjon trengs ikke videre NGS</td></tr>
+      <tr><td>RET, NTRK, NRG1</td><td>Som over</td><td>NGS (RNA/fusjon), FISH. NTRK kan screenes med IHK</td><td>NRG1 inngår ikke i alle panel</td></tr>
+      <tr><td>HER2-amplifikasjon/overuttrykk</td><td>Ved studieaktualitet</td><td>FISH, IHK</td><td>Skilles fra HER2-mutasjon</td></tr>
+      <tr><td>Bredt panel (TSO500)</td><td>Etter standardbehandling, sjeldne kreftformer</td><td>NGS via InPreD</td><td>Gir tilgang til IMPRESS-Norway og MATRIX-RARE</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="panel" id="impress">
+  <h2>IMPRESS-Norway og MATRIX-RARE ved St. Olavs</h2>
+  <p class="note"><strong>Intern henvisning i Trondheim:</strong> send forespørsel til Åsmund Flobak, Kreftklinikken (lokal utprøver IMPRESS-Norway). Lokal kontakt MATRIX-RARE: Tora Skeidsvoll Solheim. Formell innmelding: «InPreD Innmeldingsskjema» til inpred.rekvisisjon@ous-hf.no, skriv «IMPRESS-Norway» eller «Matrix-Rare» under «annet». Eldre eller ny biopsi kan brukes.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>IMPRESS-Norway</th><th>MATRIX-RARE</th></tr></thead>
+    <tbody>
+      <tr><td>Pasienter</td><td>Alle kreftdiagnoser, avansert sykdom</td><td>Sjeldne, aggressive og avanserte kreftformer</td></tr>
+      <tr><td>Når</td><td>Etter progresjon på standardbehandling, uten effektive alternativer</td><td>Tidligere i forløpet, når effektiv standard mangler</td></tr>
+      <tr><td>Design</td><td>Basket og paraply, Simon two-stage</td><td>Screeningfase og behandlingsfase. Kohort = krefttype + tumorprofil + legemiddel</td></tr>
+      <tr><td>Endepunkt</td><td>Respons, PFS, OS</td><td>Sykdomskontroll etter 16 uker</td></tr>
+    </tbody>
+  </table></div>
+  <h3>MATRIX-RARE: legemidler og mulig relevans for oss</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Legemiddel</th><th>Mål</th><th>Lungekreft</th><th>Mesoteliom</th><th>Tymuskarsinom</th></tr></thead>
+    <tbody>
+      <tr><td>Trametinib (Mekinist/Spexotras)</td><td>MEK</td><td><strong>Mulig:</strong> BRAF-fusjon eller klasse II-mutasjon (kasuistikker)</td><td>Lite aktuelt</td><td>–</td></tr>
+      <tr><td>Dabrafenib (Tafinlar/Finlee)</td><td>BRAF V600</td><td>V600E har innført behandling. Mulig ved sjeldne subtyper</td><td>Bare ved sjelden V600E</td><td>–</td></tr>
+      <tr><td>Imatinib</td><td>KIT, PDGFRA</td><td>Ikke aktuelt</td><td>Ikke aktuelt</td><td><strong>Mulig:</strong> KIT-mutasjon hos ca. 4–10 %</td></tr>
+      <tr><td>Tislelizumab (Tevimbra)</td><td>PD-1</td><td>Allerede standard</td><td><strong>Mulig:</strong> ingen IO innført. Kohortkrav ukjent</td><td>Mulig. HP advarer mot PD-1-hemmer ved tymom</td></tr>
+      <tr><td>Vorasidenib (Voranigo)</td><td>IDH1/2</td><td>Svært sjelden (0,4–1 %)</td><td>Ikke aktuelt</td><td>–</td></tr>
+      <tr><td>Ivosidenib (Tibsovo)</td><td>IDH1</td><td>Svært sjelden</td><td>Ikke aktuelt</td><td>–</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Hvilke kohorter som er åpne, avklares med matrixrare@ous-hf.no eller Tora Skeidsvoll Solheim. Vurderingen av relevans er basert på legemidlenes virkemåte, ikke på protokollen.</p>
+</section>
+
+
+</section>
+
+<footer>
+  <strong>Kilder</strong>
+  <ul>
+    <li><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/diagnostikk-og-utredning/histopatologisk-diagnostikk">Handlingsprogram lungekreft, kap. 6.9</a> og <a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/ikke-kurativ-behandling-av-ikke-smacellet-lungekreft/malrettet-behandling">kap. 8.4</a></li>
+    <li>Nye metoder, vedtak gjennomgått 31.10.2026. LIS-anbefaling onkologi 2026/27, revisjon 2 (23.10.2026)</li>
+    <li><a href="https://studieapp.no/lungekreft">studieapp.no – lungekreft</a>, <a href="https://studieapp.no/studier-ved-utprovningsenheten">Utprøvningsenheten OUS</a>, <a href="https://studieapp.no/impress-norway">IMPRESS-Norway</a>, <a href="https://www.helsenorge.no/kliniske-studier?relatertBehandling=Lungekreft">helsenorge.no</a></li>
+    <li><a href="https://matrixrare.no/om/">matrixrare.no</a></li>
+    <li>Felleskatalogen (doser og kontroller, kontrollert 02.11.2026)</li>
+  </ul>
+  Oppslagsverket er et arbeidsverktøy. Sjekk alltid Felleskatalogen og gjeldende handlingsprogram før forskrivning.
+</footer>
+</div>
+<script>
+const L="https://studieapp.no/lungekreft", U="https://studieapp.no/studier-ved-utprovningsenheten", I="https://studieapp.no/impress-norway";
+const a=(t,u)=>`<a href="${u}">${t}</a>`;
+const M=[
+ {id:"egfr",name:"EGFR ex19del / L858R",freq:"12–15 %",l1:true,l2:true,study:false,trd:false,
+  short:"Osimertinib ± kjemo eller amivantamab + lazertinib i 1. linje.",
+  first:"Osimertinib ± karboplatin/pemetreksed (FLAURA2). Amivantamab + lazertinib (MARIPOSA). Adjuvant osimertinib st. IB–IIIA, og etter kjemoradioterapi (LAURA).",
+  later:"Karboplatin/pemetreksed, docetaksel. Amivantamab + kjemo etter osimertinib: ikke vurdert.",
+  studies:"Ingen åpen studie i Norge.",trdtxt:"Ingen.",
+  tx:[["Osimertinib 80 mg × 1 ± karboplatin/pemetreksed","1L, adjuvant, etter KRT","Diaré, utslett, paronyki, tørr hud, stomatitt. ILD ca. 3 %","QTc, LVEF ved risiko, ILD"],
+      ["Amivantamab + lazertinib","1L","Akneiformt utslett, paronyki, infusjonsreaksjon, ødem, hypoalbuminemi","VTE-profylakse (DOAK/LMWH) i 4 mnd. Hudprofylakse (COCOON)"],
+      ["Karboplatin/pemetreksed, docetaksel","2L","Cytopeni, fatigue","Nyrefunksjon, folsyre og B12 ved pemetreksed"]]},
+ {id:"egfr-uvanlig",name:"EGFR uvanlige / ekson 20",freq:"10–15 % av EGFR · ex20ins ca. 2 %",l1:true,l2:true,study:false,trd:false,
+  short:"Afatinib eller osimertinib ved uvanlige. Amivantamab + kjemo ved ekson 20-innsetting.",
+  first:"Uvanlige (G719X, L861Q, S768I): afatinib, osimertinib. Ekson 20-innsetting: amivantamab + karboplatin/pemetreksed (PAPILLON).",
+  later:"Kjemo, docetaksel.",studies:"Ingen åpen studie i Norge.",trdtxt:"Ingen.",
+  tx:[["Afatinib 40 mg × 1","1L (uvanlige)","Diaré (tidlig, hyppig), akneiformt utslett, stomatitt","Dehydrering og nyresvikt. Loperamid fra dag 1"],
+      ["Amivantamab + karboplatin/pemetreksed","1L (ex20ins)","Infusjonsreaksjon (særlig iv), utslett, paronyki, cytopeni","Premedikasjon, sc foretrukket"]]},
+ {id:"alk",name:"ALK-fusjon",freq:"2–5 %",l1:true,l2:true,study:false,trd:false,
+  short:"Lorlatinib er førstevalg. Alektinib og brigatinib er alternativer.",
+  first:"Lorlatinib (førstevalg, LIS). Alektinib, brigatinib. Adjuvant alektinib.",
+  later:"Lorlatinib etter annen ALK-TKI. Kjemo.",
+  studies:`${a("HORIZON-01",L)} (st. III, rekrutterer ikke, OUS).`,trdtxt:"Ingen.",
+  tx:[["Lorlatinib 100 mg × 1","1L, etter annen ALK-TKI","Hyperlipidemi (> 80 %), ødem, vektoppgang, kognitive og psykiske endringer","Lipider, blodtrykk, EKG (AV-blokk). Ikke hormonell prevensjon"],
+      ["Alektinib 600 mg × 2","1L, adjuvant","Myalgi, CK-stigning, bradykardi, ødem, fotosensitivitet","Leverprøver hver 2. uke i 3 mnd, CK"],
+      ["Brigatinib 90 → 180 mg × 1","1L","Tidlige lungehendelser uke 1, hypertensjon, CK- og lipasestigning","Lungevakt dag 1–7, blodtrykk"]]},
+ {id:"ros1",name:"ROS1-fusjon",freq:"1–2 %",l1:true,l2:true,study:false,trd:false,
+  short:"Repotrektinib er førstevalg. Entrektinib og krizotinib er alternativer.",
+  first:"Repotrektinib (førstevalg). Entrektinib, krizotinib.",later:"Repotrektinib etter TKI. Lorlatinib: ikke vurdert.",
+  studies:"Ingen åpen studie i Norge.",trdtxt:"Ingen.",
+  tx:[["Repotrektinib 160 mg × 1 → × 2","1L og senere","Svimmelhet (svært vanlig), dysgeusi, parestesier, ataksi","Fall. CYP3A4-induktor (prevensjon)"],
+      ["Entrektinib 600 mg × 1","1L","Dysgeusi, svimmelhet, vektoppgang, kognitive plager","QTc, hjertesvikt"],
+      ["Krizotinib 250 mg × 2","1L","Synsforstyrrelser, kvalme, ødem, bradykardi","Leverprøver ukentlig i 2 mnd, øyestatus"]]},
+ {id:"kras",name:"KRAS G12C",freq:"ca. 17 %",l1:false,l2:false,study:true,trd:true,
+  short:"Ingen innført målrettet behandling. SUNRAY-01 rekrutterer i Trondheim i 1. linje.",
+  first:"Ingen målrettet. Behandling etter PD-L1 som ved tumor uten driver.",later:"Sotorasib ble ikke innført (16.06.2025).",
+  studies:`${a("SUNRAY-01",L)} (1L), ${a("SUNRAY-02",L)} (kurativ setting), ${a("KANDLELIT-014",U)} (senere linjer, OUS/Haukeland).`,
+  trdtxt:`<strong>${a("SUNRAY-01",L)}</strong>: olomorasib + pembrolizumab ± kjemo, avansert NSCLC, 1. linje. Identifiser ved diagnose, før behandlingsstart. Kontakt Bjørn Henning Grønberg.`,
+  tx:[["Olomorasib + pembrolizumab ± kjemo (studie)","1L","Klassen: leverenzymstigning, diaré, kvalme. Immunrelaterte bivirkninger","Leverprøver (KRAS G12C-hemmer + PD-1-hemmer gir mer hepatotoksisitet)"]]},
+ {id:"braf",name:"BRAF V600E",freq:"2–3 %",l1:true,l2:false,study:true,trd:false,
+  short:"Dabrafenib + trametinib i 1. linje.",
+  first:"Dabrafenib + trametinib.",later:"IO ± kjemo etter PD-L1.",
+  studies:`${a("FORTE",U)} (plixorafenib, basket, også BRAF-fusjon, OUS/Haukeland).`,trdtxt:"Ingen.",
+  tx:[["Dabrafenib 150 mg × 2 + trametinib 2 mg × 1","1L","Feber (56 %), kvalme, utslett, nye hudtumorer, redusert LVEF, øyebivirkninger","Feberplan, LVEF, månedlig hudundersøkelse"]]},
+ {id:"met",name:"MET ekson 14-skipping",freq:"ca. 3 %",l1:false,l2:true,study:false,trd:false,
+  short:"Tepotinib etter immunterapi og/eller platinum.",
+  first:"Kjemoimmunterapi.",later:"Tepotinib (etter IO og/eller platinum).",studies:"Ingen åpen studie i Norge.",trdtxt:"Ingen.",
+  tx:[["Tepotinib 450 mg × 1","Etter IO/platinum","Perifert ødem (vanligste årsak til dosereduksjon), kvalme, kreatininstigning (ofte falsk), hypoalbuminemi","Ødem, ILD"]]},
+ {id:"ret",name:"RET-fusjon",freq:"1–2 %",l1:true,l2:false,study:false,trd:false,
+  short:"Selperkatinib i 1. linje.",
+  first:"Selperkatinib.",later:"Kjemo ± IO.",studies:`${a("LIBRETTO-432",L)} (adjuvant, status uklar).`,trdtxt:"Ingen.",
+  tx:[["Selperkatinib 160 mg × 2 (120 mg × 2 under 50 kg)","1L","Hypertensjon, munntørrhet, diaré, ødem, leverenzymstigning, QTc","ALAT/ASAT hver 2. uke i 3 mnd, EKG, blodtrykk, chylothorax"]]},
+ {id:"ntrk",name:"NTRK-fusjon",freq:"ca. 1 %",l1:true,l2:true,study:false,trd:false,
+  short:"Repotrektinib eller entrektinib. Larotrektinib er ikke innført.",
+  first:"Repotrektinib, entrektinib.",later:"Repotrektinib etter NTRK-hemmer.",studies:`${a("NAVIGATE",U)} (rekrutterer ikke).`,trdtxt:"Ingen.",
+  tx:[["Repotrektinib","1L og etter NTRK-hemmer","Svimmelhet, dysgeusi, parestesier","Som ved ROS1"],["Entrektinib","1L","Dysgeusi, svimmelhet, vektoppgang","QTc"]]},
+ {id:"her2",name:"HER2 (ERBB2)",freq:"mutasjon 2–4 % · amplifikasjon ca. 2 %",l1:false,l2:false,study:true,trd:false,
+  short:"Ingen innført målrettet behandling. Zongertinib i studier ved OUS.",
+  first:"Ingen målrettet.",later:"Trastuzumab-derukstekan ble ikke innført (16.06.2025).",
+  studies:`Amplifikasjon/overuttrykk: ${a("BEAMION PanTumor-1",U)} (OUS). Mutasjon: Beamion-Lung2 (ikke åpnet, OUS, ikke i studieappen).`,trdtxt:"Ingen.",tx:[]},
+ {id:"pdl1",name:"PD-L1",freq:"≥ 50 % hos ca. 1/3",l1:true,l2:true,study:true,trd:false,
+  short:"Styrer valg av immunterapi i 1. linje ved tumor uten driver. Bivirkninger: se egen side.",
+  first:"≥ 50 %: IO alene (LIS: atezolizumab sc) eller kjemo + IO (tislelizumab). 1–49 %: kjemo + cemiplimab. < 1 %: kjemo + pembrolizumab. Plateepitel: kjemo + tislelizumab uansett PD-L1.",
+  later:"IO etter kjemo hvis ikke gitt.",studies:`${a("ROSETTA-Lung-202",L)} (≥ 50 %, Drammen/Kalnes).`,trdtxt:"Ingen åpen (PACIFIC-8 lukket).",
+  tx:[["PD-(L)1-hemmer ± kjemo","1L","Immunrelaterte bivirkninger i hud, tarm, lever, lunge, endokrine organer, hjerte",`Se <a href="../immunterapi/">Immunterapibivirkninger</a>: <a href="../immunterapi/#prover">prøver</a>, <a href="../immunterapi/#organ">organ for organ</a>, <a href="../immunterapi/#vakt">vakt</a>`]]},
+ {id:"sjeldne",name:"NRG1, FGFR3, MTAP, MSI-H",freq:"< 1 % hver",l1:false,l2:false,study:true,trd:false,
+  short:"Ingen innført behandling. Basket-studier ved OUS og Haukeland.",
+  first:"Ingen målrettet.",later:"Ingen målrettet.",
+  studies:`${a("FORAGER-1",U)} (FGFR3), ${a("MountainTAP-5",U)} (MTAP), ${a("CHRO761",U)} (MSI-H, rekrutterer ikke). ${a("eNRGy",U)} (NRG1) er avsluttet.`,trdtxt:"Ingen.",tx:[]},
+ {id:"bredt",name:"Behandlingsbar forandring (bredt panel)",freq:"–",l1:false,l2:false,study:true,trd:true,
+  short:"IMPRESS-Norway og MATRIX-RARE inkluderer ved St. Olavs.",
+  first:"–",later:"Godkjente målrettede legemidler utenfor indikasjon, i studie.",
+  studies:`${a("IMPRESS-Norway",I)}, ${a("MATRIX-RARE",U)}.`,
+  trdtxt:`<strong>${a("IMPRESS-Norway",I)}</strong> og <strong>${a("MATRIX-RARE",U)}</strong>. Send forespørsel til Åsmund Flobak. Se <a href="#impress">Testing og studier</a>.`,tx:[]},
+ {id:"sclc",name:"Småcellet lungekreft",freq:"ingen biomarkør",l1:false,l2:false,study:true,trd:true,
+  short:"Ingen biomarkør brukes til behandlingsvalg. To studier i Trondheim.",
+  first:"Kjemo + tislelizumab (LIS) ved utbredt sykdom.",later:"Etter standard.",
+  studies:`${a("DAREON-Lung-1",L)} (utbredt, 1L), EVOKE-SCLC-04 (2L, OUS/Haukeland/Drammen), DAHRTS (begrenset).`,
+  trdtxt:`<strong>${a("DAREON-Lung-1",L)}</strong> (obrixtamig, utbredt 1L) og <strong>DAHRTS</strong> (høyere torakal stråledose, begrenset stadium).`,tx:[]}
+];
+const D=[
+{id:"osimertinib",name:"Osimertinib",brand:"Tagrisso",cls:"EGFR-TKI",markers:["egfr","egfr-uvanlig"],
+ dose:"80 mg × 1, med eller uten mat. Monoterapi eller med karboplatin/pemetreksed (FLAURA2). Adjuvant (ADAURA) og etter kjemoradioterapi (LAURA).",
+ red:"80 → 40 mg. Bare ett reduksjonstrinn.",
+ organ:"",
+ start:["Felles pakke","EKG og elektrolytter (QTc)","MR caput","HBV-serologi [Forslag]","LVEF/ekko ved hjerterisiko"],
+ ctrl:[["Blodprøver og EKG","«Noen uker» etter start (HP). Forslag: uke 4, deretter ved hver kontroll"],["CT","Hver 3. måned første år"],["MR caput","Hver 3. måned ved kjente hjernemetastaser"],["Med kjemo","Blodprøver før hver kur"]],
+ ae:"Diaré, utslett, tørr hud, paronyki, stomatitt, cytopeni. Mindre vanlig: ILD (ca. 3 %), QTc-forlengelse, redusert LVEF, keratitt. Økt risiko > 65 år og < 50 kg.",
+ mgmt:[["QTc > 500 ms på 2 EKG","Pause til < 481 ms (eller baseline), start igjen med 40 mg. Med arytmi: seponer"],["ILD","Seponer permanent"],["Strålepneumonitt","Grad 2: pause. Grad 3–4: seponer"],["Andre grad ≥ 3","Pause inntil 3 uker. Bedring til grad 0–2: 80 eller 40 mg. Ellers seponer"],["Hud","Fuktighetskrem. Grad 1 topikalt steroid, grad 2 + doksysyklin"],["Øye","Øyelege ved keratittsymptomer"]],
+ ix:"Unngå sterke CYP3A-induktorer (rifampicin ca. 80 % lavere nivå; USA: 160 mg om uunngåelig). Hemmer BCRP og P-gp: følg digoksin og dabigatran. ILD-risiko øker rett etter PD-(L)1-hemmer.",
+ flags:["qtc","ild","hud","diare","lvef","oye"]},
+{id:"amivantamab",name:"Amivantamab + lazertinib",brand:"Rybrevant + Lazcluze",cls:"EGFR-MET-antistoff + EGFR-TKI",markers:["egfr"],
+ dose:"Lazertinib 240 mg × 1. Amivantamab sc (foretrukket): 1600 mg ukentlig uke 1–4, deretter 3520 mg hver 4. uke (≥ 80 kg: 2240/4640 mg). Iv: ukentlig uke 1–4, deretter hver 2. uke, første dose delt på dag 1–2.",
+ red:"Lazertinib 240 → 160 → 80 mg. Amivantamab iv q2w: 1050 → 700 → 350 mg (≥ 80 kg: 1400 → 1050 → 700). Reduser amivantamab først når begge rammes. Etter opphold > 7 dager: redusert dose.",
+ organ:"",
+ start:["Felles pakke med albumin, Ca og Mg","VTE-profylakse fra dag 1: apixaban 2,5 mg × 2, rivaroksaban 10 mg × 1 eller LMWH i 4 måneder. Ikke warfarin","Hudprofylakse (COCOON): doksysyklin 100 mg × 2 uke 1–12, deretter klindamycin 1 % i hodebunnen uke 13–52, ceramidkrem, klorheksidin på hender og føtter, solbeskyttelse","Iv: deksametason 8 mg × 2 dagene før, 20 mg iv før første infusjon, antihistamin og paracetamol"],
+ ctrl:[["Hud, negler, ødem, VTE-symptomer","Ved hver dose"],["Leverprøver","Forslag: ved hver dose i 3 mnd, deretter månedlig"],["Albumin, elektrolytter","Forslag: ved hver dose i 3 mnd"]],
+ ae:"Utslett 89 % (27 % grad 3–4), neglereaksjoner 71 %, hypoalbuminemi 48 %, hepatotoksisitet 47 %, ødem 47 %, VTE 37 %, parestesi 34 %. Infusjonsreaksjon 13 % sc mot 66 % iv. ILD ca. 3 %, keratitt.",
+ mgmt:[["Hud grad 2 > 2 uker","Reduser amivantamab først"],["Hud grad 3","Pause begge, gjenoppta redusert. Grad 4: seponer amivantamab"],["VTE","Full antikoagulasjon. Residiv tross antikoagulasjon: seponer amivantamab, lazertinib kan fortsette"],["Infusjonsreaksjon","Stopp, behandle, fortsett med 50 % hastighet. Grad 4: seponer"],["ILD","Pause begge. Seponer ved bekreftet ILD"],["Lever grad 3–4","Pause begge, gjenoppta redusert"]],
+ ix:"Lazertinib: unngå sterke og moderate CYP3A4-induktorer (rifampicin −83 %). Svak CYP3A4- og BCRP-hemmer: vurder å halvere rosuvastatin. Prevensjon til 3 uker etter siste dose.",
+ flags:["vte","hud","lever","ild","odem","oye","irr"]},
+{id:"amivantamab-kjemo",name:"Amivantamab + karboplatin/pemetreksed",brand:"Rybrevant",cls:"EGFR ekson 20-innsetting",markers:["egfr-uvanlig"],
+ dose:"Sc: 1600 mg uke 1, 2400 mg uke 2–4, fra uke 7 2400 mg hver 3. uke (≥ 80 kg: 2240/3360). Iv: 1400 mg uke 1–4, deretter 1750 mg hver 3. uke (≥ 80 kg: 1750/2100). Karboplatin AUC 5 × 4, pemetreksed 500 mg/m² også som vedlikehold.",
+ red:"Amivantamab som ved MARIPOSA. Kjemo etter vanlige regler.",organ:"",
+ start:["Felles pakke med albumin, Ca og Mg","Folsyre og B12 minst 5–7 dager før pemetreksed","Hudprofylakse og premedikasjon som over"],
+ ctrl:[["Blodtelling, kreatinin, lever, K, Mg, Ca, albumin","Før hver kur"],["Hud, negler, ødem","Ved hver dose"]],
+ ae:"Som amivantamab, i tillegg nøytropeni, trombocytopeni, hypokalemi, hypomagnesemi, kvalme og fatigue.",
+ mgmt:[["Hud og infusjonsreaksjon","Som ved amivantamab + lazertinib"],["Cytopeni, nyre","Vanlige kjemoregler"]],
+ ix:"Pemetreksed: unngå NSAID 2–5 dager før og etter ved nedsatt nyrefunksjon.",flags:["hud","irr","cytopeni","odem"]},
+{id:"afatinib",name:"Afatinib",brand:"Giotrif",cls:"EGFR-TKI (2. generasjon)",markers:["egfr-uvanlig"],
+ dose:"40 mg × 1, 1 time før eller 3 timer etter mat. Opptrapping til 50 mg kan vurderes hvis første syklus tolereres uten bivirkninger over grad 1.",
+ red:"40 → 30 → 20 mg. Under 20 mg: seponer.",organ:"",
+ start:["Felles pakke med kreatinin og elektrolytter","Loperamid og skriftlig diaréplan","Vurder forebyggende doksysyklin [Forslag]"],
+ ctrl:[["Telefon","Forslag: etter 1 uke"],["Kreatinin og elektrolytter","Forslag: etter 2 uker og ved diaré. Tettere hos kvinner, < 50 kg og nedsatt nyrefunksjon"]],
+ ae:"Diaré (svært vanlig, tidlig), akneiformt utslett, paronyki, stomatitt, dehydrering med nyresvikt, hypokalemi. Sjelden keratitt og ILD.",
+ mgmt:[["Diaré","Loperamid ved første løse avføring, til normal avføring i 12 timer. Væske"],["Diaré grad 2 > 48 t, utslett grad 2 > 7 dager, eller grad ≥ 3","Pause til grad 0–1, gjenoppta 10 mg lavere"],["ILD","Seponer"],["Keratitt","Pause, øyelege"]],
+ ix:"Ikke CYP-avhengig. P-gp-hemmere (verapamil, ciklosporin, itrakonazol): gi med lengst mulig avstand, helst 6 eller 12 timer. P-gp-induktorer senker nivået.",
+ flags:["diare","hud","nyre","ild","oye"]},
+{id:"lorlatinib",name:"Lorlatinib",brand:"Lorviqua",cls:"ALK-TKI (3. generasjon)",markers:["alk"],
+ dose:"100 mg × 1, med eller uten mat. Førstevalg ved ALK (LIS).",
+ red:"100 → 75 → 50 mg. Ikke tolerert 50 mg: seponer.",
+ organ:"eGFR < 30: redusert dose, f.eks. start 75 mg. Sterke CYP3A-hemmere: 75 mg.",
+ start:["Felles pakke","Lipider og fastende glukose","Lipase og amylase","EKG med PR-intervall","Blodtrykk","Kognisjon og humør, gjerne med pårørende","MR caput"],
+ ctrl:[["Lipider","Uke 2, 4 og 8, deretter regelmessig"],["Blodtrykk","Etter 2 uker, deretter minst månedlig"],["EKG","Månedlig (AV-blokk)"],["Glukose, lipase, amylase","Regelmessig"],["CNS-symptomer","Ved hver kontroll, spør også pårørende"]],
+ ae:"Hyperkolesterolemi 82 %, hypertriglyseridemi 61 %, ødem 51 %, perifer nevropati 44 %, CNS-effekter 40 % (kognisjon, humør, tale, psykose ca. 5 %), hypertensjon, AV-blokk, hyperglykemi.",
+ mgmt:[["Lipider","Rosuvastatin (unngå simvastatin). Grad 4: pause til grad ≤ 2, samme dose med maks lipidsenkende. Residiv: ett nivå ned"],["CNS grad 2–3","Pause til grad ≤ 1, ett nivå ned. Grad 4: seponer"],["AV-blokk","Grad 1 asymptomatisk: fortsett. Symptomatisk eller grad 2: pause, ett nivå ned. Totalblokk: pacemaker kan være indisert"],["ILD grad 1–2","Pause, steroider, ett nivå ned. Grad 3–4: seponer"],["Hypertensjon grad 3","Pause og behandle"]],
+ ix:"Sterke CYP3A-induktorer er KONTRAINDISERT. Lorlatinib induserer CYP3A4: unngå østrogen/gestagen-prevensjon, bruk hormonspiral eller barriere. Takrolimus og ciklosporin får lavere nivå.",
+ flags:["lipid","cns","avblokk","bt","odem","ild","prevensjon"]},
+{id:"alektinib",name:"Alektinib",brand:"Alecensa",cls:"ALK-TKI (2. generasjon)",markers:["alk"],
+ dose:"600 mg × 2 med mat. Adjuvant inntil 2 år (ALINA).",
+ red:"600 → 450 → 300 mg × 2. Ikke tolerert 300 mg × 2: seponer.",
+ organ:"Child-Pugh C: start 450 mg × 2.",
+ start:["Felles pakke med CK","Puls og blodtrykk","Kartlegg legemidler som gir bradykardi","MR caput"],
+ ctrl:[["Leverprøver","Hver 2. uke i 3 måneder, deretter periodisk"],["CK","Hver 2. uke første måned, deretter ved muskelsymptomer"],["Puls og blodtrykk","Ved kontroller"],["Hb","Ved mistanke om hemolyse"]],
+ ae:"Myalgi og CK-stigning, økte leververdier og bilirubin, anemi (også hemolytisk), bradykardi, ødem, vektøkning, obstipasjon, fotosensitivitet, ILD.",
+ mgmt:[["ALAT/ASAT > 5 × ULN, bilirubin ≤ 2 × ULN","Pause til ≤ 3 × ULN, redusert dose"],["ALAT/ASAT > 3 × ULN og bilirubin > 2 × ULN","Seponer"],["CK > 5 × ULN","Pause til ≤ 2,5 × ULN, samme dose. > 10 × ULN eller residiv: redusert"],["Symptomatisk bradykardi","Pause, gjennomgå betablokker og kalsiumblokker"],["ILD","Seponer"],["Sol","SPF ≥ 50 til 7 dager etter siste dose"]],
+ ix:"Ingen dosejustering ved CYP3A-hemmere eller -induktorer. Hemmer P-gp og BCRP: følg digoksin, dabigatran, metotreksat.",
+ flags:["lever","ck","bradykardi","odem","ild","sol"]},
+{id:"brigatinib",name:"Brigatinib",brand:"Alunbrig",cls:"ALK-TKI (2. generasjon)",markers:["alk"],
+ dose:"90 mg × 1 i 7 dager, deretter 180 mg × 1. Pause ≥ 14 dager (ikke bivirkning): start igjen med 90 mg i 7 dager.",
+ red:"180 → 120 → 90 → 60 mg. Startdosen 90 → 60 mg.",
+ organ:"eGFR < 30: 60 mg i 7 dager, deretter 90 mg. Child-Pugh C: 60 mg i 7 dager, deretter 120 mg. Sterke CYP3A-hemmere: halver dosen.",
+ start:["Felles pakke","CK, lipase, amylase, fastende glukose","Blodtrykk og puls","SpO₂ og lungestatus [Forslag]","MR caput","Skriftlig beskjed om å ringe ved tungpust i uke 1"],
+ ctrl:[["Uke 1","Forslag: telefon dag 3–4, vurdering dag 7 før opptrapping"],["Leverprøver","Hver 2. uke i 3 måneder"],["Blodtrykk, puls, CK, lipase, glukose","Regelmessig. Forslag: minst månedlig første halvår"]],
+ ae:"Tidlige lungehendelser i uke 1 (ca. 4,5 %), ILD, hypertensjon, bradykardi, CK-stigning, lipase/amylase, hepatotoksisitet, hyperglykemi, syn, fotosensitivitet.",
+ mgmt:[["Pneumonitt uke 1","Grad 1: pause, gjenoppta 90 mg uten opptrapping. Grad 2: ett nivå ned. Grad 3–4: seponer"],["Hypertensjon grad 3","Pause til < 140/90, samme dose"],["CK > 5 × ULN med symptomer","Pause til ≤ 2,5 × ULN, samme dose"],["Lipase > 2 × ULN","Pause til ≤ 1,5 × ULN, samme dose"],["Glukose > 13,9 mmol/l","Pause til kontrollert, lavere nivå"]],
+ ix:"Sterke CYP3A-hemmere: unngå, ellers halver dosen. Unngå sterke og moderate induktorer. Ikke-hormonell prevensjon til 4 måneder etter (menn 3 måneder).",
+ flags:["ild","bt","bradykardi","ck","lipase","glukose","prevensjon","sol"]},
+{id:"krizotinib",name:"Krizotinib",brand:"Xalkori",cls:"ALK/ROS1/MET-TKI",markers:["ros1","alk"],
+ dose:"250 mg × 2.",red:"250 × 2 → 200 × 2 → 250 × 1. Deretter seponer.",
+ organ:"ClCR < 30 uten dialyse: 250 mg × 1 (kan økes etter 4 uker). Moderat nedsatt leverfunksjon: 200 mg × 2. Alvorlig: 250 mg × 1.",
+ start:["Felles pakke","EKG, puls og blodtrykk","eGFR","Øyestatus ved synsplager"],
+ ctrl:[["Leverprøver","Ukentlig i 2 måneder, deretter månedlig"],["Øye inkl. netthinne","Innen 1 måned, deretter hver 3. måned"],["EKG, elektrolytter, puls, blodtrykk","Regelmessig"],["Nyrefunksjon","Regelmessig"]],
+ ae:"Synsforstyrrelser (lysglimt, etterbilder), hepatotoksisitet, QTc, bradykardi, nøytropeni, ødem, GI-plager, ILD (oftest innen 2 mnd), nyrecyster.",
+ mgmt:[["ALAT/ASAT grad 3–4, normal bilirubin","Pause til grad ≤ 1, 250 mg × 1, trapp opp"],["ALAT/ASAT > 3 × ULN og bilirubin > 2 × ULN","Seponer"],["QTc grad 3","Pause, lavere dose. Grad 4: seponer"],["Alvorlig synstap","Seponer, øyelege"],["ILD","Seponer"]],
+ ix:"Unngå sterke CYP3A-hemmere og -induktorer. Krizotinib er moderat CYP3A-hemmer: peroral midazolam, takrolimus og ciklosporin øker. Unngå QT-forlengende kombinasjoner.",
+ flags:["oye","lever","qtc","bradykardi","ild","nyre"]},
+{id:"repotrektinib",name:"Repotrektinib",brand:"Augtyro",cls:"ROS1/NTRK-TKI",markers:["ros1","ntrk"],
+ dose:"160 mg × 1 i 14 dager, deretter 160 mg × 2.",red:"160 → 120 → 80 mg (× 1 eller × 2 etter fase). Ikke tolerert 80 mg: seponer.",organ:"",
+ start:["Felles pakke","Graviditetstest","Informer om svimmelhet og fallrisiko. Ikke bilkjøring ved CNS-symptomer"],
+ ctrl:[["Leverprøver","Forslag: etter 2 og 4 uker, deretter månedlig i 3 mnd"],["Dag 14","Forslag: vurder svimmelhet før opptrapping"],["CK","Ved muskelsymptomer"]],
+ ae:"Svimmelhet 66 % (median dag 7), dysgeusi 57 %, parestesi 39 %, obstipasjon 39 %, anemi 38 %, ataksi 29 %, kognitive forstyrrelser 22 %, frakturer 3,5 %, pneumonitt 3,2 %.",
+ mgmt:[["CNS intolerabel grad 2","Pause til grad ≤ 1, samme eller lavere dose"],["CNS grad 3","Pause, lavere dose. Grad 4: seponer"],["Smerte eller deformitet","Utred raskt for fraktur"],["ILD","Pause ved mistanke, seponer ved bekreftet"]],
+ ix:"Unngå sterke og moderate CYP3A-hemmere og -induktorer (også flukonazol, verapamil, erytromycin). Selv CYP3A4-induktor: hormonell prevensjon usikker, bruk barriere i tillegg (kvinner 2 mnd, menn 4 mnd etter). Takrolimus, ciklosporin, sirolimus: mål speil.",
+ flags:["cns","fraktur","ild","prevensjon","lever"]},
+{id:"entrektinib",name:"Entrektinib",brand:"Rozlytrek",cls:"ROS1/NTRK-TKI",markers:["ros1","ntrk"],
+ dose:"600 mg × 1.",red:"600 → 400 → 200 mg. Ikke tolerert 200 mg: seponer.",organ:"Sterke CYP3A-hemmere: 100 mg, moderate: 200 mg, maks 14 dager.",
+ start:["Felles pakke","Urinsyre","EKG (start ikke ved QTc > 450 ms)","LVEF ved risiko","Graviditetstest","Kognisjon"],
+ ctrl:[["EKG og elektrolytter","Etter 1 måned, deretter ved behov"],["Urinsyre","Periodisk"],["Kognisjon og vekt","Ved hver kontroll"]],
+ ae:"Dysgeusi, svimmelhet, ataksi, kognitive forstyrrelser, vektøkning, ødem, hyperurikemi, frakturer, anemi, hypotensjon, QTc, hjertesvikt.",
+ mgmt:[["QTc 481–500 ms","Pause til < 481 ms, samme dose"],["QTc > 500 ms","Pause, lavere dose. Residiv eller arytmi: seponer"],["Hjertesvikt grad 2–3","Pause, lavere dose. Grad 4: seponer"],["Hyperurikemi","Urinsyresenkende, pause ved grad 4"]],
+ ix:"Unngå sterke og moderate CYP3A-hemmere og -induktorer, grapefrukt. Kan hemme P-gp (digoksin).",
+ flags:["qtc","cns","lvef","fraktur","odem"]},
+{id:"dabrafenib",name:"Dabrafenib + trametinib",brand:"Tafinlar + Mekinist",cls:"BRAF- + MEK-hemmer",markers:["braf"],
+ dose:"Dabrafenib 150 mg × 2 + trametinib 2 mg × 1, 1 time før eller 2 timer etter mat.",
+ red:"Dabrafenib 150 → 100 → 75 → 50 mg × 2. Trametinib 2 → 1,5 → 1 mg. Ikke under 1 mg.",organ:"",
+ start:["Felles pakke med kreatinin","LVEF (ekko)","Blodtrykk","Hudundersøkelse hele kroppen","Hode-hals-undersøkelse","Øyestatus ved tidligere øyesykdom","Paracetamol og skriftlig feberplan"],
+ ctrl:[["LVEF","Etter 1 måned, deretter hver 3. måned"],["Leverprøver","Hver 4. uke i 6 måneder"],["Hud","Månedlig, og 6 mnd etter seponering"],["Hode-hals","Hver 3. måned"],["Øye","Straks ved synsendringer"]],
+ ae:"Feber 56 % (første måned, tilbakevendende, kan gi hypotensjon og prerenal nyresvikt), kvalme, diaré, utslett, kutant plateepitelkarsinom, redusert LVEF, hypertensjon, uveitt, RVO, RPED, blødning. Sjelden HLH.",
+ mgmt:[["Feber ≥ 38 °C","Pause begge straks, paracetamol, utelukk infeksjon. Gjenoppta samme dose etter 24 t feberfri. Tilbakevendende: vurder prednisolon 10 mg"],["LVEF-fall ≥ 10 poeng og under LLN","Pause trametinib. Bedring innen 4 uker: lavere dose. Ellers seponer"],["RVO","Seponer trametinib permanent"],["Kutant plateepitelkarsinom","Fjern kirurgisk, fortsett"],["HLH, SCAR","Seponer begge"]],
+ ix:"Dabrafenib induserer CYP3A4 og CYP2C9: hormonell prevensjon usikker, warfarin (mål INR), deksametason og DOAK svekkes. Unngå sterke CYP3A4/2C8-hemmere og -induktorer.",
+ flags:["feber","lvef","hud","oye","bt","prevensjon"]},
+{id:"tepotinib",name:"Tepotinib",brand:"Tepmetko",cls:"MET-hemmer",markers:["met"],
+ dose:"450 mg × 1 med mat. Etter immunterapi og/eller platinum.",red:"450 → 225 mg. Ikke tolerert 225 mg: seponer.",organ:"",
+ start:["Felles pakke med albumin","EKG ved risiko","Mål legg- og ankelomkrets","Informer om forventet ødem"],
+ ctrl:[["Leverprøver","FK: ved klinisk behov. Forslag: hver 2. uke i 3 mnd, deretter månedlig"],["Kreatinin, albumin, ødem","Ved hver kontroll"]],
+ ae:"Perifert ødem (svært vanlig, sent og progredierende), kvalme, diaré, kreatininstigning (ofte falsk, hemmet tubulær sekresjon), hypoalbuminemi, lever, lipase, QTc, ILD.",
+ mgmt:[["Ødem","Kompresjon, elevasjon. Diuretika virker lite. Grad 3: pause, 225 mg"],["Kreatinin","Vurder cystatin C før doseendring"],["ILD","Pause ved mistanke, seponer ved bekreftet"],["Andre grad ≥ 3","Reduser til 225 mg. Pause inntil 21 dager kan vurderes"]],
+ ix:"Svak P-gp-hemmer: dabigatran ca. 50 % høyere, mål digoksin. Kliniske studier viser liten effekt av itrakonazol og karbamazepin.",
+ flags:["odem","nyre","lever","qtc","ild"]},
+{id:"selperkatinib",name:"Selperkatinib",brand:"Retsevmo",cls:"RET-hemmer",markers:["ret"],
+ dose:"160 mg × 2. Under 50 kg: 120 mg × 2.",red:"160 → 120 → 80 → 40 mg × 2. Deretter seponer.",
+ organ:"Child-Pugh C: 80 mg × 2. Sterke CYP3A4-hemmere: halver dosen.",
+ start:["Felles pakke","QTcF ≤ 470 ms, normale K, Mg, Ca","TSH og fritt T4","Blodtrykk (optimaliser før start)","Vurder tumorlyserisiko"],
+ ctrl:[["ALAT/ASAT","Hver 2. uke i 3 mnd, deretter månedlig i 3 mnd"],["EKG og elektrolytter","Etter 1 uke, deretter månedlig i 6 mnd"],["Blodtrykk","Ved hver kontroll"],["TSH","Forslag: hver 2.–3. måned"]],
+ ae:"Hypertensjon, munntørrhet, diaré, ødem, økte leververdier, QTc, hypotyreose, blødning, overfølsomhet (utslett, feber, trombocyttfall første uker), chylothorax, ILD. 51 % trengte dosereduksjon.",
+ mgmt:[["ALAT/ASAT grad 3–4","Pause til baseline, 2 nivåer ned, trapp opp etter ≥ 2 uker"],["Overfølsomhet","Pause, prednisolon 1 mg/kg, gjenoppta 40 mg × 2 og trapp opp ukentlig"],["QTcF > 500 ms","Pause til < 470 ms, ett nivå ned"],["Hypertensjon grad 3","Pause til kontrollert, lavere dose. Grad 4: seponer"],["ILD","Grad 2: pause, redusert dose. Grad 3–4: seponer"]],
+ ix:"Unngå sterke CYP3A4-induktorer. PPI tas med måltid, H2-blokker 2 t før eller 10 t etter. Unngå følsomme CYP2C8/3A4-substrater (repaglinid). Hemmer P-gp og BCRP.",
+ flags:["bt","lever","qtc","ild","odem"]},
+{id:"io",name:"PD-(L)1-hemmer ± kjemo",brand:"Atezolizumab, tislelizumab, cemiplimab, pembrolizumab m.fl.",cls:"Immunterapi",markers:["pdl1","sclc"],
+ dose:"Etter PD-L1 og histologi. LIS 2026/27: mono ≥ 50 % atezolizumab sc; med kjemo tislelizumab (plate, adeno ≥ 50 %), cemiplimab (1–49 %), pembrolizumab (< 1 %). ES-SCLC: tislelizumab. Inntil 2 år.",
+ red:"Ingen dosereduksjon. Pause eller seponering etter grad.",organ:"",
+ start:["Hematologi, kreatinin, lever (ALAT, ASAT, ALP, bilirubin, γGT, LD), CRP, elektrolytter, glukose","TSH og fT4, morgenkortisol, HbA1c","Hepatitt B/C og HIV","EKG, troponin, NT-proBNP (ESC)","Urinstiks","Registrer og grader baseline-plager"],
+ ctrl:[["Symptomgjennomgang, blodprøver inkl. TSH, fT4, lever, glukose","Før hver kur"],["Troponin og EKG","Før dose 2, 3 og 4, deretter hver 3. dose (ESC). Lokal praksis avklares"],["Etter avsluttet behandling","Endokrine prøver ca. 6 uker etter siste dose"]],
+ ae:"Immunrelaterte bivirkninger: hud, kolitt, hepatitt, pneumonitt, tyreoiditt, hypofysitt, diabetes, nefritt, myokarditt (sjelden, alvorlig).",
+ mgmt:[["Grad 1","Fortsett, tett oppfølging"],["Grad 2","Pause. Prednisolon 0,5–1 mg/kg ved de fleste organer"],["Grad 3–4","Pause eller seponer. Prednisolon 1–2 mg/kg, eventuelt iv"],["Endokrine","Substitusjon, IO kan som regel fortsette"],["Myokarditt","Seponer, høydose steroid, kardiolog"],["Full håndtering","<a href='../immunterapi/#organ'>Organ for organ</a> · <a href='../immunterapi/#steroider'>Steroider og nedtrapping</a> · <a href='../immunterapi/#preparater'>Avvik mellom preparatene</a>"]],
+ ix:"Ingen CYP-interaksjoner. HP advarer mot PD-1-hemmer ved tymom.",
+ flags:["irae","lever","tyreoidea","pneumonitt","kolitt","myokarditt"]}
+];
+const AE=[
+ {k:"qtc",t:"QTc-forlengelse",d:"EKG og elektrolytter ved start. Korriger K og Mg, gå gjennom QT-forlengende legemidler. Vanlig regel: QTc > 500 ms → pause og redusert dose."},
+ {k:"ild",t:"ILD / pneumonitt",d:"Ny hoste, dyspné eller hypoksi: pause og CT. De fleste TKI seponeres ved bekreftet ILD. Lorlatinib og brigatinib har egne gradregler."},
+ {k:"lever",t:"Hepatotoksisitet",d:"ALAT/ASAT > 3 × ULN med bilirubin > 2 × ULN uten annen forklaring: seponer (Hys lov). Isolert grad 3: pause og redusert dose."},
+ {k:"hud",t:"Hud og negler",d:"EGFR-hemmere: fuktighetskrem og solvern fra dag 1. Grad 1 topikalt steroid, grad 2 doksysyklin, grad 3 pause."},
+ {k:"diare",t:"Diaré",d:"Loperamid ved første løse avføring. Grad 2 som varer, eller grad 3: pause og redusert dose. Følg kreatinin og K."},
+ {k:"vte",t:"Venøs tromboembolisme",d:"Amivantamab + lazertinib: profylakse med DOAK eller LMWH de første 4 månedene. Dabrafenib kan senke DOAK-nivå."},
+ {k:"odem",t:"Ødem",d:"Tepotinib, lorlatinib, amivantamab. Kompresjon og elevasjon, diuretika virker lite. Grad 3: pause og redusert dose."},
+ {k:"lipid",t:"Lipider",d:"Lorlatinib: rosuvastatin som førstevalg, unngå simvastatin. Grad 4 krever pause."},
+ {k:"cns",t:"CNS-effekter",d:"Lorlatinib (kognisjon, humør), repotrektinib og entrektinib (svimmelhet, ataksi). Spør pårørende. Grad 2–3: pause og ett nivå ned."},
+ {k:"bradykardi",t:"Bradykardi",d:"Alektinib, brigatinib, krizotinib. Gå gjennom betablokker og kalsiumblokker før dosen reduseres."},
+ {k:"avblokk",t:"AV-blokk",d:"Lorlatinib: EKG månedlig. Symptomatisk eller grad 2: pause og ett nivå ned."},
+ {k:"bt",t:"Hypertensjon",d:"Lorlatinib, brigatinib, selperkatinib, dabrafenib/trametinib. Grad 3: pause til kontrollert."},
+ {k:"feber",t:"Feber",d:"Dabrafenib/trametinib: pause begge ved ≥ 38 °C, paracetamol, utelukk infeksjon. Gjenoppta etter 24 timer feberfri."},
+ {k:"lvef",t:"Redusert LVEF",d:"Trametinib og osimertinib. Ekko ved start og etter plan."},
+ {k:"oye",t:"Øye",d:"Keratitt (EGFR-hemmere, amivantamab), synsforstyrrelser (krizotinib), RVO og RPED (trametinib). Øyelege raskt."},
+ {k:"ck",t:"CK-stigning",d:"Alektinib, brigatinib. Pause ved > 5 × ULN med symptomer."},
+ {k:"prevensjon",t:"Prevensjon",d:"Lorlatinib, brigatinib, repotrektinib og dabrafenib induserer CYP3A4: hormonell prevensjon er usikker. Bruk spiral eller barriere."},
+ {k:"irae",t:"Immunrelaterte bivirkninger",d:"Grad 2: pause og steroid. Grad 3–4: høyere steroiddose, ofte seponering. Full håndtering: <a href='../immunterapi/'>Immunterapibivirkninger</a>."}
+];
+
+const $=s=>document.querySelector(s);
+const esc=t=>t;
+const views=["markorer","legemidler","kontroller","bivirkninger","testing"];
+let view="markorer",filter="all";
+const strip=h=>h.replace(/<[^>]+>/g,"");
+const drugById=Object.fromEntries(D.map(d=>[d.id,d]));
+const aeByKey=Object.fromEntries(AE.map(a=>[a.k,a]));
+const IO="../immunterapi/";
+function ioLinks(){return `<div class="links"><span class="lbl">Immunterapibivirkninger:</span> <a class="dl" href="${IO}#vakt">Vakt</a><a class="dl" href="${IO}#prover">Prøver og kontroller</a><a class="dl" href="${IO}#organ">Organ for organ</a><a class="dl" href="${IO}#steroider">Steroider</a><a class="dl" href="${IO}#preparater">Preparater</a></div>`;}
+function drugLinks(mid){
+  const ds=D.filter(d=>d.markers.includes(mid));
+  return ds.length?`<div class="links"><span class="lbl">Legemiddelkort:</span> ${ds.map(d=>`<a class="dl" href="#lm-${d.id}">${d.name}</a>`).join("")}</div>`+(["pdl1","sclc"].includes(mid)?ioLinks():""):"";
+}
+function pills(m){
+  const p=[];
+  p.push(m.l1?'<span class="pill p-ok">1L</span>':'<span class="pill p-none">1L: ingen</span>');
+  if(m.l2) p.push('<span class="pill p-ok">2L+</span>');
+  if(m.study) p.push('<span class="pill p-warn">Studie</span>');
+  if(m.trd) p.push('<span class="pill p-tr">Trondheim</span>');
+  return p.join("");
+}
+function markerCard(m){
+  const tx=m.tx.length?`<div class="tablewrap"><table><thead><tr><th>Behandling</th><th>Linje</th><th>Viktigste bivirkninger</th><th>Følg særlig med på</th></tr></thead><tbody>${m.tx.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`:"";
+  return `<details class="card" id="mk-${m.id}"><summary><div class="top"><span class="name">${m.name}</span><span class="freq">${m.freq}</span></div><div class="pills">${pills(m)}</div><p class="short">${m.short}</p><span class="more">Vis detaljer</span></summary>
+  <div class="body"><div class="facts">
+   <div class="fact"><h4>1. linje, innført</h4><p>${m.first}</p></div>
+   <div class="fact"><h4>2. eller senere linje</h4><p>${m.later}</p></div>
+   <div class="fact"><h4>Studie i Norge</h4><p>${m.studies}</p></div>
+   <div class="fact"><h4>Trondheim</h4><p>${m.trdtxt}</p></div>
+  </div>${tx}${drugLinks(m.id)}</div></details>`;
+}
+function drugCard(d){
+  const mk=d.markers.map(id=>{const m=M.find(x=>x.id===id);return m?`<a class="dl" href="#mk-${id}">${m.name}</a>`:""}).join("");
+  const flags=d.flags.filter(f=>aeByKey[f]).map(f=>`<a class="tag" href="#ae-${f}">${aeByKey[f].t}</a>`).join("");
+  return `<details class="card drug" id="lm-${d.id}"><summary><div class="top"><span class="name">${d.name}</span><span class="freq">${d.brand}</span></div>
+  <div class="pills"><span class="pill p-acc">${d.cls}</span></div><p class="short">${d.dose}</p><span class="more">Vis kontroller, bivirkninger og håndtering</span></summary>
+  <div class="body">
+   <div class="facts">
+    <div class="fact"><h4>Dosereduksjon</h4><p>${d.red}</p></div>
+    ${d.organ?`<div class="fact"><h4>Nedsatt organfunksjon og hemmere</h4><p>${d.organ}</p></div>`:""}
+    <div class="fact"><h4>Interaksjoner og prevensjon</h4><p>${d.ix}</p></div>
+   </div>
+   <div class="cols">
+    <div><h3>Før oppstart</h3><ul>${d.start.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+    <div><h3>Kontroller under behandling</h3><div class="tablewrap"><table class="slim"><tbody>${d.ctrl.map(r=>`<tr><th scope="row">${r[0]}</th><td>${r[1]}</td></tr>`).join("")}</tbody></table></div></div>
+   </div>
+   <div><h3>Viktigste bivirkninger</h3><p class="note">${d.ae}</p></div>
+   <div><h3>Håndtering</h3><div class="tablewrap"><table><thead><tr><th>Situasjon</th><th>Tiltak</th></tr></thead><tbody>${d.mgmt.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</tbody></table></div></div>
+   <div class="links"><span class="lbl">Markør:</span> ${mk}</div>
+   <div class="links"><span class="lbl">Bivirkningsoppslag:</span> ${flags}</div>${d.id==="io"?ioLinks():""}
+  </div></details>`;
+}
+function ctrlTable(list){
+  return `<div class="tablewrap"><table class="plan"><thead><tr><th>Legemiddel</th><th>Før oppstart (utover felles pakke)</th><th>Kontroll</th><th>Hyppighet</th></tr></thead><tbody>${
+   list.map(d=>d.ctrl.map((r,i)=>`<tr>${i===0?`<td rowspan="${d.ctrl.length}"><a href="#lm-${d.id}"><strong>${d.name}</strong></a><br><span class="sub">${d.brand}</span></td><td rowspan="${d.ctrl.length}" class="sub">${d.start.filter(x=>!/^Felles pakke$/.test(x)).map(x=>x.replace(/^Felles pakke /,"Felles pakke ")).join(" · ")}</td>`:""}<td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")).join("")}</tbody></table></div>`;
+}
+function aeCard(a){
+  const ds=D.filter(d=>d.flags.includes(a.k));
+  return `<div class="card aecard" id="ae-${a.k}"><div class="aebody"><div class="name">${a.t}</div><p class="note">${a.d}</p>
+  <div class="links">${ds.map(d=>`<a class="dl" href="#lm-${d.id}">${d.name}</a>`).join("")}</div></div></div>`;
+}
+const textM=m=>strip([m.name,m.short,m.first,m.later,m.studies,m.trdtxt,m.tx.flat().join(" ")].join(" ")).toLowerCase();
+const textD=d=>[d.name,d.brand,d.cls,d.dose,d.red,d.organ,d.ix,d.ae,d.start.join(" "),d.ctrl.flat().join(" "),d.mgmt.flat().join(" ")].join(" ").toLowerCase();
+const textA=a=>(a.t+" "+a.d).toLowerCase();
+function render(){
+  const s=$("#q").value.trim().toLowerCase();
+  document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.v===view)));
+  document.querySelectorAll(".view").forEach(v=>v.hidden=v.id!=="v-"+view);
+  $("#chips").hidden=view!=="markorer";
+  let n=0,tot=0;
+  if(view==="markorer"){
+    const l=M.filter(m=>(filter==="all"||m[filter])&&(!s||textM(m).includes(s)));n=l.length;tot=M.length;
+    $("#gm").innerHTML=l.length?l.map(markerCard).join(""):empty();
+  } else if(view==="legemidler"){
+    const l=D.filter(d=>!s||textD(d).includes(s));n=l.length;tot=D.length;
+    $("#gd").innerHTML=l.length?l.map(drugCard).join(""):empty();
+  } else if(view==="kontroller"){
+    const l=D.filter(d=>!s||textD(d).includes(s));n=l.length;tot=D.length;
+    $("#gc").innerHTML=l.length?ctrlTable(l):empty();
+  } else if(view==="bivirkninger"){
+    const l=AE.filter(a=>!s||textA(a).includes(s)||D.some(d=>d.flags.includes(a.k)&&d.name.toLowerCase().includes(s)));n=l.length;tot=AE.length;
+    $("#ga").innerHTML=l.length?l.map(aeCard).join(""):empty();
+  }
+  $("#count").textContent=view==="testing"?"":`${n} av ${tot} vist`;
+  if(s&&n===1){const d=document.querySelector(`#v-${view} details`);if(d)d.open=true;}
+  // global hint
+  if(s&&view!=="testing"){
+    const hits=[["markorer",M.filter(m=>textM(m).includes(s)).length],["legemidler",D.filter(d=>textD(d).includes(s)).length],["bivirkninger",AE.filter(a=>textA(a).includes(s)).length]].filter(h=>h[0]!==view&&h[1]>0);
+    $("#hint").innerHTML=hits.length?"Også treff i: "+hits.map(h=>`<button class="linkbtn" type="button" data-go="${h[0]}">${labels[h[0]]} (${h[1]})</button>`).join(" · "):"";
+  } else $("#hint").innerHTML="";
+}
+const labels={markorer:"Markører",legemidler:"Legemidler",kontroller:"Kontrollplan",bivirkninger:"Bivirkninger",testing:"Testing og studier"};
+const empty=()=>'<div class="empty">Ingen treff. Prøv et annet søkeord eller fjern filteret.</div>';
+function go(v,anchor){
+  view=v;render();
+  const h=anchor||v;
+  try{if(location.hash.slice(1)!==h)history.replaceState(null,"","#"+h);}catch(e){}
+  if(anchor){const el=document.getElementById(anchor);if(el){if(el.tagName==="DETAILS")el.open=true;el.scrollIntoView({block:"start"});}}
+  else window.scrollTo(0,0);
+}
+function fromHash(){
+  const h=location.hash.slice(1);
+  if(!h){render();return;}
+  if(views.includes(h)){go(h);return;}
+  if(h.startsWith("mk-")){$("#q").value="";filter="all";setChip();go("markorer",h);return;}
+  if(h.startsWith("lm-")){$("#q").value="";go("legemidler",h);return;}
+  if(h.startsWith("ae-")){$("#q").value="";go("bivirkninger",h);return;}
+  if(h==="impress"){go("testing","impress");return;}
+  render();
+}
+function setChip(){document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",String(c.dataset.f===filter)));}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>go(b.dataset.v)));
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.f;setChip();render();}));
+$("#q").addEventListener("input",render);
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-go]");if(b){go(b.dataset.go);return;}
+  const a=e.target.closest('a[href^="#"]');
+  if(a){const h=a.getAttribute("href").slice(1);if(/^(mk|lm|ae)-|^impress$/.test(h)){e.preventDefault();if(location.hash.slice(1)===h)fromHash();else location.hash=h;}}
+});
+window.addEventListener("hashchange",fromHash);
+fromHash();
+
+</script>
+</body>
+</html>

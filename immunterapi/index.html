@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="nb"><head>
+<meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immunterapibivirkninger ved lungekreft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Oppslagsverktøy: søk øverst, ett kort per markør, detaljer folder seg ut */
+  --bg:#f6f7f8; --surface:#ffffff; --ink:#1b2430; --muted:#5b6673; --line:#d9dee3;
+  --accent:#1f5f8b; --accent-soft:#e3eef6;
+  --ok:#2e7d4f; --ok-soft:#e2f2e8; --warn:#9a6a00; --warn-soft:#fbf0d6; --none:#6b7480; --none-soft:#eceff2;
+  --tr:#7a2e6b; --tr-soft:#f4e6f1; --crit:#a3271f; --crit-soft:#fbe6e3;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12161b; --surface:#1a2027; --ink:#e6eaee; --muted:#9aa5b1; --line:#2e3741;
+    --accent:#7fb6dd; --accent-soft:#1d3142;
+    --ok:#7fcf9c; --ok-soft:#183126; --warn:#e6c26a; --warn-soft:#352b12; --none:#a2acb7; --none-soft:#252d36;
+    --tr:#e3a2d4; --tr-soft:#352030; --crit:#f08c80; --crit-soft:#3a1d1a; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12161b; --surface:#1a2027; --ink:#e6eaee; --muted:#9aa5b1; --line:#2e3741;
+  --accent:#7fb6dd; --accent-soft:#1d3142;
+  --ok:#7fcf9c; --ok-soft:#183126; --warn:#e6c26a; --warn-soft:#352b12; --none:#a2acb7; --none-soft:#252d36;
+  --tr:#e3a2d4; --tr-soft:#352030; --crit:#f08c80; --crit-soft:#3a1d1a; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 16px 48px;display:flex;flex-direction:column;gap:20px}
+header h1{font-family:var(--display);font-size:clamp(26px,4vw,34px);margin:0;text-wrap:balance}
+header p{margin:4px 0 0;color:var(--muted);max-width:70ch}
+.meta{font-size:13px;color:var(--muted)}
+.tools{display:flex;flex-direction:column;gap:10px;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:2;border-bottom:1px solid var(--line)}
+#q{width:100%;padding:11px 14px;font:inherit;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.count{font-size:13px;color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));;gap:12px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column}
+.card summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.card summary::-webkit-details-marker{display:none}
+.card[open]{grid-column:1/-1}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 12px}
+.name{font-family:var(--display);font-weight:700;font-size:19px}
+.freq{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:12px;padding:2px 8px;border-radius:999px;font-weight:500}
+.p-ok{background:var(--ok-soft);color:var(--ok)}
+.p-warn{background:var(--warn-soft);color:var(--warn)}
+.p-none{background:var(--none-soft);color:var(--none)}
+.p-tr{background:var(--tr-soft);color:var(--tr)}
+.short{font-size:14px;color:var(--muted);margin:0}
+.more{font-size:12px;color:var(--accent)}
+.card[open] .more{display:none}
+.body{padding:0 16px 16px;display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:14px}
+.fact{background:var(--bg);border-radius:8px;padding:10px 12px}
+.fact h4{margin:0 0 4px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
+.fact p{margin:0;font-size:14px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:620px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
+.note{font-size:14px;margin:0;max-width:75ch}
+section.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+section.panel h2{font-family:var(--display);font-size:21px;margin:0 0 10px}
+section.panel h3{font-size:15px;margin:14px 0 6px}
+.empty{color:var(--muted);padding:20px;text-align:center;grid-column:1/-1}
+footer{font-size:13px;color:var(--muted)}
+footer ul{padding-left:18px;margin:6px 0}
+@media (prefers-reduced-motion: no-preference){.card{transition:border-color .15s}.card:hover{border-color:var(--accent)}}
+
+[hidden]{display:none!important}
+.tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line)}
+.tab{font:inherit;font-weight:500;font-size:14px;padding:8px 14px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.card,.panel{scroll-margin-top:200px}
+.alert{border-left:4px solid var(--crit);background:var(--crit-soft);padding:12px 14px;border-radius:6px}
+.alert h3{margin:0 0 6px;color:var(--crit);font-size:15px}
+.alert p,.alert li{font-size:14px}
+.alt{display:flex;flex-direction:column;gap:6px}
+.altrow{font-size:14px;background:var(--bg);border-radius:6px;padding:8px 10px}
+.src{font-size:11px;font-weight:600;padding:1px 6px;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-right:6px}
+.body ul{margin:0;padding-left:18px;font-size:14px}
+.body h3,.panel h3{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 6px;font-weight:600}
+.lead{font-size:14px;color:var(--muted);margin:0 0 10px;max-width:75ch}
+.panels{display:flex;flex-direction:column;gap:14px}
+.gradstrip{font-size:13px;color:var(--muted)}
+td b{color:var(--ink)}
+.steps{margin:0;padding-left:20px;font-size:14px;display:flex;flex-direction:column;gap:6px}
+</style></head><body><div class="wrap">
+<header><h1>Immunterapibivirkninger ved lungekreft</h1>
+<p>Prøver, gradering og behandling av immunrelaterte bivirkninger (irAE) ved PD-1-, PD-L1- og CTLA-4-hemmere. Hovedkilde er Helse Bergen (HUS). Der OUS og danske ImmunTox avviker, står det under «Andre kilder».</p>
+<div class="meta">Sist oppdatert 6. november 2026 · Håkon Olav Leira, Lungemedisinsk avdeling, St. Olavs hospital. Graderes etter CTCAE v5.0.</div><div class="meta">Se også <a href="../biomarkorer/#mk-pdl1">Biomarkører ved lungekreft</a> for PD-L1, valg av preparat og målrettet behandling.</div></header>
+<div class="tools">
+<div class="tabs" role="tablist">
+<button class="tab" type="button" role="tab" data-v="vakt">Vakt</button>
+<button class="tab" type="button" role="tab" data-v="organ">Organ for organ</button>
+<button class="tab" type="button" role="tab" data-v="steroider">Steroider og immunsuppresjon</button>
+<button class="tab" type="button" role="tab" data-v="prover">Prøver og kontroller</button>
+<button class="tab" type="button" role="tab" data-v="preparater">Preparater</button>
+<button class="tab" type="button" role="tab" data-v="pasient">Pasientinfo</button>
+</div>
+<label for="q" class="meta">Søk i bivirkninger: symptom, organ, prøve eller legemiddel</label>
+<input id="q" type="search" placeholder="F.eks. troponin, diaré, kortisol, infliksimab …" autocomplete="off">
+<div class="legend"><span class="count" id="count"></span></div>
+</div>
+<section class="view panels" id="v-vakt">
+<div class="alert"><h3>Mistenkt immunrelatert bivirkning – første døgn</h3>
+<ol class="steps">
+<li><b>Tenk irAE</b> hos alle som har fått immunterapi, også lenge etter siste dose.</li>
+<li><b>Prøver:</b> FS + PD1-pakke (hematologi, kreatinin, lever, CRP, elektrolytter, glukose, TSH, fT4). Ved hjerte- eller muskelsymptomer: troponin, CK, EKG. Ta kortisol før steroid gis.</li>
+<li><b>Utelukk infeksjon</b> (blodkultur, luftveis- og avføringsprøver). Steroider kan skjule sepsis.</li>
+<li><b>Start steroider ved tvil.</b> Grad 3–4: deksametason 8 mg × 2 iv eller metylprednisolon 120 mg iv × 1 de første 1–2 døgnene [OUS], eller metylprednisolon 1–2 mg/kg iv [HUS]. Myokarditt: metylprednisolon 500–1000 mg iv.</li>
+<li><b>Ikke gi immunterapi</b> før avklaring.</li>
+<li><b>Kontakt onkolog</b> med erfaring fra immunterapi senest dagen etter.</li>
+</ol></div>
+<section class="panel"><h2>Alvorlige tilstander som ikke må overses</h2>
+<div class="tablewrap"><table><thead><tr><th>Tilstand</th><th>Tegn</th><th>Første tiltak</th></tr></thead><tbody><tr><td>Myokarditt (3M)</td><td>Brystsmerter, dyspné, arytmi, troponinstigning, ofte med muskelsvakhet eller ptose</td><td>Telemetri, metylprednisolon 500–1000 mg iv i 3 dager, kardiolog. <a href='#o-myokarditt'>Detaljer</a></td></tr><tr><td>Pneumonitt grad ≥ 3</td><td>Hypoksi, O₂-behov</td><td>Metylprednisolon 1–2 mg/kg iv, BAL når mulig. Andrelinje etter 48 t. <a href='#o-pneumonitt'>Detaljer</a></td></tr><tr><td>Kolitt grad ≥ 3</td><td>≥ 7 avføringer over baseline, blod, peritonitt</td><td>CT abdomen, kirurg, metylprednisolon 1–2 mg/kg iv. <a href='#o-kolitt'>Detaljer</a></td></tr><tr><td>Binyrebarkkrise</td><td>Hypotensjon, hyponatremi, hyperkalemi</td><td>Solu-Cortef 100–250 mg iv og væske. <a href='#o-hypofysitt'>Detaljer</a></td></tr><tr><td>Ketoacidose</td><td>Høyt blodsukker, ketoner</td><td>Insulin og væske. Ikke høydose steroid. <a href='#o-diabetes'>Detaljer</a></td></tr><tr><td>Myasteni, Guillain-Barré, encefalitt</td><td>Ptose, svelgevansker, pareser, forvirring</td><td>Nevrolog, høydose steroid, IVIG eller plasmaferese. <a href='#o-myositt'>Detaljer</a></td></tr><tr><td>SJS/TEN</td><td>Blemmer, slimhinner, hudavløsning</td><td>Brannskadeavdeling, metylprednisolon 1–2 mg/kg iv. <a href='#o-hud'>Detaljer</a></td></tr></tbody></table></div>
+</section></section>
+<section class="view" id="v-organ" hidden><p class="lead">Ett kort per organ. Åpne kortet for gradering, tiltak per grad og avvik mellom kildene. Hud, kolitt, hepatitt, pneumonitt og nefritt følger HUS. Myokarditt, myositt, nevrologiske og revmatologiske bivirkninger følger ESMO, endokrine HUS og ESMO.</p><div class="grid" id="go"></div></section>
+<section class="view panels" id="v-steroider" hidden>
+<section class="panel"><h2>Hovedregel etter grad</h2>
+<div class="tablewrap"><table><thead><tr><th>Grad</th><th>Immunterapi</th><th>Steroid</th><th>Annet</th></tr></thead><tbody><tr><td>1</td><td>Fortsett, tett oppfølging</td><td>Som regel ikke</td><td>Unntak: nevrologiske, hematologiske og hjerte</td></tr><tr><td>2</td><td><b>Pause</b></td><td>Prednisolon 0,5–1 mg/kg/døgn</td><td>Vurder innleggelse etter organ</td></tr><tr><td>3</td><td><b>Pause</b></td><td>Prednisolon 1–2 mg/kg eller metylprednisolon iv</td><td>Innleggelse, spesialist</td></tr><tr><td>4</td><td><b>Seponer</b> (unntatt endokrine på substitusjon)</td><td>Metylprednisolon 1–2 mg/kg iv</td><td>Spesialist</td></tr></tbody></table></div>
+<ul class="steps"><li><b>Ingen bedring etter 72 timer</b> (48 t ved pneumonitt grad ≥ 3): øk dosen eller legg til sekundær immunsuppresjon.</li>
+<li><b>Permanent seponering:</b> grad 4, tilbakevendende grad 3, myokarditt, encefalitt og Guillain-Barré grad 3–4, SJS/TEN, eller ikke grad 0–1 og prednisolon ≤ 10 mg innen 12 uker.</li>
+<li><b>Gjenoppstart</b> kan vurderes ved grad ≤ 1 og prednisolon ≤ 10 mg/døgn.</li></ul>
+<div class="altrow" style="margin-top:10px"><span class="src">DK</span>ImmunTox starter lavere med faste doser: grad 2 prednisolon 25–50 mg, kraftigere 50–100 mg, metylprednisolon 1–2 mg/kg iv ved usikkert opptak eller akutt behov.</div>
+</section>
+<section class="panel"><h2>Nedtrapping</h2>
+<p class="note"><span class="src">HUS</span>Over 4–6 (8) uker etter grad ≤ 1. Metylprednisolon: ved klar bedring etter 72 t fra 2 til 1 mg/kg, eller bytt til samme dose prednisolon per os. Prednisolon over 60 mg: −20 mg/uke. Fra 60 mg: −10 mg hver 5.–7. dag. Fra 10 mg: −2,5 mg hver 3.–5. dag. Hele dosen om morgenen. Følg med på binyrebarksvikt ved ≤ 5 mg.</p>
+<h3 style="margin-top:12px">Ferdig skjema fra ImmunTox (DK), 4–6 uker</h3>
+<div class="tablewrap"><table><thead><tr><th>Trinn</th><th>Prednisolon</th><th>Dager</th><th>Tilsvarer</th></tr></thead><tbody><tr><td>1</td><td>200 mg</td><td>3</td><td></td></tr><tr><td>2</td><td>150 mg</td><td>3</td><td>Metylprednisolon 125 mg</td></tr><tr><td>3</td><td>125 mg</td><td>3</td><td></td></tr><tr><td>4</td><td>100 mg</td><td>3</td><td>Metylprednisolon 80 mg (1 mg/kg ved 80 kg)</td></tr><tr><td>5</td><td>87,5 mg</td><td>3</td><td></td></tr><tr><td>6</td><td>75 mg</td><td>3</td><td></td></tr><tr><td>7</td><td>62,5 mg</td><td>3</td><td></td></tr><tr><td>8</td><td>50 mg</td><td>3</td><td>Metylprednisolon 40 mg</td></tr><tr><td>9</td><td>37,5 mg</td><td>5</td><td></td></tr><tr><td>10</td><td>25 mg</td><td>5</td><td></td></tr><tr><td>11</td><td>12,5 mg</td><td>5</td><td></td></tr><tr><td>12</td><td>5 mg</td><td>5</td><td></td></tr></tbody></table></div>
+<p class="note">Start på trinnet som tilsvarer dosen pasienten står på. Nedtrapping tidligst 1 uke etter symptombedring (DK).</p>
+</section>
+<section class="panel"><h2>Profylakse under langvarig steroidbehandling</h2>
+<div class="tablewrap"><table><thead><tr><th>Tiltak</th><th>Dosering</th><th>Når</th></tr></thead><tbody><tr><td>PPI</td><td>Standarddose, iv ved høye doser og kolitt</td><td>Samtidig med steroid. Vurder seponering ved prednisolon < 20 mg</td></tr><tr><td>Pneumocystis-profylakse</td><td>Sulfametoksazol/trimetoprim 400/80 mg × 1</td><td>Vurder etter 2–4 uker steroid (ESMO > 4 uker). Kan gi transaminasestigning</td></tr><tr><td>Kalsium og D-vitamin</td><td>Calcigran Forte × 1</td><td>Over 40 år, til 1 mnd etter steroid (HUS). DK: ved steroid > 7 dager</td></tr><tr><td>Blodsukker</td><td>Døgnprofil</td><td>Prednisolon ≥ 0,5 mg/kg</td></tr><tr><td>Fysisk aktivitet</td><td>Fysioterapi til eldre</td><td>Motvirker muskelsvinn</td></tr></tbody></table></div>
+</section>
+<section class="panel"><h2>Sekundær immunsuppresjon</h2>
+<div class="tablewrap"><table><thead><tr><th>Legemiddel</th><th>Dose</th><th>Brukes særlig ved</th></tr></thead><tbody><tr><td>Infliksimab</td><td>5 mg/kg, kan gjentas etter 14 dager. Kolitt: 10 mg/kg fra første dose (HUS)</td><td>Kolitt (førstevalg), pneumonitt, nefritt, hud. <b>Ikke ved hepatitt</b></td></tr><tr><td>Vedolizumab</td><td>300 mg iv hver 14. dag</td><td>Kolitt</td></tr><tr><td>Mykofenolatmofetil</td><td>1000 mg × 2, inntil 1500 mg × 2</td><td>Hepatitt (førstevalg), pneumonitt, nefritt</td></tr><tr><td>Takrolimus</td><td>0,2 mg/kg/døgn fordelt på 2 (HUS). OUS: 1–4 mg × 2, målspeil 3–5</td><td>Hepatitt</td></tr><tr><td>Tocilizumab</td><td>8 mg/kg, eventuelt gjentatt etter 2–4 uker</td><td>Pneumonitt, hud, artritt, myositt</td></tr><tr><td>IVIG</td><td>2 g/kg over 2–5 dager</td><td>Pneumonitt, myasteni, Guillain-Barré, myositt</td></tr><tr><td>Abatacept, ATG</td><td>Etter kardiolog</td><td>Steroidrefraktær myokarditt</td></tr></tbody></table></div>
+<p class="note">Seponeres uten nedtrapping 2 uker etter at steroidene er seponert. Før infliksimab: utelukk perforasjon og sepsis, sjekk tuberkulose og hepatitt B.</p>
+</section></section>
+<section class="view panels" id="v-prover" hidden>
+<section class="panel"><h2>Før oppstart</h2>
+<ul class="steps">
+<li><b>FS + PD1-pakke [HUS]:</b> hematologi med differensialtelling, kreatinin, ALP, bilirubin, γGT, ALAT, ASAT, LD, CRP, Na, K, Ca, Mg, albumin, glukose, fT4 og TSH.</li>
+<li><b>Endokrin:</b> morgenkortisol (før kl. 9), HbA1c [Forslag].</li>
+<li><b>Serologi:</b> hepatitt B og C, HIV [Forslag].</li>
+<li><b>Hjerte:</b> EKG, troponin, NT-proBNP (ESC, ikke enighet i onkologiske retningslinjer). Ekko ved høy risiko, f.eks. CTLA-4-kombinasjon.</li>
+<li><b>Urin:</b> stiks og albumin/kreatinin-ratio [Forslag].</li>
+<li><b>Anamnese:</b> autoimmun sykdom, transplantasjon, steroidbruk, ILD/KOLS (lungefunksjon), hudsykdom, kroniske infeksjoner.</li>
+<li><b>Registrer og grader baseline-plager</b> (diaré, hoste, utslett). Gi varslingskort og informer fastlegen.</li>
+</ul>
+<div class="altrow" style="margin-top:10px"><span class="src">DK</span>Basispakken omfatter også INR, amylase og kortisol. Troponin (TnT/TnI) og CK-MB er standard ved kombinasjonsimmunterapi.</div>
+</section>
+<section class="panel"><h2>Under behandling</h2>
+<div class="tablewrap"><table><thead><tr><th>Kontroll</th><th>Hyppighet</th><th>Kilde</th></tr></thead><tbody><tr><td>Symptomgjennomgang organ for organ</td><td>Før hver kur</td><td>HUS, HP</td></tr><tr><td>FS + PD1-pakke inkl. lever, TSH, fT4, glukose</td><td>Før hver kur og ved innleggelse</td><td>HUS</td></tr><tr><td>Troponin og EKG</td><td>ESC: før dose 2, 3 og 4, deretter hver 3. dose. DK: troponin hver 3. uke i 3 mnd, deretter hver 3. mnd. <b>Lokal praksis ikke avklart</b></td><td>ESC, DK</td></tr><tr><td>CTLA-4-hemmer</td><td>Lever og TSH før hver dose</td><td>FK</td></tr><tr><td>CT</td><td>Etter handlingsprogrammet, også når behandlingen står på pause</td><td>HP</td></tr></tbody></table></div>
+</section>
+<section class="panel"><h2>Etter avsluttet immunterapi</h2>
+<p class="note">Klinisk kontroll og endokrine prøver ca. 6 uker etter siste dose. CT etter ca. 3 måneder, deretter klinisk kontroll hver 3. måned og CT hver 6. måned. Behandlingsvarighet inntil 2 år [HP]. Sene bivirkninger kan komme mer enn ett år etter.</p>
+</section>
+<section class="panel"><h2>Laboratoriepakker ved mistanke [HUS]</h2>
+<div class="tablewrap"><table><thead><tr><th>Pakke</th><th>Innhold</th><th>Bruk</th></tr></thead><tbody><tr><td>FS + PD1</td><td>Som før oppstart</td><td>Før hver kur og ved enhver mistanke</td></tr><tr><td>Endokrin toksisitet</td><td>TSH, fT4, kortisol, ACTH, renin, aldosteron, LH, FSH</td><td>Diffuse symptomer</td></tr><tr><td>Autoimmun lever</td><td>Immunglobuliner, ANA, ANCA, leverantistoffer, CMV, EBV, hepatitt A/B/C</td><td>Hepatitt grad ≥ 2</td></tr><tr><td>Hjerte</td><td>Troponin, NT-proBNP, CK, EKG</td><td>Myokarditt, myositt</td></tr></tbody></table></div>
+</section></section>
+<section class="view panels" id="v-preparater" hidden>
+<section class="panel"><h2>Preparater og doser</h2>
+<p class="note">Valg av preparat følger LIS-anbudet 2026/27. Dosereduksjon brukes ikke: full dose, pause eller seponering.</p>
+<div class="tablewrap"><table><thead><tr><th>Preparat</th><th>Mål</th><th>Dose</th><th>Infusjonstid</th></tr></thead><tbody><tr><td>Atezolizumab (Tecentriq)</td><td>PD-L1</td><td>1875 mg sc q3w, 1680 mg iv q4w eller 1200 mg iv q3w</td><td>Sc ca. 7 min. Iv første 60 min, deretter 30</td></tr><tr><td>Tislelizumab (Tevimbra)</td><td>PD-1</td><td>200 mg q3w eller 400 mg q6w</td><td>200 mg: 60 → 30 min. 400 mg: 120 → 60 min</td></tr><tr><td>Cemiplimab (Libtayo)</td><td>PD-1</td><td>350 mg q3w</td><td>30 min</td></tr><tr><td>Pembrolizumab (Keytruda)</td><td>PD-1</td><td>Iv 200 mg q3w / 400 mg q6w. Sc 395 mg q3w / 790 mg q6w</td><td>Iv 30 min. Sc 1–2 min</td></tr><tr><td>Nivolumab (Opdivo)</td><td>PD-1</td><td>360 mg q3w med kjemo. Sc 1200 mg q4w</td><td>30 min. Sc 3–5 min</td></tr><tr><td>Durvalumab (Imfinzi)</td><td>PD-L1</td><td>1500 mg q4w (q3w med kjemo)</td><td>60 min</td></tr><tr><td>Tremelimumab (Imjudo)</td><td>CTLA-4</td><td>75 mg, inntil 5 doser (POSEIDON)</td><td>60 min, før durvalumab</td></tr><tr><td>Serplulimab</td><td>PD-1</td><td>4,5 mg/kg q3w</td><td>Første 100 ml/t, deretter 30 min</td></tr></tbody></table></div>
+</section>
+<section class="panel"><h2>Avvik i doseendring mellom preparatene [FK]</h2>
+<div class="tablewrap"><table><thead><tr><th>Situasjon</th><th>Tislelizumab</th><th>Atezolizumab</th><th>Cemiplimab</th><th>Pembrolizumab</th><th>Durvalumab ± tremelimumab</th></tr></thead><tbody><tr><td>Pneumonitt</td><td>Grad 2 utsett. Residiv grad 2 eller grad 3–4: seponer</td><td>Grad 2 hold tilbake. Grad 3–4 seponer</td><td>Som tislelizumab</td><td>Som tislelizumab</td><td>Grad 2 pause. Grad 3–4 seponer</td></tr><tr><td>Kolitt</td><td>Grad 2–3 utsett. Residiv grad 3 eller grad 4: seponer</td><td><b>Bare grad 4 seponeres</b></td><td>Som tislelizumab</td><td>Som tislelizumab</td><td><b>Grad 3–4 seponer</b></td></tr><tr><td>Hepatitt (seponer)</td><td><b>ALAT/ASAT > 8 × ULN</b> eller bilirubin > 3 ×</td><td>> 5 × eller bilirubin > 3 ×</td><td>Som atezolizumab</td><td>> 5 × eller bilirubin > 3 ×</td><td>> 10 ×. Tremelimumab seponeres ved 5–10 ×</td></tr><tr><td>Myokarditt</td><td>Grad 2–4 seponer</td><td>Grad ≥ 2 seponer</td><td>Grad 2 avbryt, grad 3–4 seponer</td><td>Grad 3–4 seponer</td><td>Grad 2–4 seponer</td></tr><tr><td>Nevrologisk</td><td>Grad 2 utsett, 3–4 seponer</td><td><b>Myasteni, GBS, meningoencefalitt: seponer alle grader</b></td><td>Grad 2 avbryt, 3–4 seponer</td><td>Grad 3–4 seponer</td><td>Grad 2–4 seponer</td></tr><tr><td>Diabetes type 1</td><td>Grad ≥ 3 eller DKA: utsett</td><td>Som tislelizumab</td><td>Grad 3–4 avbryt</td><td>Grad ≥ 3 eller DKA: pause</td><td>Ingen endring</td></tr></tbody></table></div>
+<p class="note">Gjenopptak ved grad 0–1 og prednisolon ≤ 10 mg. Atezolizumab og cemiplimab seponeres hvis dette ikke er nådd innen 12 uker. Ved CTLA-4-kombinasjon kan tremelimumab seponeres alene ved hepatitt eller kolitt.</p>
+</section></section>
+<section class="view panels" id="v-pasient" hidden>
+<section class="panel"><h2>Når skal pasienten ringe?</h2>
+<p class="note">Straks ved:</p>
+<ul class="steps">
+<li><b>Feber</b> over 38,5 °C</li><li><b>Lunger:</b> ny eller forverret hoste eller tungpust</li>
+<li><b>Mage:</b> flere avføringer enn vanlig i mer enn 24 timer, magesmerter, blod eller slim</li>
+<li><b>Hud:</b> utbredt utslett, blemmer, hudavløsning</li><li><b>Hodepine</b> over 24 timer, eller med kvalme og magesmerter</li>
+<li><b>Nervesystem:</b> forvirring, sløvhet, føleforstyrrelser</li>
+<li><b>Hjerte og muskler:</b> brystsmerter, hjertebank, muskelsvakhet, dobbeltsyn, hengende øyelokk, svelgevansker</li>
+<li><b>Øyne:</b> smerter eller tåkesyn</li><li><b>Annet:</b> uttalt slapphet, svimmelhet ved oppreisning, mye tørste og vannlating, gulsott</li></ul>
+<p class="note" style="margin-top:10px">Vaksiner: influensa årlig, pneumokokk (Pneumovax hvert 6. år eller Prevenar 20) [HP].</p>
+</section></section>
+<footer><strong>Kilder</strong><ul>
+<li><a href="https://kvalitet.helse-bergen.no/docs/pub/DOK17333.pdf">Helse Bergen D17333 v6.00</a> [HUS] – hovedkilde</li>
+<li><a href="https://ehandboken.ous-hf.no/document/135421">OUS eHåndbok 135421</a> [OUS], v1 2023, revisjon pågår</li>
+<li><a href="https://onkologi.dk/nbv/immuntox/">ImmunTox, onkologi.dk</a> [DK] – Lars Bastholt, Henrik Schmidt, Inge Marie Svane, mai 2024</li>
+<li><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/ikke-kurativ-behandling-av-ikke-smacellet-lungekreft/immunterapi-bivirkninger-behandlingsvarighet-og-annet">Nasjonalt handlingsprogram kap. 8.6</a> [HP]</li>
+<li>Felleskatalogen (Keytruda, Tevimbra, Tecentriq, Libtayo, Opdivo, Imjudo, Hetronifly), lest 01.11.2026 [FK]</li>
+<li><a href="https://www.esmo.org/guidelines/esmo-clinical-practice-guideline-management-of-toxicities-from-immunotherapy">ESMO 2022</a>, <a href="https://pubmed.ncbi.nlm.nih.gov/34724392/">ASCO 2021</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9982212/">ESC 2022</a>, Sykehuset Innlandet D48689 [SI], NEF Metodebok</li>
+</ul>Arbeidsverktøy. Sjekk preparatomtale og lokale prosedyrer. Doseringer merket [Forslag] må avklares lokalt.</footer>
+</div><script>const O=[
+{id:"hud",name:"Hud: utslett og kløe",ae:"utslett kløe vitiligo SJS TEN pemfigoid",
+ klin:"Makulopapuløst utslett, kløe, lichenoide eller psoriasiforme forandringer, vitiligo. Sjelden bulløs pemfigoid og SJS/TEN. <strong>Røde flagg:</strong> blemmer, slimhinner, hudavløsning, feber.",
+ grad:"Grad 1 < 10 % BSA · Grad 2 10–30 % · Grad 3 > 30 % med symptomer · Grad 4 SJS/TEN (CTCAE v5.0)",
+ rows:[["1","Fortsett. Pause ved blemmer","Gruppe II-steroid (Locoid, Apolar) 1–3 × daglig, cetirizin 10 mg, fet krem. Blemmer: hudlege og biopsi"],
+  ["2","Fortsett eller pause","Gruppe III-steroid (Elocon, Betnovat) 1–2 × daglig i 4 uker. Ukentlig oppfølging. Ingen effekt: hudlege, prednisolon 0,5–1 mg/kg"],
+  ["3","<b>Pause</b>","Gruppe IV-steroid (Dermovat) × 2, vurder etter 3–4 dager. Hudlege og biopsi. Ingen effekt: prednisolon 0,5–1 mg/kg"],
+  ["4 / SJS/TEN","<b>Seponer</b>","Innleggelse, hudlege, brannskadeavdeling. Metylprednisolon 1–2 mg/kg iv"]],
+ extra:["Steroidrefraktær: infliksimab eller tocilizumab","Kløe uten utslett: hydroksyzin (maks 100 mg/døgn), deretter gabapentin eller pregabalin","Ta bilder til journalen"],
+ alt:[]},
+{id:"kolitt",name:"Kolitt og diaré",ae:"diaré kolitt magesmerter blod",
+ klin:"Diaré, magesmerter, slim og blod, feber. Hyppigst ved CTLA-4-hemmer. <strong>Røde flagg:</strong> peritonitt, perforasjon, blødning.",
+ grad:"Avføringer over baseline per døgn: grad 1 < 4 · grad 2 4–6 · grad 3 ≥ 7 · grad 4 livstruende",
+ rows:[["1","Kan fortsette","Loperamid ved behov, væske, fiberfattig kost. Telefon etter 3–7 dager"],
+  ["2","<b>Pause</b>. Ved kombinasjon: vurder å seponere CTLA-4-hemmeren","FS + PD1, C. difficile, kalprotektin. <b>Prednisolon 1 mg/kg</b>. Elektrolytter hver 3. dag. Ingen effekt etter 72 t: metylprednisolon 2 mg/kg iv, sigmoidoskopi innen 2–3 dager, deretter infliksimab 10 mg/kg eller vedolizumab 300 mg"],
+  ["3","<b>Pause</b>. Vurder å seponere CTLA-4-hemmeren permanent","Innleggelse, CT abdomen, kirurgisk vurdering. <b>Metylprednisolon 1–2 mg/kg iv</b>. Sigmoidoskopi før infliksimab. Ingen effekt etter 72 t: 2 mg/kg, deretter infliksimab eller vedolizumab"],
+  ["4","<b>Seponer</b>","Som grad 3"]],
+ extra:["Nedtrapping over 4–8 uker, tidligst etter 72 timer","Ved skopi: biopsi til CMV og serum-CMV. Infliksimab er førstevalg ved steroidrefraktær kolitt","Perforasjon: seponer permanent uansett grad","Atezolizumab seponeres først ved grad 4"],
+ alt:[["OUS","Infliksimab 5 mg/kg allerede etter 48 timer uten respons, gjentas etter 2 uker. Nedtrapping over 2–4 uker"]]},
+{id:"hepatitt",name:"Hepatitt",ae:"lever ALAT ASAT bilirubin transaminaser",
+ klin:"Ofte uten symptomer. Differensialdiagnoser: levermetastaser, alkohol, legemidler og naturmidler, virus, galleveisobstruksjon, trombose.",
+ grad:"ALAT/ASAT × ULN: grad 1 > 1–3 · grad 2 > 3–5 · grad 3 > 5–20 · grad 4 > 20. Ved forhøyet baseline brukes baseline",
+ rows:[["1","Fortsett","Stopp levertoksiske legemidler. Nye prøver etter 1 uke"],
+  ["2","<b>Pause</b>","Hepatittserologi, EBV, CMV. <b>Prednisolon 1 mg/kg</b>. Prøver hver 3. dag. Ingen effekt etter 72 t: 2 mg/kg og hepatolog"],
+  ["3","<b>Pause</b> eller seponer","INR, autoimmun utredning. <b>Prednisolon 2 mg/kg</b>, daglige prøver. Ingen effekt etter 72 t: metylprednisolon 125–250 mg iv, hepatolog"],
+  ["4","<b>Seponer</b>","Innleggelse. <b>Metylprednisolon 2 mg/kg iv</b>. Ingen effekt etter 72 t: + mykofenolat 1000 mg × 2"]],
+ extra:["Steroidrefraktær: mykofenolat 1000 mg × 2 (inntil 1500 mg × 2), deretter takrolimus 0,2 mg/kg/døgn","<b>Ikke infliksimab ved hepatitt</b>","Tremelimumab seponeres ved ALAT/ASAT > 5–10 × ULN","Tislelizumab har høyere seponeringsgrense (> 8 × ULN)"],
+ alt:[["OUS","Grad 3: metylprednisolon 120 mg iv dag 1–2, etter 48 t 500 mg iv. Takrolimus før mykofenolat"],["DK","Grad 2: prednisolon 25–50 mg først hvis pause ikke hjelper. Ikke bedret til grad ≤ 1 innen 10–14 dager: mykofenolat. Ved kolestase: ursodeoksykolsyre 10–12 mg/kg"]]},
+{id:"pneumonitt",name:"Pneumonitt",ae:"lunge hoste dyspné hypoksi ILD",
+ klin:"Ny eller forverret hoste, tungpust, hypoksi, feber. Kan forveksles med infeksjon, progresjon, lymfangitt, strålepneumonitt og hjertesvikt. <strong>Særlig viktig ved lungekreft.</strong>",
+ grad:"Grad 1 bare radiologi · grad 2 symptomer eller O₂-behov · grad 3 alvorlig, begrenset egenomsorg · grad 4 livstruende",
+ rows:[["1","<b>Pause</b>. Kontroll etter 1 uke","Klinisk kontroll og SpO₂. Lav terskel for HRCT"],
+  ["2","<b>Pause</b>. Seponer ved tilbakevendende grad 2","HRCT, luftveisprøver, ekspektorat, lungefunksjon. <b>Prednisolon 1–2 mg/kg</b>. Ingen bedring etter 72 t: behandle som grad 3"],
+  ["3–4","<b>Seponer</b>","Innleggelse, blodgass, <b>bronkoskopi med BAL</b> (inkl. PJP). <b>Metylprednisolon 1–2 mg/kg iv</b>. Ingen bedring etter <b>48 t</b>: sekundær immunsuppresjon"]],
+ extra:["Steroidrefraktær: mykofenolat, tocilizumab 8 mg/kg, infliksimab 5 mg/kg, IVIG 2 g/kg. Best dokumentert: mykofenolat og IVIG","Nedtrapping: grad 2 over 4–6 uker, grad 3–4 over 6–8 uker","Etter PACIFIC: infiltrater utenfor strålefeltet taler for immunpneumonitt","Osimertinib rett etter PD-(L)1-hemmer gir høyere ILD-risiko"],
+ alt:[["DK","Grad 2: prednisolon 25–50 mg. Grad 3–4: andrelinje etter 48 t. PJP-profylakse vurderes ved langvarig steroid"]]},
+{id:"nefritt",name:"Nefritt",ae:"nyre kreatinin proteinuri",
+ klin:"Stigende kreatinin, eventuelt proteinuri. Utelukk dehydrering, kontrast, nefrotoksiske legemidler og postrenal årsak.",
+ grad:"Kreatinin × ULN eller baseline: grad 1 > 1–1,5 · grad 2 > 1,5–3 · grad 3 > 3–6 · grad 4 > 6",
+ rows:[["1","Fortsett","Urinstiks, albumin/kreatinin-ratio, gjennomgå legemidler, væske. Kreatinin ukentlig"],
+  ["2","Pause","Ultralyd nyrer. <b>Prednisolon 0,5–1 mg/kg</b>. Kreatinin hver 72. time. Ingen effekt: 1–2 mg/kg"],
+  ["3","<b>Seponer</b>","Innleggelse, nefrolog. <b>Prednisolon 1–2 mg/kg</b>. Ingen effekt: metylprednisolon 1 mg/kg iv, vurder infliksimab eller mykofenolat"],
+  ["4","<b>Seponer</b>","Metylprednisolon 1 mg/kg iv, økes til 2 mg/kg. Vurder dialyse, infliksimab 5 mg/kg eller mykofenolat"]],
+ extra:["Biopsi vurderes individuelt, særlig ved proteinuri","Nedtrapping over 4 uker (grad 2), 4–12 uker (grad 3–4)"],
+ alt:[["OUS","Grad 2 starter ved 2 × ULN og gis prednisolon 1–2 mg/kg (høyere enn HUS)"]]},
+{id:"tyreoidea",name:"Tyreoiditt og hypotyreose",ae:"TSH fT4 tyreoidea hypertyreose hypotyreose",
+ klin:"Typisk forbigående hypertyreose (lav TSH, høy fT4), deretter hypotyreose som ofte krever livslang substitusjon.",
+ grad:"",
+ rows:[["Uten symptomer","Fortsett","Ingen tiltak. TSH og fT4 før hver kur"],
+  ["Hypertyreose med symptomer","Pause, hold tilbake ved grad ≥ 3","TRAS, anti-TPO, EKG. Propranolol og væske"],
+  ["Hypotyreose","Fortsett","Levotyroksin ca. 1,6 µg/kg. Eldre og hjertesyke: start 25–50 µg"]],
+ extra:["Immunterapi kan som regel fortsette under hormonsubstitusjon","Inflammatorisk struma (OUS): prednisolon 1–2 mg/kg"],alt:[]},
+{id:"hypofysitt",name:"Hypofysitt og binyrebarksvikt",ae:"kortisol ACTH binyre hypofyse hyponatremi hodepine",
+ klin:"Hodepine, slapphet, kvalme, hypotensjon, hyponatremi. Sekundær: lav kortisol med lav/normal ACTH, ofte lav TSH/fT4. Primær (sjelden): høy ACTH, hyperkalemi, addisonkrise.",
+ grad:"",
+ rows:[["Sekundær (hypofysitt)","Pause ved grad 2 til kontrollert","Hydrokortison 20 + 10 mg (norsk standard: kortison 25 + 12,5 mg). <b>Kortisol minst 1 uke før levotyroksin.</b> Trykksymptomer: metylprednisolon 1 mg/kg"],
+  ["Primær","Pause til stabil","Krise: iv hydrokortison (Solu-Cortef 100–250 mg). Deretter kortison 25 + 12,5 mg + fludrokortison 0,05–0,1 mg"]],
+ extra:["Ta kortisol før steroid gis","Registrer som kritisk informasjon. Steroidkort og råd ved akutt sykdom","Høydose steroid bedrer ikke hypofysefunksjonen"],alt:[]},
+{id:"diabetes",name:"Immunrelatert diabetes",ae:"glukose ketoacidose insulin",
+ klin:"Rask debut, ofte med ketoacidose, lav C-peptid.",grad:"",
+ rows:[["Diabetes / ketoacidose","Pembrolizumab, tislelizumab: hold tilbake ved grad ≥ 3 eller ketoacidose. Durvalumab: ingen endring","<b>Insulin raskt</b>. Ketoacidose: innleggelse. Høydose steroid er ikke indisert. Blodsukker hver time de første 4 timene på drypp"]],
+ extra:[],alt:[]},
+{id:"myokarditt",name:"Myokarditt",ae:"hjerte troponin myokarditt AV-blokk arytmi brystsmerter",
+ klin:"Uspesifikk: slapphet, dyspné, brystsmerter, arytmi, AV-blokk. Ofte sammen med myositt og myasteni (<b>«3M»</b>), høy dødelighet. Oftest tidlig, etter de første dosene.",
+ grad:"Utredning: troponin, EKG, NT-proBNP, CK, ekko, hjerte-MR",
+ rows:[["Mistanke","Stopp","Innleggelse med telemetri. Kardiolog"],
+  ["Bekreftet","<b>Seponer</b> uansett grad i praksis","<b>Metylprednisolon 500–1000 mg iv daglig i 3 dager</b>. Når troponin < 50 % av topp og stabil: prednisolon 1 mg/kg (maks 80 mg), ned 10 mg/uke under troponinkontroll"]],
+ extra:["Steroidrefraktær: abatacept eller ATG ± mykofenolat, i samråd med kardiolog","Perikarditt: prednisolon og kolkisin. Tamponade: drenasje","Cemiplimab, nivolumab og serplulimab: pause ved grad 2 i preparatomtalen"],
+ alt:[["DK","Troponin og EKG ved baseline, troponin hver 3. uke i 3 mnd, deretter hver 3. mnd. TnT > 300 ng/L (> 21 × ULN) eller grad 3–4: pause og telemetri. Grad 2: metylprednisolon 1000 mg × 3 dager. Andrelinje: tocilizumab, mykofenolat, ATG, alemtuzumab, abatacept, plasmaferese, IVIG"],["ESC","Troponin og EKG før dose 2, 3 og 4, deretter hver 3. dose. Lokal praksis ikke avklart"]]},
+{id:"myositt",name:"Myositt og myasteni",ae:"CK muskel ptose dobbeltsyn svelg",
+ klin:"Myalgi, proksimal svakhet, ptose, dobbeltsyn, svelgevansker. Respirasjonssvikt kan utvikle seg raskt. <b>Ta alltid troponin og EKG</b> (3M).",grad:"",
+ rows:[["Myositt grad 2","Pause","Prednisolon 0,5–1 mg/kg"],
+  ["Livstruende (bulbær, dyspné, myokarditt)","Stopp","Pulsbehandling metylprednisolon, deretter 1–2 mg/kg. IVIG og/eller plasmaferese. Refraktær: tocilizumab"],
+  ["Myasteni","<b>Seponer</b>","Steroid og pyridostigmin (start 30 mg × 3). IVIG eller plasmaferese ved bulbære eller respiratoriske symptomer. Vitalkapasitet, nevrolog"]],
+ extra:["Atezolizumab: seponer myasteni og Guillain-Barré uansett grad"],alt:[]},
+{id:"nevro",name:"Andre nevrologiske",ae:"Guillain-Barré encefalitt meningitt myelitt nevropati",
+ klin:"Tenk irAE ved alle nye motoriske, sensoriske eller kognitive symptomer.",grad:"",
+ rows:[["Guillain-Barré","<b>Seponer</b>","Mild: metylprednisolon 2–4 mg/kg. Grad 3–4: metylprednisolon 1 g/døgn i 5 dager + IVIG eller plasmaferese"],
+  ["Encefalitt / aseptisk meningitt","Meningitt: pause grad 2, seponer grad 3–4. Encefalitt: seponer","MR, spinalpunksjon, EEG. Aciklovir til HSV er utelukket. Høydose metylprednisolon, vurder IVIG"],
+  ["Transvers myelitt","<b>Seponer</b> uansett grad","Høydose steroid, nevrolog"]],
+ extra:[],alt:[["OUS","Encefalitt: metylprednisolon 120 mg iv eller deksametason 8 mg × 2. Forverring innen 48 t: IVIG. Økes til 500–1000 mg ved manglende effekt"]]},
+{id:"revma",name:"Revmatologiske",ae:"artritt polymyalgi sicca leddsmerter",
+ klin:"Artritt, polymyalgi-lignende bilde, sicca. Kan komme opptil 2 år etter avsluttet behandling og persisterer oftere.",grad:"",
+ rows:[["Lett / oligoartritt","Fortsett","NSAID, intraartikulært steroid"],["Grad 2 artritt eller polymyalgi","Individuelt","Prednisolon 10–20 mg/døgn, deretter nedtrapping. Uten bedring: 0,5 mg/kg. Revmatolog tidlig"],["Vedvarende","Pause ved grad 3","DMARD (metotreksat, hydroksyklorokin, sulfasalazin) eller IL-6-hemmer"]],
+ extra:[],alt:[]},
+{id:"annet",name:"Øye, blod, pankreas, sarkoid",ae:"uveitt ITP hemolyse HLH lipase pankreatitt sarkoid",
+ klin:"Sjeldnere bivirkninger med egne fallgruver.",grad:"",
+ rows:[["Uveitt, episkleritt","Individuelt","Øyelege samme dag. Lokal steroid, systemisk ved alvorlig forløp"],["Hematologisk (AIHA, ITP, HLH)","HLH: seponer","Hematolog, steroid, deretter IVIG, rituksimab, mykofenolat"],["Lipasestigning uten symptomer","Fortsett","Ingen steroid"],["Sarkoid reaksjon","Individuelt","Viktig differensialdiagnose til progresjon. Vurder biopsi, f.eks. EBUS"]],
+ extra:[],alt:[]},
+{id:"irr",name:"Infusjonsreaksjon",ae:"infusjon allergi",klin:"",grad:"",
+ rows:[["1–2","Senk hastighet eller avbryt, fortsett under overvåking","Vurder premedikasjon med antipyretikum og antihistamin"],["3–4","<b>Seponer</b>","Avslutt infusjonen"]],extra:[],alt:[]}
+];
+
+const $=s=>document.querySelector(s);
+const views=["vakt","organ","steroider","prover","preparater","pasient"];
+let view="vakt";
+const strip=h=>h.replace(/<[^>]+>/g,"");
+function organCard(o){
+ const rows=o.rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("");
+ return `<details class="card" id="o-${o.id}"><summary><div class="top"><span class="name">${o.name}</span></div>${o.klin?`<p class="short">${o.klin}</p>`:""}<span class="more">Vis håndtering</span></summary>
+ <div class="body">${o.grad?`<p class="gradstrip" style="margin-top:12px">${o.grad}</p>`:""}
+ <div class="tablewrap"><table><thead><tr><th>Grad</th><th>Immunterapi</th><th>Utredning og behandling</th></tr></thead><tbody>${rows}</tbody></table></div>
+ ${o.extra.length?`<ul>${o.extra.map(x=>`<li>${x}</li>`).join("")}</ul>`:""}
+ ${o.alt.length?`<div class="alt"><h3>Andre kilder</h3>${o.alt.map(a=>`<div class="altrow"><span class="src">${a[0]}</span>${a[1]}</div>`).join("")}</div>`:""}
+ </div></details>`;
+}
+const textO=o=>strip([o.name,o.ae,o.klin,o.grad,o.rows.flat().join(" "),o.extra.join(" "),o.alt.flat().join(" ")].join(" ")).toLowerCase();
+function render(){
+ const s=$("#q").value.trim().toLowerCase();
+ if(s&&view!=="organ"){view="organ";}
+ document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.v===view)));
+ document.querySelectorAll(".view").forEach(v=>v.hidden=v.id!=="v-"+view);
+ const l=O.filter(o=>!s||textO(o).includes(s));
+ $("#go").innerHTML=l.length?l.map(organCard).join(""):'<div class="empty">Ingen treff. Prøv et annet ord, f.eks. troponin, kolitt eller kortisol.</div>';
+ $("#count").textContent=view==="organ"?`${l.length} av ${O.length} vist`:"";
+ if(s&&l.length===1){const d=$("#go details");if(d)d.open=true;}
+}
+function go(v,anchor){
+ view=v;render();
+ try{history.replaceState(null,"","#"+(anchor||v));}catch(e){}
+ if(anchor){const el=document.getElementById(anchor);if(el){if(el.tagName==="DETAILS")el.open=true;el.scrollIntoView({block:"start"});}}else window.scrollTo(0,0);
+}
+function fromHash(){const h=location.hash.slice(1);
+ if(views.includes(h))go(h);else if(h.startsWith("o-")){$("#q").value="";go("organ",h);}else render();}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{$("#q").value="";go(b.dataset.v);}));
+$("#q").addEventListener("input",render);
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#o-"]');if(a){e.preventDefault();const h=a.getAttribute("href").slice(1);$("#q").value="";go("organ",h);}});
+window.addEventListener("hashchange",fromHash);fromHash();
+</script></body></html>
