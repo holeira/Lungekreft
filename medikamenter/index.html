@@ -50,6 +50,10 @@ mark.hit{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
 .ttoc nav{display:flex;flex-direction:column;gap:2px;padding:8px 0 4px 6px;columns:2}
 .ttoc a{text-decoration:none}.ttoc a.l3{padding-left:16px;font-size:13.5px}
 body.sok .ttoc{display:none}
+.lis{display:inline-block;margin:2px 0 0;padding:1px 7px;border-radius:6px;background:#e6f2ea;color:#1f6b3d;font-size:12.5px;font-weight:500}
+@media (prefers-color-scheme:dark){.lis{background:#183126;color:#7fcf9c}}
+.lis-box,p.lisline{background:#e6f2ea;border-left:4px solid #2e7d4f;padding:6px 10px;border-radius:0 6px 6px 0}
+@media (prefers-color-scheme:dark){.lis-box,p.lisline{background:#183126}}
 .note{background:var(--warn-soft);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px}
 @media print{.bar,.ttoc{display:none}.tab[hidden]{display:block!important}.tab{border:none;padding:0}}
 </style>
@@ -68,16 +72,20 @@ body.sok .ttoc{display:none}
 <div class="wrap">
 <header class="ph"><h1>Medikamentell behandling av lungekreft – kontroller og bivirkninger</h1>
 <p>Oppslagsverk for Dagposten, Lungemedisinsk avdeling, St. Olavs hospital. Legemidler og kurer i handlingsprogrammet, målrettet behandling, immunterapi, kombinasjonskurer og Beslutningsforum/LIS.</p>
-<div class="meta">Hoveddokument fra 7. november 2026 (erstatter Docs-utgaven) · Arbeidsutkast · Håkon Olav Leira · Ingen pasientopplysninger. Doser og terskler må kontrolleres mot gjeldende preparatomtale (Felleskatalogen) og lokale kurprotokoller før klinisk bruk.</div>
-<div class="note">Lokale vedtak: karboplatin erstatter cisplatin (unntatt thymussvulster og adenoid cystisk karsinom). Peroral vinorelbin gis bare dag 8. Valg av PD-1/PD-L1-hemmer følger LIS 2026/27.</div>
+<div class="meta">Hoveddokument fra 7. november 2026 (erstatter Docs-utgaven) · LIS-prioriteringer rev. 3 lagt inn 7. november 2026 · Arbeidsutkast · Håkon Olav Leira · Ingen pasientopplysninger. Doser og terskler må kontrolleres mot gjeldende preparatomtale (Felleskatalogen) og lokale kurprotokoller før klinisk bruk.</div>
+<div class="note">Lokale vedtak: karboplatin erstatter cisplatin (unntatt thymussvulster og adenoid cystisk karsinom). Peroral vinorelbin gis bare dag 8. Valg av preparat følger LIS 2026/27 (rev. 3, 03.11.2026): se <a href="#lis-oversikt">prioriteringene</a> og de grønne merkene ved hvert preparat.</div>
 </header>
 <div class="bar"><input id="q" type="search" placeholder="Søk i alle faner, for eksempel pneumonitt, CYP3A4, lorlatinib …" aria-label="Søk i alle faner">
 <div class="tabs" role="tablist"><button class="tb" role="tab" data-tab="medikamenter" aria-selected="true">Medikamenter og Nye metoder</button><button class="tb" role="tab" data-tab="malrettet" aria-selected="false">Målrettet behandling</button><button class="tb" role="tab" data-tab="immunterapi" aria-selected="false">Immunterapi</button><button class="tb" role="tab" data-tab="kombi" aria-selected="false">Kombinasjonskurer</button><button class="tb" role="tab" data-tab="lis" aria-selected="false">Beslutningsforum og LIS</button></div><div id="treff" aria-live="polite"></div></div>
-<main><div class="tab" id="tab-medikamenter" data-name="Medikamenter og Nye metoder"><details class="ttoc"><summary>Innhold i fanen</summary><nav><a class="l2" href="#medikamenter-1">Viktige lenker</a><a class="l2" href="#medikamenter-2">Del A – Medikamenter og kurer i handlingsprogrammet</a><a class="l3" href="#medikamenter-3">A1. Kurative NSCLC: neoadjuvant og perioperativ kjemoimmunterapi (kap. 7.3)</a><a class="l3" href="#medikamenter-4">A2. Kurative NSCLC: adjuvant behandling (kap. 7.3)</a><a class="l3" href="#medikamenter-5">A3. Kurative NSCLC: ikke-kirurgisk stadium II–III og Pancoast (kap. 7.4 og 7.5)</a><a class="l3" href="#medikamenter-6">A4. Ikke-kurativ NSCLC uten driver: førstelinje (kap. 8.3)</a><a class="l3" href="#medikamenter-7">A5. Målrettet behandling (kap. 8.4)</a><a class="l3" href="#medikamenter-8">A6. Progresjon etter førstelinje, angiogenesehemmere og beinresorpsjonshemmere (kap. 8.5, 8.7, 8.8)</a><a class="l3" href="#medikamenter-9">A7. Immunterapi: bivirkningsbehandling, varighet og kontroller (kap. 8.6, 8.10)</a><a class="l3" href="#medikamenter-10">A8. Småcellet lungekreft (kap. 9–10)</a><a class="l3" href="#medikamenter-11">A9. Nevroendokrine svulster (kap. 11)</a><a class="l3" href="#medikamenter-12">A10. Mesoteliom (kap. 12)</a><a class="l3" href="#medikamenter-13">A11. Thymussvulster (kap. 13.6)</a><a class="l3" href="#medikamenter-14">A12. Komplikasjoner og støttebehandling (kap. 14)</a><a class="l2" href="#medikamenter-15">Del B – Beslutninger i Nye metoder</a><a class="l3" href="#medikamenter-16">B1. Innført 2025–2026 (siste 18 måneder)</a><a class="l3" href="#medikamenter-17">B2. Ikke innført (gjeldende)</a><a class="l3" href="#medikamenter-18">B3. Under vurdering, eller med MT uten vurdering</a><a class="l3" href="#medikamenter-19">B4. Åpne punkter i Nye metoder</a><a class="l2" href="#medikamenter-20">Kilder</a></nav></details><section class="blk" id="medikamenter-0"><h2 class="tabtitle">Medikamentell behandling av lungekreft – kontroller og bivirkninger</h2>
+<main><div class="tab" id="tab-medikamenter" data-name="Medikamenter og Nye metoder"><details class="ttoc"><summary>Innhold i fanen</summary><nav><a class="l2" href="#lis-oversikt">LIS 2026/27 – prioriteringer fra Sykehusinnkjøp</a><a class="l2" href="#medikamenter-1">Viktige lenker</a><a class="l2" href="#medikamenter-2">Del A – Medikamenter og kurer i handlingsprogrammet</a><a class="l3" href="#medikamenter-3">A1. Kurative NSCLC: neoadjuvant og perioperativ kjemoimmunterapi (kap. 7.3)</a><a class="l3" href="#medikamenter-4">A2. Kurative NSCLC: adjuvant behandling (kap. 7.3)</a><a class="l3" href="#medikamenter-5">A3. Kurative NSCLC: ikke-kirurgisk stadium II–III og Pancoast (kap. 7.4 og 7.5)</a><a class="l3" href="#medikamenter-6">A4. Ikke-kurativ NSCLC uten driver: førstelinje (kap. 8.3)</a><a class="l3" href="#medikamenter-7">A5. Målrettet behandling (kap. 8.4)</a><a class="l3" href="#medikamenter-8">A6. Progresjon etter førstelinje, angiogenesehemmere og beinresorpsjonshemmere (kap. 8.5, 8.7, 8.8)</a><a class="l3" href="#medikamenter-9">A7. Immunterapi: bivirkningsbehandling, varighet og kontroller (kap. 8.6, 8.10)</a><a class="l3" href="#medikamenter-10">A8. Småcellet lungekreft (kap. 9–10)</a><a class="l3" href="#medikamenter-11">A9. Nevroendokrine svulster (kap. 11)</a><a class="l3" href="#medikamenter-12">A10. Mesoteliom (kap. 12)</a><a class="l3" href="#medikamenter-13">A11. Thymussvulster (kap. 13.6)</a><a class="l3" href="#medikamenter-14">A12. Komplikasjoner og støttebehandling (kap. 14)</a><a class="l2" href="#medikamenter-15">Del B – Beslutninger i Nye metoder</a><a class="l3" href="#medikamenter-16">B1. Innført 2025–2026 (siste 18 måneder)</a><a class="l3" href="#medikamenter-17">B2. Ikke innført (gjeldende)</a><a class="l3" href="#medikamenter-18">B3. Under vurdering, eller med MT uten vurdering</a><a class="l3" href="#medikamenter-19">B4. Åpne punkter i Nye metoder</a><a class="l2" href="#medikamenter-20">Kilder</a></nav></details><section class="blk" id="medikamenter-0"><h2 class="tabtitle">Medikamentell behandling av lungekreft – kontroller og bivirkninger</h2>
 <p class="meta">1. november 2026 · Håkon Olav Leira</p>
 <p>Oppslagsverk for Dagposten, Lungemedisinsk avdeling, St. Olavs hospital. Det er overført fra fem Word- og Markdown-filer fra 31. oktober 2026, og dette er nå den levende versjonen. Fanene er: Medikamenter og Nye metoder (denne), Målrettet behandling, Immunterapi, Kombinasjonskurer og Beslutningsforum og LIS. Doser og terskler må kontrolleres mot gjeldende preparatomtale før klinisk bruk. Når et nytt legemiddel kommer, følges huskelisten for oppslagsverk legemidler.</p>
-</section><section class="blk" id="medikamenter-1"><h2 id="viktige-lenker">Viktige lenker</h2>
-<table><thead><tr><th>Lenke</th><th>Bruk</th></tr></thead><tbody><tr><td><a href="https://www.sykehusinnkjop.no/4aa61f/siteassets/avtaledokumenter/avtaler-legemidler/onkologi/anbefaling-onkologiske-og-kolonistimulerende-legemidler.pdf">LIS-anbefaling onkologi 01.10.2026–30.09.2027 (PDF, rev. 2, 23.10.2026)</a></td><td>Gjeldende rangering av legemidler. Lungekreft står på s. 28–37</td></tr><tr><td><a href="https://www.sykehusinnkjop.no/avtaler-legemidler/onkologi/">Sykehusinnkjøp – avtaler onkologi</a></td><td>Avtalesiden for onkologi. Her kommer nye revisjoner av anbefalingen</td></tr><tr><td><a href="https://www.sykehusinnkjop.no/legemidler/">Sykehusinnkjøp – legemidler (tidligere LIS)</a></td><td>Oversikt over anbud, avtaler og anbefalinger</td></tr><tr><td><a href="https://www.nyemetoder.no/moter-i-beslutningsforum-for-nye-metoder/">Møter i Beslutningsforum</a></td><td>Protokoller og nye vedtak</td></tr><tr><td><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram">Nasjonalt handlingsprogram</a></td><td>Faglige anbefalinger</td></tr><tr><td><a href="https://www.felleskatalogen.no">Felleskatalogen</a></td><td>Preparatomtaler og interaksjoner</td></tr></tbody></table>
+</section><section class="blk" id="lis-oversikt"><h2>LIS 2026/27 – prioriteringer fra Sykehusinnkjøp</h2>
+<p><em>Kilde: [LIS] Sykehusinnkjøp HF, «Onkologi anbefaling i perioden 01.10.2026–30.09.2027», revisjon 3 av 03.11.2026, lungekapitlet s. 28–37. Lest 7. november 2026. Priser er utelatt.</em></p>
+<p>Anbefalingen er vedtatt som <strong>instruks</strong> for helseforetakene i alle fire regioner. Avvik av medisinske årsaker dokumenteres i journalen. Handlingsprogrammet sier hva som er innført, anbudet avgjør preparat og administrasjonsform. Samme virkestoff fra samme leverandør kan velges fritt mellom sc og iv når begge står rangert etter hverandre. Rangeringen er også lagt inn ved hvert preparat i fanene (grønne merker).</p>
+<table><thead><tr><th>Situasjon</th><th>Førstevalg</th><th>Deretter</th></tr></thead><tbody><tr><td>Perioperativ NSCLC (neo + adjuvant)</td><td>1) <strong>Tislelizumab</strong> 200 mg iv q3w × 4, deretter 400 mg iv q6w × 8</td><td>2) Nivolumab (PD-L1 ≥ 1 %) 360 mg iv × 4, deretter 1200 mg sc q4w × 13 · 3–4) pembrolizumab sc · 5) durvalumab · 6–7) pembrolizumab iv</td></tr><tr><td>Kun neoadjuvant, PD-L1 ≥ 1 %</td><td>Nivolumab 360 mg iv q3w (ikke rangert)</td><td>–</td></tr><tr><td>Adjuvant IO, PD-L1 ≥ 50 %</td><td>1) <strong>Atezolizumab 1875 mg sc q3w</strong></td><td>2) atezolizumab 1680 mg iv q4w · 3) 1200 mg iv q3w · 4–7) pembrolizumab</td></tr><tr><td>Adjuvant IO, PD-L1 &lt; 50 %</td><td>Pembrolizumab (ikke rangert)</td><td>–</td></tr><tr><td>Adjuvant EGFR / ALK</td><td><strong>Osimertinib</strong> / <strong>alektinib</strong></td><td>–</td></tr><tr><td>Stadium III etter kjemoradioterapi</td><td>Durvalumab (ikke rangert, PD-L1 ≥ 1 %). EGFR: osimertinib</td><td>–</td></tr><tr><td>Metastatisk, monoterapi PD-L1 ≥ 50 %</td><td>1) <strong>Atezolizumab 1875 mg sc q3w</strong></td><td>2–3) atezolizumab iv · 4) cemiplimab · 5–8) pembrolizumab</td></tr><tr><td>Uegnet for platinum</td><td>Atezolizumab (ikke rangert)</td><td>–</td></tr><tr><td>Plateepitel + kjemo</td><td>1) <strong>Tislelizumab 400 mg iv q6w</strong></td><td>2) tislelizumab 200 mg q3w · 3) cemiplimab · 4–7) pembrolizumab</td></tr><tr><td>Adenokarsinom PD-L1 ≥ 50 % + kjemo</td><td>1) <strong>Tislelizumab 400 mg iv q6w</strong></td><td>2) tislelizumab 200 mg q3w · 3) cemiplimab · 4–7) pembrolizumab</td></tr><tr><td>Adenokarsinom PD-L1 1–49 % + kjemo</td><td>1) <strong>Cemiplimab 350 mg iv q3w</strong></td><td>2–5) pembrolizumab</td></tr><tr><td>Adenokarsinom PD-L1 &lt; 1 % + kjemo</td><td>Pembrolizumab (ikke rangert)</td><td>–</td></tr><tr><td>Med CTLA-4-hemmer</td><td>Durvalumab + tremelimumab (HP anbefaler det ikke fremfor kjemo + PD-(L)1-hemmer)</td><td>–</td></tr><tr><td>2. linje og senere, NSCLC</td><td>Ikke rangert: tislelizumab, atezolizumab, nivolumab, pembrolizumab. Serplulimab (rev. 3) ikke rangert. Atezolizumab + bevacizumab etter EGFR/ALK står i LIS, men HP frarår</td><td>–</td></tr><tr><td>EGFR ex19del/L858R, 1L</td><td>Osimertinib (± kjemo) og amivantamab + lazertinib, begge ikke rangert</td><td>–</td></tr><tr><td>EGFR, andre mutasjoner / eldre TKI</td><td><strong>Osimertinib</strong> / <strong>afatinib</strong></td><td>–</td></tr><tr><td>EGFR ex20ins</td><td><strong>Amivantamab</strong> + karboplatin/pemetreksed (sc og iv likestilt)</td><td>–</td></tr><tr><td>ALK 1L</td><td><strong>Lorlatinib</strong></td><td>Andre ALK-TKI: 1) brigatinib, 2) alektinib. Ceritinib og krizotinib ikke rangert</td></tr><tr><td>ROS1 / NTRK</td><td>Repotrektinib eller entrektinib (ikke rangert)</td><td>–</td></tr><tr><td>BRAF V600 / RET</td><td>Dabrafenib + trametinib / selperkatinib (ikke rangert)</td><td>–</td></tr><tr><td>MET ex14</td><td><strong>Tepotinib</strong> (etter IO og/eller platinum)</td><td>–</td></tr><tr><td>LS-SCLC etter kjemoradioterapi</td><td>Durvalumab 1500 mg iv q4w (ikke rangert)</td><td>–</td></tr><tr><td>ES-SCLC 1L</td><td>1) <strong>Tislelizumab 400 mg iv q6w</strong></td><td>2) tislelizumab 200 mg q3w. Ingen andre PD-(L)1-hemmere til nye pasienter (pris-volum-avtale)</td></tr></tbody></table>
+<p>Full gjennomgang med vedtak i Beslutningsforum står i fanen <a href="#tab-lis" data-goto="lis">Beslutningsforum og LIS</a>.</p></section><section class="blk" id="medikamenter-1"><h2 id="viktige-lenker">Viktige lenker</h2>
+<table><thead><tr><th>Lenke</th><th>Bruk</th></tr></thead><tbody><tr><td><a href="https://www.sykehusinnkjop.no/4aa61f/siteassets/avtaledokumenter/avtaler-legemidler/onkologi/anbefaling-onkologiske-og-kolonistimulerende-legemidler.pdf">LIS-anbefaling onkologi 01.10.2026–30.09.2027 (PDF, rev. 3, 03.11.2026)</a></td><td>Gjeldende rangering av legemidler. Lungekreft står på s. 28–37</td></tr><tr><td><a href="https://www.sykehusinnkjop.no/avtaler-legemidler/onkologi/">Sykehusinnkjøp – avtaler onkologi</a></td><td>Avtalesiden for onkologi. Her kommer nye revisjoner av anbefalingen</td></tr><tr><td><a href="https://www.sykehusinnkjop.no/legemidler/">Sykehusinnkjøp – legemidler (tidligere LIS)</a></td><td>Oversikt over anbud, avtaler og anbefalinger</td></tr><tr><td><a href="https://www.nyemetoder.no/moter-i-beslutningsforum-for-nye-metoder/">Møter i Beslutningsforum</a></td><td>Protokoller og nye vedtak</td></tr><tr><td><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram">Nasjonalt handlingsprogram</a></td><td>Faglige anbefalinger</td></tr><tr><td><a href="https://www.felleskatalogen.no">Felleskatalogen</a></td><td>Preparatomtaler og interaksjoner</td></tr></tbody></table>
 <p><strong>Formål:</strong> Første steg mot et oppslagsverk om kontroller og bivirkninger ved medikamentell lungekreftbehandling. Dokumentet samler (A) alle medikamenter og kurer som er omtalt i handlingsprogrammet, og (B) beslutningene i Beslutningsforum for nye metoder.</p>
 <p><strong>Utarbeidet for:</strong> Håkon Olav Leira, Lungemedisinsk avdeling, St. Olavs hospital <strong>Dato:</strong> 31. oktober 2026 <strong>Kilder:</strong> Helsedirektoratets nettversjon av handlingsprogrammet (28. utgave, siste faglige endring 08.10.2026) og nyemetoder.no (protokoller og sakspapirer januar–august 2026, samt metodesider).</p>
 <blockquote><p><strong>Forbehold:</strong> Kapitlene ble lest i nettversjonen. Kapittel 10.4 (SCLC ES, eldre og redusert allmenntilstand), 10.6 (SCLC ES, residiv) og 14.7 (ekstravasering) kunne ikke hentes 31.10.2026, men er lest 02.11.2026 og lagt inn i A8 og A12. Beslutningsforum august–oktober 2026 er gjennomgått i fanen Beslutningsforum og LIS (se også B4).</p></blockquote>
@@ -85,29 +93,29 @@ body.sok .ttoc{display:none}
 </section><section class="blk" id="medikamenter-3"><h3 id="a1-kurative-nsclc-neoadjuvant-og-perioperativ-kjemoimmunterapi-kap-73">A1. Kurative NSCLC: neoadjuvant og perioperativ kjemoimmunterapi (kap. 7.3)</h3>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram, nettversjon (siste faglige endring 08.10.2026), kapittel som i overskriften · lokalt vedtak 01.11.2026 (karboplatin i stedet for cisplatin).</em></p>
 <p>Alle forutsetter EGFR- og ALK-negativ sykdom, stadium II–III. Det er vedtatt at cisplatin ikke brukes: karboplatin erstatter cisplatin ved alle indikasjoner (thymussvulster og adenoid cystisk karsinom er ikke vurdert).</p>
-<table><thead><tr><th>Regime</th><th>Dosering/varighet</th><th>Indikasjon</th><th>Status i HP</th></tr></thead><tbody><tr><td>Nivolumab + karboplatindublett (CheckMate 816)</td><td>Nivolumab 360 mg dag 1 q3w, 3 kurer → kirurgi innen 6 uker</td><td>PD-L1 ≥ 1 %</td><td>Anbefalt (BF 12.2.2024)</td></tr><tr><td>Nivolumab + karboplatin → adjuvant nivolumab (CheckMate 77T)</td><td>4 kurer preop. → nivolumab q4w i 1 år</td><td>PD-L1 ≥ 1 %</td><td>Innført (BF 16.6.2025). HP anbefaler likevel kun neoadjuvant ved PD-L1 ≥ 1 %</td></tr><tr><td>Durvalumab + karboplatin → durvalumab (AEGEAN)</td><td>1500 mg q3w × 4 → 1500 mg q4w i inntil 1 år</td><td>Uavhengig av PD-L1</td><td>Innført (BF 28.4.2025)</td></tr><tr><td>Pembrolizumab + karboplatinbasert kjemo → pembrolizumab (KEYNOTE-671; studien brukte cisplatin)</td><td>200 mg q3w/400 mg q6w; 4 kurer → inntil 13 adjuvante kurer</td><td>PD-L1 &lt; 1 %</td><td>Innført (BF 28.4.2025)</td></tr><tr><td>Tislelizumab + karboplatin → tislelizumab (RATIONALE-315)</td><td>4 kurer preop. → 8 kurer q6w</td><td>Stadium II–IIIA, uavhengig av PD-L1</td><td>Innført (BF 16.3.2026)</td></tr></tbody></table>
+<table><thead><tr><th>Regime</th><th>Dosering/varighet</th><th>Indikasjon</th><th>Status i HP</th></tr></thead><tbody><tr><td>Nivolumab + karboplatindublett (CheckMate 816)</td><td>Nivolumab 360 mg dag 1 q3w, 3 kurer → kirurgi innen 6 uker</td><td>PD-L1 ≥ 1 %</td><td>Anbefalt (BF 12.2.2024) <span class="lis">LIS: ikke rangert (eneste i tabellen «kun neoadjuvant, PD-L1 ≥ 1 %»)</span></td></tr><tr><td>Nivolumab + karboplatin → adjuvant nivolumab (CheckMate 77T)</td><td>4 kurer preop. → nivolumab q4w i 1 år</td><td>PD-L1 ≥ 1 %</td><td>Innført (BF 16.6.2025). HP anbefaler likevel kun neoadjuvant ved PD-L1 ≥ 1 % <span class="lis">LIS: andrevalg perioperativt (360 mg iv × 4, deretter 1200 mg sc q4w × 13)</span></td></tr><tr><td>Durvalumab + karboplatin → durvalumab (AEGEAN)</td><td>1500 mg q3w × 4 → 1500 mg q4w i inntil 1 år</td><td>Uavhengig av PD-L1</td><td>Innført (BF 28.4.2025) <span class="lis">LIS: femtevalg perioperativt</span></td></tr><tr><td>Pembrolizumab + karboplatinbasert kjemo → pembrolizumab (KEYNOTE-671; studien brukte cisplatin)</td><td>200 mg q3w/400 mg q6w; 4 kurer → inntil 13 adjuvante kurer</td><td>PD-L1 &lt; 1 %</td><td>Innført (BF 28.4.2025) <span class="lis">LIS: tredje-, fjerde-, sjette- og sjuendevalg perioperativt (sc foran iv)</span></td></tr><tr><td>Tislelizumab + karboplatin → tislelizumab (RATIONALE-315)</td><td>4 kurer preop. → 8 kurer q6w</td><td>Stadium II–IIIA, uavhengig av PD-L1</td><td>Innført (BF 16.3.2026) <span class="lis">LIS: <strong>førstevalg</strong> perioperativt (200 mg iv × 4, deretter 400 mg iv q6w × 8)</span></td></tr></tbody></table>
 <p><strong>Kjemoterapipartnere (neoadjuvant):</strong></p>
 <ul><li><p>Ikke-plateepitel: karboplatin + pemetreksed (3 kurer ved PD-L1 ≥ 1 %, 4 kurer ved &lt; 1 %)</p></li><li><p>Plateepitel: karboplatin + paklitaksel eller gemcitabin (3 kurer); karboplatin + gemcitabin (4 kurer ved PD-L1 &lt; 1 %)</p></li></ul>
 <p><strong>Støtte:</strong> Folsyre og vitamin B12 (pemetreksed); G-CSF kan vurderes ved grad 4-nøytropeni.</p>
 </section><section class="blk" id="medikamenter-4"><h3 id="a2-kurative-nsclc-adjuvant-behandling-kap-73">A2. Kurative NSCLC: adjuvant behandling (kap. 7.3)</h3>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram, nettversjon (siste faglige endring 08.10.2026), kapittel som i overskriften.</em></p>
-<table><thead><tr><th>Regime</th><th>Dosering/varighet</th><th>Indikasjon</th><th>Status i HP</th></tr></thead><tbody><tr><td>Karboplatin + pemetreksed</td><td>Inntil 4 kurer, oppstart innen 8 uker</td><td>Ikke-plateepitel, st. II–III, ECOG 0–1</td><td>Bør vurderes</td></tr><tr><td>Karboplatin + vinorelbin</td><td>Inntil 4 kurer</td><td>Plateepitel, eller når pemetreksed ikke kan gis</td><td>Bør vurderes</td></tr><tr><td>Atezolizumab (IMpower010)</td><td>1200 mg q3w i inntil 1 år</td><td>PD-L1 ≥ 50 %, etter adjuvant kjemo</td><td>Innført (BF 25.9.2023)</td></tr><tr><td>Pembrolizumab</td><td>1 år</td><td>St. IB (T &gt; 4 cm)–IIIA, etter adjuvant kjemo. Ingen gevinst sett ved PD-L1 ≥ 50 %</td><td>Innført (BF 17.11.2025). Anbefalt ved PD-L1 &lt; 50 %</td></tr><tr><td>Osimertinib (ADAURA)</td><td>80 mg × 1 i 3 år</td><td>EGFR ex19del/L858R, st. IB (T &gt; 3 cm)–IIIA</td><td>Bør vurderes (BF 29.8.2022)</td></tr><tr><td>Alektinib (ALINA)</td><td>600 mg × 2 i inntil 2 år</td><td>ALK+, st. II (T &gt; 4 cm)–III; ikke adjuvant kjemo først</td><td>Bør vurderes (BF 18.11.2024)</td></tr><tr><td>Karboplatin + etoposid</td><td>4 kurer</td><td>Resekert LCNEC (inkl. IB)</td><td>Anbefalt (se A9)</td></tr></tbody></table>
+<table><thead><tr><th>Regime</th><th>Dosering/varighet</th><th>Indikasjon</th><th>Status i HP</th></tr></thead><tbody><tr><td>Karboplatin + pemetreksed</td><td>Inntil 4 kurer, oppstart innen 8 uker</td><td>Ikke-plateepitel, st. II–III, ECOG 0–1</td><td>Bør vurderes</td></tr><tr><td>Karboplatin + vinorelbin</td><td>Inntil 4 kurer</td><td>Plateepitel, eller når pemetreksed ikke kan gis</td><td>Bør vurderes</td></tr><tr><td>Atezolizumab (IMpower010)</td><td>1200 mg q3w i inntil 1 år</td><td>PD-L1 ≥ 50 %, etter adjuvant kjemo</td><td>Innført (BF 25.9.2023) <span class="lis">LIS: <strong>førstevalg</strong> ved PD-L1 ≥ 50 %: atezolizumab 1875 mg sc q3w, deretter 1680 mg iv q4w, deretter 1200 mg iv q3w</span></td></tr><tr><td>Pembrolizumab</td><td>1 år</td><td>St. IB (T &gt; 4 cm)–IIIA, etter adjuvant kjemo. Ingen gevinst sett ved PD-L1 ≥ 50 %</td><td>Innført (BF 17.11.2025). Anbefalt ved PD-L1 &lt; 50 % <span class="lis">LIS: PD-L1 ≥ 50 %: fjerde- til sjuendevalg (etter atezolizumab). PD-L1 &lt; 50 %: ikke rangert, eneste alternativ</span></td></tr><tr><td>Osimertinib (ADAURA)</td><td>80 mg × 1 i 3 år</td><td>EGFR ex19del/L858R, st. IB (T &gt; 3 cm)–IIIA</td><td>Bør vurderes (BF 29.8.2022) <span class="lis">LIS: <strong>førstevalg</strong> adjuvant EGFR</span></td></tr><tr><td>Alektinib (ALINA)</td><td>600 mg × 2 i inntil 2 år</td><td>ALK+, st. II (T &gt; 4 cm)–III; ikke adjuvant kjemo først</td><td>Bør vurderes (BF 18.11.2024) <span class="lis">LIS: <strong>førstevalg</strong> adjuvant ALK</span></td></tr><tr><td>Karboplatin + etoposid</td><td>4 kurer</td><td>Resekert LCNEC (inkl. IB)</td><td>Anbefalt (se A9)</td></tr></tbody></table>
 </section><section class="blk" id="medikamenter-5"><h3 id="a3-kurative-nsclc-ikke-kirurgisk-stadium-iiiii-og-pancoast-kap-74-og-75">A3. Kurative NSCLC: ikke-kirurgisk stadium II–III og Pancoast (kap. 7.4 og 7.5)</h3>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram, nettversjon (siste faglige endring 08.10.2026), kapittel som i overskriften · lokalt vedtak 01.11.2026 (karboplatin i stedet for cisplatin).</em></p>
-<table><thead><tr><th>Regime</th><th>Dosering/varighet</th><th>Indikasjon</th><th>Status i HP</th></tr></thead><tbody><tr><td>Konkomitant kjemoradioterapi: <strong>karboplatin/etoposid</strong></td><td>2 kurer q3w under 2 Gy × 30–33</td><td>St. III (og II N1)</td><td>Anbefalt, norsk foretrukket</td></tr><tr><td>Konkomitant: karboplatin/vinorelbin</td><td>Som over</td><td>Som over</td><td>Alternativ</td></tr><tr><td>Sekvensiell karboplatinbasert kjemo</td><td>2 kurer før RT</td><td>Usikker toleranse for konkomitant behandling</td><td>Anbefalt i denne situasjonen</td></tr><tr><td><strong>Durvalumab</strong> konsolidering (PACIFIC)</td><td>10 mg/kg q2w eller 1500 mg q4w i inntil 12 mnd; start innen 42 (helst 14) dager</td><td>PD-L1 ≥ 1 %, EGFR/ALK-negativ</td><td>Anbefalt (BF 2019). Kan vurderes etter sekvensiell behandling</td></tr><tr><td><strong>Osimertinib</strong> konsolidering (LAURA)</td><td>Til progresjon</td><td>EGFR ex19del/L858R etter kjemoradioterapi</td><td>Anbefalt (BF 16.6.2025)</td></tr><tr><td>G-CSF</td><td>–</td><td>Under kjemoradioterapi</td><td>Ikke anbefalt</td></tr><tr><td>Pancoast: neoadjuvant kjemoimmunterapi, alternativt 2 Gy × 25 + 2 karboplatinkurer; ved inoperabilitet → 60–66 Gy + durvalumab ved PD-L1 ≥ 1 %</td><td>–</td><td>Sulcus superior-tumor</td><td>Anbefalt</td></tr></tbody></table>
+<table><thead><tr><th>Regime</th><th>Dosering/varighet</th><th>Indikasjon</th><th>Status i HP</th></tr></thead><tbody><tr><td>Konkomitant kjemoradioterapi: <strong>karboplatin/etoposid</strong></td><td>2 kurer q3w under 2 Gy × 30–33</td><td>St. III (og II N1)</td><td>Anbefalt, norsk foretrukket</td></tr><tr><td>Konkomitant: karboplatin/vinorelbin</td><td>Som over</td><td>Som over</td><td>Alternativ</td></tr><tr><td>Sekvensiell karboplatinbasert kjemo</td><td>2 kurer før RT</td><td>Usikker toleranse for konkomitant behandling</td><td>Anbefalt i denne situasjonen</td></tr><tr><td><strong>Durvalumab</strong> konsolidering (PACIFIC)</td><td>10 mg/kg q2w eller 1500 mg q4w i inntil 12 mnd; start innen 42 (helst 14) dager</td><td>PD-L1 ≥ 1 %, EGFR/ALK-negativ</td><td>Anbefalt (BF 2019) <span class="lis">LIS: ikke rangert (under «Andre legemidler til NSCLC»)</span>. Kan vurderes etter sekvensiell behandling</td></tr><tr><td><strong>Osimertinib</strong> konsolidering (LAURA)</td><td>Til progresjon</td><td>EGFR ex19del/L858R etter kjemoradioterapi</td><td>Anbefalt (BF 16.6.2025)</td></tr><tr><td>G-CSF</td><td>–</td><td>Under kjemoradioterapi</td><td>Ikke anbefalt</td></tr><tr><td>Pancoast: neoadjuvant kjemoimmunterapi, alternativt 2 Gy × 25 + 2 karboplatinkurer; ved inoperabilitet → 60–66 Gy + durvalumab ved PD-L1 ≥ 1 %</td><td>–</td><td>Sulcus superior-tumor</td><td>Anbefalt</td></tr></tbody></table>
 </section><section class="blk" id="medikamenter-6"><h3 id="a4-ikke-kurativ-nsclc-uten-driver-førstelinje-kap-83">A4. Ikke-kurativ NSCLC uten driver: førstelinje (kap. 8.3)</h3>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram, nettversjon (siste faglige endring 08.10.2026), kapittel som i overskriften · lokalt vedtak 01.11.2026 (karboplatin i stedet for cisplatin).</em></p>
 <p><strong>Kombinasjon med kjemoterapi</strong> (4 kurer, deretter PD-1/PD-L1-hemmer ± pemetreksed til progresjon eller inntil 2 år). Valg av preparat styres av LIS-anbud.</p>
-<table><thead><tr><th>Histologi</th><th>PD-1/PD-L1-hemmer</th><th>Indikasjon</th><th>BF-vedtak</th></tr></thead><tbody><tr><td>Ikke-plateepitel (karbo + pemetreksed)</td><td>Pembrolizumab (KEYNOTE-189)</td><td>PD-L1 &lt; 50 %</td><td>29.4.2019</td></tr><tr><td></td><td>Cemiplimab (EMPOWER-Lung 3)</td><td>PD-L1 ≥ 1 %</td><td>17.6.2024</td></tr><tr><td></td><td>Tislelizumab 200 mg (RATIONALE-304)</td><td>PD-L1 ≥ 50 %</td><td>26.8.2024</td></tr><tr><td>Plateepitel (karbo + paklitaksel/nab-paklitaksel)</td><td>Pembrolizumab (KEYNOTE-407)</td><td>PD-L1 &lt; 50 %</td><td>26.10.2020</td></tr><tr><td></td><td>Cemiplimab</td><td>PD-L1 ≥ 1 %</td><td>17.6.2024</td></tr><tr><td></td><td>Tislelizumab 200 mg (RATIONALE-307)</td><td>Uavhengig av PD-L1</td><td>26.8.2024</td></tr><tr><td>Begge</td><td><strong>Durvalumab 1500 mg + tremelimumab 75 mg</strong> + karboplatindublett (POSEIDON)</td><td>Uten EGFR/ALK</td><td>15.6.2026, i bruk fra 1.8.2026. HP anbefaler det <strong>ikke</strong> fremfor kjemo + PD-1/PD-L1-hemmer</td></tr></tbody></table>
+<table><thead><tr><th>Histologi</th><th>PD-1/PD-L1-hemmer</th><th>Indikasjon</th><th>BF-vedtak</th></tr></thead><tbody><tr><td>Ikke-plateepitel (karbo + pemetreksed)</td><td>Pembrolizumab (KEYNOTE-189)</td><td>PD-L1 &lt; 50 %</td><td>29.4.2019 <span class="lis">LIS: adeno PD-L1 1–49 %: andre- til femtevalg (etter cemiplimab). PD-L1 &lt; 1 %: ikke rangert, eneste alternativ. PD-L1 ≥ 50 %: fjerde- til sjuendevalg</span></td></tr><tr><td></td><td>Cemiplimab (EMPOWER-Lung 3)</td><td>PD-L1 ≥ 1 %</td><td>17.6.2024 <span class="lis">LIS: <strong>førstevalg</strong> ved adeno PD-L1 1–49 % (350 mg iv q3w). Tredjevalg ved PD-L1 ≥ 50 %</span></td></tr><tr><td></td><td>Tislelizumab 200 mg (RATIONALE-304)</td><td>PD-L1 ≥ 50 %</td><td>26.8.2024 <span class="lis">LIS: <strong>førstevalg</strong> ved adeno PD-L1 ≥ 50 % (400 mg iv q6w, deretter 200 mg q3w)</span></td></tr><tr><td>Plateepitel (karbo + paklitaksel/nab-paklitaksel)</td><td>Pembrolizumab (KEYNOTE-407)</td><td>PD-L1 &lt; 50 %</td><td>26.10.2020 <span class="lis">LIS: fjerde- til sjuendevalg</span></td></tr><tr><td></td><td>Cemiplimab</td><td>PD-L1 ≥ 1 %</td><td>17.6.2024 <span class="lis">LIS: tredjevalg</span></td></tr><tr><td></td><td>Tislelizumab 200 mg (RATIONALE-307)</td><td>Uavhengig av PD-L1</td><td>26.8.2024 <span class="lis">LIS: <strong>førstevalg</strong> (400 mg iv q6w, deretter 200 mg q3w)</span></td></tr><tr><td>Begge</td><td><strong>Durvalumab 1500 mg + tremelimumab 75 mg</strong> + karboplatindublett (POSEIDON)</td><td>Uten EGFR/ALK</td><td>15.6.2026, i bruk fra 1.8.2026. HP anbefaler det <strong>ikke</strong> fremfor kjemo + PD-1/PD-L1-hemmer <span class="lis">LIS: førstevalg i egen tabell «med CTLA-4-hemmer»</span></td></tr></tbody></table>
 <p><strong>Monoterapi ved PD-L1 ≥ 50 %</strong> (likeverdige, LIS-vinner foretrekkes):</p>
-<ul><li><p>Pembrolizumab 200 mg iv q3w eller 400 mg q6w; sc 395/390 mg q3w eller 790 mg q6w (sc fra 1.4.2026) – BF 22.5.2017</p></li><li><p>Cemiplimab 350 mg q3w – BF 21.11.2022</p></li><li><p>Atezolizumab (TC ≥ 50 % eller IC ≥ 10 %) – BF 30.8.2021</p></li><li><p>Atezolizumab ved platinum-uegnethet, uavhengig av PD-L1 – BF 21.10.2024</p></li></ul>
+<ul><li><p class="lis-box"><strong>LIS-rekkefølge monoterapi PD-L1 ≥ 50 %:</strong> 1) atezolizumab 1875 mg sc q3w · 2) atezolizumab 1680 mg iv q4w · 3) atezolizumab 1200 mg iv q3w · 4) cemiplimab 350 mg iv q3w · 5–8) pembrolizumab (790 sc, 395 sc, 400 iv, 200 iv). Uegnet for platinum: atezolizumab (ikke rangert).</p></li><li><p>Pembrolizumab 200 mg iv q3w eller 400 mg q6w; sc 395/390 mg q3w eller 790 mg q6w (sc fra 1.4.2026) – BF 22.5.2017</p></li><li><p>Cemiplimab 350 mg q3w – BF 21.11.2022</p></li><li><p>Atezolizumab (TC ≥ 50 % eller IC ≥ 10 %) – BF 30.8.2021</p></li><li><p>Atezolizumab ved platinum-uegnethet, uavhengig av PD-L1 – BF 21.10.2024</p></li></ul>
 <p><strong>Kurskjema:</strong></p>
 <table><thead><tr><th>Kur</th><th>Dosering</th><th>Merknad</th></tr></thead><tbody><tr><td>Pemetreksed + karboplatin</td><td>500 mg/m² + AUC 5 (maks 750 mg) dag 1, q3w × 4 → pemetreksed vedlikehold</td><td>Ikke ved plateepitel</td></tr><tr><td>Paklitaksel + karboplatin</td><td>175 mg/m² + AUC 5 dag 1, q3w × 4</td><td>Premedikasjon: steroid, antihistamin, H2-blokker</td></tr><tr><td>Gemcitabin + karboplatin</td><td>1000 mg/m² dag 1 og 8 + AUC 5 dag 1, q3w × 4</td><td></td></tr><tr><td>Vinorelbin + karboplatin</td><td>25 mg/m² iv dag 1 og 8 + AUC 5, q3w × 4. Peroral vinorelbin 60 mg/m² gis bare dag 8 (lokalt vedtak)</td><td></td></tr><tr><td>Nab-paklitaksel</td><td>100 mg/m² ukentlig (KEYNOTE-407)</td><td>Alternativ til paklitaksel</td></tr></tbody></table>
 <p><strong>Obligatorisk støtte ved pemetreksed:</strong> Folsyre 0,4–1 mg daglig fra minst 5 dager før til 3 uker etter siste dose. Vitamin B12 1 mg im hver 9. uke, første dose minst 5 dager før. (I KEYNOTE-189: deksametason 4 mg × 2 dag −1 til +1.)</p>
 <p><strong>Andre histologier:</strong> Ved adenoid cystisk karsinom kan cisplatin + epirubicin + syklofosfamid være aktuelt.</p>
 </section><section class="blk" id="medikamenter-7"><h3 id="a5-målrettet-behandling-kap-84">A5. Målrettet behandling (kap. 8.4)</h3>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram, nettversjon (siste faglige endring 08.10.2026), kapittel som i overskriften.</em></p>
-<table><thead><tr><th>Target</th><th>Medikament (dosering)</th><th>Linje</th><th>Status i HP / BF</th></tr></thead><tbody><tr><td><strong>EGFR ex19del/L858R</strong></td><td>Osimertinib + pemetreksed/karboplatin (FLAURA2)</td><td>1L, førstevalg</td><td>BF 16.3.2026</td></tr><tr><td></td><td>Osimertinib 80 mg monoterapi</td><td>1L ved kontraindikasjon mot kjemo</td><td>Innført</td></tr><tr><td></td><td>Amivantamab (iv/sc) + lazertinib (MARIPOSA)</td><td>1L, alternativ for yngre i god AT</td><td>BF 27.4.2026, i bruk fra 15.6.2026</td></tr><tr><td></td><td>Erlotinib, afatinib, dakomitinib</td><td>1L</td><td>MT. Gefitinib avregistrert i Norge</td></tr><tr><td></td><td>Amivantamab + karboplatin/pemetreksed (MARIPOSA-2)</td><td>Etter osimertinib</td><td>MT, <strong>ikke vurdert i Nye metoder</strong></td></tr><tr><td></td><td>Karboplatin/pemetreksed rechallenge, docetaksel</td><td>Etter progresjon</td><td>Anbefalt</td></tr><tr><td><strong>EGFR ex20ins</strong></td><td>Amivantamab + karboplatin/pemetreksed (PAPILLON). Iv: 1400/1750 mg (splittet dag 1–2) ukentlig × 4, deretter 1750/2100 mg q3w</td><td>1L, førstevalg</td><td>BF 25.8.2025, i bruk fra 1.10.2025. Sc foretrukket</td></tr><tr><td><strong>EGFR uvanlige</strong> (G719X, L861Q, S768I)</td><td>Afatinib; osimertinib</td><td>1L</td><td>Rimelig å forsøke</td></tr><tr><td><strong>ALK</strong></td><td>Lorlatinib 100 mg × 1</td><td>1L, førstevalg; også etter andre ALK-TKI</td><td>BF 23.5.2022; etter alektinib BF 14.12.2020</td></tr><tr><td></td><td>Alektinib 600 mg × 2</td><td>1L, alternativ</td><td>BF 25.6.2018</td></tr><tr><td></td><td>Brigatinib 90 mg × 7 d → 180 mg × 1</td><td>1L, alternativ; etter krizotinib</td><td>BF 15.2.2021; 21.10.2019</td></tr><tr><td></td><td>Krizotinib, ceritinib</td><td>1L</td><td>Positive vedtak, ikke lenger førstevalg</td></tr><tr><td><strong>ROS1</strong></td><td>Repotrektinib 160 mg × 1 i 2 uker → 160 mg × 2</td><td>1L, førstevalg</td><td>BF 25.8.2025, i bruk fra 1.10.2025</td></tr><tr><td></td><td>Entrektinib 600 mg × 1</td><td>1L, alternativ</td><td>BF 13.12.2021</td></tr><tr><td></td><td>Krizotinib 250 mg × 2</td><td>1L, alternativ</td><td>BF 23.4.2018</td></tr><tr><td></td><td>Lorlatinib</td><td>Etter krizotinib</td><td>Ikke vurdert i Nye metoder</td></tr><tr><td><strong>NTRK</strong></td><td>Entrektinib 600 mg × 1</td><td>1L</td><td>Midlertidig innført (BF 13.12.2021)</td></tr><tr><td></td><td>Repotrektinib</td><td>1L og etter NTRK-hemmer</td><td>BF 20.10.2025</td></tr><tr><td></td><td>Larotrektinib</td><td>–</td><td><strong>Ikke innført</strong> (BF 12.12.2022)</td></tr><tr><td><strong>BRAF V600</strong></td><td>Dabrafenib 150 mg × 2 + trametinib 2 mg × 1</td><td>1L, førstevalg</td><td>BF 22.5.2023</td></tr><tr><td><strong>MET ex14</strong></td><td>Tepotinib 450 mg × 1</td><td>Etter immunterapi og/eller platinum</td><td>BF 16.3.2026, i bruk fra 1.5.2026 (etter nei 9.2.2026)</td></tr><tr><td></td><td>Kapmatinib 400 mg × 2</td><td>2L</td><td>MT, ikke vurdert</td></tr><tr><td><strong>RET</strong></td><td>Selperkatinib 160 mg × 2 (120 mg × 2 ved &lt; 50 kg)</td><td>1L, førstevalg</td><td>BF 29.8.2022, i bruk fra 1.12.2024</td></tr><tr><td></td><td>Pralsetinib</td><td>–</td><td>Avregistrert 2024, ingen nye pasienter</td></tr><tr><td><strong>KRAS G12C</strong></td><td>Sotorasib</td><td>≥ 2L</td><td><strong>Ikke innført</strong> (BF 16.6.2025)</td></tr><tr><td><strong>HER2-mutasjon</strong></td><td>Trastuzumab-derukstekan 5,4/6,4 mg/kg q3w</td><td>Etter platinum ± IO</td><td><strong>Ikke innført</strong> (BF 16.6.2025)</td></tr><tr><td></td><td>Zongertinib, sevabertinib</td><td>–</td><td>Kun omtalt, ikke vurdert</td></tr></tbody></table>
+<table><thead><tr><th>Target</th><th>Medikament (dosering)</th><th>Linje</th><th>Status i HP / BF</th></tr></thead><tbody><tr><td><strong>EGFR ex19del/L858R</strong></td><td>Osimertinib + pemetreksed/karboplatin (FLAURA2)</td><td>1L, førstevalg</td><td>BF 16.3.2026 <span class="lis">LIS: osimertinib 1L ikke rangert, likestilt med amivantamab + lazertinib</span></td></tr><tr><td></td><td>Osimertinib 80 mg monoterapi</td><td>1L ved kontraindikasjon mot kjemo</td><td>Innført</td></tr><tr><td></td><td>Amivantamab (iv/sc) + lazertinib (MARIPOSA)</td><td>1L, alternativ for yngre i god AT</td><td>BF 27.4.2026, i bruk fra 15.6.2026 <span class="lis">LIS: ikke rangert, likestilt med osimertinib</span></td></tr><tr><td></td><td>Erlotinib, afatinib, dakomitinib</td><td>1L</td><td>MT. Gefitinib avregistrert i Norge</td></tr><tr><td></td><td>Amivantamab + karboplatin/pemetreksed (MARIPOSA-2)</td><td>Etter osimertinib</td><td>MT, <strong>ikke vurdert i Nye metoder</strong></td></tr><tr><td></td><td>Karboplatin/pemetreksed rechallenge, docetaksel</td><td>Etter progresjon</td><td>Anbefalt</td></tr><tr><td><strong>EGFR ex20ins</strong></td><td>Amivantamab + karboplatin/pemetreksed (PAPILLON). Iv: 1400/1750 mg (splittet dag 1–2) ukentlig × 4, deretter 1750/2100 mg q3w</td><td>1L, førstevalg</td><td>BF 25.8.2025, i bruk fra 1.10.2025. Sc foretrukket <span class="lis">LIS: <strong>førstevalg</strong>, sc og iv likestilt</span></td></tr><tr><td><strong>EGFR uvanlige</strong> (G719X, L861Q, S768I)</td><td>Afatinib; osimertinib</td><td>1L</td><td>Rimelig å forsøke</td></tr><tr><td><strong>ALK</strong></td><td>Lorlatinib 100 mg × 1</td><td>1L, førstevalg; også etter andre ALK-TKI</td><td>BF 23.5.2022; etter alektinib BF 14.12.2020 <span class="lis">LIS: <strong>førstevalg</strong> ALK 1L</span></td></tr><tr><td></td><td>Alektinib 600 mg × 2</td><td>1L, alternativ</td><td>BF 25.6.2018 <span class="lis">LIS: andrevalg blant «andre ALK-TKI» (etter brigatinib). Førstevalg adjuvant</span></td></tr><tr><td></td><td>Brigatinib 90 mg × 7 d → 180 mg × 1</td><td>1L, alternativ; etter krizotinib</td><td>BF 15.2.2021; 21.10.2019 <span class="lis">LIS: <strong>førstevalg</strong> blant «andre ALK-TKI»</span></td></tr><tr><td></td><td>Krizotinib, ceritinib</td><td>1L</td><td>Positive vedtak, ikke lenger førstevalg</td></tr><tr><td><strong>ROS1</strong></td><td>Repotrektinib 160 mg × 1 i 2 uker → 160 mg × 2</td><td>1L, førstevalg</td><td>BF 25.8.2025, i bruk fra 1.10.2025 <span class="lis">LIS: ikke rangert (ROS1 og NTRK)</span></td></tr><tr><td></td><td>Entrektinib 600 mg × 1</td><td>1L, alternativ</td><td>BF 13.12.2021</td></tr><tr><td></td><td>Krizotinib 250 mg × 2</td><td>1L, alternativ</td><td>BF 23.4.2018</td></tr><tr><td></td><td>Lorlatinib</td><td>Etter krizotinib</td><td>Ikke vurdert i Nye metoder</td></tr><tr><td><strong>NTRK</strong></td><td>Entrektinib 600 mg × 1</td><td>1L</td><td>Midlertidig innført (BF 13.12.2021)</td></tr><tr><td></td><td>Repotrektinib</td><td>1L og etter NTRK-hemmer</td><td>BF 20.10.2025</td></tr><tr><td></td><td>Larotrektinib</td><td>–</td><td><strong>Ikke innført</strong> (BF 12.12.2022)</td></tr><tr><td><strong>BRAF V600</strong></td><td>Dabrafenib 150 mg × 2 + trametinib 2 mg × 1</td><td>1L, førstevalg</td><td>BF 22.5.2023 <span class="lis">LIS: ikke rangert</span></td></tr><tr><td><strong>MET ex14</strong></td><td>Tepotinib 450 mg × 1</td><td>Etter immunterapi og/eller platinum</td><td>BF 16.3.2026, i bruk fra 1.5.2026 <span class="lis">LIS: <strong>førstevalg</strong> MET ex14</span> (etter nei 9.2.2026)</td></tr><tr><td></td><td>Kapmatinib 400 mg × 2</td><td>2L</td><td>MT, ikke vurdert</td></tr><tr><td><strong>RET</strong></td><td>Selperkatinib 160 mg × 2 (120 mg × 2 ved &lt; 50 kg)</td><td>1L, førstevalg</td><td>BF 29.8.2022, i bruk fra 1.12.2024 <span class="lis">LIS: ikke rangert</span></td></tr><tr><td></td><td>Pralsetinib</td><td>–</td><td>Avregistrert 2024, ingen nye pasienter</td></tr><tr><td><strong>KRAS G12C</strong></td><td>Sotorasib</td><td>≥ 2L</td><td><strong>Ikke innført</strong> (BF 16.6.2025)</td></tr><tr><td><strong>HER2-mutasjon</strong></td><td>Trastuzumab-derukstekan 5,4/6,4 mg/kg q3w</td><td>Etter platinum ± IO</td><td><strong>Ikke innført</strong> (BF 16.6.2025)</td></tr><tr><td></td><td>Zongertinib, sevabertinib</td><td>–</td><td>Kun omtalt, ikke vurdert</td></tr></tbody></table>
 <p><strong>Støttebehandling nevnt i HP:</strong></p>
 <ul><li><p>EGFR-TKI: topikalt steroid eller systemisk tetrasyklin (hud); loperamid eller opiumsdråper/Dropizol (diaré)</p></li><li><p>Amivantamab: premedikasjon med deksametason, antihistamin og antipyretika. COCOON-profylakse: doksysyklin 100 mg × 2 (uke 0–12), ceramidkrem × 2, klindamycin 1 % i hodebunn (uke 13–52), klorheksidin 4 % til hender og føtter, solbeskyttelse</p></li><li><p>Amivantamab + lazertinib: LMWH eller DOAK som VTE-profylakse</p></li><li><p>Lorlatinib: rosuvastatin anbefalt, unngå simvastatin</p></li></ul>
 </section><section class="blk" id="medikamenter-8"><h3 id="a6-progresjon-etter-førstelinje-angiogenesehemmere-og-beinresorpsjonshemmere-kap-85-87-88">A6. Progresjon etter førstelinje, angiogenesehemmere og beinresorpsjonshemmere (kap. 8.5, 8.7, 8.8)</h3>
@@ -121,7 +129,7 @@ body.sok .ttoc{display:none}
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram, nettversjon (siste faglige endring 08.10.2026), kapittel som i overskriften.</em></p>
 <ul><li><p><strong>Varighet:</strong> Inntil 2 år. Kortere ved komplett respons eller vesentlige bivirkninger.</p></li><li><p><strong>Medikamenter ved irAE:</strong> Prednisolon 1–2 mg/kg med nedtrapping; infliksimab ved alvorlig kolitt (ikke ved hepatitt); mykofenolat ved levertoksisitet; levotyroksin ved hypotyreose. Endokrinolog ved behov.</p></li><li><p><strong>Kontroller:</strong> Regelmessige blodprøver inkl. thyreoidea og lever. Frekvens er ikke angitt.</p></li><li><p><strong>Etter avsluttet IO:</strong> Klinisk kontroll og endokrine prøver ca. 6 uker etter siste dose, CT ca. 3 mnd etter. Deretter klinisk kontroll hver 3. mnd og CT hver 6. mnd.</p></li><li><p><strong>Vaksiner:</strong> Influensa årlig. Pneumovax hvert 6. år, eller Prevenar 20 (livsvarig).</p></li></ul>
 </section><section class="blk" id="medikamenter-10"><h3 id="a8-småcellet-lungekreft-kap-910">A8. Småcellet lungekreft (kap. 9–10)</h3>
-<p><em>Kilder: [HP] Nasjonalt handlingsprogram, nettversjon (siste faglige endring 08.10.2026), kapittel som i overskriften · [LIS] LIS-anbefaling onkologi 2026/27, rev. 2 av 23.10.2026 (lungekapitlet s. 28–37) · lokalt vedtak 01.11.2026 (karboplatin i stedet for cisplatin).</em></p>
+<p><em>Kilder: [HP] Nasjonalt handlingsprogram, nettversjon (siste faglige endring 08.10.2026), kapittel som i overskriften · [LIS] LIS-anbefaling onkologi 2026/27, rev. 3 av 03.11.2026 (lungekapitlet s. 28–37) · lokalt vedtak 01.11.2026 (karboplatin i stedet for cisplatin).</em></p>
 <table><thead><tr><th>Regime</th><th>Dosering</th><th>Indikasjon</th><th>Status/BF</th></tr></thead><tbody><tr><td>Karboplatin AUC 5 dag 1 + etoposid 100 mg/m² dag 1–3</td><td>q3w × 4, konkomitant med TRT 1,5 Gy × 2 × 20</td><td>LS-SCLC</td><td>Anbefalt</td></tr><tr><td>Durvalumab 1500 mg q4w (ADRIATIC)</td><td>Inntil 2 år</td><td>LS-SCLC etter kjemoradioterapi</td><td>BF 28.4.2025</td></tr><tr><td>Karboplatin/etoposid + <strong>atezolizumab</strong> 1200 mg iv / 1875 mg sc</td><td>4 kurer → vedlikehold q3w</td><td>ES-SCLC 1L</td><td>Innført 1.11.2021. <strong>LIS 2026/27: ikke i tabellen, ikke til nye pasienter</strong> [LIS]</td></tr><tr><td>Karboplatin/etoposid + <strong>durvalumab</strong> 1500 mg</td><td>→ vedlikehold q4w</td><td>ES-SCLC 1L</td><td>BF 20.1.2025, i bruk fra 1.10.2025 (volumavtale). <strong>LIS 2026/27: ikke i tabellen, ikke til nye pasienter</strong> [LIS]</td></tr><tr><td>Karboplatin/etoposid + <strong>tislelizumab</strong> 200 mg</td><td>→ q3w</td><td>ES-SCLC 1L</td><td>BF 9.2.2026, tentativt fra 1.10.2026. <strong>LIS 2026/27: eneste PD-(L)1-hemmer i tabellen</strong>, 200 mg q3w eller 400 mg q6w (volumavtale) [LIS]</td></tr><tr><td>Karboplatin/etoposid + <strong>serplulimab</strong> 4,5 mg/kg</td><td>→ q3w</td><td>ES-SCLC 1L</td><td>BF 18.5.2026, tentativt fra 1.10.2026. <strong>LIS 2026/27: ikke i tabellen, ikke til nye pasienter</strong> [LIS]</td></tr><tr><td>Peroral etoposid-variant</td><td>100 mg/m² iv dag 1, deretter 200 mg/m²/d po dag 2–4</td><td>ES-SCLC 1L</td><td>Opsjon</td></tr><tr><td>Rechallenge 1L kjemo + IO</td><td>Residiv &gt; 3 mnd</td><td>Sensitiv residiv</td><td>Anbefalt</td></tr><tr><td>ACO (doksorubicin, syklofosfamid, vinkristin)</td><td>Doksorubicin 50 mg/m² + syklofosfamid 1000 mg/m² + vinkristin 2 mg (fast dose) iv dag 1, ny kur dag 22, inntil 4 kurer [HP 10.6]</td><td>Tidlig residiv &lt; 3 mnd</td><td>Aktuelt</td></tr><tr><td>Oral topotekan</td><td>–</td><td>Tidlig residiv når ACO ikke er aktuelt</td><td>Anbefalt (mer hematologisk toksisitet)</td></tr><tr><td>Irinotekan, docetaksel, ifosfamid, temozolomid, oral etoposid; karboplatin-irinotekan</td><td>Karboplatin-irinotekan: karboplatin AUC 5 + irinotekan 175 mg/m² iv dag 1, ny kur dag 22 [HP 10.6]</td><td>Senere linjer</td><td>«Noe effekt»</td></tr><tr><td>G-CSF / GM-CSF</td><td>–</td><td>Under kjemoradioterapi</td><td>Ikke rutinemessig / ikke anbefalt</td></tr></tbody></table>
 <p><strong>Dosemodifikasjon:</strong> Ved nøytrofile &lt; 1,5 og/eller trombocytter &lt; 100 utsettes kuren 0,5–1 uke. Ved &gt; 1 ukes utsettelse vurderes 15–20 % dosereduksjon.</p>
 <p><strong>Ikke omtalt i HP:</strong> tarlatamab og lurbinektedin (se B3).</p>
@@ -174,7 +182,7 @@ body.sok .ttoc{display:none}
 <li><strong>[Label]</strong> Amerikansk preparatomtale (FDA). Brukes bare der EU-tekst ikke var tilgjengelig.</li>
 <li><strong>[Label-IL]</strong> Produsentens preparatomtale i en annen versjon (godkjent i Israel, samme tekstgrunnlag som tidlig EU-tekst). Brukt for tepotinib.</li>
 <li><strong>[CTCAE]</strong> NCI CTCAE v5.0, se A8</li>
-<li><strong>[LIS]</strong> Sykehusinnkjøp, «Anbefalinger legemidler, onkologi», rev. 2, 23.10.2026 (gyldig 01.10.2026–30.09.2027). Rangeringen står i fanen Beslutningsforum og LIS</li>
+<li><strong>[LIS]</strong> Sykehusinnkjøp, «Anbefalinger legemidler, onkologi», rev. 3, 03.11.2026 (gyldig 01.10.2026–30.09.2027). Rangeringen står i fanen Beslutningsforum og LIS</li>
 <li><strong>[Forslag]</strong> Mitt forslag til lokal praksis, uten kilde</li>
 </ul>
 <p>Doser og terskler må kontrolleres mot gjeldende preparatomtale før klinisk bruk.</p>
@@ -1077,7 +1085,7 @@ body.sok .ttoc{display:none}
 </tbody>
 </table>
 </section><section class="blk" id="malrettet-10"><h2>Del B – Medikament for medikament</h2>
-</section><section class="blk" id="malrettet-11"><h3>B1. Osimertinib (Tagrisso)</h3>
+</section><section class="blk" id="malrettet-11"><h3>B1. Osimertinib (Tagrisso)</h3><p class="lisline"><strong>LIS 2026/27:</strong> <strong>Førstevalg</strong> adjuvant (st. IB–IIIA) og ved andre EGFR-mutasjoner (monoterapi). 1L ved ex19del/L858R: ikke rangert, likestilt med amivantamab + lazertinib. Etter kjemoradioterapi (LAURA) og med kjemo (FLAURA2): innført, ikke rangert.</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Tagrisso) · [Label] amerikansk preparatomtale · [Forslag] eget forslag, skal avklares lokalt.</em></p>
 <p><strong>Indikasjon:</strong> EGFR exon 19-delesjon og L858R.</p>
 <ul>
@@ -1129,7 +1137,7 @@ body.sok .ttoc{display:none}
 <li><strong>ILD-risikoen øker hvis osimertinib gis rett etter PD-(L)1-hemmer.</strong> Vær forsiktig ved sekvensering.</li>
 <li>Spør om øyesymptomer ved kontrollene.</li>
 </ul>
-</section><section class="blk" id="malrettet-12"><h3>B2. Amivantamab (Rybrevant) + lazertinib (Lazcluze)</h3>
+</section><section class="blk" id="malrettet-12"><h3>B2. Amivantamab (Rybrevant) + lazertinib (Lazcluze)</h3><p class="lisline"><strong>LIS 2026/27:</strong> Ikke rangert ved 1L ex19del/L858R (likestilt med osimertinib). Amivantamab 1600 mg sc ukentlig uke 1–4, deretter 3520 mg sc q4w; lazertinib 240 mg daglig.</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [LIS] LIS-anbefaling 2026/27 · [FK] Felleskatalogen (Rybrevant, Lazcluze) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Label] amerikansk preparatomtale · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.</em></p>
 <p><strong>Indikasjon:</strong> EGFR exon 19-delesjon og L858R, førstelinje (MARIPOSA).</p>
 <p><strong>Dosering:</strong></p>
@@ -1258,7 +1266,7 @@ body.sok .ttoc{display:none}
 <li>Keratitt er rapportert. Ved forverrede øyesymptomer: øyelege straks, og stopp bruk av kontaktlinser [FK].</li>
 <li>Glemt dose: ta den hvis det er under 12 timer siden. Brekninger: neste dose dagen etter. Tablettene kan slæmmes i vann eller gis i sonde [FK].</li>
 </ul>
-</section><section class="blk" id="malrettet-13"><h3>B3. Amivantamab + karboplatin/pemetreksed (EGFR ex20ins)</h3>
+</section><section class="blk" id="malrettet-13"><h3>B3. Amivantamab + karboplatin/pemetreksed (EGFR ex20ins)</h3><p class="lisline"><strong>LIS 2026/27:</strong> <strong>Førstevalg</strong> ved EGFR ex20ins med karboplatin/pemetreksed. Sc (1600 mg uke 1, 2400 mg uke 2–4, deretter 2400 mg q3w fra uke 7) og iv (1400 mg uke 1–4, deretter 1750 mg q3w) er likestilt.</p>
 <p><em>Kilder: [LIS] LIS-anbefaling 2026/27 · [FK] Felleskatalogen (Rybrevant).</em></p>
 <p><strong>Indikasjon:</strong> EGFR exon 20-insersjon, førstelinje (PAPILLON).</p>
 <p><strong>Dosering:</strong></p>
@@ -1297,7 +1305,7 @@ body.sok .ttoc{display:none}
 <ul>
 <li>Pemetreksed: unngå NSAID 2–5 dager før og etter ved nedsatt nyrefunksjon.</li>
 </ul>
-</section><section class="blk" id="malrettet-14"><h3>B4. Afatinib (Giotrif)</h3>
+</section><section class="blk" id="malrettet-14"><h3>B4. Afatinib (Giotrif)</h3><p class="lisline"><strong>LIS 2026/27:</strong> <strong>Førstevalg</strong> blant «andre eldre EGFR-TKI» (40 mg daglig).</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Giotrif) · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.</em></p>
 <p><strong>Indikasjon:</strong> Uvanlige EGFR-mutasjoner (G719X, L861Q, S768I) [HP].</p>
 <p><strong>Dosering:</strong> 40 mg × 1, tas 1 time før eller 3 timer etter mat.</p>
@@ -1336,7 +1344,7 @@ body.sok .ttoc{display:none}
 <li><strong>P-gp-hemmere</strong> (verapamil, ciklosporin, itrakonazol): gi dem med lengst mulig avstand fra afatinib, helst 6 timer ved hemmer 2 ganger daglig og 12 timer ved hemmer 1 gang daglig [FK, kontrollert 02.11.2026]. Det eldre rådet om å gi hemmeren samtidig med eller etter afatinib er erstattet.</li>
 <li><strong>P-gp-induktorer</strong> (rifampicin, karbamazepin, johannesurt) senker nivået.</li>
 </ul>
-</section><section class="blk" id="malrettet-15"><h3>B5. Lorlatinib (Lorviqua)</h3>
+</section><section class="blk" id="malrettet-15"><h3>B5. Lorlatinib (Lorviqua)</h3><p class="lisline"><strong>LIS 2026/27:</strong> <strong>Førstevalg</strong> ALK 1L (100 mg daglig).</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [LIS] LIS-anbefaling 2026/27 · [FK] Felleskatalogen (Lorviqua) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Label] amerikansk preparatomtale · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.</em></p>
 <p><strong>Indikasjon:</strong> ALK-positiv, førstelinje (CROWN) og senere linjer [HP]. Lorlatinib er også førstevalg ved ALK i første linje i LIS-anbudet 2026/27. Brigatinib og alektinib er rangert som 1 og 2 bare når det skal velges mellom de andre ALK-TKI-ene [LIS].</p>
 <p><strong>Dosering:</strong> 100 mg × 1, med eller uten mat.</p>
@@ -1427,7 +1435,7 @@ body.sok .ttoc{display:none}
 <li>Informer pasient og pårørende om CNS-effektene på forhånd. Endringene kommer ofte gradvis, og pårørende oppdager dem ofte først.</li>
 <li>Lang behandlingsvarighet (CROWN: ca. 60 % uten progresjon etter 5 år) gjør langsiktig kardiovaskulær risikoreduksjon viktig.</li>
 </ul>
-</section><section class="blk" id="malrettet-16"><h3>B6. Alektinib (Alecensa)</h3>
+</section><section class="blk" id="malrettet-16"><h3>B6. Alektinib (Alecensa)</h3><p class="lisline"><strong>LIS 2026/27:</strong> <strong>Førstevalg</strong> adjuvant ALK. Andrevalg blant «andre ALK-TKI», etter brigatinib.</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Alecensa).</em></p>
 <p><strong>Indikasjon:</strong></p>
 <ul>
@@ -1484,7 +1492,7 @@ body.sok .ttoc{display:none}
 <li>Det er krevende å ta 8 kapsler daglig. Etterlevelsen bør tas opp ved kontrollene.</li>
 <li>Obstipasjon er vanlig og behandles forebyggende.</li>
 </ul>
-</section><section class="blk" id="malrettet-17"><h3>B7. Brigatinib (Alunbrig)</h3>
+</section><section class="blk" id="malrettet-17"><h3>B7. Brigatinib (Alunbrig)</h3><p class="lisline"><strong>LIS 2026/27:</strong> <strong>Førstevalg</strong> blant «andre ALK-TKI» (90 mg i 7 dager, deretter 180 mg daglig).</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Alunbrig) · [Forslag] eget forslag, skal avklares lokalt.</em></p>
 <p><strong>Indikasjon:</strong> ALK-positiv, førstelinje og etter krizotinib [HP].</p>
 <p><strong>Dosering: 90 mg × 1 i 7 dager, deretter 180 mg × 1</strong> [FK].</p>
@@ -1632,7 +1640,7 @@ body.sok .ttoc{display:none}
 <li>Dag 8 bør være et definert kontaktpunkt før opptrapping.</li>
 <li>Ved planlagt kirurgi eller stråling med pause på 14 dager eller mer: planlegg ny oppstart med 90 mg på forhånd.</li>
 </ul>
-</section><section class="blk" id="malrettet-18"><h3>B8. Krizotinib (Xalkori)</h3>
+</section><section class="blk" id="malrettet-18"><h3>B8. Krizotinib (Xalkori)</h3><p class="lisline"><strong>LIS 2026/27:</strong> Ikke rangert («annen tilgjengelig ALK-hemmer»; også ROS1).</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Xalkori) · [FK-int] Felleskatalogens interaksjonsoppslag.</em></p>
 <p><strong>Indikasjon:</strong> ALK- eller ROS1-positiv. Brukes sjelden i dag, men kan være aktuell ved ROS1 [HP].</p>
 <p><strong>Dosering:</strong> 250 mg × 2.</p>
@@ -1681,7 +1689,7 @@ body.sok .ttoc{display:none}
 <li><strong>Krizotinib er selv en moderat CYP3A-hemmer.</strong> Peroral midazolam får 3–4 ganger høyere nivå, og dosebehovet anslås å være 70–80 % lavere [FK-int]. Det samme gjelder for eksempel takrolimus og ciklosporin.</li>
 <li>Unngå QT-forlengende kombinasjoner.</li>
 </ul>
-</section><section class="blk" id="malrettet-19"><h3>B9. Repotrektinib (Augtyro)</h3>
+</section><section class="blk" id="malrettet-19"><h3>B9. Repotrektinib (Augtyro)</h3><p class="lisline"><strong>LIS 2026/27:</strong> Ikke rangert (ROS1 og NTRK), likestilt med entrektinib.</p>
 <p><em>Kilder: [FK] Felleskatalogen (Augtyro) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.</em></p>
 <p><strong>Indikasjon:</strong> ROS1-positiv avansert NSCLC, uavhengig av tidligere behandling. Innført i Beslutningsforum 25.08.2025, i bruk fra 01.10.2025 (ID2024_065). NTRK-fusjon, også etter tidligere NTRK-hemmer: innført 20.10.2025 (ID2025_037) [Nye metoder]. Ikke rangert i LIS 2026/27 [LIS].</p>
 <p><strong>Dosering:</strong> 160 mg × 1 i 14 dager, deretter 160 mg × 2.</p>
@@ -1734,7 +1742,7 @@ body.sok .ttoc{display:none}
 <li><strong>Repotrektinib hemmer P-gp, BCRP, OATP1B1 og MATE.</strong> Følsomme substrater kan få høyere nivå. Ciklosporin, sirolimus og takrolimus får lavere nivå. Mål konsentrasjonen og juster [FK]. Unngå grapefruktjuice [FK].</li>
 <li><strong>Hormonell prevensjon er usikker</strong> fordi legemidlet induserer CYP3A4 [FK]. Kvinner: svært sikker prevensjon under behandlingen og minst 2 måneder etter siste dose, med barrieremetode i tillegg til eventuell hormonell prevensjon. Menn med fertil partner: kondom under behandlingen og 4 måneder etter siste dose. Graviditetstest før oppstart. Ikke amming under behandlingen og 10 dager etter [FK].</li>
 </ul>
-</section><section class="blk" id="malrettet-20"><h3>B10. Entrektinib (Rozlytrek)</h3>
+</section><section class="blk" id="malrettet-20"><h3>B10. Entrektinib (Rozlytrek)</h3><p class="lisline"><strong>LIS 2026/27:</strong> Ikke rangert (ROS1 og NTRK), likestilt med repotrektinib.</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Rozlytrek).</em></p>
 <p><strong>Indikasjon:</strong> ROS1-positiv, og NTRK-fusjon [HP].</p>
 <p><strong>Dosering:</strong> 600 mg × 1.</p>
@@ -1781,7 +1789,7 @@ body.sok .ttoc{display:none}
 <li>Entrektinib kan hemme P-gp (følg digoksin). Det finnes ingen egen doseanbefaling for P-gp-substrater [FK].</li>
 <li><strong>Unngå grapefrukt, Sevilla-appelsiner og produkter som inneholder grapefrukt</strong> [FK].</li>
 </ul>
-</section><section class="blk" id="malrettet-21"><h3>B11. Dabrafenib (Tafinlar) + trametinib (Mekinist)</h3>
+</section><section class="blk" id="malrettet-21"><h3>B11. Dabrafenib (Tafinlar) + trametinib (Mekinist)</h3><p class="lisline"><strong>LIS 2026/27:</strong> Ikke rangert (BRAF V600).</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Tafinlar, Mekinist) · [FK-int] Felleskatalogens interaksjonsoppslag · [Label] amerikansk preparatomtale · [Ekspert] ekspertartikler (se kildelisten).</em></p>
 <p><strong>Indikasjon:</strong> BRAF V600E [HP].</p>
 <p><strong>Dosering:</strong> Dabrafenib 150 mg × 2 og trametinib 2 mg × 1. Tas <strong>på tom mage</strong> (1 time før eller 2 timer etter mat).</p>
@@ -1859,7 +1867,7 @@ body.sok .ttoc{display:none}
 <li>DOAK (apixaban, rivaroksaban) er CYP3A4-substrater og kan få lavere nivå. Dette er ikke dokumentert [Forslag: vurder LMWH ved VTE].</li>
 <li>Trametinib er ikke CYP-avhengig.</li>
 </ul>
-</section><section class="blk" id="malrettet-22"><h3>B12. Tepotinib (Tepmetko)</h3>
+</section><section class="blk" id="malrettet-22"><h3>B12. Tepotinib (Tepmetko)</h3><p class="lisline"><strong>LIS 2026/27:</strong> <strong>Førstevalg</strong> ved MET ex14, etter immunterapi og/eller platinum.</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Tepmetko) · [FK-int] Felleskatalogens interaksjonsoppslag · [Label] amerikansk preparatomtale · [Label-IL] israelsk preparatomtale · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.</em></p>
 <p><strong>Indikasjon:</strong> MET exon 14-skipping [HP].</p>
 <p><strong>Dosering:</strong> 450 mg × 1 (2 tabletter) <strong>med mat</strong>.</p>
@@ -1919,7 +1927,7 @@ body.sok .ttoc{display:none}
 <ul>
 <li>Ødem er den vanligste årsaken til dosereduksjon og seponering ved MET-hemmere. Planlegg tiltak tidlig, gjerne sammen med fysioterapeut eller lymfødemterapeut.</li>
 </ul>
-</section><section class="blk" id="malrettet-23"><h3>B13. Selperkatinib (Retsevmo)</h3>
+</section><section class="blk" id="malrettet-23"><h3>B13. Selperkatinib (Retsevmo)</h3><p class="lisline"><strong>LIS 2026/27:</strong> Ikke rangert (RET).</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Retsevmo) · [FK-int] Felleskatalogens interaksjonsoppslag · [Ekspert] ekspertartikler (se kildelisten).</em></p>
 <p><strong>Indikasjon:</strong> RET-fusjon, førstelinje og senere linjer [HP].</p>
 <p><strong>Dosering:</strong> 160 mg × 2. Ved vekt under 50 kg: 120 mg × 2.</p>
@@ -1974,7 +1982,7 @@ body.sok .ttoc{display:none}
 <li><strong>Følsomme CYP2C8- og CYP3A4-substrater bør unngås</strong> [FK]. Repaglinid får omtrent dobbelt så høyt nivå: halver dosen og følg blodsukkeret nøye [FK-int].</li>
 <li>Selperkatinib hemmer <strong>P-gp og BCRP</strong>. Vær forsiktig med substrater av disse [FK].</li>
 </ul>
-</section><section class="blk" id="malrettet-24"><h3>B14. Erlotinib (Tarceva)</h3>
+</section><section class="blk" id="malrettet-24"><h3>B14. Erlotinib (Tarceva)</h3><p class="lisline"><strong>LIS 2026/27:</strong> Står ikke i LIS-tabellene. Afatinib er førstevalg blant eldre EGFR-TKI.</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Tarceva) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Forslag] eget forslag, skal avklares lokalt.</em></p>
 <p><strong>Indikasjon:</strong> EGFR-mutert NSCLC i 1. linje, som alternativ der osimertinib ikke passer [HP]. Brukes sjelden i dag.</p>
 <p><strong>Dosering:</strong> 150 mg × 1, minst 1 time før eller 2 timer etter mat [FK].</p>
@@ -2006,7 +2014,7 @@ body.sok .ttoc{display:none}
 <li><strong>CYP1A2-hemmere</strong> (ciprofloksacin, fluvoksamin): nivået øker. Gi med forsiktighet [FK].</li>
 </ul>
 <p><strong>Annet viktig:</strong> sikker prevensjon under behandlingen og i minst 2 uker etter siste dose. Ikke amming i samme periode [SPC].</p>
-</section><section class="blk" id="malrettet-25"><h3>B15. Dakomitinib (Vizimpro)</h3>
+</section><section class="blk" id="malrettet-25"><h3>B15. Dakomitinib (Vizimpro)</h3><p class="lisline"><strong>LIS 2026/27:</strong> Står ikke i LIS-tabellene. Afatinib er førstevalg blant eldre EGFR-TKI.</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Vizimpro) · [FK-int] Felleskatalogens interaksjonsoppslag · [Forslag] eget forslag, skal avklares lokalt.</em></p>
 <p><strong>Indikasjon:</strong> EGFR-mutert NSCLC (ex19del eller L858R) i 1. linje, som alternativ der osimertinib ikke passer [HP]. Brukes sjelden i dag.</p>
 <p><strong>Dosering:</strong> 45 mg × 1, med eller uten mat [FK].</p>
@@ -2053,7 +2061,7 @@ body.sok .ttoc{display:none}
 <li><strong>Natriumzirkoniumsyklosilikat</strong> (Lokelma) senker nivået.</li>
 </ul>
 <p><strong>Annet viktig:</strong> sikker prevensjon under behandlingen og i minst 17 dager etter siste dose [FK].</p>
-</section><section class="blk" id="malrettet-26"><h3>B16. Ceritinib (Zykadia)</h3>
+</section><section class="blk" id="malrettet-26"><h3>B16. Ceritinib (Zykadia)</h3><p class="lisline"><strong>LIS 2026/27:</strong> Ikke rangert («annen tilgjengelig ALK-hemmer»).</p>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [LIS] LIS-anbefaling 2026/27 · [FK] Felleskatalogen (Zykadia) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Ekspert] ekspertartikler (se kildelisten).</em></p>
 <p><strong>Indikasjon:</strong> ALK-positiv NSCLC [HP]. Brukes i dag sjelden, fordi lorlatinib er førstevalg [LIS].</p>
 <p><strong>Dosering:</strong> 450 mg × 1 (3 × 150 mg), <strong>med mat</strong> [FK].</p>
@@ -2240,7 +2248,7 @@ body.sok .ttoc{display:none}
 <li><strong>[ASCO]</strong> ASCO-retningslinje for irAE, oppdatering 2021</li>
 <li><strong>[ESC]</strong> ESC-retningslinje for kardioonkologi 2022</li>
 <li><strong>[DK]</strong> Danske kilder: Dansk Reumatologisk Selskab (NBV), Regionshospitalet Gødstrup og Dansk Selskab for Onkologisk Radiologi</li>
-<li><strong>[LIS]</strong> Sykehusinnkjøp, «Anbefalinger legemidler, onkologi», rev. 2, 23.10.2026 (gyldig 01.10.2026–30.09.2027). Rangeringen står i fanen Beslutningsforum og LIS</li>
+<li><strong>[LIS]</strong> Sykehusinnkjøp, «Anbefalinger legemidler, onkologi», rev. 3, 03.11.2026 (gyldig 01.10.2026–30.09.2027). Rangeringen står i fanen Beslutningsforum og LIS</li>
 <li><strong>[Ekspert]</strong> Publisert oversikt eller studie</li>
 <li><strong>[Forslag]</strong> Mitt forslag til lokal praksis, uten kilde</li>
 </ul>
@@ -2287,7 +2295,7 @@ body.sok .ttoc{display:none}
 <td><strong>Serplulimab</strong></td>
 <td>PD-1</td>
 <td>4,5 mg/kg iv hver 3. uke ved alle lungeindikasjoner. SCLC ES: med karboplatin/etoposid × 4, deretter vedlikehold. Ikke-plateepitel: med karboplatin/pemetreksed × 4. Plateepitel: med karboplatin + nab-paklitaksel dag 1, 8 og 15 × 4–6. Ingen dosereduksjon, pause inntil 12 uker tillatt (Hetronifly) [FK]</td>
-<td>NSCLC 1L med kjemo, plateepitel og ikke-plateepitel: innført av Beslutningsforum 21.09.2026, kan brukes fra 01.11.2026. Ikke i HP og ikke i LIS-anbudet ennå. Ikke i LIS-tabellen for SCLC ES</td>
+<td>NSCLC 1L med kjemo, plateepitel og ikke-plateepitel: innført av Beslutningsforum 21.09.2026, kan brukes fra 01.11.2026. Ikke i HP og ikke i LIS-anbudet ennå. Ikke i LIS-tabellen for SCLC ES <span class="lis">LIS rev. 3 (03.11.2026): lagt til under «Andre legemidler til NSCLC», ikke rangert, oppført med 400 mg iv q3w. Ikke i tabellen for ES-SCLC</span></td>
 </tr>
 <tr>
 <td><strong>Atezolizumab</strong> (Tecentriq)</td>
@@ -2324,6 +2332,8 @@ body.sok .ttoc{display:none}
 <li>perioperativt: tislelizumab</li>
 <li>adjuvant PD-L1 ≥ 50 %: atezolizumab sc</li>
 <li>SCLC ES: tislelizumab, som er eneste PD-(L)1-hemmer i tabellen</li>
+<li>andre linje og senere: tislelizumab, atezolizumab, nivolumab og pembrolizumab, alle ikke rangert</li>
+<li>serplulimab: lagt til i rev. 3 (03.11.2026), ikke rangert</li>
 </ul>
 <p>Se fanen Beslutningsforum og LIS for full rangering.</p>
 <p><strong>NB:</strong> Handlingsprogrammet oppgir sc-dosen av pembrolizumab som «395/390 mg». Felleskatalogen og Nye metoder har <strong>395 mg</strong>. 390 mg er feil.</p>
@@ -3446,7 +3456,7 @@ body.sok .ttoc{display:none}
 <li><strong>[HP]</strong> Nasjonalt handlingsprogram for lungekreft (kurskjema i kap. 7–12)</li>
 <li><strong>[FK]</strong> Felleskatalogen, lest 31.10.2026 (pemetreksed, paklitaksel, gemcitabin, vinorelbin, karboplatin, nab-paklitaksel, Keytruda, Imjudo, Rybrevant)</li>
 <li><strong>[ESMO]</strong> ESMO- og MASCC/ESMO-retningslinjer</li>
-<li><strong>[LIS]</strong> Sykehusinnkjøp, «Anbefalinger legemidler, onkologi», rev. 2, 23.10.2026 (gyldig 01.10.2026–30.09.2027). Rangeringen står i fanen Beslutningsforum og LIS</li>
+<li><strong>[LIS]</strong> Sykehusinnkjøp, «Anbefalinger legemidler, onkologi», rev. 3, 03.11.2026 (gyldig 01.10.2026–30.09.2027). Rangeringen står i fanen Beslutningsforum og LIS</li>
 <li><strong>[HSØ]</strong> Kurbibliotek HSØ (Metodebok), Helse Sør-Østs kurdefinisjoner. Det er variant-praksis, ikke St. Olavs eller Helse Midts egen. Brukes som støtte der vi ikke har lokal definisjon.</li>
 <li><strong>[Hdir]</strong> Helsedirektoratets nasjonale retningslinjer utenom lungekreftprogrammet: antibiotika i sykehus (febril nøytropeni) og handlingsprogrammet for lymfekreft (tumorlysesyndrom).</li>
 <li><strong>[Ekspert]</strong> Oversiktsartikler og ekspertkonsensus.</li>
@@ -3474,13 +3484,13 @@ body.sok .ttoc{display:none}
 <tr>
 <td><strong>NSCLC 1L, ikke-plateepitel</strong></td>
 <td>Karbo/pem + PD-1/PD-L1-hemmer</td>
-<td>Pemetreksed 500 mg/m² + karboplatin AUC 5 (maks 750 mg) dag 1, hver 3. uke + pembrolizumab, cemiplimab eller tislelizumab</td>
+<td>Pemetreksed 500 mg/m² + karboplatin AUC 5 (maks 750 mg) dag 1, hver 3. uke + pembrolizumab, cemiplimab eller tislelizumab <span class="lis">LIS: Adeno PD-L1 ≥ 50 %: tislelizumab. 1–49 %: cemiplimab. &lt; 1 %: pembrolizumab</span></td>
 <td>4 kurer, deretter IO + pemetreksed til progresjon eller inntil 2 år</td>
 </tr>
 <tr>
 <td><strong>NSCLC 1L, plateepitel</strong></td>
 <td>Karbo/paklitaksel eller nab-paklitaksel + PD-1/PD-L1-hemmer</td>
-<td>Paklitaksel 175 mg/m² + karbo AUC 5 hver 3. uke, eller nab-paklitaksel 100 mg/m² ukentlig + karbo</td>
+<td>Paklitaksel 175 mg/m² + karbo AUC 5 hver 3. uke, eller nab-paklitaksel 100 mg/m² ukentlig + karbo <span class="lis">LIS: tislelizumab (400 mg iv q6w)</span></td>
 <td>4 kurer, deretter IO alene</td>
 </tr>
 <tr>
@@ -3492,13 +3502,13 @@ body.sok .ttoc{display:none}
 <tr>
 <td><strong>Perioperativt (st. II–III)</strong></td>
 <td>Kjemoimmunterapi</td>
-<td>Nivolumab, durvalumab, pembrolizumab eller tislelizumab + karboplatindublett</td>
+<td>Nivolumab, durvalumab, pembrolizumab eller tislelizumab + karboplatindublett <span class="lis">LIS: 1) tislelizumab, 2) nivolumab (PD-L1 ≥ 1 %), 3–4) pembrolizumab sc, 5) durvalumab</span></td>
 <td>3–4 kurer preoperativt, deretter eventuelt adjuvant IO (se B6)</td>
 </tr>
 <tr>
 <td><strong>Adjuvant</strong></td>
 <td>Kjemo, deretter IO</td>
-<td>Karbo/pem eller karbo/vinorelbin × 4, deretter atezolizumab eller pembrolizumab i 1 år</td>
+<td>Karbo/pem eller karbo/vinorelbin × 4, deretter atezolizumab eller pembrolizumab i 1 år <span class="lis">LIS: PD-L1 ≥ 50 %: atezolizumab sc. &lt; 50 %: pembrolizumab</span></td>
 <td>Sekvensielt</td>
 </tr>
 <tr>
@@ -3516,7 +3526,7 @@ body.sok .ttoc{display:none}
 <tr>
 <td><strong>SCLC ES 1L</strong></td>
 <td>Kjemo + IO</td>
-<td>Karbo/etoposid + <strong>atezolizumab</strong>, <strong>durvalumab</strong>, <strong>tislelizumab</strong> eller <strong>serplulimab</strong></td>
+<td>Karbo/etoposid + <strong>atezolizumab</strong>, <strong>durvalumab</strong>, <strong>tislelizumab</strong> eller <strong>serplulimab</strong> <span class="lis">LIS: bare tislelizumab (400 mg iv q6w) til nye pasienter</span></td>
 <td>4 kurer, deretter IO som vedlikehold</td>
 </tr>
 <tr>
@@ -4405,13 +4415,14 @@ body.sok .ttoc{display:none}
 1. Pembrolizumab ved mesoteliom: avklart. Den ble <strong>ikke innført</strong> 24.08.2026, så handlingsprogrammets «ikke innført» stemmer fortsatt.
 2. Sak 107-2026: rettet over.
 3. Møtene i september og oktober 2026: gjennomgått. September ga to nye lungeindikasjoner (serplulimab), oktober ingen.</p>
-<p><strong>Konsekvens for handlingsprogrammet (kap. 8.3):</strong> Serplulimab er ikke omtalt der. Handlingsprogrammet ble sist revidert 08.10.2026, altså før serplulimab kan tas i bruk fra 01.11.2026. Dette er et naturlig innspill til redaksjonsgruppen. Serplulimab står heller ikke i LIS-anbefalingen ennå (se under).</p>
+<p><strong>Konsekvens for handlingsprogrammet (kap. 8.3):</strong> Serplulimab er ikke omtalt der. Handlingsprogrammet ble sist revidert 08.10.2026, altså før serplulimab kan tas i bruk fra 01.11.2026. Dette er et naturlig innspill til redaksjonsgruppen. Serplulimab ble lagt til i LIS-anbefalingen i rev. 3 av 03.11.2026, ikke rangert (se under).</p>
 <hr />
 </section><section class="blk" id="lis-2"><h2>2. LIS-anbefaling for onkologi, 01.10.2026–30.09.2027</h2>
-<p>Kilden er Sykehusinnkjøps anbefaling datert 23.10.2026 (revisjon 2), som HO har hentet og som er lest i sin helhet.</p>
+<p>Kilden er Sykehusinnkjøps anbefaling datert 03.11.2026 (revisjon 3), som Håkon Olav Leira har lastet opp og som er lest i sin helhet 7. november 2026.</p>
 <ul>
 <li><strong>Revisjon 1 (23.09.2026):</strong> Ny tabelloppdeling for EGFR-positiv lungekreft.</li>
 <li><strong>Revisjon 2 (23.10.2026):</strong> Nye tabeller for NTRK- og RET-positiv lungekreft.</li>
+<li><strong>Revisjon 3 (03.11.2026):</strong> Serplulimab (Hetronifly) lagt til etter innføring i Beslutningsforum 21.09.2026. Ved NSCLC står det under «Andre legemidler til NSCLC», ikke rangert, med 400 mg iv q3w. Ingen andre endringer i lungekapitlet.</li>
 </ul>
 <p>RHF-direktørene har vedtatt anbefalingene som instruks for helseforetakene. Avvik av medisinske årsaker skal dokumenteres i journalen.</p>
 </section><section class="blk" id="lis-3"><h3>2a. Kurativ NSCLC</h3>
@@ -4492,15 +4503,11 @@ body.sok .ttoc{display:none}
 </tr>
 <tr>
 <td><strong>Serplulimab</strong></td>
-<td><strong>Står ikke i tabellene ennå</strong> (kan brukes fra 01.11.2026). Hvordan det skal rangeres, må avklares med Sykehusinnkjøp eller i neste revisjon</td>
+<td><strong>Lagt til i rev. 3 (03.11.2026), ikke rangert</strong>, under «Andre legemidler til NSCLC», 400 mg iv q3w. Kan brukes fra 01.11.2026 med karboplatin/pemetreksed (ikke-plateepitel) eller karboplatin/nab-paklitaksel (plateepitel). Rangerte førstevalg går foran</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Andre linje og senere (ikke rangert):</strong>
-- Tislelizumab etter platinum
-- Atezolizumab sc eller iv
-- Nivolumab 1200 mg sc q4w eller 480 mg iv q4w
-- Pembrolizumab sc eller iv</p>
+<p><strong>Andre linje og senere (ikke rangert):</strong></p><ul><li>Tislelizumab etter platinum</li><li>Atezolizumab sc eller iv</li><li>Nivolumab 1200 mg sc q4w eller 480 mg iv q4w</li><li>Pembrolizumab sc eller iv</li></ul>
 <p>Nivolumab og pembrolizumab har vilkår om ECOG 0–1.</p>
 <p><strong>Atezolizumab + bevacizumab + paklitaksel/karboplatin</strong> etter målrettet behandling ved EGFR/ALK står fortsatt som innført, med vilkår om rimeligste bevacizumab. <em>Handlingsprogrammet anbefaler derimot kjemoterapi uten immunterapi etter EGFR-TKI, og frarår bevacizumab. Vedtaket finnes altså, men faglig anbefaling går imot.</em></p>
 </section><section class="blk" id="lis-5"><h3>2c. Målrettet behandling</h3>
@@ -4584,30 +4591,21 @@ body.sok .ttoc{display:none}
 <p>Fra 01.10.2026 kan sykehuset velge administrasjonsform når samme virkestoff fra samme leverandør står rangert etter hverandre, uten en annen leverandørs produkt mellom seg (HealthTalk). Atezolizumab sc og iv (plass 1–3 i monoterapitabellen) og tislelizumab q6w og q3w (plass 1–2) er altså fritt valg innen samme preparat.</p>
 <hr />
 </section><section class="blk" id="lis-9"><h2>3. Hva dette betyr for kompendiet og Dagpostens kurer</h2>
-<p><strong>Kompendiet:</strong>
-- Behold formuleringen «Valg av PD-(L)1-hemmer styres av LIS-anbud». Legg eventuelt inn en liten årsboks, «LIS 2026/27, førstevalg», som byttes hver høst:
+<p><strong>Kompendiet:</strong></p><ul><li>Behold formuleringen «Valg av PD-(L)1-hemmer styres av LIS-anbud». Legg eventuelt inn en liten årsboks, «LIS 2026/27, førstevalg», som byttes hver høst:
   - Mono PD-L1 ≥ 50 %: atezolizumab sc
   - Plateepitel og adeno PD-L1 ≥ 50 % + kjemo: tislelizumab
   - Adeno PD-L1 1–49 %: cemiplimab
   - Adeno PD-L1 &lt; 1 %: pembrolizumab
   - Perioperativt: tislelizumab
   - Adjuvant PD-L1 ≥ 50 %: atezolizumab sc
-  - ES-SCLC: tislelizumab
-- Pembrolizumab er ikke lenger førstevalg i noen førstelinjesituasjon ved metastatisk NSCLC, unntatt adenokarsinom med PD-L1 &lt; 1 %.
-- Serplulimab bør inn på listen over innførte PD-1-hemmere ved NSCLC.</p>
-<p><strong>Til lokale kurregimer (Cytodose):</strong>
-- ES-SCLC: atezolizumab byttes til tislelizumab
-- Plateepitel: tislelizumab
-- Adeno PD-L1 1–49 %: cemiplimab
-- Mono PD-L1 ≥ 50 %: atezolizumab sc</p>
+  - ES-SCLC: tislelizumab</li><li>Pembrolizumab er ikke lenger førstevalg i noen førstelinjesituasjon ved metastatisk NSCLC, unntatt adenokarsinom med PD-L1 &lt; 1 %.</li><li>Serplulimab bør inn på listen over innførte PD-1-hemmere ved NSCLC.</li></ul>
+<p><strong>Til lokale kurregimer (Cytodose):</strong></p><ul><li>ES-SCLC: atezolizumab byttes til tislelizumab</li><li>Plateepitel: tislelizumab</li><li>Adeno PD-L1 1–49 %: cemiplimab</li><li>Mono PD-L1 ≥ 50 %: atezolizumab sc</li></ul>
 <p>Sjekk om dette allerede er gjort fra 01.10.2026.</p>
-<p><strong>Innspill til redaksjonsgruppen:</strong>
-- Serplulimab mangler i kap. 8.3.
-- LIS-tabellen har fortsatt atezolizumab + bevacizumab etter EGFR/ALK, mens handlingsprogrammet frarår det.</p>
+<p><strong>Innspill til redaksjonsgruppen:</strong></p><ul><li>Serplulimab mangler i kap. 8.3.</li><li>LIS-tabellen har fortsatt atezolizumab + bevacizumab etter EGFR/ALK, mens handlingsprogrammet frarår det.</li></ul>
 </section><section class="blk" id="lis-10"><h2>Kilder</h2>
 <ul>
 <li>Nye metoder. <a href="https://www.nyemetoder.no/moter-i-beslutningsforum-for-nye-metoder/">Møter i Beslutningsforum</a>. Protokoller: <a href="https://www.nyemetoder.no/4a5621/contentassets/1deaee85578f4fc386b34ddd596e593e/protokoll-beslutningsforum-24.08.2026.pdf">24.08.2026</a>, <a href="https://www.nyemetoder.no/4a8319/contentassets/1deaee85578f4fc386b34ddd596e593e/protokoll-beslutningsforum-21.-september.pdf">21.09.2026</a> og <a href="https://www.nyemetoder.no/4aad3a/contentassets/1deaee85578f4fc386b34ddd596e593e/protokoll-beslutningsforum-19.-oktober.pdf">19.10.2026</a></li>
-<li>Sykehusinnkjøp HF. <a href="https://www.sykehusinnkjop.no/4aa61f/siteassets/avtaledokumenter/avtaler-legemidler/onkologi/anbefaling-onkologiske-og-kolonistimulerende-legemidler.pdf">Onkologi anbefaling i perioden 01.10.2026–30.09.2027</a>, datert 23.10.2026, s. 28–37 (lest fra PDF lastet opp av HO)</li>
+<li>Sykehusinnkjøp HF. <a href="https://www.sykehusinnkjop.no/4aa61f/siteassets/avtaledokumenter/avtaler-legemidler/onkologi/anbefaling-onkologiske-og-kolonistimulerende-legemidler.pdf">Onkologi anbefaling i perioden 01.10.2026–30.09.2027</a>, revisjon 3 datert 03.11.2026, s. 28–37 (lest fra PDF lastet opp av Håkon Olav Leira)</li>
 <li>HealthTalk. <a href="https://www.healthtalk.no/nyheter-og-politikk/telefonsamtalen-som-endret-norges-storste-legemiddelanbud/212845">Telefonsamtalen som endret Norges største legemiddelanbud</a></li>
 <li>Helsedirektoratet. <a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/ikke-kurativ-behandling-av-metastatisk-smacellet-lungekreft-sclc-t1-4n0-3m1-utbredt-sykdom/medikamentell-behandling">Handlingsprogram kap. 10.2</a> (volumavtale ES-SCLC)</li>
 </ul></section></div></main>
@@ -4630,7 +4628,8 @@ function run(){clear();const s=q.value.trim().toLowerCase();btns.forEach(b=>{con
 let tm;q.addEventListener('input',()=>{clearTimeout(tm);tm=setTimeout(run,200)});
 q.addEventListener('keydown',e=>{if(e.key==='Escape'){q.value='';run()}});
 const h=location.hash.slice(1);if(h){const t=tabs.find(x=>x.id==='tab-'+h);if(t)show(h);else{const el=document.getElementById(h);if(el){const tt=el.closest('.tab');if(tt)show(tt.id.slice(4));setTimeout(()=>el.scrollIntoView(),50)}}}
-document.querySelectorAll('.ttoc a').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href'));if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'})}}));
+document.querySelectorAll('a[data-goto]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();show(a.dataset.goto,true);window.scrollTo({top:0})}));
+document.querySelectorAll('a[href^="#"]:not([data-goto])').forEach(a=>a.addEventListener('click',e=>{const el=document.getElementById(a.getAttribute('href').slice(1));if(el){e.preventDefault();const tt=el.closest('.tab');if(tt&&tt.hidden&&!q.value)show(tt.id.slice(4));el.scrollIntoView({behavior:'smooth'})}}));
 })();
 </script>
 </body>
