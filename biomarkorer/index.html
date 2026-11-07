@@ -4,7 +4,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Biomarkører ved lungekreft</title>
+<title>Biomarkører og målrettet behandling ved lungekreft</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -32,6 +32,15 @@
   --ok:#7fcf9c; --ok-soft:#183126; --warn:#e6c26a; --warn-soft:#352b12; --none:#a2acb7; --none-soft:#252d36;
   --tr:#e3a2d4; --tr-soft:#352030; color-scheme:dark;
 }
+.full{margin-top:14px;border-top:1px solid var(--line);padding-top:8px}
+.full>summary{cursor:pointer;color:var(--accent);font-weight:500;font-size:14px;padding:4px 0}
+.fullbody{font-size:14px}
+.fullbody table{min-width:0;margin:8px 0;display:block;overflow-x:auto;border-collapse:collapse}
+.fullbody th,.fullbody td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.fullbody h4{font-size:15px;margin:14px 0 4px}
+.fullbody ul,.fullbody ol{padding-left:20px}
+.fullbody p{margin:6px 0}
+.lisline{background:var(--ok-soft);border-left:4px solid var(--ok);padding:6px 10px;border-radius:0 6px 6px 0}
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
@@ -119,12 +128,12 @@ table.plan td{font-size:14px}
 .sitenav a[aria-current="page"]{color:#fff;font-weight:600;border-bottom-color:#7fb6dd}
 .sitenav a:focus-visible{outline:2px solid #7fb6dd;outline-offset:-2px}
 @media print{.sitenav{display:none}}
-</style><ul><li><a href="https://holeira.github.io/Lungekreft/" data-sn="portal">Arbeidsportal</a></li><li><a href="https://holeira.github.io/Lungekreft/biomarkorer/" data-sn="biomarkorer" aria-current="page">Biomarkører</a></li><li><a href="https://holeira.github.io/Lungekreft/immunterapi/" data-sn="immunterapi">Immunterapibivirkninger</a></li><li><a href="https://holeira.github.io/Lungekreft/medikamenter/" data-sn="medikamenter">Medikamentell behandling</a></li></ul></nav>
+</style><ul><li><a href="https://holeira.github.io/Lungekreft/" data-sn="portal">Arbeidsportal</a></li><li><a href="https://holeira.github.io/Lungekreft/biomarkorer/" data-sn="biomarkorer" aria-current="page">Biomarkører og målrettet behandling</a></li><li><a href="https://holeira.github.io/Lungekreft/immunterapi/" data-sn="immunterapi">Immunterapibivirkninger</a></li><li><a href="https://holeira.github.io/Lungekreft/medikamenter/" data-sn="medikamenter">Medikamentell behandling</a></li></ul></nav>
 
 
 <div class="wrap">
 <header>
-  <h1>Biomarkører ved lungekreft</h1>
+  <h1>Biomarkører og målrettet behandling ved lungekreft</h1>
   <p>Markører, behandling, kontroller og bivirkninger på ett sted. Alle NSCLC unntatt rene plateepitelkarsinom skal testes molekylært, og alle NSCLC skal ha PD-L1.</p>
   <div class="meta">Sist oppdatert 6. november 2026 · Håkon Olav Leira, Lungemedisinsk avdeling, St. Olavs hospital. Doser og kontroller kontrollert mot Felleskatalogen 2. november 2026. Studiestatus per 3. november 2026: bekreft med kontaktperson.</div>
   <div class="meta">Egen side: <a href="../immunterapi/">Immunterapibivirkninger ved lungekreft</a> (prøver, gradering, steroider, vakt).</div>
@@ -136,6 +145,7 @@ table.plan td{font-size:14px}
     <button class="tab" type="button" role="tab" data-v="kontroller">Kontrollplan</button>
     <button class="tab" type="button" role="tab" data-v="bivirkninger">Bivirkninger</button>
     <button class="tab" type="button" role="tab" data-v="testing">Testing og studier</button>
+    <button class="tab" type="button" role="tab" data-v="felles">Felles råd og kilder</button>
   </div>
   <label for="q" class="meta">Søk i alle faner: markør, legemiddel, studie, bivirkning eller prøve</label>
   <input id="q" type="search" placeholder="F.eks. KRAS, lorlatinib, SUNRAY, QTc, CK …" autocomplete="off">
@@ -164,6 +174,719 @@ table.plan td{font-size:14px}
 <section class="view" id="v-bivirkninger" hidden>
   <p class="lead">Slå opp en bivirkning og se hvilke legemidler som gir den og hva som er hovedregelen. Detaljene står på legemiddelkortet.</p>
   <div class="grid" id="ga"></div>
+</section>
+<section class="view" id="v-felles" hidden>
+<section class="panel" id="fx-a1"><h2>A1. Felles oppstartspakke</h2><div class="fullbody"><p><em>Kilder: [HP] Nasjonalt handlingsprogram.</em></p>
+<p>Gjelder alle målrettede legemidler [Forslag, basert på FK-kravene samlet]:</p>
+<ul>
+<li><strong>Blodprøver:</strong><ul>
+<li>Hb, leukocytter med differensialtelling og trombocytter</li>
+<li>Kreatinin/eGFR</li>
+<li>Na, K, Ca og Mg</li>
+<li>ALAT, ASAT, ALP, bilirubin og albumin</li>
+</ul>
+</li>
+<li><strong>EKG</strong> med QTc (Fridericia)</li>
+<li><strong>Graviditetstest</strong> hos fertile kvinner</li>
+<li><strong>Gjennomgang av medisinlisten:</strong><ul>
+<li>CYP3A4/P-gp-interaksjoner (se A5)</li>
+<li>QT-forlengende legemidler</li>
+<li>Legemidler som gir bradykardi</li>
+<li>Prevensjon</li>
+</ul>
+</li>
+<li><strong>Baseline-CT</strong>, og <strong>MR caput</strong> der handlingsprogrammet anbefaler det (EGFR og ALK) [HP]</li>
+<li><strong>Blodtrykk, puls, vekt og SpO₂</strong></li>
+<li><strong>Eventuelt:</strong> Legemiddelspesifikke tillegg står under hvert medikament (lipider, CK, lipase, LVEF, TSH, urinsyre, øyestatus).</li>
+</ul></div></section>
+<section class="panel" id="fx-a2"><h2>A2. Felles kontrollprinsipper og graderingsregler</h2><div class="fullbody"><p><em>Kilder: [HP] Nasjonalt handlingsprogram · [CTCAE] CTCAE v5.0 · [Standard] etablert praksis, ikke kildekontrollert.</em></p>
+<ul>
+<li><strong>CTCAE-gradering</strong> brukes for alle bivirkninger.</li>
+<li><strong>Hovedregel:</strong><ul>
+<li>Ved grad ≥ 3: pause til grad ≤ 1, eller til baseline.</li>
+<li>Deretter gjenopptas behandlingen som regel <strong>ett dosenivå ned</strong>.</li>
+<li>Grad 4 eller residiv av grad 3 fører ofte til seponering.</li>
+<li>Hvert medikament har egne unntak.</li>
+</ul>
+</li>
+<li><strong>Grad 2 som er intolerabel for pasienten</strong> (særlig ved langvarig behandling) kan håndteres som grad 3. Livskvaliteten veier tungt når behandlingen varer i flere år.</li>
+<li><strong>Mange av bivirkningene kommer tidlig.</strong> Den første måneden er en sårbar periode: brigatinib (uke 1), dabrafenib/trametinib (feber), amivantamab (IRR, hud, VTE) og selperkatinib (overfølsomhet).</li>
+<li><strong>Kontroller hver 3. måned</strong> følger handlingsprogrammet (CT og klinisk kontroll). Blodprøvene følger i tillegg legemiddelspesifikke intervaller. Hurtigoversikten står i A7.</li>
+<li><strong>Pause av andre årsaker</strong> (operasjon, stråling, innleggelse): sjekk de særskilte reglene for gjenoppstart, særlig ved <strong>brigatinib</strong>.</li>
+</ul></div></section>
+<section class="panel" id="fx-a3"><h2>A3. Klasseeffekter å kjenne til</h2><div class="fullbody"><p><em>Kilder: [SPC] EU-preparatomtale · [Ekspert] ekspertartikler (se kildelisten).</em></p>
+<table>
+<thead>
+<tr>
+<th>Klasseeffekt</th>
+<th>Hvilke legemidler</th>
+<th>Felles håndtering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ILD/pneumonitt</strong></td>
+<td>Alle. Særlig osimertinib (økt risiko etter immunterapi), amivantamab, brigatinib (tidlig, uke 1) og krizotinib</td>
+<td>Pause ved mistanke, gjør CT og utelukk infeksjon. Grad ≥ 2 eller bekreftet medikamentindusert ILD: oftest permanent seponering, gi steroider</td>
+</tr>
+<tr>
+<td><strong>QTc-forlengelse</strong></td>
+<td>Osimertinib, krizotinib, entrektinib, selperkatinib, tepotinib</td>
+<td>EKG ved start og ved kontroll. Korriger K og Mg. Unngå andre QT-forlengende legemidler</td>
+</tr>
+<tr>
+<td><strong>Hepatotoksisitet</strong></td>
+<td>Alle, særlig alektinib, brigatinib, krizotinib, selperkatinib, lazertinib og dabrafenib</td>
+<td>Følg leverprøvene etter skjema. Hys lov (ALAT/ASAT &gt; 3 × ULN og bilirubin &gt; 2 × ULN): seponer</td>
+</tr>
+<tr>
+<td><strong>Bradykardi</strong></td>
+<td>Alektinib, brigatinib, krizotinib, lorlatinib (AV-blokk)</td>
+<td>Gå gjennom betablokker, kalsiumblokker og digoksin</td>
+</tr>
+<tr>
+<td><strong>Hud og negler</strong></td>
+<td>EGFR (osimertinib, afatinib, amivantamab + lazertinib)</td>
+<td>Forebygg og grader (se tabell under <a href="#lm-amivantamab">Amivantamab + lazertinib</a>)</td>
+</tr>
+<tr>
+<td><strong>Ødem</strong></td>
+<td>MET-hemmere, amivantamab, lorlatinib, alektinib</td>
+<td>Kompresjon og elevasjon. Diuretika har liten effekt</td>
+</tr>
+<tr>
+<td><strong>CNS-effekter</strong></td>
+<td>Lorlatinib, repotrektinib, entrektinib</td>
+<td>Kartlegg kognisjon ved start, spør ved hver kontroll, og ta med pårørende</td>
+</tr>
+<tr>
+<td><strong>Fotosensitivitet</strong></td>
+<td>Alektinib, brigatinib</td>
+<td>Solbeskyttelse</td>
+</tr>
+<tr>
+<td><strong>Vektøkning</strong></td>
+<td>Lorlatinib, alektinib, repotrektinib, entrektinib</td>
+<td>Kostråd og vektkontroll</td>
+</tr>
+</tbody>
+</table>
+<h4>Graderingstabell for EGFR-hudtoksisitet</h4>
+<table>
+<thead>
+<tr>
+<th>Grad</th>
+<th>Funn</th>
+<th>Tiltak [Ekspert/SPC]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>&lt; 10 % av kroppsoverflaten, lite plager</td>
+<td>Fortsett full dose. Fuktighetskrem, topikalt steroid (gruppe I–II i ansiktet) og eventuelt topikalt klindamycin</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10–30 % av kroppsoverflaten, påvirker daglige gjøremål</td>
+<td>Fortsett. Gi doksysyklin 100 mg × 2 og topikalt steroid gruppe III. Revurder etter 2 uker</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&gt; 30 % av kroppsoverflaten, påvirker egenomsorg</td>
+<td>Pause til grad ≤ 1, deretter redusert dose. Gi systemisk steroid ved behov og ta bakteriedyrkning</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Livstruende og utbredt superinfeksjon</td>
+<td>Seponer. Henvis til hudlege</td>
+</tr>
+</tbody>
+</table></div></section>
+<section class="panel" id="fx-a4"><h2>A4. Pasientinformasjon – felles</h2><div class="fullbody"><p><em>Kilder: [FK] Felleskatalogen · [Standard] etablert praksis, ikke kildekontrollert.</em></p>
+<ul>
+<li><strong>Ta kontakt straks ved:</strong><ul>
+<li>ny eller forverret tungpust, hoste eller feber (ILD)</li>
+<li>besvimelse eller hjertebank (QTc, bradykardi)</li>
+<li>gulsott</li>
+<li>kraftig diaré</li>
+<li>synsforstyrrelser</li>
+</ul>
+</li>
+<li><strong>Unngå:</strong> grapefrukt (også pomelo og pomerans) og johannesurt.</li>
+<li><strong>Ta alltid med medisinlisten til kontroll.</strong> Si fra om nye legemidler fra fastlege eller legevakt, særlig antibiotika, soppmidler og Paxlovid.</li>
+<li><strong>Glemt dose:</strong> Følg regelen i preparatomtalen. Hovedregelen er at dosen ikke tas dobbelt.</li>
+</ul></div></section>
+<section class="panel" id="fx-a5"><h2>A5. CYP3A4: legemidler å se etter i medisinlisten</h2><div class="fullbody"><p><em>Kilder: [FDA] FDA-tabellen over CYP-hemmere og -induktorer.</em></p>
+<p>FDA deler inn etter endring i AUC for sensitive substrater [FDA]:</p>
+<ul>
+<li><strong>Hemmere:</strong> sterke ≥ 5 ganger økning, moderate 2–5 ganger.</li>
+<li><strong>Induktorer:</strong> sterke ≥ 80 % reduksjon, moderate 50–80 %.</li>
+</ul>
+<h4>Sterke CYP3A4-hemmere (øker TKI-nivået)</h4>
+<table>
+<thead>
+<tr>
+<th>Gruppe</th>
+<th>Legemidler</th>
+<th>Når møter vi dem?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Makrolider</td>
+<td><strong>Klaritromycin</strong></td>
+<td>Pneumoni, KOLS-eksaserbasjon, H. pylori</td>
+</tr>
+<tr>
+<td>Azoler</td>
+<td><strong>Itrakonazol, posakonazol, vorikonazol</strong>, ketokonazol</td>
+<td>Soppinfeksjon, profylakse ved nøytropeni</td>
+</tr>
+<tr>
+<td>HIV- og COVID-legemidler</td>
+<td><strong>Ritonavir (inkl. Paxlovid)</strong>, kobicistat, andre proteasehemmere</td>
+<td>COVID-19. Hemmingen varer flere dager etter siste dose</td>
+</tr>
+<tr>
+<td>Andre</td>
+<td>Nefazodon, idelalisib</td>
+<td>Sjelden</td>
+</tr>
+<tr>
+<td>Mat</td>
+<td><strong>Grapefrukt/grapefruktjuice</strong> (pomelo, pomerans)</td>
+<td>Styrken varierer fra moderat til sterk [FDA]</td>
+</tr>
+</tbody>
+</table>
+<h4>Moderate CYP3A4-hemmere</h4>
+<table>
+<thead>
+<tr>
+<th>Gruppe</th>
+<th>Legemidler</th>
+<th>Når møter vi dem?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antibiotika</td>
+<td><strong>Erytromycin</strong>, ciprofloksacin</td>
+<td>Luftveisinfeksjoner</td>
+</tr>
+<tr>
+<td>Soppmidler</td>
+<td><strong>Flukonazol</strong> (sterkere ved høy dose)</td>
+<td>Candida, soor</td>
+</tr>
+<tr>
+<td>Hjerte</td>
+<td><strong>Verapamil, diltiazem</strong>, dronedaron</td>
+<td>Atrieflimmer, angina</td>
+</tr>
+<tr>
+<td>Kvalmestillende</td>
+<td><strong>Aprepitant/fosaprepitant, netupitant (Akynzeo)</strong></td>
+<td>Kjemoterapi i kombinasjon med TKI</td>
+</tr>
+<tr>
+<td>Andre</td>
+<td>Ciklosporin, fluvoksamin, krizotinib, imatinib</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<h4>CYP3A4-induktorer (senker TKI-nivået og gir risiko for svikt i effekten)</h4>
+<table>
+<thead>
+<tr>
+<th>Styrke</th>
+<th>Legemidler</th>
+<th>Når møter vi dem?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sterk</td>
+<td><strong>Karbamazepin, fenytoin</strong>, fosfenytoin</td>
+<td>Krampeprofylakse ved hjernemetastaser. Velg levetiracetam</td>
+</tr>
+<tr>
+<td>Sterk</td>
+<td><strong>Rifampicin</strong>, rifabutin</td>
+<td>TB, atypiske mykobakterier, protesinfeksjon</td>
+</tr>
+<tr>
+<td>Sterk</td>
+<td><strong>Johannesurt</strong></td>
+<td>Naturmiddel, spør eksplisitt</td>
+</tr>
+<tr>
+<td>Sterk</td>
+<td>Enzalutamid, apalutamid, mitotan</td>
+<td>Samtidig prostatakreft</td>
+</tr>
+<tr>
+<td>Moderat</td>
+<td><strong>Fenobarbital, primidon</strong>, bosentan, efavirenz, modafinil</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Svak</td>
+<td><strong>Deksametason</strong> (høye doser over tid)</td>
+<td>Hjernemetastaser og kvalme. Oftest uten klinisk betydning</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tidsforløp ved induksjon:</strong> Effekten bygger seg opp over 1–2 uker og varer 2–4 uker etter seponering av induktoren. TKI-nivået stiger derfor gradvis etter at for eksempel karbamazepin er seponert.</p></div></section>
+<section class="panel" id="fx-a6"><h2>A6. CYP3A4: praktiske råd i Dagposten</h2><div class="fullbody"><p><em>Kilder: [FK-int] Felleskatalogens interaksjonsoppslag · [Ekspert] Laura Molenaar-Kuijsten m.fl., Front Pharmacol 2021 · [Forslag] eget forslag, skal avklares lokalt.</em></p>
+<p>&#91;Forslag]</p>
+<ol>
+<li><strong>Ved oppstart:</strong><ul>
+<li>Spør eksplisitt om naturmidler (johannesurt), grapefrukt og antiepileptika.</li>
+<li>Kjør medisinlisten gjennom interaksjonsdatabasen (interaksjoner.no i FEST/DIPS, eller pro.medicin.dk).</li>
+<li>Noter «CYP3A4-sensitiv TKI» i journalen.</li>
+</ul>
+</li>
+<li><strong>Infeksjoner:</strong> Velg doksysyklin, amoksicillin eller penicillin før klaritromycin og erytromycin. Ved soppbehandling vurderes ekinokandin (mikafungin, anidulafungin); ellers justeres TKI-dosen eller behandlingen settes på pause.</li>
+<li><strong>COVID-19:</strong> Paxlovid (ritonavir) er problematisk med lorlatinib, brigatinib, entrektinib, repotrektinib og selperkatinib. Vurder remdesivir, eller pause TKI under kuren og i 3 dager etter, i samråd med onkolog.</li>
+<li><strong>Hjernemetastaser og kramper:</strong> Levetiracetam er førstevalg. Unngå karbamazepin, fenytoin og fenobarbital. Dette er særlig viktig ved lorlatinib.</li>
+<li><strong>Hjertelegemidler:</strong> Verapamil og diltiazem (moderate hemmere og bradykardi) er uheldige ved alektinib, brigatinib og krizotinib. Bruk heller betablokker til frekvenskontroll, og følg pulsen.</li>
+<li><strong>Prevensjon:</strong> Hormonell prevensjon er usikker ved lorlatinib, brigatinib, repotrektinib og dabrafenib. Bruk kobberspiral eller barrieremetode.</li>
+<li><strong>Moderate og svake hemmere eller induktorer uten egne data:</strong> Mange preparatomtaler har bare studier med sterke hemmere og induktorer. Ved moderat hemmer eller induktor kan man da anta omtrent halvparten av effekten som er målt med sterk hemmer eller induktor. Svake hemmere og induktorer gir ingen dosejustering på forhånd. Når legemidlet har aktive metabolitter, må virkningen på dem tas med (eksempel: osimertinib, alektinib) [Ekspert].</li>
+<li><strong>Etter seponering av en hemmer eller induktor:</strong><ul>
+<li>Hemmer: gå tilbake til tidligere TKI-dose etter 3–5 halveringstider av hemmeren.</li>
+<li>Induktor: gå tilbake etter ca. 2 uker.</li>
+</ul>
+</li>
+</ol></div></section>
+<section class="panel" id="fx-a7"><h2>A7. Hurtigoversikt – de første 3 månedene</h2><div class="fullbody"><p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen · [Label-IL] israelsk preparatomtale · [Forslag] eget forslag, skal avklares lokalt.</em></p>
+<table>
+<thead>
+<tr>
+<th>Legemiddel</th>
+<th>Uke 1</th>
+<th>Uke 2</th>
+<th>Uke 4</th>
+<th>Uke 8</th>
+<th>Hver 2. uke × 3 mnd</th>
+<th>Månedlig</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Osimertinib</td>
+<td>–</td>
+<td>–</td>
+<td>Blodprøver og EKG (HP «noen uker»)</td>
+<td>–</td>
+<td>–</td>
+<td>Ved kontroll</td>
+</tr>
+<tr>
+<td>Amivantamab + lazertinib</td>
+<td>Dose ukentlig × 4: hud, IRR, VTE</td>
+<td>✓</td>
+<td>✓</td>
+<td>–</td>
+<td>[Forslag] lever og albumin ved dose</td>
+<td>Hud og negler</td>
+</tr>
+<tr>
+<td>Afatinib</td>
+<td>[Forslag] telefon (diaré)</td>
+<td>Kreatinin og elektrolytter</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>Ved kontroll</td>
+</tr>
+<tr>
+<td>Erlotinib</td>
+<td>–</td>
+<td>[Forslag] hud, diaré</td>
+<td>Lever</td>
+<td>–</td>
+<td>–</td>
+<td>Lever. Spør om røyking</td>
+</tr>
+<tr>
+<td>Dakomitinib</td>
+<td>[Forslag] telefon (diaré, hud)</td>
+<td>Lever, K</td>
+<td>Lever, K</td>
+<td>–</td>
+<td>–</td>
+<td>Lever</td>
+</tr>
+<tr>
+<td>Lorlatinib</td>
+<td>–</td>
+<td>Lipider, BT</td>
+<td>Lipider</td>
+<td>Lipider</td>
+<td>–</td>
+<td>EKG, BT</td>
+</tr>
+<tr>
+<td>Alektinib</td>
+<td>–</td>
+<td>Lever, CK</td>
+<td>Lever, CK</td>
+<td>Lever</td>
+<td><strong>Lever</strong> (CK første mnd)</td>
+<td>–</td>
+</tr>
+<tr>
+<td><strong>Brigatinib</strong></td>
+<td><strong>Lungevakt (90 mg); opptrapping dag 8</strong></td>
+<td>Lever</td>
+<td>Lever</td>
+<td>Lever</td>
+<td><strong>Lever</strong></td>
+<td>BT, puls, CK, lipase, glukose</td>
+</tr>
+<tr>
+<td>Krizotinib</td>
+<td>Lever</td>
+<td>Lever</td>
+<td>Lever, øye</td>
+<td>Lever</td>
+<td>(lever ukentlig × 8 uker)</td>
+<td>Lever etter 2 mnd; øye hver 3. mnd</td>
+</tr>
+<tr>
+<td>Ceritinib</td>
+<td>Lever</td>
+<td>Lever</td>
+<td>Lever, glukose, lipase</td>
+<td>–</td>
+<td>Lever</td>
+<td>Lever, EKG, puls, glukose</td>
+</tr>
+<tr>
+<td>Repotrektinib</td>
+<td>Svimmelhet (debut \~dag 7)</td>
+<td>Opptrapping dag 15</td>
+<td>[Forslag] lever</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Entrektinib</td>
+<td>–</td>
+<td>–</td>
+<td>EKG, elektrolytter</td>
+<td>–</td>
+<td>–</td>
+<td>Urinsyre periodisk</td>
+</tr>
+<tr>
+<td>Dabrafenib + trametinib</td>
+<td>Feber</td>
+<td>–</td>
+<td>Lever, hud, LVEF</td>
+<td>Lever, hud</td>
+<td>–</td>
+<td>Lever × 6 mnd, hud; LVEF hver 3. mnd</td>
+</tr>
+<tr>
+<td>Tepotinib</td>
+<td>–</td>
+<td>Lever (Label-IL)</td>
+<td>Lever</td>
+<td>Lever</td>
+<td><strong>Lever</strong> (Label-IL)</td>
+<td>Lever, ødem, kreatinin</td>
+</tr>
+<tr>
+<td>Selperkatinib</td>
+<td><strong>EKG, elektrolytter</strong></td>
+<td>Lever</td>
+<td>Lever, EKG</td>
+<td>Lever, EKG</td>
+<td><strong>Lever</strong></td>
+<td>EKG × 6 mnd; lever mnd 4–6</td>
+</tr>
+</tbody>
+</table></div></section>
+<section class="panel"><h2>Eldre TKI uten eget kort</h2><p class="note">Står i handlingsprogrammet, men brukes sjelden. Fullstendig omtale med kilder.</p></section>
+<section class="panel" id="fx-erlotinib"><h2>B14. Erlotinib (Tarceva)</h2><div class="fullbody"><p class="lisline"><strong>LIS 2026/27:</strong> Står ikke i LIS-tabellene. Afatinib er førstevalg blant eldre EGFR-TKI.</p>
+<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Tarceva) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Forslag] eget forslag, skal avklares lokalt.</em></p>
+<p><strong>Indikasjon:</strong> EGFR-mutert NSCLC i 1. linje, som alternativ der osimertinib ikke passer [HP]. Brukes sjelden i dag.</p>
+<p><strong>Dosering:</strong> 150 mg × 1, minst 1 time før eller 2 timer etter mat [FK].</p>
+<p><strong>Dosereduksjon:</strong> i trinn på 50 mg: 150 → 100 → 50 mg [FK].</p>
+<p><strong>Oppstartsprøver:</strong> felles pakke, med leverprøver og bilirubin.</p>
+<p><strong>Kontroller:</strong></p>
+<ul>
+<li>Leverprøver regelmessig. Pause ved store endringer, og seponer ved alvorlig leverpåvirkning [FK].</li>
+<li>&#91;Forslag] Kontakt etter 2 uker, med vekt på hud og diaré. Deretter som for afatinib (<a href="#lm-afatinib">Afatinib</a>).</li>
+</ul>
+<p><strong>Viktigste bivirkninger:</strong></p>
+<ul>
+<li><strong>Akneiformt utslett</strong> og <strong>diaré</strong>, svært vanlige</li>
+<li>Paronyki, tørr hud og keratitt</li>
+<li>Forhøyede leverprøver</li>
+<li>ILD (sjelden)</li>
+</ul>
+<p><strong>Håndtering:</strong></p>
+<ul>
+<li><strong>Hud og diaré:</strong> se A3 og <a href="#lm-afatinib">Afatinib</a>. Ved alvorlig utslett eller diaré: pause, og gjenoppta med 50 mg lavere dose.</li>
+<li><strong>ILD:</strong> pause ved mistanke, og seponer ved bekreftet ILD.</li>
+<li><strong>Keratitt:</strong> pause, og henvis til øyelege.</li>
+</ul>
+<p><strong>Interaksjoner:</strong></p>
+<ul>
+<li><strong>Røyking</strong> induserer CYP1A2 og senker erlotinibnivået med 50–60 %. Ved røykestopp kan nivået dobles, og bivirkningene øke. Råd til røykestopp, og følg opp ekstra når pasienten slutter [FK-int].</li>
+<li><strong>Syrehemmere:</strong> protonpumpehemmere bør unngås. Gis H2-blokker, tas den minst 10 timer før eller minst 2 timer etter erlotinib. Antacida tas minst 4 timer før eller 2 timer etter [FK-int].</li>
+<li><strong>CYP3A4:</strong> sterke induktorer og sterke hemmere bør unngås. Ketokonazol øker nivået med ca. 90 % [FK-int]. Må en sterk induktor som rifampicin brukes, kan dosen økes til 300 mg under tett kontroll av nyre, lever og elektrolytter [SPC].</li>
+<li><strong>CYP1A2-hemmere</strong> (ciprofloksacin, fluvoksamin): nivået øker. Gi med forsiktighet [FK].</li>
+</ul>
+<p><strong>Annet viktig:</strong> sikker prevensjon under behandlingen og i minst 2 uker etter siste dose. Ikke amming i samme periode [SPC].</p></div></section>
+<section class="panel" id="fx-dakomitinib"><h2>B15. Dakomitinib (Vizimpro)</h2><div class="fullbody"><p class="lisline"><strong>LIS 2026/27:</strong> Står ikke i LIS-tabellene. Afatinib er førstevalg blant eldre EGFR-TKI.</p>
+<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Vizimpro) · [FK-int] Felleskatalogens interaksjonsoppslag · [Forslag] eget forslag, skal avklares lokalt.</em></p>
+<p><strong>Indikasjon:</strong> EGFR-mutert NSCLC (ex19del eller L858R) i 1. linje, som alternativ der osimertinib ikke passer [HP]. Brukes sjelden i dag.</p>
+<p><strong>Dosering:</strong> 45 mg × 1, med eller uten mat [FK].</p>
+<p><strong>Dosereduksjon:</strong> 45 → 30 → 15 mg. 30 mg-tabletten er tatt av markedet (2026), så 30 mg gis som 2 × 15 mg [FK].</p>
+<p><strong>Lever og nyre:</strong></p>
+<ul>
+<li>Child-Pugh C: start med 30 mg. Dosen kan økes til 45 mg etter minst 4 uker hvis pasienten tåler den.</li>
+<li>Det finnes ikke data for alvorlig nedsatt nyrefunksjon [FK].</li>
+</ul>
+<p><strong>Oppstartsprøver:</strong> felles pakke, med leverprøver og kalium. Loperamid og hudpakke utleveres før start.</p>
+<p><strong>Kontroller:</strong></p>
+<ul>
+<li>Leverprøver regelmessig [FK].</li>
+<li>&#91;Forslag] Kontakt etter 1 uke. Elektrolytter og leverprøver etter 2 og 4 uker, deretter månedlig.</li>
+</ul>
+<p><strong>Viktigste bivirkninger:</strong></p>
+<ul>
+<li><strong>Diaré, utslett og paronyki</strong> er svært vanlige, og hyppigere enn ved erlotinib</li>
+<li>Stomatitt, tørr hud, fissurer og hånd-fot-syndrom</li>
+<li>Konjunktivitt, hypokalemi og forhøyede transaminaser [FK]</li>
+</ul>
+<p><strong>Håndtering</strong> [FK]:</p>
+<ul>
+<li><strong>ILD:</strong> pause under utredning, og seponer permanent ved bekreftet ILD.</li>
+<li><strong>Diaré:</strong><ul>
+<li>Grad 1: loperamid straks, og drikk godt.</li>
+<li>Grad 2 som ikke er bedre til grad ≤ 1 innen 24 timer: pause. Gjenoppta med samme dose, eller vurder én dosenivå lavere.</li>
+<li>Grad ≥ 3: pause. Gjenoppta én dosenivå lavere.</li>
+</ul>
+</li>
+<li><strong>Hud:</strong><ul>
+<li>Grad 1–2: behandle uten å endre dosen.</li>
+<li>Grad 2 som varer i 72 timer trass i behandling: pause. Gjenoppta med samme dose, eller vurder én dosenivå lavere.</li>
+<li>Grad ≥ 3: pause. Gjenoppta én dosenivå lavere.</li>
+<li>Solbeskyttelse.</li>
+</ul>
+</li>
+<li><strong>Annen toksisitet grad ≥ 3:</strong> pause til grad ≤ 2, og gjenoppta én dosenivå lavere.</li>
+</ul>
+<p><strong>Interaksjoner</strong> [FK-int]:</p>
+<ul>
+<li><strong>Protonpumpehemmere:</strong> skal unngås, fordi de gir 30–40 % lavere nivå. Gis H2-blokker, tas dakomitinib minst 2 timer før eller 10 timer etter.</li>
+<li><strong>Dakomitinib hemmer CYP2D6 kraftig.</strong> Unngå:<ul>
+<li>metoprolol, nortriptylin, atomoksetin og perfenazin, fordi nivået deres øker</li>
+<li>tamoksifen</li>
+<li>kodein og tramadol, som mister smertestillende effekt</li>
+<li>Velg for eksempel morfin eller oksykodon i stedet.</li>
+</ul>
+</li>
+<li><strong>Natriumzirkoniumsyklosilikat</strong> (Lokelma) senker nivået.</li>
+</ul>
+<p><strong>Annet viktig:</strong> sikker prevensjon under behandlingen og i minst 17 dager etter siste dose [FK].</p></div></section>
+<section class="panel" id="fx-ceritinib"><h2>B16. Ceritinib (Zykadia)</h2><div class="fullbody"><p class="lisline"><strong>LIS 2026/27:</strong> Ikke rangert («annen tilgjengelig ALK-hemmer»).</p>
+<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [LIS] LIS-anbefaling 2026/27 · [FK] Felleskatalogen (Zykadia) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Ekspert] ekspertartikler (se kildelisten).</em></p>
+<p><strong>Indikasjon:</strong> ALK-positiv NSCLC [HP]. Brukes i dag sjelden, fordi lorlatinib er førstevalg [LIS].</p>
+<p><strong>Dosering:</strong> 450 mg × 1 (3 × 150 mg), <strong>med mat</strong> [FK].</p>
+<p><strong>Dosereduksjon</strong> [FK]:</p>
+<ul>
+<li>i trinn på 150 mg: 450 → 300 → 150 mg</li>
+<li>seponer hvis 150 mg med mat ikke tolereres</li>
+<li>fastende inntak bare når pasienten ikke kan spise: da 750 mg, eller 450 mg i stedet for 300 mg</li>
+<li>ikke veksle mellom fastende inntak og inntak med mat</li>
+</ul>
+<p><strong>Oppstartsprøver:</strong> felles pakke, med leverprøver og bilirubin, fastende glukose, lipase og amylase, EKG med QTc, elektrolytter, puls og blodtrykk [FK].</p>
+<p><strong>Kontroller</strong> [FK]:</p>
+<ul>
+<li><strong>Leverprøver:</strong> hver 2. uke de første 3 månedene, deretter månedlig, og oftere ved grad 2–4 [SPC].</li>
+<li><strong>Glukose, lipase og amylase:</strong> regelmessig.</li>
+<li><strong>EKG og elektrolytter:</strong> regelmessig.</li>
+<li><strong>Puls og blodtrykk:</strong> jevnlig, på grunn av bradykardi.</li>
+</ul>
+<p><strong>Viktigste bivirkninger:</strong></p>
+<ul>
+<li><strong>Diaré, kvalme og oppkast</strong> er svært vanlige, men sjeldnere ved 450 mg med mat enn ved 750 mg fastende [Ekspert]</li>
+<li>Forhøyede transaminaser</li>
+<li>Hyperglykemi</li>
+<li>QTc-forlengelse og bradykardi</li>
+<li>Pankreatitt og lipaseforhøyelse</li>
+<li>ILD</li>
+</ul>
+<p><strong>Håndtering</strong> [FK]:</p>
+<ul>
+<li><strong>Kvalme, oppkast eller diaré</strong> som er alvorlig trass i behandling: pause til bedring, og gjenoppta med 150 mg lavere dose.</li>
+<li><strong>Lever:</strong><ul>
+<li>ALAT/ASAT &gt; 5 × ULN med bilirubin ≤ 2 × ULN: pause til ≤ 3 × ULN, og gjenoppta med 150 mg lavere dose.</li>
+<li>ALAT/ASAT &gt; 3 × ULN med bilirubin &gt; 2 × ULN: seponer.</li>
+</ul>
+</li>
+<li><strong>ILD av enhver grad:</strong> seponer permanent.</li>
+<li><strong>QTc:</strong><ul>
+<li>QTc &gt; 500 ms på 2 EKG: pause til QTc ≤ 480 ms eller baseline, og gjenoppta med 150 mg lavere dose.</li>
+<li>QTc-forlengelse med torsades eller alvorlig arytmi: seponer.</li>
+</ul>
+</li>
+<li><strong>Bradykardi:</strong><ul>
+<li>Symptomatisk: pause, og se gjennom de andre legemidlene.</li>
+<li>Livstruende: seponer, hvis det ikke finnes et annet legemiddel som forklarer den.</li>
+</ul>
+</li>
+<li><strong>Glukose:</strong> vedvarende &gt; 13,9 mmol/l (250 mg/dl) trass i behandling: pause, og gjenoppta med 150 mg lavere dose.</li>
+<li><strong>Lipase eller amylase grad ≥ 3:</strong> pause til grad ≤ 1, og gjenoppta med 150 mg lavere dose.</li>
+</ul>
+<p><strong>Interaksjoner</strong> [FK-int]:</p>
+<ul>
+<li><strong>Sterke CYP3A4-hemmere:</strong> øker nivået ca. 3 ganger. Unngå dem. Er de nødvendige, reduser til ca. 1/3 av dosen (nærmeste 150 mg).</li>
+<li><strong>Syrehemmere:</strong> protonpumpehemmere og H2-blokkere bør unngås. Antacida tas minst 2 timer fra ceritinib.</li>
+<li><strong>Ceritinib hemmer selv CYP3A4.</strong> Midazolam-AUC ble 5,4 ganger høyere ved 750 mg fastende [SPC]. Unngå midazolam og CYP3A4-substrater med smalt terapeutisk vindu [FK-int]. Ceritinib er også P-gp-substrat, så P-gp-hemmere gis med forsiktighet [SPC].</li>
+<li><strong>Andre QT-forlengende og bradykardigivende legemidler:</strong> unngå, for eksempel escitalopram, kvetiapin, betablokkere og verapamil.</li>
+<li><strong>Grapefrukt:</strong> unngå.</li>
+</ul>
+<p><strong>Annet viktig:</strong> sikker prevensjon under behandlingen og i 3 måneder etter siste dose [SPC].</p></div></section>
+<section class="panel" id="fx-c1"><h2>C1. Gjenstår å verifisere</h2><div class="fullbody"><h4>Interaksjonskontroll mot Felleskatalogen 31.10.2026</h4>
+<table>
+<thead>
+<tr>
+<th>Legemiddel</th>
+<th>Resultat</th>
+<th>Endring i dokumentet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Osimertinib</td>
+<td>Bekreftet: unngå sterke induktorer, ingen data for dosejustering</td>
+<td>Dosen 160 mg er bare amerikansk anbefaling. BCRP- og P-gp-eksempler er korrigert</td>
+</tr>
+<tr>
+<td>Amivantamab</td>
+<td>Dosereduksjonstabellen er bekreftet</td>
+<td>Tabell lagt inn, med regelen om redusert dose etter pause &gt; 7 dager</td>
+</tr>
+<tr>
+<td>Lazertinib</td>
+<td>Amerikansk preparatomtale og interaksjonsoppslaget i Felleskatalogen er brukt</td>
+<td><strong>Korrigert:</strong> unngå også <strong>moderate</strong> induktorer (bekreftet i Felleskatalogen)</td>
+</tr>
+<tr>
+<td>Lorlatinib</td>
+<td>Kontraindikasjonen for sterke induktorer er bekreftet. Prevensjon bekreftet. <strong>Doseendringstabellen er lest</strong></td>
+<td>ILD-, CNS-, AV-blokk- og lipidregler er presisert. Startdose 75 mg ved sterke hemmere er bekreftet i amerikansk tekst og studie, ikke i Felleskatalogen</td>
+</tr>
+<tr>
+<td>Alektinib</td>
+<td>Bekreftet: ingen dosejustering</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Brigatinib</td>
+<td><strong>Korrigert:</strong> moderate hemmere gir <strong>ingen</strong> dosereduksjon i EU-teksten</td>
+<td>Lagt til doseøkning ved moderate induktorer og 4 måneders ikke-hormonell prevensjon</td>
+</tr>
+<tr>
+<td>Krizotinib</td>
+<td>Bekreftet</td>
+<td>Tall for midazolam lagt til</td>
+</tr>
+<tr>
+<td>Repotrektinib</td>
+<td>Unngå moderate hemmere og induktorer er bekreftet [FK-int]</td>
+<td>Mykofenolsyre lagt til</td>
+</tr>
+<tr>
+<td>Entrektinib</td>
+<td>Dosene 100 og 200 mg er bekreftet</td>
+<td><strong>Nytt:</strong> kombinasjonen begrenses til 14 dager</td>
+</tr>
+<tr>
+<td>Dabrafenib</td>
+<td>Bekreftet via studie og amerikansk preparatomtale. Prevensjon bekreftet i Felleskatalogen</td>
+<td>INR-kontroll lagt til</td>
+</tr>
+<tr>
+<td>Tepotinib</td>
+<td><strong>Motsigelsen er forklart:</strong> nye kliniske studier viser ingen relevant effekt, mens interaksjonsoppslaget bygger på eldre in vitro-baserte råd</td>
+<td>Praktisk råd lagt inn. Leverkontroll hver 2. uke i 3 måneder (produsentens tekst) og doseendringer lagt til</td>
+</tr>
+<tr>
+<td>Selperkatinib</td>
+<td>Halvering ved sterke hemmere er bekreftet. Moderate hemmere og induktorer er ikke omtalt</td>
+<td>Repaglinid og råd om alternative makrolider lagt til</td>
+</tr>
+</tbody>
+</table>
+<h4>Fortsatt åpent</h4>
+<ol>
+<li><strong>Kontrollert mot norsk eller EU-tekst 01.11.2026:</strong><ul>
+<li>Lazcluze: Felleskatalogen har egen tekst fra januar 2026. <a href="#lm-amivantamab">Amivantamab + lazertinib</a> er oppdatert.</li>
+<li>Repotrektinib: prevensjonsteksten er lest i Felleskatalogen (Augtyro). <a href="#lm-repotrektinib">Repotrektinib</a> er oppdatert.</li>
+<li>Lorlatinib: startdose 75 mg ved sterke hemmere står i EU-teksten (FASS 05/2025). Reduksjon fra 75 til 50 mg står bare i amerikansk tekst.</li>
+<li>Tepotinib: Felleskatalogen sier fortsatt «ved klinisk behov». Uenigheten mellom kildene står ved lag, og det strengere opplegget er ført opp som [Forslag]. Må avklares lokalt.</li>
+</ul>
+</li>
+<li><del><strong>CTCAE v6.0:</strong></del> NCI-dokumentet (versjon januar 2026) er lest 02.11.2026. Endringene for alle parameterne i <a href="https://holeira.github.io/Lungekreft/medikamenter/#malrettet-9">CTCAE-tabellen (Medikamentell behandling)</a> står i tabellen under <a href="https://holeira.github.io/Lungekreft/medikamenter/#malrettet-9">CTCAE-tabellen (Medikamentell behandling)</a>. To ting sekundærkildene ikke fanget: ALP har bare grad 1 i v6.0, og CK-økning er ikke lenger egen term. Tabellen i <a href="https://holeira.github.io/Lungekreft/medikamenter/#malrettet-9">CTCAE-tabellen (Medikamentell behandling)</a> følger fortsatt v5.0.</li>
+<li><strong>Punktene merket [Forslag]</strong> for kontrollfrekvens skal avklares som lokal praksis:<ul>
+<li>leverprøver ved amivantamab + lazertinib, tepotinib og repotrektinib</li>
+<li>parametrene som skal måles «regelmessig» ved brigatinib</li>
+</ul>
+</li>
+<li>
+<p><strong>Lagt inn 02.11.2026:</strong> erlotinib (<a href="#fx-erlotinib">Erlotinib</a>), dakomitinib (<a href="#fx-dakomitinib">Dakomitinib</a>) og ceritinib (<a href="#fx-ceritinib">Ceritinib</a>), kontrollert mot Felleskatalogen. Prevensjonstiden (erlotinib 2 uker, ceritinib 3 måneder), leverkontrollen ved ceritinib og at ceritinib hemmer CYP3A4 er kontrollert mot EU-teksten i FASS samme dag. <strong>Rettet:</strong> leverprøver ved ceritinib tas hver 2. uke de første 3 månedene, ikke bare den første måneden.</p>
+<p><strong>Kapmatinib er ikke tatt med:</strong> det har markedsføringstillatelse, men er ikke vurdert i Nye metoder. Ved MET ex14 brukes tepotinib (<a href="#lm-tepotinib">Tepotinib</a>).
+5. <del>Nye metoder-status for repotrektinib</del> – avklart 02.11.2026: innført for ROS1 (25.08.2025) og NTRK (20.10.2025). Se <a href="#lm-repotrektinib">Repotrektinib</a>.
+6. Produsentenes egne nettsider for helsepersonell har jeg ikke hatt tilgang til.
+7. <del>Fulltekst av Laura Molenaar-Kuijsten m.fl. 2021 (praktiske råd om CYP3A-interaksjoner) er ikke lest.</del> Lest 02.11.2026 (åpen tilgang). Tommelfingerregelen for moderate og svake hemmere og induktorer står nå i A6.</p>
+</li>
+</ol>
+<p><strong>Kapmatinib er ikke tatt med:</strong> det har markedsføringstillatelse, men er ikke vurdert i Nye metoder. Ved MET ex14 brukes tepotinib (<a href="#lm-tepotinib">Tepotinib</a>).
+5. <del>Nye metoder-status for repotrektinib</del> – avklart 02.11.2026: innført for ROS1 (25.08.2025) og NTRK (20.10.2025). Se <a href="#lm-repotrektinib">Repotrektinib</a>.
+6. Produsentenes egne nettsider for helsepersonell har jeg ikke hatt tilgang til.
+7. <del>Fulltekst av Laura Molenaar-Kuijsten m.fl. 2021 (praktiske råd om CYP3A-interaksjoner) er ikke lest.</del> Lest 02.11.2026 (åpen tilgang). Tommelfingerregelen for moderate og svake hemmere og induktorer står nå i A6.</p></div></section>
+<section class="panel" id="fx-c2"><h2>C2. Kilder</h2><div class="fullbody"><ul>
+<li><strong>Felleskatalogen</strong> (lest 31.10.2026), https://www.felleskatalogen.no:<ul>
+<li>Tagrisso, Rybrevant i.v., Giotrif</li>
+<li>Lorviqua, Alecensa, Alunbrig, Xalkori</li>
+<li>Rozlytrek, Tafinlar, Mekinist, Tepmetko, Retsevmo</li>
+<li>Tarceva, Vizimpro, Zykadia (lest 02.11.2026)</li>
+</ul>
+</li>
+<li><strong>EMA-preparatomtaler:</strong> Augtyro (repotrektinib) og Lazcluze (lazertinib). https://www.ema.europa.eu</li>
+<li><strong>Nasjonalt handlingsprogram for lungekreft, mesoteliom og thymom</strong>, kap. 8.4. https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram</li>
+<li><strong>FDA.</strong> Drug Development and Drug Interactions: Table of Substrates, Inhibitors and Inducers. https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers</li>
+<li><strong>Tidsskriftet 2008:</strong> Cytokrom P-450 3A4 – kroppens viktigste arena for legemiddelinteraksjoner. https://tidsskriftet.no/2008/12/oversiktsartikkel/cytokrom-p-450-3a4-kroppens-viktigste-arena-legemiddelinteraksjoner</li>
+<li><strong>Laura Molenaar-Kuijsten, Dorieke E. M. van Balen, Jos H. Beijnen, Neeltje Steeghs, Alwin D. R. Huitema.</strong> A Review of CYP3A Drug-Drug Interaction Studies: Practical Guidelines for Patients Using Targeted Oral Anticancer Drugs. <em>Front Pharmacol</em> 2021;12:670862.</li>
+<li><strong>Todd M. Bauer m.fl.</strong> <em>Oncologist</em> 2019 (lorlatinib, håndtering av bivirkninger).</li>
+<li><strong>Geoffrey Liu m.fl.</strong> <em>Lung Cancer</em> 2024 (lorlatinib, praktisk guide).</li>
+<li><strong>Alexander Drilon m.fl.</strong> <em>Oncologist</em> 2026 (repotrektinib, TRIDENT-1, håndtering av bivirkninger).</li>
+<li><strong>Byoung Chul Cho m.fl.</strong> <em>J Thorac Oncol</em> 2025 (COCOON, hudprofylakse ved amivantamab + lazertinib).</li>
+<li><strong>Dirk Schadendorf m.fl.</strong> <em>Eur J Cancer</em> 2021 (COMBI-APlus, feberalgoritme ved dabrafenib/trametinib).</li>
+<li><strong>Mario E. Lacouture m.fl.</strong> <em>Support Care Cancer</em> 2011 (MASCC, hudtoksisitet ved EGFR-hemmere).</li>
+<li><strong>Makoto Nishio m.fl.</strong> <em>Target Oncol</em> 2022 (MET-hemmere og ødem).</li>
+<li><strong>Interaksjonsdatabaser:</strong> https://www.interaksjoner.no · https://pro.medicin.dk</li>
+<li><strong>NCI.</strong> Common Terminology Criteria for Adverse Events (CTCAE) v5.0, 2017. Om v6.0: https://dctd.cancer.gov/about/news-events/news/2026-news/ctcae-updated-version-6</li>
+<li><strong>Lauren E. Merz.</strong> A paradigm shift in neutrophil adverse event grading: why now? <em>HemaSphere</em> 2025. https://pmc.ncbi.nlm.nih.gov/articles/PMC12558435/</li>
+<li><strong>National Cancer Institute.</strong> Common Terminology Criteria for Adverse Events (CTCAE) v6.0 (MedDRA 28.0). Publisert 22.07.2025, versjon januar 2026. https://dctd.cancer.gov/research/ctep-trials/for-sites/adverse-events/ctcae-v6.pdf</li>
+<li><strong>SWOG.</strong> CTCAE v.6: Highlights of changes (Elizabeth Ness, 12.12.2025). https://www.swog.org/sites/default/files/docs/2025-12/2.%20QA%20webinar-CTCAE%20v6%20Slide%20Set-Posted.pdf</li>
+<li><strong>A. Benjamin Suttle m.fl.</strong> Assessment of the drug interaction potential … of dabrafenib. <em>J Clin Pharmacol</em> 2015;55:392–400.</li>
+<li><strong>Lazcluze</strong>, amerikansk preparatomtale (Janssen), gjengitt via https://medlibrary.org/lib/rx/meds/lazcluze/page/4/</li>
+<li><strong>Lorlatinib og itrakonazol:</strong> <em>Invest New Drugs</em> 2020;38:131–139.</li>
+<li><strong>Tepmetko</strong>, produsentens preparatomtale (Israel): https://mohpublic.z6.web.core.windows.net/IsraelDrugs/Rishum01_3_774510522.pdf. Amerikansk preparatomtale: https://medlibrary.org/lib/rx/meds/tepmetko/page/3/</li>
+<li><strong>Tepotinib-interaksjoner med CYP3A- og P-gp-substrater:</strong> ESMO 2019, abstract 480P.</li>
+</ul></div></section>
 </section>
 <section class="view" id="v-testing" hidden>
 <section class="panel" id="testing">
@@ -216,7 +939,7 @@ table.plan td{font-size:14px}
   <strong>Kilder</strong>
   <ul>
     <li><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/diagnostikk-og-utredning/histopatologisk-diagnostikk">Handlingsprogram lungekreft, kap. 6.9</a> og <a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/ikke-kurativ-behandling-av-ikke-smacellet-lungekreft/malrettet-behandling">kap. 8.4</a></li>
-    <li>Nye metoder, vedtak gjennomgått 31.10.2026. LIS-anbefaling onkologi 2026/27, revisjon 2 (23.10.2026)</li>
+    <li>Nye metoder, vedtak gjennomgått 31.10.2026. LIS-anbefaling onkologi 2026/27, revisjon 3 (03.11.2026)</li>
     <li><a href="https://studieapp.no/lungekreft">studieapp.no – lungekreft</a>, <a href="https://studieapp.no/studier-ved-utprovningsenheten">Utprøvningsenheten OUS</a>, <a href="https://studieapp.no/impress-norway">IMPRESS-Norway</a>, <a href="https://www.helsenorge.no/kliniske-studier?relatertBehandling=Lungekreft">helsenorge.no</a></li>
     <li><a href="https://matrixrare.no/om/">matrixrare.no</a></li>
     <li>Felleskatalogen (doser og kontroller, kontrollert 02.11.2026)</li>
@@ -251,8 +974,8 @@ const M=[
       ["Alektinib 600 mg × 2","1L, adjuvant","Myalgi, CK-stigning, bradykardi, ødem, fotosensitivitet","Leverprøver hver 2. uke i 3 mnd, CK"],
       ["Brigatinib 90 → 180 mg × 1","1L","Tidlige lungehendelser uke 1, hypertensjon, CK- og lipasestigning","Lungevakt dag 1–7, blodtrykk"]]},
  {id:"ros1",name:"ROS1-fusjon",freq:"1–2 %",l1:true,l2:true,study:false,trd:false,
-  short:"Repotrektinib er førstevalg. Entrektinib og krizotinib er alternativer.",
-  first:"Repotrektinib (førstevalg). Entrektinib, krizotinib.",later:"Repotrektinib etter TKI. Lorlatinib: ikke vurdert.",
+  short:"Repotrektinib er førstevalg i handlingsprogrammet. I LIS er repotrektinib og entrektinib likestilt (ikke rangert). Krizotinib er alternativ.",
+  first:"Repotrektinib (førstevalg i HP; LIS: ikke rangert, likestilt med entrektinib). Entrektinib, krizotinib.",later:"Repotrektinib etter TKI. Lorlatinib: ikke vurdert.",
   studies:"Ingen åpen studie i Norge.",trdtxt:"Ingen.",
   tx:[["Repotrektinib 160 mg × 1 → × 2","1L og senere","Svimmelhet (svært vanlig), dysgeusi, parestesier, ataksi","Fall. CYP3A4-induktor (prevensjon)"],
       ["Entrektinib 600 mg × 1","1L","Dysgeusi, svimmelhet, vektoppgang, kognitive plager","QTc, hjertesvikt"],
@@ -454,9 +1177,10 @@ const AE=[
  {k:"irae",t:"Immunrelaterte bivirkninger",d:"Grad 2: pause og steroid. Grad 3–4: høyere steroiddose, ofte seponering. Full håndtering: <a href='../immunterapi/'>Immunterapibivirkninger</a>."}
 ];
 
+const FULLM={"osimertinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> <strong>Førstevalg<\/strong> adjuvant (st. IB–IIIA) og ved andre EGFR-mutasjoner (monoterapi). 1L ved ex19del/L858R: ikke rangert, likestilt med amivantamab + lazertinib. Etter kjemoradioterapi (LAURA) og med kjemo (FLAURA2): innført, ikke rangert.<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Tagrisso) · [Label] amerikansk preparatomtale · [Forslag] eget forslag, skal avklares lokalt.<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> EGFR exon 19-delesjon og L858R.<\/p>\n<ul>\n<li>Førstelinje, som monoterapi eller kombinert med karboplatin/pemetreksed (FLAURA2).<\/li>\n<li>Adjuvant etter reseksjon (ADAURA).<\/li>\n<li>Etter kjemoradioterapi i stadium III (LAURA) [HP].<\/li>\n<\/ul>\n<p><strong>Dosering:<\/strong> 80 mg × 1, med eller uten mat.<\/p>\n<p><strong>Dosereduksjon:<\/strong> 40 mg × 1. Det finnes bare ett reduksjonstrinn.<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke (A1)<\/li>\n<li>EKG og elektrolytter (QTc)<\/li>\n<li>MR caput [HP]<\/li>\n<li>HBV-serologi [Forslag; FK krever overvåking av HBV-positive]<\/li>\n<li>LVEF/ekko ved hjerterisiko [FK]<\/li>\n<\/ul>\n<p><strong>Kontroller:<\/strong><\/p>\n<ul>\n<li>Blodprøver (hematologi, nyre, lever) og EKG «noen uker» etter start [HP]. [Forslag]: uke 4, deretter ved hver kontroll.<\/li>\n<li>CT hver 3. måned første år [HP]. MR caput hver 3. måned ved kjente hjernemetastaser [HP].<\/li>\n<li>Ved kombinasjon med kjemoterapi: blodprøver før hver kur.<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li>Diaré, utslett, tørr hud, paronyki og stomatitt<\/li>\n<li>Cytopenier<\/li>\n<li>Mindre vanlige, men viktige: ILD, QTc-forlengelse, redusert LVEF og keratitt<\/li>\n<li>Økt risiko ved alder &gt; 65 år og vekt &lt; 50 kg<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>Hud:<\/strong> Se graderingstabellen i A3. Fuktighetskrem; grad 1 topikalt steroid; grad 2 tillegg av doksysyklin.<\/li>\n<li><strong>Diaré:<\/strong> Loperamid.<\/li>\n<li><strong>ILD:<\/strong> <strong>Seponer permanent.<\/strong><\/li>\n<li><strong>QTc &gt; 500 ms på 2 EKG:<\/strong> Pause til &lt; 481 ms (eller baseline), start igjen med 40 mg. QTc-forlengelse med arytmi: seponer.<\/li>\n<li><strong>Øye:<\/strong> Henvis til øyelege ved keratittsymptomer.<\/li>\n<li><strong>Andre bivirkninger grad ≥ 3:<\/strong> Pause i inntil 3 uker. Ved bedring til grad 0–2: gjenoppta 80 eller 40 mg. Uten bedring: seponer.<\/li>\n<li><strong>Strålepneumonitt:<\/strong> Grad 2: pause. Grad 3–4: seponer.<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Unngå sterke CYP3A-induktorer.<\/strong> Rifampicin gir i snitt ca. 80 % lavere konsentrasjon. Felleskatalogen har ingen data for dosejustering [FK]. Amerikansk preparatomtale anbefaler 160 mg dersom induktoren ikke kan unngås [Label].<\/li>\n<li><strong>Sterke hemmere<\/strong> omtales ikke i Felleskatalogen. Ingen dosejustering [FK].<\/li>\n<li>Osimertinib kan øke eksponeringen for <strong>BCRP- og P-gp-substrater<\/strong>, for eksempel digoksin, dabigatran og aliskiren. Følg med på substrater med lav terapeutisk indeks [FK].<\/li>\n<\/ul>\n<p><strong>Annet viktig:<\/strong><\/p>\n<ul>\n<li><strong>ILD-risikoen øker hvis osimertinib gis rett etter PD-(L)1-hemmer.<\/strong> Vær forsiktig ved sekvensering.<\/li>\n<li>Spør om øyesymptomer ved kontrollene.<\/li>\n<\/ul>", "amivantamab": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> Ikke rangert ved 1L ex19del/L858R (likestilt med osimertinib). Amivantamab 1600 mg sc ukentlig uke 1–4, deretter 3520 mg sc q4w; lazertinib 240 mg daglig.<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [LIS] LIS-anbefaling 2026/27 · [FK] Felleskatalogen (Rybrevant, Lazcluze) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Label] amerikansk preparatomtale · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> EGFR exon 19-delesjon og L858R, førstelinje (MARIPOSA).<\/p>\n<p><strong>Dosering:<\/strong><\/p>\n<ul>\n<li><strong>Lazertinib<\/strong> 240 mg × 1 per os.<\/li>\n<li><strong>Amivantamab<\/strong> iv eller sc:<ul>\n<li>ukentlig de første 4 ukene, deretter hver 2. uke (iv) eller hver 3.–4. uke (sc)<\/li>\n<li>iv-dose etter vekt: &lt; 80 kg eller ≥ 80 kg<\/li>\n<li>første iv-dose fordeles over dag 1 og 2<\/li>\n<li><strong>sc er foretrukket<\/strong> [HP]<\/li>\n<li>LIS-anbudet 2026/27: amivantamab <strong>1600 mg sc ukentlig i uke 1–4, deretter 3520 mg sc hver 4. uke<\/strong>, med lazertinib 240 mg daglig. Ikke rangert (likestilt med osimertinib) [LIS]. Anbudet oppgir bare dosen for &lt; 80 kg. Felleskatalogen: ≥ 80 kg 2240 mg ukentlig i uke 1–4, deretter 4640 mg hver 4. uke. Alternativt hver 2. uke fra uke 5: 1600 mg (&lt; 80 kg) eller 2240 mg (≥ 80 kg). Dosereduksjon sc: 3520 → 2400 → 1600 mg og 4640 → 3360 → 2240 mg [FK].<\/li>\n<\/ul>\n<\/li>\n<\/ul>\n<p><strong>Dosereduksjon:<\/strong><\/p>\n<ul>\n<li>Lazertinib: 240 → 160 → 80 mg, seponer etter tredje reduksjon [FK]. Ved bivirkning grad 2–3 som rammer begge: reduser helst amivantamab først [FK].<\/li>\n<li>Amivantamab iv [FK]:<\/li>\n<\/ul>\n<table>\n<thead>\n<tr>\n<th>Dose da bivirkningen oppsto<\/th>\n<th>1. reduksjon<\/th>\n<th>2. reduksjon<\/th>\n<th>3. reduksjon<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>1050 mg (&lt; 80 kg, hver 2. uke)<\/td>\n<td>700 mg<\/td>\n<td>350 mg<\/td>\n<td>Seponer<\/td>\n<\/tr>\n<tr>\n<td>1400 mg (≥ 80 kg, hver 2. uke)<\/td>\n<td>1050 mg<\/td>\n<td>700 mg<\/td>\n<td>Seponer<\/td>\n<\/tr>\n<tr>\n<td>1750 mg (&lt; 80 kg, hver 3. uke)<\/td>\n<td>1400 mg<\/td>\n<td>1050 mg<\/td>\n<td>Seponer<\/td>\n<\/tr>\n<tr>\n<td>2100 mg (≥ 80 kg, hver 3. uke)<\/td>\n<td>1750 mg<\/td>\n<td>1400 mg<\/td>\n<td>Seponer<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<ul>\n<li>Etter et opphold på <strong>mer enn 7 dager<\/strong> gjenopptas amivantamab med redusert dose [FK].<\/li>\n<li>For amivantamab sc gjelder egen tabell i preparatomtalen for Rybrevant sc.<\/li>\n<\/ul>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke, med albumin, Ca og Mg<\/li>\n<li><strong>VTE-profylakse fra dag 1:<\/strong><ul>\n<li>DOAK (apixaban 2,5 mg × 2, eller rivaroksaban 10 mg × 1) eller LMWH, de første 4 månedene (COCOON). Preparatomtalen angir ingen varighet.<\/li>\n<li>Ikke warfarin. Vurder blødningsrisikoen.<\/li>\n<\/ul>\n<\/li>\n<li><strong>Hudprofylakse fra dag 1 (COCOON):<\/strong><ul>\n<li>Doksysyklin eller minocyklin 100 mg × 2, uke 1–12<\/li>\n<li>Deretter klindamycin 1 % i hodebunnen, uke 13–52<\/li>\n<li>Ceramidbasert fuktighetskrem daglig<\/li>\n<li>Klorheksidin til hender og føtter (negler)<\/li>\n<li>Solbeskyttelse til 2 måneder etter avsluttet behandling<\/li>\n<\/ul>\n<\/li>\n<li>Resept på topikalt steroid og antibiotika klar fra start<\/li>\n<li><strong>Premedikasjon ved iv:<\/strong><ul>\n<li>Deksametason 8 mg × 2 per os de 2 dagene før første infusjon.<\/li>\n<li>Før første infusjon: deksametason 20 mg iv, antihistamin og paracetamol.<\/li>\n<li>Antihistamin og paracetamol før hver dose.<\/li>\n<\/ul>\n<\/li>\n<\/ul>\n<p><strong>Kontroller:<\/strong><\/p>\n<ul>\n<li>Ved hver dose: klinisk vurdering av hud og negler, ødem og VTE-symptomer.<\/li>\n<li><strong>Leverprøver (hepatotoksisitet 47 %):<\/strong> Preparatomtalen angir ingen frekvens. [Forslag]: ved hver dose de første 3 månedene, deretter månedlig.<\/li>\n<li>Albumin og elektrolytter: [Forslag] ved hver dose de første 3 månedene.<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger (kombinasjon) [SPC]:<\/strong><\/p>\n<ul>\n<li><strong>Utslett 89 %<\/strong> (27 % grad 3–4)<\/li>\n<li><strong>Neglereaksjoner 71 %<\/strong><\/li>\n<li><strong>Hypoalbuminemi 48 %<\/strong><\/li>\n<li><strong>Hepatotoksisitet 47 %<\/strong><\/li>\n<li><strong>Ødem 47 %<\/strong><\/li>\n<li><strong>VTE 37 %<\/strong> (11 % grad ≥ 3)<\/li>\n<li>Parestesi 34 %<\/li>\n<li>IRR, særlig ved første iv-dose. IRR forekommer hos 13 % med sc mot 66 % med iv.<\/li>\n<li>ILD ca. 3 %, keratitt, stomatitt og diaré<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>Hud og negler:<\/strong> Se A3. Grad 2 som varer mer enn 2 uker: reduser amivantamab først. Grad 3: pause begge og gjenoppta med redusert dose. Grad 4: seponer amivantamab.<\/li>\n<li><strong>VTE:<\/strong> Gi fullbehandling med DOAK eller LMWH. Ved klinisk ustabilitet: pause. Ved residiv på antikoagulasjon: seponer amivantamab; lazertinib kan fortsette.<\/li>\n<li><strong>IRR:<\/strong> Stopp infusjonen og gi symptomatisk behandling. Fortsett med 50 % hastighet. Ved grad 3: vurder å fortsette. Ved grad 4: seponer.<\/li>\n<li><strong>ILD:<\/strong> Pause begge. Seponer ved bekreftet ILD.<\/li>\n<li><strong>Leverprøver grad 3–4:<\/strong> Pause begge. Gjenoppta med redusert dose.<\/li>\n<li><strong>Parestesi grad 3–4:<\/strong> Pause lazertinib.<\/li>\n<li><strong>Ødem og hypoalbuminemi:<\/strong> Kompresjon og eventuelt diuretika. Ernæringsvurdering.<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Lazertinib:<\/strong><ul>\n<li><strong>Unngå sterke og moderate CYP3A4-induktorer.<\/strong> Rifampicin ga 83 % lavere AUC. For efavirenz er det beregnet minst 44 % lavere AUC [Label].<\/li>\n<li>Sterke hemmere: itrakonazol ga 1,5 ganger høyere AUC. Ingen dosejustering [Label].<\/li>\n<li>Lazertinib er en <strong>svak CYP3A4-hemmer og en BCRP-hemmer.<\/strong> Rosuvastatin fikk dobbelt så høy AUC. Følg med på substrater med lav terapeutisk indeks, for eksempel takrolimus og ciklosporin [Label].<\/li>\n<li><strong>Bekreftet i Felleskatalogens interaksjonsoppslag:<\/strong> moderate induktorer som modafinil og bosentan står som «bør unngås», og sterke induktorer gir 80–90 % lavere nivå [FK-int].<\/li>\n<li><strong>Norsk preparatomtale for Lazcluze (Felleskatalogen, lest 01.11.2026)<\/strong> bekrefter det over, og legger til [FK]:<ul>\n<li>Syrehemmere (PPI, H2-blokkere): ingen dosejustering.<\/li>\n<li>Rosuvastatin: vurder å halvere dosen.<\/li>\n<li>CYP1A2-substrater (for eksempel tizanidin): forsiktighet, fordi induksjon ikke kan utelukkes.<\/li>\n<li>Prevensjon: kvinner sikker prevensjon og menn kondom under behandlingen og i 3 uker etter siste dose. Ikke amming i samme periode.<\/li>\n<\/ul>\n<\/li>\n<\/ul>\n<\/li>\n<li><strong>Amivantamab:<\/strong> Det er ikke gjort interaksjonsstudier [FK]. Som monoklonalt antistoff har det ingen CYP-interaksjoner.<\/li>\n<\/ul>\n<p><strong>Annet viktig:<\/strong><\/p>\n<ul>\n<li>COCOON-regimet halverte forekomsten av hudbivirkninger grad ≥ 2 (38,6 % mot 76,5 %) [Ekspert].<\/li>\n<li>Sc-formulering gir langt mindre IRR og kortere tid i stolen.<\/li>\n<li>Krever godt koordinert sykepleie (dosering ukentlig, deretter hver 2. uke). Skriftlig plan for hud og VTE bør følge pasienten.<\/li>\n<li>Hudprofylakse etter preparatomtalen: doksysyklin eller minosyklin 100 mg × 2 de første 12 ukene fra dag 1, deretter klindamycin 1 % i hodebunnen i 9 måneder. Fuktighetskrem (ikke hodebunn) og klorheksidin til hender og føtter fra dag 1. Unngå sol under behandlingen og 2 måneder etter [FK].<\/li>\n<li>Keratitt er rapportert. Ved forverrede øyesymptomer: øyelege straks, og stopp bruk av kontaktlinser [FK].<\/li>\n<li>Glemt dose: ta den hvis det er under 12 timer siden. Brekninger: neste dose dagen etter. Tablettene kan slæmmes i vann eller gis i sonde [FK].<\/li>\n<\/ul>", "amivantamab-kjemo": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> <strong>Førstevalg<\/strong> ved EGFR ex20ins med karboplatin/pemetreksed. Sc (1600 mg uke 1, 2400 mg uke 2–4, deretter 2400 mg q3w fra uke 7) og iv (1400 mg uke 1–4, deretter 1750 mg q3w) er likestilt.<\/p>\n<p><em>Kilder: [LIS] LIS-anbefaling 2026/27 · [FK] Felleskatalogen (Rybrevant).<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> EGFR exon 20-insersjon, førstelinje (PAPILLON).<\/p>\n<p><strong>Dosering:<\/strong><\/p>\n<ul>\n<li>Amivantamab ukentlig de første 4 ukene, deretter hver 3. uke sammen med kjemo.<\/li>\n<li>Doser i LIS-anbudet 2026/27, der sc og iv begge er <strong>førstevalg<\/strong> [LIS]:<ul>\n<li><strong>Sc:<\/strong> uke 1 1600 mg, uke 2–4 2400 mg ukentlig, fra uke 7 2400 mg hver 3. uke.<\/li>\n<li><strong>Iv:<\/strong> 1400 mg ukentlig i uke 1–4, deretter 1750 mg hver 3. uke (&lt; 80 kg).<\/li>\n<li>≥ 80 kg (anbudet oppgir bare &lt; 80 kg): sc 2240 mg uke 1, 3360 mg uke 2–4, fra uke 7 3360 mg hver 3. uke. Iv 1750 mg uke 1–4, deretter 2100 mg. Rekkefølge på kurdagen: pemetreksed, karboplatin, amivantamab [FK].<\/li>\n<\/ul>\n<\/li>\n<li>Karboplatin AUC 5 i 4 kurer.<\/li>\n<li>Pemetreksed 500 mg/m² hver 3. uke, også som vedlikehold.<\/li>\n<\/ul>\n<p><strong>Dosereduksjon:<\/strong> Amivantamab som under <a href=\"#lm-amivantamab\">Amivantamab + lazertinib<\/a>. Kjemoterapi etter vanlige regler.<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke, med albumin, Ca og Mg<\/li>\n<li><strong>Folsyre og <a href=\"#lm-tepotinib\">Tepotinib<\/a><\/strong> minst 5–7 dager før første pemetreksed<\/li>\n<li>Deksametason rundt pemetreksed etter lokal rutine<\/li>\n<li>Hudprofylakse og IRR-premedikasjon som under <a href=\"#lm-amivantamab\">Amivantamab + lazertinib<\/a><\/li>\n<li>VTE-profylakse er ikke dokumentert her (bare ved lazertinib-kombinasjonen)<\/li>\n<\/ul>\n<p><strong>Kontroller:<\/strong><\/p>\n<ul>\n<li>Før hver kur: blodtelling, kreatinin/eGFR, leverprøver, K, Mg, Ca og albumin.<\/li>\n<li>Hud, negler og ødem vurderes ved hver dose.<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li>Som amivantamab under <a href=\"#lm-amivantamab\">Amivantamab + lazertinib<\/a>.<\/li>\n<li>Nøytropeni og trombocytopeni.<\/li>\n<li>Hypokalemi og hypomagnesemi.<\/li>\n<li>Kvalme og fatigue.<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong> Som under <a href=\"#lm-amivantamab\">Amivantamab + lazertinib<\/a>, i tillegg til vanlige kjemoterapiregler for cytopeni og nyrefunksjon.<\/p>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li>Pemetreksed: unngå NSAID 2–5 dager før og etter ved nedsatt nyrefunksjon.<\/li>\n<\/ul>", "afatinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> <strong>Førstevalg<\/strong> blant «andre eldre EGFR-TKI» (40 mg daglig).<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Giotrif) · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> Uvanlige EGFR-mutasjoner (G719X, L861Q, S768I) [HP].<\/p>\n<p><strong>Dosering:<\/strong> 40 mg × 1, tas 1 time før eller 3 timer etter mat.<\/p>\n<p><strong>Dosereduksjon:<\/strong> Reduser i trinn på 10 mg: 40 → 30 → 20 mg. Ved behov for under 20 mg: seponer.<\/p>\n<p><strong>Opptrapping:<\/strong> 50 mg × 1 kan vurderes hvis 40 mg tolereres uten diaré, utslett, stomatitt eller andre bivirkninger over grad 1 i første syklus (21 dager) [FK].<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke, med kreatinin og elektrolytter<\/li>\n<li><strong>Loperamid utleveres og pasienten får en skriftlig plan for diaré<\/strong><\/li>\n<li>&#91;Forslag] Vurder forebyggende doksysyklin. Oral tetrasyklin reduserte utslett grad ≥ 2 med ca. 40 % i metaanalyse [Ekspert].<\/li>\n<\/ul>\n<p><strong>Kontroller:<\/strong><\/p>\n<ul>\n<li><strong>Tettere oppfølging<\/strong> for kvinner, pasienter under 50 kg og ved nedsatt nyrefunksjon [FK].<\/li>\n<li>&#91;Forslag] Telefonkontakt etter 1 uke. Kreatinin og elektrolytter etter 2 uker og ved diaré.<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li><strong>Diaré<\/strong>, svært vanlig og tidlig<\/li>\n<li>Akneiformt utslett, paronyki og stomatitt<\/li>\n<li>Dehydrering med nyresvikt<\/li>\n<li>Hypokalemi<\/li>\n<li>Keratitt og ILD (sjeldent)<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>Diaré:<\/strong> Loperamid straks ved første løse avføring, og kontinuerlig til avføringen er normal i 12 timer. Gi væske.<\/li>\n<li><strong>Dosepause<\/strong> ved diaré grad 2 i mer enn 48 timer, utslett grad 2 i mer enn 7 dager eller grad ≥ 3: pause til grad 0–1, gjenoppta med 10 mg lavere dose.<\/li>\n<li><strong>Hud:<\/strong> Se A3.<\/li>\n<li><strong>ILD:<\/strong> Seponer.<\/li>\n<li><strong>Keratitt:<\/strong> Pause og henvis til øyelege.<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li>Afatinib er ikke CYP-avhengig.<\/li>\n<li><strong>P-gp-hemmere<\/strong> (verapamil, ciklosporin, itrakonazol): gi dem med lengst mulig avstand fra afatinib, helst 6 timer ved hemmer 2 ganger daglig og 12 timer ved hemmer 1 gang daglig [FK, kontrollert 02.11.2026]. Det eldre rådet om å gi hemmeren samtidig med eller etter afatinib er erstattet.<\/li>\n<li><strong>P-gp-induktorer<\/strong> (rifampicin, karbamazepin, johannesurt) senker nivået.<\/li>\n<\/ul>", "lorlatinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> <strong>Førstevalg<\/strong> ALK 1L (100 mg daglig).<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [LIS] LIS-anbefaling 2026/27 · [FK] Felleskatalogen (Lorviqua) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Label] amerikansk preparatomtale · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> ALK-positiv, førstelinje (CROWN) og senere linjer [HP]. Lorlatinib er også førstevalg ved ALK i første linje i LIS-anbudet 2026/27. Brigatinib og alektinib er rangert som 1 og 2 bare når det skal velges mellom de andre ALK-TKI-ene [LIS].<\/p>\n<p><strong>Dosering:<\/strong> 100 mg × 1, med eller uten mat.<\/p>\n<p><strong>Dosereduksjon:<\/strong> 100 → 75 → 50 mg. Hvis 50 mg ikke tolereres: seponer.<\/p>\n<p><strong>Nedsatt nyrefunksjon:<\/strong> eGFR &lt; 30 ml/min: redusert dose, for eksempel startdose 75 mg × 1. Ingen data ved dialyse [FK].<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke<\/li>\n<li><strong>Lipider:<\/strong> totalkolesterol, LDL og triglyserider<\/li>\n<li><strong>Fastende glukose<\/strong><\/li>\n<li><strong>Lipase og amylase<\/strong><\/li>\n<li><strong>EKG<\/strong> med PR-intervall<\/li>\n<li><strong>Blodtrykk<\/strong><\/li>\n<li><strong>Kartlegg kognitiv funksjon og humør<\/strong>, gjerne med pårørende til stede [Ekspert]<\/li>\n<li>MR caput [HP]<\/li>\n<li><strong>Prevensjon:<\/strong> Ikke hormonell prevensjon (se Interaksjoner).<\/li>\n<\/ul>\n<p><strong>Kontroller [FK]:<\/strong><\/p>\n<ul>\n<li><strong>Lipider:<\/strong> uke 2, 4 og 8, deretter regelmessig<\/li>\n<li><strong>Blodtrykk:<\/strong> etter 2 uker, deretter minst månedlig<\/li>\n<li><strong>EKG:<\/strong> månedlig (AV-blokk)<\/li>\n<li><strong>Glukose, lipase og amylase:<\/strong> regelmessig<\/li>\n<li><strong>CNS-symptomer:<\/strong> spør ved hver kontroll, også pårørende<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li><strong>Hyperkolesterolemi 82 % og hypertriglyseridemi 61 %<\/strong><\/li>\n<li><strong>Ødem 51 %<\/strong> og vektøkning<\/li>\n<li><strong>Perifer nevropati 44 %<\/strong><\/li>\n<li><strong>CNS-effekter 40 %:<\/strong> kognitiv svikt, humørendring, talevansker og psykotiske symptomer (ca. 5 %)<\/li>\n<li>Hypertensjon, AV-blokk og hyperglykemi<\/li>\n<li>Grad 3–4 hos 77 % i CROWN, mest lipider [Ekspert]<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>Lipider:<\/strong><ul>\n<li>Start statin. <strong>Rosuvastatin<\/strong> er førstevalg (unngå simvastatin; atorvastatin øker lorlatinibnivået). Ved høye triglyserider: fenofibrat og/eller omega-3.<\/li>\n<li>Grad 1–3 krever sjelden dosereduksjon.<\/li>\n<li><strong>Grad 4<\/strong> (kolesterol &gt; 12,92 mmol/l eller triglyserider &gt; 11,4 mmol/l):<ul>\n<li>Start, øk eller bytt lipidsenkende behandling.<\/li>\n<li>Pause lorlatinib til grad ≤ 2, gjenoppta deretter <strong>samme dose<\/strong> med maksimal lipidsenkende behandling.<\/li>\n<li>Ved residiv: reduser ett nivå [FK].<\/li>\n<\/ul>\n<\/li>\n<\/ul>\n<\/li>\n<li><strong>CNS-effekter<\/strong> [FK]:<ul>\n<li>Grad 1: ikke omtalt i Felleskatalogen. Fortsett og følg med [Forslag].<\/li>\n<li>Grad 2–3: pause til grad ≤ 1, gjenoppta ett nivå ned.<\/li>\n<li>Grad 4: seponer permanent.<\/li>\n<li>Dosereduksjon gir ofte god bedring uten tap av effekt [Ekspert].<\/li>\n<\/ul>\n<\/li>\n<li><strong>AV-blokk<\/strong> [FK]:<ul>\n<li><strong>Grad 1 uten symptomer:<\/strong> samme dose, følg med på EKG.<\/li>\n<li><strong>Grad 1 med symptomer:<\/strong> pause, gjenoppta ett nivå ned når symptomene bedres.<\/li>\n<li><strong>Grad 2 uten symptomer:<\/strong> pause. Gjenoppta ett nivå ned når kontroll-EKG ikke lenger viser grad 2.<\/li>\n<li><strong>Grad 2 med symptomer:<\/strong> pause og henvis til kardiologisk overvåking. Vurder pacemaker. Gjenoppta ett nivå ned.<\/li>\n<li><strong>Fullstendig AV-blokk:<\/strong> pause og overvåk. Pacemaker kan være indisert.<ul>\n<li>Med pacemaker: full dose [Label].<\/li>\n<li>Uten pacemaker: gjenoppta ett nivå ned når PR &lt; 200 ms.<\/li>\n<\/ul>\n<\/li>\n<\/ul>\n<\/li>\n<li><strong>Hypertensjon grad 3:<\/strong> Pause og behandle. Gjenoppta når blodtrykket er under kontroll.<\/li>\n<li><strong>Hyperglykemi:<\/strong> Behandle. Pause ved vedvarende verdier over 13,9 mmol/l.<\/li>\n<li><strong>Lipase/amylase:<\/strong> Pause ved klinisk pankreatitt.<\/li>\n<li><strong>ILD<\/strong> [FK]:<ul>\n<li><strong>Grad 1–2:<\/strong> pause til baseline og vurder kortikosteroider. Gjenoppta ett nivå ned.<\/li>\n<li>Seponer permanent ved residiv, eller hvis det ikke er bedring etter 6 uker uten lorlatinib og med steroider.<\/li>\n<li><strong>Grad 3–4:<\/strong> seponer permanent.<\/li>\n<li>Amerikansk preparatomtale er strengere: seponer ved ILD av enhver grad [Label].<\/li>\n<\/ul>\n<\/li>\n<li><strong>Ødem og vekt:<\/strong> Kompresjon og kostråd. Ved grad 3: reduser dosen.<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Sterke CYP3A4/5-induktorer er KONTRAINDISERT<\/strong> [FK]. Rifampicin ga 85 % lavere AUC, og ALAT/ASAT-stigning hos friske frivillige.<ul>\n<li>Seponer induktoren minst 3 halveringstider før oppstart [Label].<\/li>\n<li>Moderate induktorer bør unngås hvis mulig.<\/li>\n<\/ul>\n<\/li>\n<li><strong>Sterke CYP3A4/5-hemmere:<\/strong><ul>\n<li>Bør unngås. Itrakonazol ga 42 % høyere AUC.<\/li>\n<li>Hvis det ikke er mulig: <strong>startdose 75 mg<\/strong> [SPC; FK-int, kontrollert 02.11.2026: «reduseres fra 100 mg/d til 75 mg/d»]. Har pasienten allerede 75 mg på grunn av bivirkninger, reduseres dosen til 50 mg. Det står bare i amerikansk tekst [Label].<\/li>\n<li>Etter seponering av hemmeren: tilbake til tidligere dose etter en utvaskingsperiode på 3–5 halveringstider for hemmeren [SPC].<\/li>\n<\/ul>\n<\/li>\n<li><strong>Lorlatinib er selv en CYP3A4-induktor<\/strong> (midazolam-AUC falt med 64 %):<ul>\n<li><strong>Østrogen- og gestagenholdige prevensjonsmidler bør unngås<\/strong>, fordi effekten kan bli nedsatt eller opphevet [FK-int].<\/li>\n<li>Bruk hormonspiral eller barrieremetode. Felleskatalogen regner disse som de beste alternativene [FK-int].<\/li>\n<li>Peroral midazolam og mange andre CYP3A4-substrater står som «bør unngås» i interaksjonsoppslaget [FK-int]. Sjekk hvert legemiddel.<\/li>\n<li>Takrolimus og ciklosporin får lavere nivå.<\/li>\n<\/ul>\n<\/li>\n<\/ul>\n<p><strong>Annet viktig:<\/strong><\/p>\n<ul>\n<li>Informer pasient og pårørende om CNS-effektene på forhånd. Endringene kommer ofte gradvis, og pårørende oppdager dem ofte først.<\/li>\n<li>Lang behandlingsvarighet (CROWN: ca. 60 % uten progresjon etter 5 år) gjør langsiktig kardiovaskulær risikoreduksjon viktig.<\/li>\n<\/ul>", "alektinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> <strong>Førstevalg<\/strong> adjuvant ALK. Andrevalg blant «andre ALK-TKI», etter brigatinib.<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Alecensa).<\/em><\/p>\n<p><strong>Indikasjon:<\/strong><\/p>\n<ul>\n<li>ALK-positiv, førstelinje.<\/li>\n<li>Adjuvant etter reseksjon (ALINA), inntil 2 år [HP].<\/li>\n<\/ul>\n<p><strong>Dosering:<\/strong> 600 mg × 2 (4 kapsler × 2) <strong>med mat<\/strong>.<\/p>\n<p><strong>Nedsatt leverfunksjon:<\/strong> Child-Pugh C: startdose 450 mg × 2 [FK].<\/p>\n<p><strong>Dosereduksjon:<\/strong> 600 → 450 → 300 mg × 2. Hvis 300 mg × 2 ikke tolereres: seponer.<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke, med <strong>CK<\/strong><\/li>\n<li>Puls og blodtrykk<\/li>\n<li>Kartlegg legemidler som gir bradykardi<\/li>\n<li>MR caput [HP]<\/li>\n<\/ul>\n<p><strong>Kontroller [FK]:<\/strong><\/p>\n<ul>\n<li><strong>Leverprøver hver 2. uke de første 3 månedene<\/strong>, deretter periodisk<\/li>\n<li><strong>CK hver 2. uke den første måneden<\/strong>, deretter ved muskelsymptomer<\/li>\n<li>Puls og blodtrykk ved kontroller<\/li>\n<li>Hb ved mistanke om hemolyse<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li>Myalgi og CK-stigning<\/li>\n<li>Økte leververdier og bilirubin<\/li>\n<li>Anemi, også hemolytisk<\/li>\n<li>Bradykardi og ødem<\/li>\n<li>Vektøkning og obstipasjon<\/li>\n<li>Fotosensitivitet<\/li>\n<li>ILD<\/li>\n<li>Nyrepåvirkning (sjeldent)<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>ALAT/ASAT &gt; 5 × ULN med bilirubin ≤ 2 × ULN:<\/strong> Pause til ≤ 3 × ULN, gjenoppta med redusert dose.<\/li>\n<li><strong>ALAT/ASAT &gt; 3 × ULN med bilirubin &gt; 2 × ULN<\/strong> (uten kolestase eller hemolyse): seponer.<\/li>\n<li><strong>Bilirubin &gt; 3 × ULN:<\/strong> Pause, gjenoppta med redusert dose.<\/li>\n<li><strong>CK &gt; 5 × ULN:<\/strong> Pause til ≤ 2,5 × ULN, deretter samme dose. CK &gt; 10 × ULN eller residiv: redusert dose.<\/li>\n<li><strong>Symptomatisk bradykardi:<\/strong> Pause og gjennomgå betablokker og kalsiumblokker. Gjenoppta med samme dose hvis et annet legemiddel er årsaken, ellers redusert dose. Ved livstruende bradykardi: seponer, med mindre et annet legemiddel er årsaken.<\/li>\n<li><strong>Hemolytisk anemi med Hb &lt; 10 g/dl:<\/strong> Pause, gjenoppta med redusert dose.<\/li>\n<li><strong>Nyre:<\/strong> Kreatinin &gt; 3 × ULN: pause. Grad 4: seponer.<\/li>\n<li><strong>ILD:<\/strong> Seponer.<\/li>\n<li><strong>Sol:<\/strong> SPF ≥ 50 til 7 dager etter siste dose.<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Ingen dosejustering ved CYP3A-hemmere eller -induktorer.<\/strong> Ved sterke hemmere eller induktorer anbefales «egnet overvåkning» [FK].<\/li>\n<li><strong>Alektinib og M4 hemmer P-gp og BCRP<\/strong> og kan øke nivået av for eksempel digoksin, dabigatran og metotreksat. Følg med [FK].<\/li>\n<\/ul>\n<p><strong>Annet viktig:<\/strong><\/p>\n<ul>\n<li>Det er krevende å ta 8 kapsler daglig. Etterlevelsen bør tas opp ved kontrollene.<\/li>\n<li>Obstipasjon er vanlig og behandles forebyggende.<\/li>\n<\/ul>", "brigatinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> <strong>Førstevalg<\/strong> blant «andre ALK-TKI» (90 mg i 7 dager, deretter 180 mg daglig).<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Alunbrig) · [Forslag] eget forslag, skal avklares lokalt.<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> ALK-positiv, førstelinje og etter krizotinib [HP].<\/p>\n<p><strong>Dosering: 90 mg × 1 i 7 dager, deretter 180 mg × 1<\/strong> [FK].<\/p>\n<p><strong>Dosereduksjon:<\/strong><\/p>\n<ul>\n<li>180 → 120 → 90 → 60 mg.<\/li>\n<li>Startdosen på 90 mg reduseres til 60 mg.<\/li>\n<li>Hvis 60 mg ikke tolereres: seponer.<\/li>\n<\/ul>\n<h4>Særregler – et uvanlig sammensatt regime [FK]<\/h4>\n<ol>\n<li><strong>Tidlige pulmonale hendelser<\/strong> (dyspné, hypoksi, pneumonitt) kommer vanligvis innen de første 7 dagene, hos ca. 4,5 % med oppstart på 90 mg [HP]. Risikoen øker med alder, og hvis siste dose krizotinib ble tatt mindre enn 7 dager før start.<\/li>\n<li><strong>Pneumonitt i uke 1:<\/strong><ul>\n<li><strong>Grad 1:<\/strong> pause til baseline, gjenoppta 90 mg. <strong>Ikke trapp opp til 180 mg.<\/strong><\/li>\n<li><strong>Grad 2:<\/strong> pause, gjenoppta ett nivå ned.<\/li>\n<li><strong>Grad 3–4, eller residiv:<\/strong> seponer permanent.<\/li>\n<\/ul>\n<\/li>\n<li><strong>Pause ≥ 14 dager av andre årsaker enn bivirkninger<\/strong> (operasjon, stråling, innleggelse): <strong>start på nytt med 90 mg i 7 dager<\/strong>, deretter tidligere tolerert dose.<\/li>\n<li><strong>Alvorlig nedsatt nyrefunksjon<\/strong> (eGFR &lt; 30): startdose 60 mg × 1 i 7 dager, deretter 90 mg × 1, og tett overvåking av respirasjonen i uke 1. <strong>Child-Pugh C:<\/strong> 60 mg × 1 i 7 dager, deretter 120 mg × 1 [FK].<\/li>\n<\/ol>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke<\/li>\n<li><strong>CK, lipase og amylase<\/strong><\/li>\n<li><strong>Fastende glukose<\/strong><\/li>\n<li><strong>Blodtrykk og puls<\/strong><\/li>\n<li><strong>SpO₂ og klinisk lungestatus<\/strong> [Forslag]<\/li>\n<li>MR caput [HP]<\/li>\n<li><strong>Skriftlig beskjed<\/strong> om å ta kontakt ved tungpust i uke 1 [HP]<\/li>\n<\/ul>\n<p><strong>Kontroller:<\/strong><\/p>\n<ul>\n<li><strong>Uke 1:<\/strong> [Forslag] Telefon dag 3–4 og vurdering dag 7, før opptrapping. Spør om dyspné og mål SpO₂ ved behov.<\/li>\n<li><strong>Leverprøver hver 2. uke de første 3 månedene<\/strong>, deretter regelmessig [FK].<\/li>\n<li><strong>Blodtrykk, puls, CK, lipase/amylase og glukose «regelmessig»<\/strong> [FK]. Felleskatalogen angir ingen fast frekvens. [Forslag]: ved hver kontroll, minst månedlig det første halvåret.<\/li>\n<li><strong>Puls oftere<\/strong> ved samtidig bruk av legemidler som gir bradykardi.<\/li>\n<li><strong>Syn:<\/strong> henvis til øyelege ved symptomer.<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li>Tidlige pulmonale hendelser og ILD<\/li>\n<li>Hypertensjon og bradykardi<\/li>\n<li>CK-stigning og myalgi<\/li>\n<li>Lipase- og amylasestigning<\/li>\n<li>Hepatotoksisitet og hyperglykemi<\/li>\n<li>Synsforstyrrelser<\/li>\n<li>Fotosensitivitet<\/li>\n<li>GI-plager og fatigue<\/li>\n<\/ul>\n<h4>Dosemodifisering [FK]<\/h4>\n<table>\n<thead>\n<tr>\n<th>Bivirkning<\/th>\n<th>Tiltak<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td><strong>ILD etter uke 1<\/strong>, grad 1<\/td>\n<td>Pause til baseline, samme dose. Residiv: seponer<\/td>\n<\/tr>\n<tr>\n<td>ILD etter uke 1, grad 2<\/td>\n<td>Pause, gjenoppta ett nivå ned. Residiv: seponer<\/td>\n<\/tr>\n<tr>\n<td>ILD grad 3–4<\/td>\n<td>Seponer<\/td>\n<\/tr>\n<tr>\n<td><strong>Hypertensjon grad 3<\/strong> (≥ 160/100)<\/td>\n<td>Pause til &lt; 140/90, samme dose. Residiv: lavere nivå eller seponering<\/td>\n<\/tr>\n<tr>\n<td>Hypertensjon grad 4<\/td>\n<td>Pause, gjenoppta lavere nivå. Residiv: seponer<\/td>\n<\/tr>\n<tr>\n<td><strong>Symptomatisk bradykardi<\/strong> (&lt; 60/min)<\/td>\n<td>Pause til asymptomatisk eller ≥ 60/min. Samme dose hvis et annet legemiddel er justert, ellers lavere nivå<\/td>\n<\/tr>\n<tr>\n<td>Livstruende bradykardi<\/td>\n<td>Lavere nivå med tett monitorering hvis et annet legemiddel er justert, ellers seponer. Residiv: seponer<\/td>\n<\/tr>\n<tr>\n<td><strong>CK &gt; 5 × ULN<\/strong> med muskelsymptomer grad ≥ 2<\/td>\n<td>Pause til ≤ 2,5 × ULN, samme dose. Residiv: lavere nivå<\/td>\n<\/tr>\n<tr>\n<td>CK &gt; 10 × ULN<\/td>\n<td>Pause, gjenoppta lavere nivå<\/td>\n<\/tr>\n<tr>\n<td><strong>Lipase/amylase &gt; 2 × ULN<\/strong><\/td>\n<td>Pause til ≤ 1,5 × ULN, samme dose. Residiv: lavere nivå<\/td>\n<\/tr>\n<tr>\n<td>Lipase/amylase &gt; 5 × ULN<\/td>\n<td>Pause, gjenoppta lavere nivå<\/td>\n<\/tr>\n<tr>\n<td><strong>ALAT/ASAT &gt; 5 × ULN<\/strong> med bilirubin ≤ 2 × ULN<\/td>\n<td>Pause til ≤ 3 × ULN, gjenoppta lavere nivå<\/td>\n<\/tr>\n<tr>\n<td>ALAT/ASAT &gt; 3 × ULN med bilirubin &gt; 2 × ULN, uten kolestase eller hemolyse<\/td>\n<td>Seponer<\/td>\n<\/tr>\n<tr>\n<td><strong>Glukose &gt; 13,9 mmol/l<\/strong><\/td>\n<td>Pause til kontrollert, deretter lavere nivå eller seponering<\/td>\n<\/tr>\n<tr>\n<td><strong>Syn grad 2–3<\/strong><\/td>\n<td>Pause, gjenoppta lavere nivå<\/td>\n<\/tr>\n<tr>\n<td>Syn grad 4<\/td>\n<td>Seponer<\/td>\n<\/tr>\n<tr>\n<td>Andre bivirkninger grad 3<\/td>\n<td>Pause, samme dose<\/td>\n<\/tr>\n<tr>\n<td>Andre bivirkninger grad 4<\/td>\n<td>Pause, gjenoppta lavere nivå<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<p><strong>Sol:<\/strong> SPF ≥ 30 til 5 dager etter siste dose.<\/p>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Sterke CYP3A-hemmere:<\/strong> unngå. Hvis det ikke er mulig: <strong>halver dosen<\/strong> (180 → 90 mg, 90 → 60 mg) [FK].<\/li>\n<li><strong>Moderate CYP3A-hemmere: ingen dosejustering, men overvåk pasienten nøye<\/strong> [FK]. Amerikansk preparatomtale anbefaler i stedet ca. 40 % reduksjon. Følg EU-teksten.<\/li>\n<li><strong>Unngå sterke og moderate CYP3A-induktorer<\/strong> [FK].<ul>\n<li>Hvis en moderat induktor ikke kan unngås: øk dosen i trinn på 30 mg etter 7 dagers behandling. Maksimum er det dobbelte av dosen pasienten tolererte før induktoren ble startet [FK].<\/li>\n<li>Etter seponering av induktoren: tilbake til dosen som var tolerert før.<\/li>\n<\/ul>\n<\/li>\n<li><strong>Prevensjon:<\/strong> Fertile kvinner skal bruke <strong>effektiv ikke-hormonell prevensjon<\/strong> under behandlingen og i minst 4 måneder etter siste dose. Menn skal bruke prevensjon i minst 3 måneder etter siste dose [FK].<\/li>\n<\/ul>\n<p><strong>Annet viktig:<\/strong><\/p>\n<ul>\n<li>Brigatinib har <strong>det mest sammensatte kontrollregimet<\/strong> av alle de målrettede legemidlene: oppstartsdose, lungevakt i uke 1, ny oppstartsdose etter pause og en lang tabell for dosemodifisering.<\/li>\n<li>Dag 8 bør være et definert kontaktpunkt før opptrapping.<\/li>\n<li>Ved planlagt kirurgi eller stråling med pause på 14 dager eller mer: planlegg ny oppstart med 90 mg på forhånd.<\/li>\n<\/ul>", "krizotinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> Ikke rangert («annen tilgjengelig ALK-hemmer»; også ROS1).<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Xalkori) · [FK-int] Felleskatalogens interaksjonsoppslag.<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> ALK- eller ROS1-positiv. Brukes sjelden i dag, men kan være aktuell ved ROS1 [HP].<\/p>\n<p><strong>Dosering:<\/strong> 250 mg × 2.<\/p>\n<p><strong>Nedsatt organfunksjon [FK]:<\/strong> ClCR &lt; 30 uten dialyse: 250 mg × 1, kan økes til 200 mg × 2 etter minst 4 uker. Moderat nedsatt leverfunksjon: 200 mg × 2. Alvorlig nedsatt leverfunksjon: 250 mg × 1.<\/p>\n<p><strong>Dosereduksjon:<\/strong> 200 mg × 2, deretter 250 mg × 1. Ved behov for videre reduksjon: seponer.<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke<\/li>\n<li>EKG<\/li>\n<li>Puls og blodtrykk<\/li>\n<li>Nyrefunksjon (eGFR)<\/li>\n<li>Øyestatus ved synsplager i anamnesen<\/li>\n<\/ul>\n<p><strong>Kontroller [FK]:<\/strong><\/p>\n<ul>\n<li><strong>Leverprøver ukentlig de første 2 månedene, deretter månedlig<\/strong><\/li>\n<li><strong>Øyeundersøkelse, inkludert netthinne, innen 1 måned etter start, deretter hver 3. måned<\/strong><\/li>\n<li>EKG, elektrolytter, puls og blodtrykk regelmessig<\/li>\n<li>Blodtelling ved klinisk indikasjon<\/li>\n<li>Nyrefunksjon<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li><strong>Synsforstyrrelser<\/strong> (lysglimt og etterbilder, ofte forbigående)<\/li>\n<li>Hepatotoksisitet<\/li>\n<li>QTc-forlengelse og bradykardi<\/li>\n<li>Nøytropeni<\/li>\n<li>Ødem<\/li>\n<li>GI-plager (kvalme, diaré, oppkast)<\/li>\n<li>ILD, oftest innen 2 måneder<\/li>\n<li>Nyrecyster og redusert eGFR<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>ALAT/ASAT grad 3–4 med normal bilirubin:<\/strong> Pause til grad ≤ 1, gjenoppta 250 mg × 1 og trapp opp hvis behandlingen tolereres.<\/li>\n<li><strong>ALAT/ASAT &gt; 3 × ULN med bilirubin &gt; 2 × ULN:<\/strong> Seponer.<\/li>\n<li><strong>QTc grad 3:<\/strong> Pause til grad ≤ 1, gjenoppta med lavere dose. Grad 4: seponer.<\/li>\n<li><strong>Bradykardi:<\/strong> Gjennomgå legemidler.<\/li>\n<li><strong>Alvorlig synstap:<\/strong> Seponer og henvis til øyelege.<\/li>\n<li><strong>ILD:<\/strong> Seponer.<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Sterke CYP3A-hemmere<\/strong> kan gi 3–4 ganger høyere krizotinibnivå. Samtidig bruk bør unngås [FK-int].<\/li>\n<li><strong>Sterke induktorer:<\/strong> Rifampicin gir 80–90 % lavere nivå. Kombinasjonen bør unngås [FK-int].<\/li>\n<li><strong>Krizotinib er selv en moderat CYP3A-hemmer.<\/strong> Peroral midazolam får 3–4 ganger høyere nivå, og dosebehovet anslås å være 70–80 % lavere [FK-int]. Det samme gjelder for eksempel takrolimus og ciklosporin.<\/li>\n<li>Unngå QT-forlengende kombinasjoner.<\/li>\n<\/ul>", "repotrektinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> Ikke rangert (ROS1 og NTRK), likestilt med entrektinib.<\/p>\n<p><em>Kilder: [FK] Felleskatalogen (Augtyro) · [FK-int] Felleskatalogens interaksjonsoppslag · [SPC] EU-preparatomtale · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> ROS1-positiv avansert NSCLC, uavhengig av tidligere behandling. Innført i Beslutningsforum 25.08.2025, i bruk fra 01.10.2025 (ID2024_065). NTRK-fusjon, også etter tidligere NTRK-hemmer: innført 20.10.2025 (ID2025_037) [Nye metoder]. Ikke rangert i LIS 2026/27 [LIS].<\/p>\n<p><strong>Dosering:<\/strong> 160 mg × 1 i 14 dager, deretter 160 mg × 2.<\/p>\n<p><strong>Dosereduksjon:<\/strong> 160 → 120 → 80 mg (× 1 eller × 2, etter fase). Hvis 80 mg ikke tolereres: seponer.<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke<\/li>\n<li>Graviditetstest<\/li>\n<li><strong>Informer om svimmelhet og fallrisiko. Pasienten skal ikke kjøre bil ved CNS-symptomer.<\/strong><\/li>\n<li><strong>Prevensjon:<\/strong> Barrieremetode (se Interaksjoner).<\/li>\n<\/ul>\n<p><strong>Kontroller:<\/strong><\/p>\n<ul>\n<li>Leverprøver ved klinisk indikasjon [SPC]. [Forslag]: etter 2 og 4 uker, deretter månedlig de første 3 månedene.<\/li>\n<li><strong>Dag 14, før opptrapping:<\/strong> vurder svimmelhet [Forslag].<\/li>\n<li>CK ved muskelsymptomer.<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger [SPC]:<\/strong><\/p>\n<ul>\n<li><strong>Svimmelhet 66 %<\/strong> (median debut dag 7)<\/li>\n<li><strong>Dysgeusi 57 %<\/strong><\/li>\n<li>Parestesi 39 % og obstipasjon 39 %<\/li>\n<li>Anemi 38 %<\/li>\n<li><strong>Ataksi 29 %<\/strong> og kognitive forstyrrelser 22 %<\/li>\n<li>Muskelsvakhet og CK-stigning<\/li>\n<li>Vektøkning<\/li>\n<li><strong>Frakturer 3,5 %<\/strong><\/li>\n<li>Pneumonitt 3,2 %<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>CNS-effekter:<\/strong><ul>\n<li>Intolerabel grad 2: pause til grad ≤ 1, gjenoppta med samme eller lavere dose.<\/li>\n<li>Grad 3: pause, gjenoppta med lavere dose.<\/li>\n<li>Grad 4: seponer.<\/li>\n<li>Dosemodifisering fjernet eller nedgraderte svimmelheten hos 78 % [Ekspert]. Vurder å utsette opptrappingen ved plagsom svimmelhet [Forslag]. 14 % ble aldri trappet opp til dosering to ganger daglig.<\/li>\n<\/ul>\n<\/li>\n<li><strong>Smerter, nedsatt bevegelighet eller deformitet:<\/strong> Utred raskt for fraktur.<\/li>\n<li><strong>ILD:<\/strong> Pause ved mistanke, seponer ved bekreftet ILD.<\/li>\n<li><strong>CK-stigning med symptomer:<\/strong> Pause.<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Sterke og moderate CYP3A-hemmere bør unngås.<\/strong> Itrakonazol gir inntil 6 ganger høyere nivå. Felleskatalogen fører også moderate hemmere som «bør unngås»: <strong>flukonazol, verapamil og erytromycin<\/strong> [FK-int].<\/li>\n<li><strong>Sterke og moderate induktorer bør unngås<\/strong> [FK-int].<ul>\n<li>Rifampicin gir minst 90 % lavere nivå, med «kraftig og uforutsigbar interaksjonseffekt».<\/li>\n<li>Moderate induktorer som modafinil og bosentan står også som «bør unngås».<\/li>\n<\/ul>\n<\/li>\n<li><strong>Repotrektinib er selv en CYP3A4-induktor<\/strong> [FK-int]:<ul>\n<li>Everolimus får lavere nivå. Konsentrasjonen må måles.<\/li>\n<li>Mykofenolsyre får lavere nivå (via UGT og CYP3A4).<\/li>\n<\/ul>\n<\/li>\n<li><strong>Repotrektinib hemmer P-gp, BCRP, OATP1B1 og MATE.<\/strong> Følsomme substrater kan få høyere nivå. Ciklosporin, sirolimus og takrolimus får lavere nivå. Mål konsentrasjonen og juster [FK]. Unngå grapefruktjuice [FK].<\/li>\n<li><strong>Hormonell prevensjon er usikker<\/strong> fordi legemidlet induserer CYP3A4 [FK]. Kvinner: svært sikker prevensjon under behandlingen og minst 2 måneder etter siste dose, med barrieremetode i tillegg til eventuell hormonell prevensjon. Menn med fertil partner: kondom under behandlingen og 4 måneder etter siste dose. Graviditetstest før oppstart. Ikke amming under behandlingen og 10 dager etter [FK].<\/li>\n<\/ul>", "entrektinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> Ikke rangert (ROS1 og NTRK), likestilt med repotrektinib.<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Rozlytrek).<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> ROS1-positiv, og NTRK-fusjon [HP].<\/p>\n<p><strong>Dosering:<\/strong> 600 mg × 1.<\/p>\n<p><strong>Dosereduksjon:<\/strong> 600 → 400 → 200 mg. Hvis 200 mg ikke tolereres: seponer.<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke<\/li>\n<li><strong>Urinsyre<\/strong><\/li>\n<li><strong>EKG<\/strong> (start ikke ved QTc &gt; 450 ms)<\/li>\n<li>LVEF ved hjertesymptomer eller risiko<\/li>\n<li>Graviditetstest<\/li>\n<li>Kartlegg kognisjon<\/li>\n<\/ul>\n<p><strong>Kontroller [FK]:<\/strong><\/p>\n<ul>\n<li><strong>EKG og elektrolytter etter 1 måned<\/strong>, deretter ved behov<\/li>\n<li><strong>Urinsyre periodisk<\/strong><\/li>\n<li>Kognisjon og vekt ved hver kontroll<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li>Dysgeusi, svimmelhet, ataksi og kognitive forstyrrelser<\/li>\n<li>Vektøkning og ødem<\/li>\n<li>Hyperurikemi<\/li>\n<li>Frakturer<\/li>\n<li>Anemi og nøytropeni<\/li>\n<li>Hypotensjon og synkope<\/li>\n<li>QTc-forlengelse og hjertesvikt<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>QTc 481–500 ms:<\/strong> Pause til &lt; 481 ms, samme dose. <strong>QTc &gt; 500 ms:<\/strong> pause; gjenoppta med lavere dose hvis ingen annen årsak finnes. Ved residiv eller arytmi: seponer.<\/li>\n<li><strong>Hjertesvikt grad 2–3:<\/strong> Pause, gjenoppta med lavere dose. Grad 4: seponer.<\/li>\n<li><strong>Hyperurikemi med symptomer eller grad 4:<\/strong> Urinsyresenkende behandling og pause.<\/li>\n<li><strong>Kognitive forstyrrelser grad ≥ 2 som er intolerable:<\/strong> Pause, gjenoppta med lavere dose. Grad 4: seponer.<\/li>\n<li><strong>Frakturer:<\/strong> Lav terskel for bildediagnostikk.<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Unngå sterke og moderate CYP3A-hemmere<\/strong> [FK].<ul>\n<li>Hvis det ikke er mulig hos voksne: <strong>100 mg × 1 ved sterke<\/strong> og <strong>200 mg × 1 ved moderate hemmere<\/strong>, og <strong>begrens kombinasjonen til 14 dager<\/strong> [FK].<\/li>\n<li>Etter seponering av hemmeren: tilbake til tidligere dose.<\/li>\n<\/ul>\n<\/li>\n<li><strong>Unngå sterke og moderate induktorer<\/strong>, fordi de kan redusere effekten [FK].<\/li>\n<li>Entrektinib kan hemme P-gp (følg digoksin). Det finnes ingen egen doseanbefaling for P-gp-substrater [FK].<\/li>\n<li><strong>Unngå grapefrukt, Sevilla-appelsiner og produkter som inneholder grapefrukt<\/strong> [FK].<\/li>\n<\/ul>", "dabrafenib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> Ikke rangert (BRAF V600).<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Tafinlar, Mekinist) · [FK-int] Felleskatalogens interaksjonsoppslag · [Label] amerikansk preparatomtale · [Ekspert] ekspertartikler (se kildelisten).<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> BRAF V600E [HP].<\/p>\n<p><strong>Dosering:<\/strong> Dabrafenib 150 mg × 2 og trametinib 2 mg × 1. Tas <strong>på tom mage<\/strong> (1 time før eller 2 timer etter mat).<\/p>\n<p><strong>Dosereduksjon:<\/strong><\/p>\n<ul>\n<li>Dabrafenib: 150 → 100 → 75 → 50 mg × 2.<\/li>\n<li>Trametinib: 2 → 1,5 → 1 mg × 1. Ikke under 1 mg.<\/li>\n<\/ul>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke, med kreatinin<\/li>\n<li><strong>LVEF (ekko)<\/strong><\/li>\n<li><strong>Blodtrykk<\/strong><\/li>\n<li><strong>Hudundersøkelse av hele kroppen<\/strong><\/li>\n<li><strong>Hode- og halsundersøkelse<\/strong> (munnslimhinne og lymfeknuter)<\/li>\n<li><strong>CT thorax/abdomen<\/strong><\/li>\n<li>Øyestatus ved tidligere øyesykdom<\/li>\n<li><strong>Paracetamol og en skriftlig feberplan utleveres<\/strong><\/li>\n<li><strong>Prevensjon:<\/strong> Ikke hormonell prevensjon (se Interaksjoner).<\/li>\n<\/ul>\n<p><strong>Kontroller [FK]:<\/strong><\/p>\n<ul>\n<li><strong>LVEF: etter 1 måned, deretter hver 3. måned<\/strong><\/li>\n<li><strong>Leverprøver hver 4. uke de første 6 månedene<\/strong><\/li>\n<li><strong>Hudundersøkelse månedlig<\/strong>, også i 6 måneder etter seponering<\/li>\n<li>Hode/hals hver 3. måned og CT thorax/abdomen hver 6. måned (følger oftest vanlig kontroll-CT)<\/li>\n<li>Kreatinin rutinemessig<\/li>\n<li>Blodtrykk<\/li>\n<li>Øyeundersøkelse <strong>straks ved synsendringer<\/strong><\/li>\n<li>Anal- og bekkenundersøkelse før og etter behandling (nye maligniteter)<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li><strong>Feber 56 %:<\/strong> ofte i den første måneden og tilbakevendende. Kan gi frostanfall, hypotensjon og prerenal nyresvikt.<\/li>\n<li>Kvalme, diaré og asteni<\/li>\n<li>Utslett og <strong>nye hudtumorer<\/strong> (kutant plateepitelkarsinom og keratoakantom)<\/li>\n<li><strong>Redusert LVEF<\/strong> og hypertensjon<\/li>\n<li><strong>Øye:<\/strong> uveitt, retinal veneokklusjon (RVO) og serøs netthinneløsning (RPED)<\/li>\n<li>Blødning<\/li>\n<li>Hepatotoksisitet, nøytropeni og hyponatremi<\/li>\n<li>Sjeldent: HLH og alvorlige hudreaksjoner (SCAR)<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>Feber ≥ 38 °C:<\/strong><ul>\n<li>Pause <strong>begge<\/strong> legemidlene straks og gi paracetamol.<\/li>\n<li>Utelukk infeksjon.<\/li>\n<li>Gjenoppta med samme dose når pasienten har vært symptomfri i minst 24 timer.<\/li>\n<li>Ved tilbakevendende feber: pause allerede ved prodromer. Ved manglende effekt vurderes prednisolon (10 mg).<\/li>\n<li>Ved feber &gt; 40 °C, hypotensjon eller dehydrering: gi iv væske og kontroller kreatinin.<\/li>\n<li>Den tilpassede algoritmen (COMBI-APlus) halverte alvorlig feber og innleggelser [Ekspert].<\/li>\n<\/ul>\n<\/li>\n<li><strong>LVEF-fall ≥ 10 prosentpoeng og under nedre normalgrense:<\/strong> Pause trametinib. Ved bedring innen 4 uker: gjenoppta med lavere dose. Ved LVEF grad 3–4 eller uten bedring: seponer trametinib.<\/li>\n<li><strong>Øye:<\/strong><ul>\n<li><strong>RVO:<\/strong> seponer trametinib permanent.<\/li>\n<li><strong>RPED:<\/strong> pause trametinib i inntil 3 uker.<\/li>\n<li><strong>Uveitt:<\/strong> lokal behandling. Dabrafenib settes på pause ved manglende effekt.<\/li>\n<\/ul>\n<\/li>\n<li><strong>Kutant plateepitelkarsinom:<\/strong> Fjernes kirurgisk. Behandlingen fortsetter uendret.<\/li>\n<li><strong>Hepatotoksisitet grad 3–4:<\/strong> Pause, gjenoppta med lavere dose.<\/li>\n<li><strong>Seponer begge<\/strong> ved HLH, SCAR eller livstruende lungeemboli.<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li>Dabrafenib:<ul>\n<li>Dabrafenib metaboliseres via CYP2C8 og CYP3A4.<ul>\n<li>Ketokonazol økte AUC med 71 %, og gemfibrozil (CYP2C8) med 47 %.<\/li>\n<li><strong>Sterke CYP3A4- eller CYP2C8-hemmere og -induktorer bør erstattes<\/strong> med alternativer [Ekspert: Suttle 2015; Label].<\/li>\n<\/ul>\n<\/li>\n<li><strong>Dabrafenib induserer CYP3A4 og CYP2C9.<\/strong> Midazolam-AUC falt med 74 % og S-warfarin-AUC med 37 % [Ekspert].<ul>\n<li><strong>INR må måles hyppigere<\/strong> når dabrafenib startes og seponeres.<\/li>\n<li>Virkningen av <strong>deksametason<\/strong> og andre CYP3A4-substrater svekkes.<\/li>\n<\/ul>\n<\/li>\n<li><strong>Hormonell prevensjon er usikker.<\/strong> Felleskatalogen fører levonorgestrel som «bør unngås», fordi effekten kan falle 30–50 %. Som nødprevensjon brukes dobbel dose, 3 mg [FK-int]. Bruk ikke-hormonell prevensjon.<\/li>\n<li>DOAK (apixaban, rivaroksaban) er CYP3A4-substrater og kan få lavere nivå. Dette er ikke dokumentert [Forslag: vurder LMWH ved VTE].<\/li>\n<\/ul>\n<\/li>\n<li>Trametinib er ikke CYP-avhengig.<\/li>\n<\/ul>", "tepotinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> <strong>Førstevalg<\/strong> ved MET ex14, etter immunterapi og/eller platinum.<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Tepmetko) · [FK-int] Felleskatalogens interaksjonsoppslag · [Label] amerikansk preparatomtale · [Label-IL] israelsk preparatomtale · [Ekspert] ekspertartikler (se kildelisten) · [Forslag] eget forslag, skal avklares lokalt.<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> MET exon 14-skipping [HP].<\/p>\n<p><strong>Dosering:<\/strong> 450 mg × 1 (2 tabletter) <strong>med mat<\/strong>.<\/p>\n<p><strong>Dosereduksjon:<\/strong> 225 mg × 1. Hvis 225 mg ikke tolereres: seponer.<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke, med albumin<\/li>\n<li>EKG ved risiko<\/li>\n<li><strong>Mål legg- og ankelomkrets<\/strong> [Ekspert]<\/li>\n<li>Informer om at ødem er forventet<\/li>\n<\/ul>\n<p><strong>Kontroller:<\/strong><\/p>\n<ul>\n<li><strong>Leverprøver:<\/strong><ul>\n<li>Felleskatalogen sier «ved klinisk behov» [FK].<\/li>\n<li>En annen versjon av produsentens preparatomtale anbefaler leverprøver <strong>før start, hver 2. uke de første 3 månedene, deretter månedlig<\/strong> [Label-IL]. Den er strengere og samsvarer med andre TKI.<\/li>\n<li>Felleskatalogen (lest 01.11.2026) sier fortsatt bare «før oppstart og ved klinisk behov» [FK]. Uenigheten mellom kildene står altså ved lag. <strong>Praktisk råd: følg det strengeste opplegget, hver 2. uke de første 3 månedene og deretter månedlig<\/strong> [Forslag].<\/li>\n<\/ul>\n<\/li>\n<li>Kreatinin, albumin og ødem ved hver kontroll.<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li><strong>Perifert ødem<\/strong> (svært vanlig, ofte sent og progredierende)<\/li>\n<li>Kvalme og diaré<\/li>\n<li><strong>Kreatininstigning<\/strong> (ofte en pseudoøkning, fordi tepotinib hemmer tubulær sekresjon)<\/li>\n<li>Hypoalbuminemi<\/li>\n<li>Økte leververdier, lipase og amylase<\/li>\n<li>QTc-forlengelse<\/li>\n<li>ILD<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>Ødem:<\/strong><ul>\n<li>Kompresjonsstrømper, elevasjon og aktivitet. Diuretika har liten effekt.<\/li>\n<li>Grad 2 som er intolerabel, eller grad 3: pause til grad ≤ 1, gjenoppta med 225 mg [Ekspert].<\/li>\n<\/ul>\n<\/li>\n<li><strong>Kreatinin:<\/strong> Vurder cystatin C eller annen GFR-vurdering før dosen endres [Forslag].<\/li>\n<li><strong>ALAT/ASAT grad 3 uten bilirubinstigning:<\/strong> Pause til baseline. Ved normalisering innen 7 dager: samme dose. Ellers: 225 mg [Label-IL].<\/li>\n<li><strong>ALAT/ASAT grad 4, eller ALAT/ASAT &gt; 3 × ULN med bilirubin &gt; 2 × ULN:<\/strong> Seponer [Label-IL].<\/li>\n<li><strong>ILD av enhver grad:<\/strong> Pause ved mistanke, seponer ved bekreftet ILD [FK; Label-IL].<\/li>\n<li><strong>Andre bivirkninger grad ≥ 3:<\/strong> Reduser til 225 mg til grad ≤ 2. Pause i inntil 21 dager kan også vurderes [FK; Label-IL].<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Sterke CYP3A- og P-gp-induktorer bør unngås<\/strong>, fordi tepotinibnivået kan falle så mye at effekten blir nedsatt eller opphevet [FK-int]. Det gjelder for eksempel rifampicin, rifabutin, karbamazepin, fenytoin, barbiturater, johannesurt, apalutamid, enzalutamid og dabrafenib.<\/li>\n<li><strong>Sterke CYP3A- og P-gp-hemmere bør unngås<\/strong> ifølge interaksjonsoppslaget i Felleskatalogen [FK-int]. Eksempler er itrakonazol, posakonazol, klaritromycin, erytromycin og ritonavir. Ved verapamil: forholdsregler bør tas.<\/li>\n<li><strong>Forklaring på motsigelsen i Felleskatalogen:<\/strong><ul>\n<li>Det opprinnelige rådet om å unngå doble sterke CYP3A- og P-gp-hemmere og sterke induktorer bygde <strong>bare på in vitro-data<\/strong>. Effekten var ikke studert klinisk [Label-IL].<\/li>\n<li>Senere kliniske interaksjonsstudier med itrakonazol (NCT05203822) og karbamazepin viste <strong>ingen klinisk betydningsfull endring<\/strong> i tepotinibeksponeringen. Det er tatt inn i amerikansk preparatomtale [Label].<\/li>\n<li>Felleskatalogen har altså det nyere farmakokinetiske avsnittet, mens interaksjonsoppslaget er basert på det eldre rådet.<\/li>\n<li><strong>Praktisk råd:<\/strong> kombinasjonene er trolig akseptable med klinisk oppfølging. Velg alternativ når det er lett [Forslag].<\/li>\n<\/ul>\n<\/li>\n<li><strong>Tepotinib er en svak P-gp-hemmer<\/strong> [FK-int; Ekspert]:<ul>\n<li>Dabigatran får ca. 50 % høyere nivå. Følg med på blødning.<\/li>\n<li>Digoksin kan få inntil 50 % høyere nivå. Mål serum-digoksin.<\/li>\n<li>Unngå P-gp-substrater med smalt terapeutisk vindu, eller følg dem tett [Label-IL]. Felleskatalogen: dabigatran får ca. 50 % høyere AUC, og dosejustering og blødningsovervåking kan være nødvendig. Digoksin kan få inntil 50 % høyere nivå, så mål serumkonsentrasjonen. Kreatinin kan stige fordi tepotinib hemmer OCT2 og MATE, uten at nyrefunksjonen er redusert [FK].<\/li>\n<\/ul>\n<\/li>\n<li>Tepotinib påvirker ikke CYP3A4: midazolam er uendret [Ekspert].<\/li>\n<\/ul>\n<p><strong>Annet viktig:<\/strong><\/p>\n<ul>\n<li>Ødem er den vanligste årsaken til dosereduksjon og seponering ved MET-hemmere. Planlegg tiltak tidlig, gjerne sammen med fysioterapeut eller lymfødemterapeut.<\/li>\n<\/ul>", "selperkatinib": "<p class=\"lisline\"><strong>LIS 2026/27:<\/strong> Ikke rangert (RET).<\/p>\n<p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen (Retsevmo) · [FK-int] Felleskatalogens interaksjonsoppslag · [Ekspert] ekspertartikler (se kildelisten).<\/em><\/p>\n<p><strong>Indikasjon:<\/strong> RET-fusjon, førstelinje og senere linjer [HP].<\/p>\n<p><strong>Dosering:<\/strong> 160 mg × 2. Ved vekt under 50 kg: 120 mg × 2.<\/p>\n<p><strong>Nedsatt leverfunksjon:<\/strong> Child-Pugh C: 80 mg × 2 [FK].<\/p>\n<p><strong>Dosereduksjon:<\/strong> 160 → 120 → 80 → 40 mg × 2. Hvis 40 mg × 2 ikke tolereres: seponer.<\/p>\n<p><strong>Oppstartsprøver:<\/strong><\/p>\n<ul>\n<li>Felles pakke<\/li>\n<li><strong>QTcF ≤ 470 ms<\/strong> og normale elektrolytter (K, Mg, Ca)<\/li>\n<li><strong>TSH og fritt T4<\/strong><\/li>\n<li><strong>Blodtrykk<\/strong> (optimaliser blodtrykksbehandlingen før start)<\/li>\n<li>Vurder risiko for tumorlysesyndrom ved stor tumorbyrde<\/li>\n<\/ul>\n<p><strong>Kontroller [FK]:<\/strong><\/p>\n<ul>\n<li><strong>ALAT/ASAT hver 2. uke de første 3 månedene, deretter månedlig de neste 3 månedene<\/strong><\/li>\n<li><strong>EKG og elektrolytter etter 1 uke, deretter månedlig de første 6 månedene<\/strong><\/li>\n<li>Blodtrykk ved hver kontroll<\/li>\n<li>TSH periodisk [Forslag: hver 2.–3. måned]<\/li>\n<\/ul>\n<p><strong>Viktigste bivirkninger:<\/strong><\/p>\n<ul>\n<li>Hypertensjon, munntørrhet, diaré og ødem<\/li>\n<li>Økte leververdier<\/li>\n<li>QTc-forlengelse<\/li>\n<li>Hypotyreose<\/li>\n<li>Blødning<\/li>\n<li><strong>Overfølsomhet:<\/strong> utslett, feber, artralgi og fall i trombocytter, oftest de første ukene<\/li>\n<li>Chylothorax og chyløs ascites<\/li>\n<li>ILD<\/li>\n<li><strong>51 % trengte dosereduksjon<\/strong> [Ekspert]<\/li>\n<\/ul>\n<p><strong>Håndtering:<\/strong><\/p>\n<ul>\n<li><strong>ALAT/ASAT grad 3–4:<\/strong> Pause til grad ≤ 1, gjenoppta 2 nivåer ned og trapp gradvis opp etter ≥ 2 uker. Ved residiv: seponer.<\/li>\n<li><strong>Overfølsomhet:<\/strong> Pause og gi prednisolon 1 mg/kg. Gjenoppta med 40 mg × 2 under steroidbehandling, og trapp opp ukentlig til tidligere dose. Trapp deretter ned steroidet.<\/li>\n<li><strong>QTcF &gt; 500 ms:<\/strong> Pause til &lt; 470 ms (eller baseline), gjenoppta ett nivå ned. Ved arytmi: seponer.<\/li>\n<li><strong>Hypertensjon:<\/strong> Behandle. Grad 3: pause til kontrollert, deretter lavere dose. Grad 4: seponer.<\/li>\n<li><strong>Blødning grad 3:<\/strong> Pause, gjenoppta med lavere dose. Grad 4: seponer.<\/li>\n<li><strong>Hypotyreose:<\/strong> Levotyroksin. Pause er vanligvis ikke nødvendig.<\/li>\n<li><strong>Chylothorax/chyløs ascites:<\/strong> Drenasje og fettredusert kost. Vurder dosereduksjon.<\/li>\n<li><strong>ILD:<\/strong> Grad 2: pause til bedring, gjenoppta med redusert dose. Seponer ved residiv. Grad 3–4: seponer [FK].<\/li>\n<\/ul>\n<p><strong>Interaksjoner:<\/strong><\/p>\n<ul>\n<li><strong>Sterke CYP3A4-hemmere: reduser dosen med 50 %<\/strong>, for eksempel fra 160 til 80 mg × 2 [FK]. Det gjelder blant annet itrakonazol, ketokonazol, posakonazol, vorikonazol, klaritromycin og ritonavir.<ul>\n<li>Etter seponering av hemmeren (3–5 halveringstider): tilbake til dosen før hemmeren ble startet [FK].<\/li>\n<li>Ved behov for makrolid: <strong>azitromycin<\/strong> hemmer ikke CYP3A4 i relevant grad. Felleskatalogen omtaler <strong>erytromycin<\/strong> som en svak hemmer og et mulig alternativ [FK-int].<\/li>\n<li><strong>Moderate hemmere<\/strong> omtales ikke spesielt i Felleskatalogen.<\/li>\n<\/ul>\n<\/li>\n<li><strong>Unngå sterke CYP3A4-induktorer<\/strong>, fordi de gir risiko for redusert effekt [FK]. Eksempler er rifampicin, karbamazepin, fenytoin, fenobarbital, johannesurt og dabrafenib. Moderate induktorer omtales ikke.<\/li>\n<li><strong>Syrehemmere:<\/strong> PPI tas med et måltid. H2-blokker tas 2 timer før eller 10 timer etter selperkatinib [FK].<\/li>\n<li><strong>Følsomme CYP2C8- og CYP3A4-substrater bør unngås<\/strong> [FK]. Repaglinid får omtrent dobbelt så høyt nivå: halver dosen og følg blodsukkeret nøye [FK-int].<\/li>\n<li>Selperkatinib hemmer <strong>P-gp og BCRP<\/strong>. Vær forsiktig med substrater av disse [FK].<\/li>\n<\/ul>"};
 const $=s=>document.querySelector(s);
 const esc=t=>t;
-const views=["markorer","legemidler","kontroller","bivirkninger","testing"];
+const views=["markorer","legemidler","kontroller","bivirkninger","testing","felles"];
 let view="markorer",filter="all";
 const strip=h=>h.replace(/<[^>]+>/g,"");
 const drugById=Object.fromEntries(D.map(d=>[d.id,d]));
@@ -486,6 +1210,7 @@ function markerCard(m){
   </div>${tx}${drugLinks(m.id)}</div></details>`;
 }
 function drugCard(d){
+  if(d.id==="io")return `<details class="card drug" id="lm-io"><summary><div class="top"><span class="name">${d.name}</span><span class="freq">Immunterapi</span></div><p class="short">Valg av preparat følger LIS 2026/27. Doser, kontroller og bivirkninger står på egne sider.</p><span class="more">Vis lenker</span></summary><div class="body"><ul><li><a href="https://holeira.github.io/Lungekreft/medikamenter/#lis">LIS-rangering (Medikamentell behandling → Beslutningsforum og LIS)</a></li><li><a href="https://holeira.github.io/Lungekreft/medikamenter/#immunterapi">Legemidler og doser (Medikamentell behandling → Immunterapi)</a></li></ul>${ioLinks()}</div></details>`;
   const mk=d.markers.map(id=>{const m=M.find(x=>x.id===id);return m?`<a class="dl" href="#mk-${id}">${m.name}</a>`:""}).join("");
   const flags=d.flags.filter(f=>aeByKey[f]).map(f=>`<a class="tag" href="#ae-${f}">${aeByKey[f].t}</a>`).join("");
   return `<details class="card drug" id="lm-${d.id}"><summary><div class="top"><span class="name">${d.name}</span><span class="freq">${d.brand}</span></div>
@@ -503,7 +1228,8 @@ function drugCard(d){
    <div><h3>Viktigste bivirkninger</h3><p class="note">${d.ae}</p></div>
    <div><h3>Håndtering</h3><div class="tablewrap"><table><thead><tr><th>Situasjon</th><th>Tiltak</th></tr></thead><tbody>${d.mgmt.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</tbody></table></div></div>
    <div class="links"><span class="lbl">Markør:</span> ${mk}</div>
-   <div class="links"><span class="lbl">Bivirkningsoppslag:</span> ${flags}</div>${d.id==="io"?ioLinks():""}
+   <div class="links"><span class="lbl">Bivirkningsoppslag:</span> ${flags}</div>
+   ${FULLM[d.id]?`<details class="full"><summary>Fullstendig omtale med kilder</summary><div class="fullbody">${FULLM[d.id]}</div></details>`:""}
   </div></details>`;
 }
 function ctrlTable(list){
@@ -516,7 +1242,7 @@ function aeCard(a){
   <div class="links">${ds.map(d=>`<a class="dl" href="#lm-${d.id}">${d.name}</a>`).join("")}</div></div></div>`;
 }
 const textM=m=>strip([m.name,m.short,m.first,m.later,m.studies,m.trdtxt,m.tx.flat().join(" ")].join(" ")).toLowerCase();
-const textD=d=>[d.name,d.brand,d.cls,d.dose,d.red,d.organ,d.ix,d.ae,d.start.join(" "),d.ctrl.flat().join(" "),d.mgmt.flat().join(" ")].join(" ").toLowerCase();
+const textD=d=>[FULLM[d.id]?strip(FULLM[d.id]):"",d.name,d.brand,d.cls,d.dose,d.red,d.organ,d.ix,d.ae,d.start.join(" "),d.ctrl.flat().join(" "),d.mgmt.flat().join(" ")].join(" ").toLowerCase();
 const textA=a=>(a.t+" "+a.d).toLowerCase();
 function render(){
   const s=$("#q").value.trim().toLowerCase();
@@ -537,15 +1263,15 @@ function render(){
     const l=AE.filter(a=>!s||textA(a).includes(s)||D.some(d=>d.flags.includes(a.k)&&d.name.toLowerCase().includes(s)));n=l.length;tot=AE.length;
     $("#ga").innerHTML=l.length?l.map(aeCard).join(""):empty();
   }
-  $("#count").textContent=view==="testing"?"":`${n} av ${tot} vist`;
+  $("#count").textContent=(view==="testing"||view==="felles")?"":`${n} av ${tot} vist`;
   if(s&&n===1){const d=document.querySelector(`#v-${view} details`);if(d)d.open=true;}
   // global hint
-  if(s&&view!=="testing"){
+  if(s&&view!=="testing"&&view!=="felles"){
     const hits=[["markorer",M.filter(m=>textM(m).includes(s)).length],["legemidler",D.filter(d=>textD(d).includes(s)).length],["bivirkninger",AE.filter(a=>textA(a).includes(s)).length]].filter(h=>h[0]!==view&&h[1]>0);
     $("#hint").innerHTML=hits.length?"Også treff i: "+hits.map(h=>`<button class="linkbtn" type="button" data-go="${h[0]}">${labels[h[0]]} (${h[1]})</button>`).join(" · "):"";
   } else $("#hint").innerHTML="";
 }
-const labels={markorer:"Markører",legemidler:"Legemidler",kontroller:"Kontrollplan",bivirkninger:"Bivirkninger",testing:"Testing og studier"};
+const labels={markorer:"Markører",legemidler:"Legemidler",kontroller:"Kontrollplan",bivirkninger:"Bivirkninger",testing:"Testing og studier",felles:"Felles råd og kilder"};
 const empty=()=>'<div class="empty">Ingen treff. Prøv et annet søkeord eller fjern filteret.</div>';
 function go(v,anchor){
   view=v;render();
@@ -562,6 +1288,7 @@ function fromHash(){
   if(h.startsWith("lm-")){$("#q").value="";go("legemidler",h);return;}
   if(h.startsWith("ae-")){$("#q").value="";go("bivirkninger",h);return;}
   if(h==="impress"){go("testing","impress");return;}
+  if(h.startsWith("fx-")){go("felles",h);return;}
   render();
 }
 function setChip(){document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",String(c.dataset.f===filter)));}
@@ -571,7 +1298,7 @@ $("#q").addEventListener("input",render);
 document.addEventListener("click",e=>{
   const b=e.target.closest("[data-go]");if(b){go(b.dataset.go);return;}
   const a=e.target.closest('a[href^="#"]');
-  if(a){const h=a.getAttribute("href").slice(1);if(/^(mk|lm|ae)-|^impress$/.test(h)){e.preventDefault();if(location.hash.slice(1)===h)fromHash();else location.hash=h;}}
+  if(a){const h=a.getAttribute("href").slice(1);if(/^(mk|lm|ae|fx)-|^impress$/.test(h)){e.preventDefault();if(location.hash.slice(1)===h)fromHash();else location.hash=h;}}
 });
 window.addEventListener("hashchange",fromHash);
 fromHash();
