@@ -1784,6 +1784,8 @@ const ARK={
  'ark-pakl-tislelizumab':{t:'Karboplatin + paklitaksel/nab-paklitaksel + tislelizumab',bruk:'Plateepitelkarsinom uten driver (LIS 2026/27)',kur:'kur-karbo-paklitaksel',io:'Tislelizumab'},
  'ark-etop-tislelizumab':{t:'Karboplatin + etoposid + tislelizumab',bruk:'SCLC utbredt sykdom, og inoperabel/metastatisk LCNEC (LIS 2026/27)',kur:'kur-karbo-etoposid',io:'Tislelizumab'},
  'ark-poseidon':{t:'Karboplatindublett + durvalumab + tremelimumab (POSEIDON)',bruk:'NSCLC uten EGFR/ALK, plateepitel og ikke-plateepitel, uavhengig av PD-L1 (HP okt. 2026)',kur:'kur-poseidon',io:'Durvalumab',io2:'Tremelimumab'},
+ 'ark-periop-nivolumab':{t:'Neoadjuvant karboplatindublett + nivolumab (CheckMate 816)',bruk:'Operabel NSCLC stadium II–III uten EGFR/ALK, PD-L1 ≥ 1 %. 3 kurer før operasjon, ingen immunterapi etter rutinemessig (HP 7.3)',kur:'kur-perioperativ',io:'Nivolumab'},
+ 'ark-periop-tislelizumab':{t:'Perioperativ karboplatindublett + tislelizumab (RATIONALE-315)',bruk:'Operabel NSCLC stadium II–III uten EGFR/ALK, PD-L1 &lt; 1 %. 4 kurer før operasjon, tislelizumab etter kan vurderes (HP 7.3, LIS 2026/27)',kur:'kur-perioperativ',io:'Tislelizumab'},
  'ark-atezolizumab':{t:'Atezolizumab monoterapi',bruk:'NSCLC uten driver, PD-L1 ≥ 50 % (LIS-førstevalg), eller ikke egnet for platinum uavhengig av PD-L1',kur:null,io:'Atezolizumab'}
 };
 const box=document.getElementById('kurark'),bar=document.querySelector('.bar'),main=document.querySelector('main');
@@ -1795,7 +1797,7 @@ function mark(root,word){const w=document.createTreeWalker(root,NodeFilter.SHOW_
 window.visArk=function(id){const k=ARK[id];if(!k)return false;
  box.innerHTML='';
  const h=document.createElement('div');h.className='ark-head';
- h.innerHTML='<div class="ark-nav"><a href="'+P+'#uten-driver">← Arbeidsportal kap. 9.2</a> · <a href="#kombi">Alle kombinasjonskurer</a> · <button type="button" onclick="window.print()">Skriv ut</button></div><div class="ark-kicker">Kurark</div><h2>'+k.t+'</h2><p><strong>Brukes ved:</strong> '+k.bruk+'</p>';
+ h.innerHTML='<div class="ark-nav"><a href="'+P+(k.kur==='kur-perioperativ'?'#neoadjuvant">← Arbeidsportal kap. 7.2':'#uten-driver">← Arbeidsportal kap. 9.2')+'</a> · <a href="#kombi">Alle kombinasjonskurer</a> · <button type="button" onclick="window.print()">Skriv ut</button></div><div class="ark-kicker">Kurark</div><h2>'+k.t+'</h2><p><strong>Brukes ved:</strong> '+k.bruk+'</p>';
  box.append(h);
  if(k.kur){const s=document.createElement('section');s.className='ark-sec';s.innerHTML='<h3>1. Kurskjema, prøver, bivirkninger og fallgruver</h3>';const b=blk(k.kur);b.querySelector('h3').remove();mark(b,k.io);if(k.io2)mark(b,k.io2);s.append(b);box.append(s)}
  const s2=document.createElement('section');s2.className='ark-sec';s2.innerHTML='<h3>'+(k.kur?'2':'1')+'. '+k.io+(k.io2?' + '+k.io2.toLowerCase():'')+': dosering</h3>';const r=ioRow(k.io);if(r){if(k.io2){const r2=ioRow(k.io2);if(r2)r.tBodies[0].append(r2.tBodies[0].rows[0])}s2.append(r)}
