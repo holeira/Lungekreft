@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lungekreftstudier i Norge – studiefinner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7f9; --card:#fff; --ink:#1c2430; --muted:#5b6675; --line:#e2e6ec;
+  --accent:#0b5c8a; --accent-soft:#e6f0f7;
+  --open:#1f7a4d; --open-bg:#e5f4ec; --unc:#9a6400; --unc-bg:#fdf3dc; --closed:#9b2c2c; --closed-bg:#f9e6e6;
+  --star:#7a3fb0; --star-bg:#f1e9f9;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#12161c; --card:#1b2129; --ink:#e7ebf0; --muted:#9aa5b4; --line:#2c343f;
+    --accent:#6fb4e0; --accent-soft:#1d2d3a; --open:#6fd19d; --open-bg:#173226; --unc:#f0c060; --unc-bg:#3a2f15;
+    --closed:#f08a8a; --closed-bg:#3a1d1d; --star:#c7a1ef; --star-bg:#2c2140; }
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;font-size:16px}
+header{padding:28px 20px 12px;max-width:1180px;margin:0 auto}
+h1{margin:0 0 4px;font-size:1.7rem}
+.sub{color:var(--muted);margin:0}
+main{max-width:1180px;margin:0 auto;padding:0 20px 40px}
+.meta{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:10px 16px;margin:16px 0 0;font-size:.93rem;display:flex;flex-direction:column;gap:4px}
+.meta summary{cursor:pointer;font-weight:700;color:var(--accent)}
+.meta[open] summary{margin-bottom:4px}
+.meta b{color:var(--muted)}
+.srclist{margin:0;padding-left:22px}
+.srclist li{margin:1px 0}
+.srclist b{color:var(--ink)}
+.prio{background:var(--star-bg);border:1px solid var(--line);border-left:5px solid var(--star);border-radius:10px;padding:14px 18px;margin:16px 0}
+.prio h2{margin:0 0 8px;font-size:1.1rem;color:var(--star)}
+.prio ul{margin:0;padding-left:20px}
+.prio li{margin:3px 0}
+.prio small{color:var(--muted)}
+.controls{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.seg{display:flex;flex-wrap:wrap;gap:4px}
+.seg button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:999px;font:inherit;font-size:.92rem;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (prefers-color-scheme: dark){.seg button[aria-pressed="true"]{color:#0d1720}}
+input[type=search]{flex:1;min-width:200px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+label.chk{display:flex;gap:6px;align-items:center;font-size:.95rem;cursor:pointer}
+.count{color:var(--muted);font-size:.92rem;margin:12px 0 6px}
+section.group h2{font-size:1.2rem;margin:22px 0 8px;padding-bottom:4px;border-bottom:2px solid var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.card.closed{opacity:.72}
+.top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.name{font-weight:700;font-size:1.05rem}
+.badge{font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.b-open{background:var(--open-bg);color:var(--open)}
+.b-unc{background:var(--unc-bg);color:var(--unc)}
+.b-closed{background:var(--closed-bg);color:var(--closed)}
+.marker{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:.85rem;padding:1px 8px;border-radius:6px}
+.stolav{display:inline-block;background:var(--star-bg);color:var(--star);font-weight:700;font-size:.8rem;padding:1px 8px;border-radius:6px;margin-left:4px}
+.row{font-size:.93rem}
+.row b{color:var(--muted);font-weight:600}
+.src{display:flex;gap:6px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
+.src span{border:1px solid var(--line);border-radius:5px;padding:0 6px}
+.ov{margin:18px 0 8px}
+.ov h2{font-size:1.2rem;margin:0 0 6px;padding-bottom:4px;border-bottom:2px solid var(--accent)}
+.ovlegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.85rem;color:var(--muted);margin:6px 0 10px}
+.ovlegend .sep{font-weight:700;margin-left:6px}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+#ovt{border-collapse:collapse;width:100%;font-size:.9rem}
+#ovt th{position:sticky;top:0;background:var(--accent-soft);color:var(--ink);text-align:left;padding:7px 9px;font-weight:700;white-space:nowrap}
+#ovt td{padding:6px 9px;border-top:1px solid var(--line);vertical-align:top}
+#ovt td.ic{font-size:1rem;padding-left:6px;padding-right:6px}
+#ovt td.ic+td.ic{color:var(--star)}
+#ovt td.c{text-align:center;white-space:nowrap}
+#ovt tr.grp td{background:var(--bg);font-weight:700;color:var(--accent);padding-top:10px}
+#ovt tr.closed td:not(.c){color:var(--muted)}
+#ovt a.jump{font-weight:600;text-decoration:none}
+#ovt a.jump:hover{text-decoration:underline}
+#ovt th.sortable{cursor:pointer;user-select:none}
+#ovt th.sortable:hover{background:var(--line)}
+#ovt th .arr{color:var(--muted);font-size:.8em}
+#ovt td.tags{white-space:nowrap}
+.tag{display:inline-block;font-size:.74rem;font-weight:700;padding:1px 7px;border-radius:5px;margin:1px 3px 1px 0;border:1px solid var(--line)}
+.t0{background:#fde8d8;color:#8a3b0b}.t1{background:#fbe3ee;color:#8a1f52}.t2{background:#e4e6fb;color:#2d3a8c}
+.t3{background:#e2f3f1;color:#0d6157}.t4{background:#e6f0f7;color:#0b5c8a}.t5{background:#eef0f3;color:#3d4757}.t6{background:#f3efe2;color:#6b5a1d}
+@media (prefers-color-scheme: dark){.tag{filter:brightness(.85)}}
+button.tag{font-family:inherit;cursor:pointer;line-height:1.5}
+button.tag:hover{outline:2px solid currentColor;outline-offset:0}
+button.tag.on{outline:2px solid currentColor;box-shadow:0 0 0 2px var(--card) inset}
+.ovfilter{font-size:.92rem;margin:0 0 8px;min-height:0}
+.ovfilter button{font:inherit;font-size:.85rem;margin-left:8px;border:1px solid var(--line);background:var(--card);color:var(--accent);border-radius:999px;padding:2px 10px;cursor:pointer}
+.phrow{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;width:100%}
+.phlab{font-weight:700;color:var(--muted);font-size:.9rem;min-width:92px}
+button.fchip{font-family:inherit;cursor:pointer;color:var(--ink)}
+button.fchip:hover{outline:2px solid var(--accent)}
+.fchip.on{outline:2px solid var(--accent)}
+.fchip{display:inline-block;font-size:.8rem;font-weight:600;padding:1px 8px;border-radius:5px;border:1px solid var(--line);background:var(--card)}
+.phchk{font-size:.9rem}
+.reset{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--card);color:var(--accent);border-radius:999px;padding:4px 12px;cursor:pointer}
+.seg.ph button{font-size:.85rem;padding:5px 10px}
+.ovnote{font-size:.85rem;color:var(--muted);margin:6px 0 0}
+.card.flash{outline:3px solid var(--accent);transition:outline .3s}
+.links{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;padding-top:8px;border-top:1px solid var(--line);font-size:.85rem}
+.links a{background:var(--accent-soft);padding:2px 9px;border-radius:6px;text-decoration:none;font-weight:600}
+.links a:hover{text-decoration:underline}
+.links .miss{color:var(--muted);padding:2px 4px;font-style:italic}
+.note{font-size:.88rem;color:var(--muted);font-style:italic}
+a{color:var(--accent)}
+details.legend{margin:10px 0;font-size:.92rem}
+details.legend summary{cursor:pointer;color:var(--accent);font-weight:600}
+footer{max-width:1180px;margin:0 auto;padding:20px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+.empty{padding:30px;text-align:center;color:var(--muted)}
+</style>
+</head>
+<body>
+<nav class="sitenav" aria-label="Sider"><style>
+.sitenav{background:#16384f;font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:14px;line-height:1.3}
+.sitenav ul{list-style:none;margin:0 auto;padding:0 12px;max-width:1180px;display:flex;flex-wrap:wrap;gap:2px}
+.sitenav li{margin:0}
+.sitenav a{display:block;padding:10px 14px;color:#dce9f2;text-decoration:none;border-bottom:3px solid transparent}
+.sitenav a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.sitenav a[aria-current="page"]{color:#fff;font-weight:600;border-bottom-color:#7fb6dd}
+.sitenav a:focus-visible{outline:2px solid #7fb6dd;outline-offset:-2px}
+@media print{.sitenav{display:none}}
+</style><ul><li><a href="https://holeira.github.io/Lungekreft/" data-sn="portal">Arbeidsportal</a></li><li><a href="https://holeira.github.io/Lungekreft/biomarkorer/" data-sn="biomarkorer">Biomarkører og målrettet behandling</a></li><li><a href="https://holeira.github.io/Lungekreft/immunterapi/" data-sn="immunterapi">Immunterapibivirkninger</a></li><li><a href="https://holeira.github.io/Lungekreft/medikamenter/" data-sn="medikamenter">Medikamentell behandling</a></li><li><a href="https://holeira.github.io/Lungekreft/studier/" data-sn="studier" aria-current="page">Lungekreftstudier</a></li></ul></nav>
+<header>
+  <h1>Lungekreftstudier i Norge</h1>
+  <p class="sub">Studiefinner for NSCLC, SCLC, mesoteliom og kreft-typeuavhengige studier · status per 3. november 2026 · Håkon Olav Leira</p>
+</header>
+<main>
+  <details class="meta">
+    <summary>Sist sjekket 3. november 2026 og kilder</summary>
+    <div>Status er sjekket 3. november 2026 mot tre studieregistre og lokal informasjon. Siden ble sist oppdatert 8. november 2026, med direktelenker til hver studie i studieapp.</div>
+    <ol class="srclist">
+      <li><b>studieapp.no</b> – <a href="https://studieapp.no/lungekreft">lungekreft</a> og <a href="https://studieapp.no/studier-ved-utprovningsenheten">Utprøvningsenheten</a> (to sider i samme register)</li>
+      <li><b>helsenorge.no</b> – <a href="https://www.helsenorge.no/kliniske-studier?relatertBehandling=Lungekreft">kliniske studier, filtrert på lungekreft</a></li>
+      <li><b>ClinicalTrials.gov</b> – <a href="https://clinicaltrials.gov/">clinicaltrials.gov</a></li>
+      <li><b>Lokal informasjon</b> – Tarje Onsøien Halvorsen, St. Olavs (3. november 2026). Gjelder SUNRAY-01, DAREON-Lung-1 og DAHRTS</li>
+    </ol>
+  </details>
+  <div class="prio">
+    <h2>★ St. Olavs ønsker pasienter nå</h2>
+    <ul>
+      <li><b>SUNRAY-01</b> – KRAS G12C, avansert NSCLC, førstelinje. Én standardkur før inklusjon er tillatt. <small>Kontakt: Bjørn Henning Grønberg</small></li>
+      <li><b>DAREON-Lung-1</b> («BiTE-studien») – utbredt SCLC, førstelinje. <small>Kontakt: Bjørn Henning Grønberg</small></li>
+      <li><b>DAHRTS</b> – begrenset SCLC, høyere torakal stråledose. Henvis før kjemoradioterapi. <small>Kontakt: Tarje Onsøien Halvorsen</small></li>
+    </ul>
+    <small>Kilde: Tarje Onsøien Halvorsen, 3. november 2026. Identifiser pasientene ved diagnose, før behandlingsstart.</small>
+  </div>
+
+  <div class="controls" role="search">
+    <input type="search" id="q" placeholder="Søk: biomarkør, studie, legemiddel, sykehus …" aria-label="Søk">
+    <button type="button" id="resetAll" class="reset">Nullstill filtre</button>
+    <div class="phrow" id="typeRow" aria-label="Type"><span class="phlab">Type:</span></div>
+    <div class="phrow" id="phRow" aria-label="Behandlingsfase"><span class="phlab">Fase:</span></div>
+    <div class="phrow" id="recRow" aria-label="Rekrutterer"><span class="phlab">Rekrutterer:</span></div>
+  </div>
+
+  <section class="ov">
+    <h2>Oversikt</h2>
+    <p class="ovlegend">
+      <span>✅ rekrutterer</span><span>⏸️ rekrutterer ikke / lukket for inklusjon</span><span>⛔ avsluttet eller avbrutt</span><span>❔ uavklart / ikke oppdatert</span><span>– ikke registrert</span>
+      <span class="sep">● Rekrutterer:</span><span>🟢 åpen</span><span>🟡 uavklart</span><span>🔴 lukket</span><span>★ St. Olavs</span>
+    </p>
+    <div id="ovfilter" class="ovfilter"></div>
+    <div class="tblwrap"><table id="ovt">
+      <thead><tr></tr></thead>
+      <tbody></tbody>
+    </table></div>
+    <p class="ovnote">Filtrene over gjelder både tabellen og studiekortene. Innen én rad vises studier som passer minst ett av valgene, og radene kombineres. «Driver» og St. Olavs-valgene snevrer alltid inn. Klikk på et fasemerke for å slå filteret av eller på. Klikk på en kolonneoverskrift for å sortere, og klikk igjen for å snu rekkefølgen. Klikk på et studienavn for å gå til studiekortet med detaljer og lenker. DAHRTS er vurdert som åpen på grunnlag av lokal informasjon fra Tarje Onsøien Halvorsen, selv om registrene viser noe annet.</p>
+  </section>
+
+
+  <details class="legend">
+    <summary>Slik er status vurdert</summary>
+    <p>Hver studie er kontrollert mot tre kilder: <b>studieapp.no</b> (SA), <b>helsenorge.no</b> (HN) og <b>ClinicalTrials.gov</b> (CT). «Åpen» betyr at studien rekrutterer ifølge ClinicalTrials.gov og ingen kilde viser den som lukket, eller at åpen status er bekreftet lokalt. «Uavklart» betyr at kildene spriker. «Lukket» betyr at ClinicalTrials.gov viser at studien er aktiv uten å ta inn nye pasienter, er avsluttet eller er avbrutt. Bekreft alltid med kontaktpersonen før henvisning.</p>
+  </details>
+
+  <div class="count" id="count"></div>
+  <div id="out"></div>
+</main>
+<footer>
+  Kilder: <a href="https://studieapp.no/lungekreft">studieapp.no</a> · <a href="https://www.helsenorge.no/kliniske-studier?relatertBehandling=Lungekreft">helsenorge.no – kliniske studier</a> · <a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a>. Status hentet 3. november 2026. Siden er et arbeidsverktøy og erstatter ikke studieprotokollen.
+</footer>
+
+<script>
+const S = {
+  open:  {cls:"b-open",  txt:"Åpen"},
+  unc:   {cls:"b-unc",   txt:"Uavklart"},
+  closed:{cls:"b-closed",txt:"Lukket"}
+};
+const TYPES = ["Alle","NSCLC","SCLC","Mesoteliom","Kreft-typeuavhengig","Støtte og screening"];
+const D = [
+ // NSCLC
+ {t:"NSCLC",n:"SUNRAY-01",nct:"NCT06119581",m:"KRAS G12C",set:"Avansert, førstelinje",iv:"Olomorasib + pembrolizumab ± kjemo vs placebo",sites:"St. Olavs, Haukeland, Drammen, Gjøvik, Ahus, OUS, Stavanger",so:1,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Bjørn Henning Grønberg",note:"Prioritert ved St. Olavs"},
+ {t:"NSCLC",n:"SUNRAY-02",nct:"NCT06890598",m:"KRAS G12C",set:"Reseksert st. II–IIIB, eller inoperabel st. III etter kjemoradioterapi",iv:"Olomorasib + pembrolizumab/durvalumab vs placebo",sites:"Arendal, Haukeland, Drammen, Gjøvik, OUS",so:0,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Inger Johanne Zwicky Eide"},
+ {t:"NSCLC",n:"TROFUSE-019",nct:"NCT06312137",m:"Ingen EGFR",set:"Resektabel st. II–IIIB (N2). Henvis før neoadjuvant behandling",iv:"Pembrolizumab ± sacituzumab tirumotecan (TROP2-ADC) adjuvant",sites:"Ahus, Drammen, Gjøvik, OUS",so:0,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Kirill Neumann"},
+ {t:"NSCLC",n:"ROSETTA-Lung-202",nct:"NCT07361510",m:"PD-L1 ≥ 50 %, ingen driver",set:"Avansert, førstelinje",iv:"Pumitamig (PD-L1×VEGF) vs pembrolizumab",sites:"Drammen, Kalnes",so:0,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Inger Johanne Zwicky Eide"},
+ {t:"NSCLC",n:"PRELUCA",nct:"NCT05889247",m:"Ingen krav",set:"Utbredt NSCLC under immunterapi",iv:"ctDNA-basert responsvurdering",sites:"OUS",so:0,st:"open",src:"HN ✓ · CT ✓",k:"OUS"},
+ {t:"NSCLC",n:"UV1 / LUNGVAC",nct:"NCT05344209",m:"Ingen krav",set:"Avansert, førstelinje",iv:"Anti-PD-1/PD-L1 ± UV1-vaksine",sites:"Drammen",so:0,st:"unc",src:"SA – · HN – · CT ✓ (ikke oppdatert siden 2023)",k:"Odd Terje Brustugun"},
+ {t:"NSCLC",n:"COM-IT-2",nct:"",m:"Ingen krav",set:"St. IV med IO-indikasjon",iv:"Systembehandling ± RT mot alle lesjoner",sites:"OUS, St. Olavs, Innlandet",so:1,st:"unc",src:"SA ✓ · HN ✗ · CT ikke funnet",k:"Vilde Drageset Haakensen"},
+ {t:"NSCLC",n:"PACIFIC-8",nct:"NCT05211895",m:"PD-L1-positiv, ingen driver",set:"Inoperabel st. III etter kjemoradioterapi",iv:"Durvalumab + domvanalimab vs durvalumab",sites:"St. Olavs, OUS, Gjøvik, Bodø",so:1,st:"closed",src:"SA ✓ · HN ✓ · CT ✗ aktiv, rekrutterer ikke",k:"Tarje Onsøien Halvorsen"},
+ {t:"NSCLC",n:"V940-002 (INTerpath-002)",nct:"NCT06077760",m:"Ingen EGFR/ALK",set:"Reseksert st. II–IIIB",iv:"mRNA-vaksine V940 + pembrolizumab",sites:"Ahus, Stavanger, Drammen",so:0,st:"closed",src:"SA ✓ · HN ✓ · CT ✗ aktiv, rekrutterer ikke",k:"Odd Terje Brustugun"},
+ {t:"NSCLC",n:"ASTEROID",nct:"NCT03446547",m:"Ingen krav",set:"St. I–IIA etter SBRT",iv:"Durvalumab vs observasjon",sites:"OUS m.fl.",so:0,st:"closed",src:"CT ✗ avsluttet",k:"Saima Jamil Farooqi"},
+ {t:"NSCLC",n:"LIBRETTO-432",nct:"NCT04819100",m:"RET-fusjon",set:"St. IB–IIIA etter kirurgi/RT",iv:"Selperkatinib vs placebo",sites:"OUS, Vestre Viken",so:0,st:"closed",src:"CT ✗ aktiv, rekrutterer ikke",k:"Odd Terje Brustugun"},
+ {t:"NSCLC",n:"HORIZON-01",nct:"NCT05170204",m:"ALK-fusjon",set:"St. III etter kjemoradioterapi",iv:"Alektinib vs durvalumab",sites:"OUS",so:0,st:"closed",src:"HN ✗ · CT ✗ aktiv, rekrutterer ikke",k:"Maria Moksnes Bjaanæs"},
+ {t:"NSCLC",n:"HERTHENA-Lung02",nct:"NCT05338970",m:"EGFR ex19del / L858R",set:"Progresjon på osimertinib",iv:"Patritumab deruxtecan vs platinum-dublett",sites:"OUS, Ahus, Stavanger",so:0,st:"closed",src:"HN avsluttet · CT ✗",k:"Henrik Horndalsveen"},
+ {t:"NSCLC",n:"Be6A Lung-01",nct:"NCT06012435",m:"Ingen krav",set:"Ikke-plateepitel, ≥ andrelinje",iv:"Sigvotatug vedotin vs docetaksel",sites:"St. Olavs, Vestre Viken, OUS",so:1,st:"closed",src:"HN ✗ · CT ✗ aktiv, rekrutterer ikke",k:"Bjørn Henning Grønberg"},
+ {t:"NSCLC",n:"Beamion-Lung2",nct:"NCT06151574",m:"HER2-mutasjon",set:"Avansert",iv:"Zongertinib",sites:"OUS, Vestre Viken",so:0,st:"closed",src:"HN ✗ · CT ✗ aktiv, rekrutterer ikke",k:"OUS"},
+ // SCLC
+ {t:"SCLC",n:"DAREON-Lung-1 («BiTE-studien»)",nct:"NCT07472517",m:"Ingen krav",set:"Utbredt stadium, førstelinje",iv:"Obrixtamig (DLL3×CD3) + atezolizumab + karboplatin/etoposid",sites:"St. Olavs, OUS, Haukeland",so:1,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Bjørn Henning Grønberg",note:"Prioritert ved St. Olavs"},
+ {t:"SCLC",n:"DAHRTS",nct:"",m:"Ingen krav",set:"Begrenset stadium, før kjemoradioterapi",iv:"Høyere torakal stråledose",sites:"St. Olavs (sponsor)",so:1,st:"open",src:"HN ✗ · CT ikke funnet · bekreftet lokalt",k:"Tarje Onsøien Halvorsen",note:"Prioritert ved St. Olavs. Registrene henger etter"},
+ {t:"SCLC",n:"EVOKE-SCLC-04",nct:"NCT06801834",m:"Ingen krav",set:"Utbredt stadium, andrelinje",iv:"Sacituzumab govitekan vs topotekan",sites:"OUS, Haukeland, Drammen",so:0,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Inger Johanne Zwicky Eide"},
+ {t:"SCLC",n:"TRIPLEX",nct:"NCT05223647",m:"Ingen krav",set:"Utbredt stadium, førstelinje",iv:"Kjemo-immunterapi ± torakal RT",sites:"St. Olavs (sponsor) + 11",so:1,st:"closed",src:"CT ✗ avbrutt jan. 2026",k:"Bjørn Henning Grønberg"},
+ {t:"SCLC",n:"ACHILES",nct:"NCT03540420",m:"Ingen krav",set:"Begrenset stadium",iv:"Atezolizumab etter kjemoradioterapi",sites:"St. Olavs (sponsor) + 13",so:1,st:"closed",src:"CT ✗ aktiv, rekrutterer ikke",k:"St. Olavs"},
+ {t:"SCLC",n:"INCB99318-122",nct:"NCT04272034",m:"Ingen krav",set:"Avansert, etter standard",iv:"Peroral PD-L1-hemmer",sites:"OUS, Haukeland",so:0,st:"closed",src:"CT ✗ avbrutt",k:"Knut Halvor Bjøro Smeland"},
+ // Meso
+ {t:"Mesoteliom",n:"eVOLVE-Meso",nct:"NCT06097728",m:"Ingen krav",set:"Inoperabelt pleuralt mesoteliom, førstelinje",iv:"Volrustomig + karboplatin/pemetreksed",sites:"OUS, Ahus",so:0,st:"closed",src:"HN ✗ · CT ✗ aktiv, rekrutterer ikke",k:"Saima Jamil Farooqi",note:"Ingen åpen førstelinjestudie for mesoteliom i Norge nå"},
+ {t:"Mesoteliom",ovskip:1,n:"MATRIX-RARE",nct:"NCT06119789",m:"Behandlingsbar forandring",set:"Sjelden kreftform, etter standard",iv:"Godkjente målrettede legemidler",sites:"Henvisning via InPreD fra alle HF",so:1,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Åslaug Helland (lokalt: Tora Skeidsvoll Solheim)"},
+ // Basket
+ {t:"Kreft-typeuavhengig",n:"IMPRESS-Norway",nct:"NCT04817956",m:"Behandlingsbar forandring (TSO500)",set:"Avansert, etter standard (NSCLC, SCLC m.fl.)",iv:"Godkjente målrettede legemidler, kohortbasert",sites:"~17 sykehus inkl. St. Olavs",so:1,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Åslaug Helland (lokalt: Åsmund Flobak)"},
+ {t:"Kreft-typeuavhengig",n:"MATRIX-RARE",nct:"NCT06119789",m:"Behandlingsbar forandring, sjelden subtype",set:"Avansert, uten effektiv standard",iv:"Godkjente målrettede legemidler, tidligere linjer",sites:"Henvisning via InPreD, inkl. St. Olavs",so:1,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Åslaug Helland (lokalt: Tora Skeidsvoll Solheim)"},
+ {t:"Kreft-typeuavhengig",n:"KANDLELIT-014",nct:"NCT07209111",m:"KRAS G12C",set:"Avansert, etter standard",iv:"Calderasib (MK-1084) ± cetuksimab",sites:"OUS, Haukeland",so:0,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Tormod Kyrre Guren"},
+ {t:"Kreft-typeuavhengig",n:"BEAMION PanTumor-1",nct:"NCT06581432",m:"HER2-amplifikasjon/overuttrykk (uten mutasjon)",set:"Avansert, ≥ 1 linje",iv:"Zongertinib",sites:"OUS",so:0,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Tormod Kyrre Guren"},
+ {t:"Kreft-typeuavhengig",n:"FORTE",nct:"NCT05503797",m:"BRAF V600E / BRAF-fusjon",set:"Avansert, etter standard",iv:"Plixorafenib",sites:"OUS, Haukeland",so:0,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Tormod Kyrre Guren"},
+ {t:"Kreft-typeuavhengig",n:"MountainTAP-5",nct:"NCT07492680",m:"MTAP-delesjon / CDKN2A-tap",set:"Avansert",iv:"Navlimetostat (MTA-kooperativ PRMT5-hemmer) ± andre",sites:"OUS, Haukeland",so:0,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Tormod Kyrre Guren",note:"MTAP fanges ofte ikke i hotspot-NGS. Vurder MTAP-IHC"},
+ {t:"Kreft-typeuavhengig",n:"FORAGER-1",nct:"NCT05614739",m:"FGFR3-forandring",set:"Avansert",iv:"Vepugratinib (LOXO-435) ± pembrolizumab",sites:"OUS, Haukeland",so:0,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Tormod Kyrre Guren"},
+ {t:"Kreft-typeuavhengig",n:"HERTHENA-PanTumor01",nct:"NCT06172478",m:"Ingen behandlingsbar driver",set:"Ikke-plateepitel NSCLC etter én linje PD-(L)1 + platinum",iv:"Patritumab deruxtecan",sites:"OUS",so:0,st:"unc",src:"SA ✓ · HN ✗ · CT ✓ (OUS)",k:"Tormod Kyrre Guren",note:"Usikkert om NSCLC-kohorten er åpen"},
+ {t:"Kreft-typeuavhengig",n:"NAVIGATE",nct:"NCT02576431",m:"NTRK1/2/3-fusjon",set:"Avansert",iv:"Larotrektinib",sites:"OUS",so:0,st:"closed",src:"CT ✗ avsluttet",k:"Tormod Kyrre Guren"},
+ {t:"Kreft-typeuavhengig",n:"GO42144",nct:"NCT04449874",m:"KRAS G12C",set:"Avansert",iv:"Divarasib ± kombinasjoner",sites:"OUS, Haukeland",so:0,st:"closed",src:"CT ✗ aktiv, rekrutterer ikke",k:"Tormod Kyrre Guren"},
+ {t:"Kreft-typeuavhengig",n:"CHRO761A12101",nct:"NCT05838768",m:"MSI-H / dMMR",set:"Avansert",iv:"HRO761 (WRN-hemmer) ± kombinasjoner",sites:"OUS",so:0,st:"closed",src:"SA «midlertidig lukket» · CT ✗ aktiv, rekrutterer ikke",k:"Tormod Kyrre Guren"},
+ {t:"Kreft-typeuavhengig",n:"eNRGy",nct:"NCT02912949",m:"NRG1-fusjon",set:"Avansert",iv:"Zenocutuzumab",sites:"OUS",so:0,st:"closed",src:"HN avsluttet · CT ✗",k:"Tormod Kyrre Guren"},
+ // Støtte
+ {t:"Støtte og screening",n:"VINCIT",nct:"NCT07112196",m:"Kakeksi/vekttap",set:"NSCLC (og GI-kreft)",iv:"Visugromab (anti-GDF-15) vs placebo",sites:"St. Olavs, OUS, Haukeland, Kristiansand",so:1,st:"open",src:"SA ✓ · HN ✓ · CT ✓",k:"Ola Magne Vagnhildhaug"},
+ {t:"Støtte og screening",n:"ACE 5",nct:"NCT07301489",m:"Lungekreftscreening",set:"Personer med lang røykehistorie",iv:"Screening-CT + kardiovaskulær risikovurdering",sites:"Ahus",so:0,st:"open",src:"HN ✓ · CT ✓",k:"Ahus"}
+];
+
+const SA_LUNG="https://studieapp.no/lungekreft", SA_UT="https://studieapp.no/studier-ved-utprovningsenheten";
+const OUS="https://www.oslo-universitetssykehus.no/kliniske-studier/", STO="https://www.stolav.no/kliniske-studier/", VV="https://www.vestreviken.no/kliniske-studier/", AHUS="https://www.ahus.no/kliniske-studier/";
+const L = {
+ "SUNRAY-01":[SA_LUNG+"#page106", OUS+"immunterapi-cellegift-og-olomorasibfor-for-pasienter-med-avansert-ikke-smacellet-lungekreft-og-kras-g12c-mutasjon/"],
+ "SUNRAY-02":[SA_LUNG+"#page59", OUS+"immunterapi-og-olomorasib-for-pasienter-med-kirurgisk-fjernet-eller-ikke-opererbar-ikke-smacellet-lungekreft-og--kras-g12c-mutasjon/"],
+ "TROFUSE-019":[SA_LUNG+"#page31", OUS+"studiemedisinen-mk-2870-gitt-med-immunterapi-versus-immunterapi-gitt-alene-hos-deltakere-som-har-blitt-operert-for-ikke-smacellet-lungekreft-nsclc/"],
+ "ROSETTA-Lung-202":[SA_LUNG+"#page107", VV+"studie-av-pumitamig-sammenlignet-med-pembrolizumab-ved-avansert-ikke-smacellet-lungekreft-med-pd-l1-uttrykk-pa-minst-50-prosent/"],
+ "PRELUCA":[null, OUS+"maling-av-behandlingseffekt-via-blodprover-ved-utbredt-ikke-smacellet-lungekreft/"],
+ "UV1 / LUNGVAC":[null, null],
+ "COM-IT-2":[SA_LUNG+"#page115", OUS+"stralebehandling-og-immunterapi-mot-ikke-smacellet-lungekreft/"],
+ "PACIFIC-8":[SA_LUNG+"#page60", STO+"effekt-av-behandling-med-durvalumab-og-domvanalimab-etter-cellegift-og-stralebehandling-hos-deltakere-med-stadium-iii-ikke-operabel-ikke-smacellet-lungekreft/"],
+ "V940-002 (INTerpath-002)":[SA_LUNG+"#page39", AHUS+"interpath002-v940-002/"],
+ "ASTEROID":[SA_LUNG+"#page30", null],
+ "LIBRETTO-432":[SA_LUNG+"#page36", null],
+ "HORIZON-01":[SA_LUNG+"#page50", OUS+"ikke-smacellet-lungekreft/"],
+ "HERTHENA-Lung02":[SA_LUNG+"#page126", OUS+"patritumab-deruxtecan-sammenliknet-med-platinabasert-kjemoterapi-etter-mislykket-standardbehandling/"],
+ "Be6A Lung-01":[SA_LUNG+"#page145", VV+"en-legemiddelutproving-for-a-evaluere-sgn-b6a-sammenlignet-med-docetaxel-hos-voksne-forsokspersoner-med-tidligere-behandlet-ikke-sma-cellet-lungekreft/"],
+ "Beamion-Lung2":[null, OUS+"avansert-ikke-smacellet-lungekreft-med-her2-mutasjoner/"],
+ "DAREON-Lung-1 («BiTE-studien»)":[SA_LUNG+"#page17", OUS+"obrixtamig-i-kombinasjon-med-andre-medisiner-mot-avansert-smacellet-lungekreft/"],
+ "DAHRTS":[null, STO+"dahrts/"],
+ "EVOKE-SCLC-04":[SA_LUNG+"#page102", OUS+"sacituzumab-govitecan-versus-standardbehandling-soc-hos-deltakere-med-tidligere-behandlet-utbredt-smacellet-lungekreft/"],
+ "TRIPLEX":[SA_LUNG+"#page210", STO+"forlenges-overlevelsen-hos-pasienter-med-utbredt-smacellet-lungekreft-nar-stralebehandling-gis-i-tillegg-til-cellegift-og-immunterapi/"],
+ "ACHILES":[null, STO+"immunterapi-til-pasienter-med-smacellet-lungekreft-i-begrenset-stadium-achiles/"],
+ "INCB99318-122":[SA_LUNG+"#page250", OUS+"immunterapi-med-incb099318-ved-avansert-kreftsykdom/"],
+ "eVOLVE-Meso":[SA_LUNG+"#page301", OUS+"studie-for-pasienter-med-inoperabelt-pleuralt-mesotheliom/"],
+ "MATRIX-RARE":["https://studieapp.no/matrix-rare", OUS+"persontilpasset-behandling-ved-sjeldne-kreftsykdommer/"],
+ "IMPRESS-Norway":["https://studieapp.no/impress-norway", OUS+"impress-norway/"],
+ "KANDLELIT-014":[SA_LUNG+"#page142", OUS+"malrettet-behandling-av-kras-g12c-mutert-kreft-kandlelit-014/"],
+ "BEAMION PanTumor-1":[SA_LUNG+"#page147", OUS+"studie-av-effekten-og-sikkerheten-av-zongertinib-hos-pasienter-med-her2-positive-eller-solide-svulster/"],
+ "FORTE":[SA_UT+"#page131", OUS+"studiemedisinen-fore8394-mot-kreftsykdom-med-braf-endringer/"],
+ "MountainTAP-5":[SA_UT+"#page242", OUS+"prmt5-hemmer-for-mtap-manglende-kreftceller-bms-986504-som-monoterapi-og-i-kombinasjon-med-andre-legemidler-hos-deltakere-med-avanserte-ogeller-metastatiske-solide-tumorer-med-mtap-gen-eller-mtap-protein-mangel/"],
+ "FORAGER-1":[SA_UT+"#page505", OUS+"basketstudie-for-pasienter-med-avanserte-solide-maligne-tumorer-med-fgfr-3-endringer/"],
+ "HERTHENA-PanTumor01":[SA_LUNG+"#page148", OUS+"patritumab-deruxtecan-hos-pasienter-med-lokalt-avanserte-eller-metastatiske-solide-svulster/"],
+ "NAVIGATE":[SA_LUNG+"#page130", OUS+"trk-hemmeren-larotrectinib-hos-pasienter-med-ntrk-fusjonspositive-tumorer/"],
+ "GO42144":[SA_LUNG+"#page143", OUS+"gdc-6036-mot-avansert-kreftsykdom-med-kras-g12c-mutasjon/"],
+ "CHRO761A12101":[SA_UT+"#page504", OUS+"svulster-med-mikrosatelittustabilitet/"],
+ "eNRGy":[SA_LUNG+"#page151", OUS+"immunterapi-mot-avansert-kreftsykdom-med-nrg1-fusjon/"],
+ "VINCIT":[SA_UT+"#page20", OUS+"effekt-og-sikkerhet-til-visugromab-hos-deltakere-med-kreft-assosiert-kakeksi/"],
+ "ACE 5":[null, AHUS+"ace-5/"]
+};
+
+// Status per kilde: + rekrutterer, ~ rekrutterer ikke/lukket, x avsluttet/avbrutt, ? uavklart, - ikke registrert
+const ST = {
+ "SUNRAY-01":"+++","SUNRAY-02":"+++","TROFUSE-019":"+++","ROSETTA-Lung-202":"+++","PRELUCA":"-++",
+ "UV1 / LUNGVAC":"--?","COM-IT-2":"+~-","PACIFIC-8":"++~","V940-002 (INTerpath-002)":"++~","ASTEROID":"+-x",
+ "LIBRETTO-432":"+-~","HORIZON-01":"+~~","HERTHENA-Lung02":"+x~","Be6A Lung-01":"+~~","Beamion-Lung2":"-~~",
+ "DAREON-Lung-1 («BiTE-studien»)":"+++","DAHRTS":"-~-","EVOKE-SCLC-04":"+++","TRIPLEX":"+~x","ACHILES":"-~~","INCB99318-122":"+xx",
+ "eVOLVE-Meso":"+~~","MATRIX-RARE":"+++","IMPRESS-Norway":"+++","KANDLELIT-014":"+++","BEAMION PanTumor-1":"+++",
+ "FORTE":"+++","MountainTAP-5":"+++","FORAGER-1":"+++","HERTHENA-PanTumor01":"+~+","NAVIGATE":"+~x","GO42144":"+~~",
+ "CHRO761A12101":"~~~","eNRGy":"+x~","VINCIT":"+++","ACE 5":"-++"
+};
+const IC = {"+":"✅","~":"⏸️","x":"⛔","?":"❔","-":"–"};
+const CONC = {open:"🟢",unc:"🟡",closed:"🔴"};
+const CONCT = {open:"Åpen",unc:"Uavklart",closed:"Lukket"};
+const _ids=new Set();
+D.forEach(d=>{let b=d.n.toLowerCase().replace(/[«»()]/g,"").replace(/[^a-z0-9æøå]+/g,"-").replace(/^-+|-+$/g,""); let id=b,i=2; while(_ids.has(id)) id=b+"-"+(i++); _ids.add(id); d.id=id;});
+
+const phases=new Set();
+// Behandlingsfase/type per studie
+const PH = ["Neoadjuvant","Adjuvant","Kjemoradioterapi / konsolidering","Drivermutasjon / biomarkør","1. linje","2. linje og senere","Støtte / screening"];
+const PHS = {"Neoadjuvant":"Neoadj.","Adjuvant":"Adjuvant","Kjemoradioterapi / konsolidering":"KRT/konsol.","Drivermutasjon / biomarkør":"Driver","1. linje":"1. linje","2. linje og senere":"≥ 2. linje","Støtte / screening":"Støtte/screen."};
+const TG = {
+ "SUNRAY-01":[3,4],"SUNRAY-02":[3,1,2],"TROFUSE-019":[0,1],"ROSETTA-Lung-202":[4],"PRELUCA":[4],
+ "UV1 / LUNGVAC":[4],"COM-IT-2":[4],"PACIFIC-8":[2],"V940-002 (INTerpath-002)":[1],"ASTEROID":[1],
+ "LIBRETTO-432":[3,1],"HORIZON-01":[3,2],"HERTHENA-Lung02":[3,5],"Be6A Lung-01":[5],"Beamion-Lung2":[3,4],
+ "DAREON-Lung-1 («BiTE-studien»)":[4],"DAHRTS":[2],"EVOKE-SCLC-04":[5],"TRIPLEX":[4],"ACHILES":[2],"INCB99318-122":[5],
+ "eVOLVE-Meso":[4],"MATRIX-RARE":[3,5],"IMPRESS-Norway":[3,5],"KANDLELIT-014":[3,5],"BEAMION PanTumor-1":[3,5],
+ "FORTE":[3,5],"MountainTAP-5":[3,5],"FORAGER-1":[3,5],"HERTHENA-PanTumor01":[5],"NAVIGATE":[3,5],"GO42144":[3,5],
+ "CHRO761A12101":[3,5],"eNRGy":[3,5],"VINCIT":[6],"ACE 5":[6]
+};
+D.forEach(d=>{d.tg=(TG[d.n]||[]).slice().sort((a,b)=>a-b); d.tgtxt=d.tg.map(i=>PH[i]).join(" ");});
+const tagBtn=i=>`<button type="button" class="tag t${i}${phases.has(i)?" on":""}" data-ph="${i}" title="Filtrer på: ${PH[i]}">${PHS[PH[i]]}</button>`;
+const phaseTags=d=>d.tg.filter(i=>![3,6].includes(i)).map(tagBtn).join("");
+const typeCell=d=>(d.t==="Kreft-typeuavhengig"?"":`<button type="button" class="fchip tchip${F.types.has(d.t)?" on":""}" data-type="${esc(d.t)}" title="Filtrer på: ${esc(d.t)}">${esc(TSHORT[d.t]||d.t)}</button> `)+(d.tg.includes(3)?tagBtn(3):"");
+const TSHORT={"Kreft-typeuavhengig":"Typeuavhengig","Støtte og screening":"Støtte/screening"};
+const tagHtml=d=>d.tg.map(i=>`<button type="button" class="tag t${i}${phases.has(i)?" on":""}" data-ph="${i}" title="Filtrer på: ${PH[i]}">${PHS[PH[i]]}</button>`).join("");
+
+const SRCRANK={"+":0,"?":1,"~":2,"x":3,"-":4};
+const COLS=[
+ {k:"st",h:"●",v:d=>order[d.st],c:1,title:"Rekrutterer: 🟢 åpen, 🟡 uavklart, 🔴 lukket"},
+ {k:"so",h:"★",v:d=>-d.so,c:1,title:"St. Olavs er senter"},
+ {k:"n",h:"Studie",v:d=>d.n},
+ {k:"t",h:"Type",v:d=>TYPES.indexOf(d.t)*2+(d.tg.includes(3)?0:1)},
+ {k:"tg",h:"Fase",v:d=>{const f=d.tg.filter(i=>![3,6].includes(i)); return f.length?f[0]*10+(f[1]??9):99;}},
+ {k:"m",h:"Biomarkør",v:d=>d.m},
+ {k:"set",h:"Setting",v:d=>d.set},
+ {k:"sa",h:"SA",v:d=>SRCRANK[(ST[d.n]||"---")[0]],c:1,title:"studieapp.no"},
+ {k:"hn",h:"HN",v:d=>SRCRANK[(ST[d.n]||"---")[1]],c:1,title:"helsenorge.no"},
+ {k:"ct",h:"CT",v:d=>SRCRANK[(ST[d.n]||"---")[2]],c:1,title:"ClinicalTrials.gov"}
+];
+let sortK="t", sortDir=1;
+function buildOverview(){
+  const thead=document.querySelector("#ovt thead tr");
+  thead.innerHTML=COLS.map(c=>`<th data-k="${c.k}" ${c.title?`title="${c.title}"`:""} class="${c.c?"c":""} sortable" aria-sort="${sortK===c.k?(sortDir>0?"ascending":"descending"):"none"}">${c.h}<span class="arr">${sortK===c.k?(sortDir>0?" ▲":" ▼"):" ↕"}</span></th>`).join("");
+  const rows=D.filter(d=>!d.ovskip && matches(d));
+  document.getElementById("ovfilter").textContent = rows.length+" av "+D.filter(d=>!d.ovskip).length+" studier i tabellen"+(anyFilter()?" (filtrert)":"");
+  const col=COLS.find(c=>c.k===sortK);
+  const cmp=(a,b)=>{const x=col.v(a),y=col.v(b); return (typeof x==="string"?x.localeCompare(y,"nb"):x-y)*sortDir;};
+  rows.sort((a,b)=>cmp(a,b)||order[a.st]-order[b.st]||b.so-a.so||TYPES.indexOf(a.t)-TYPES.indexOf(b.t)||a.n.localeCompare(b.n,"nb"));
+  document.querySelector("#ovt tbody").innerHTML=rows.map(d=>{const s=(ST[d.n]||"---").split("");
+    return `<tr class="${d.st==="closed"?"closed":""}"><td class="c ic" title="${CONCT[d.st]}">${CONC[d.st]}</td><td class="c ic" title="${d.so?"St. Olavs er senter":""}">${d.so?"★":""}</td><td><a href="#" class="jump" data-id="${d.id}">${esc(d.n)}</a></td><td class="tags">${typeCell(d)}</td><td class="tags">${phaseTags(d)||'<span class="miss">–</span>'}</td><td>${esc(d.m)}</td><td>${esc(d.set)}</td>
+    <td class="c">${IC[s[0]]}</td><td class="c">${IC[s[1]]}</td><td class="c">${IC[s[2]]}</td></tr>`;}).join("");
+}
+document.querySelector("#ovt thead").addEventListener("click",e=>{const th=e.target.closest("th[data-k]"); if(!th) return;
+  const k=th.dataset.k; if(sortK===k) sortDir=-sortDir; else {sortK=k; sortDir=1;} buildOverview();});
+document.querySelector("#ovt tbody").addEventListener("click",e=>{const a=e.target.closest("a.jump"); if(!a) return; e.preventDefault();
+  let el=document.getElementById(a.dataset.id);
+  if(!el){ resetAll(); el=document.getElementById(a.dataset.id);}
+  if(el){el.scrollIntoView({behavior:"smooth",block:"center"}); el.classList.add("flash"); setTimeout(()=>el.classList.remove("flash"),1600);}
+});
+
+// ---------- Filtre ----------
+const TYPEF=[{k:"drv",l:"Driver",tag:3},{k:"NSCLC",l:"NSCLC"},{k:"SCLC",l:"SCLC"},{k:"Mesoteliom",l:"Mesoteliom"},{k:"Kreft-typeuavhengig",l:"Typeuavhengig"},{k:"Støtte og screening",l:"Støtte og screening",tag:6}];
+const PHF=[0,1,2,4,5];
+const RECF=[{k:"so",l:"St. Olavs",tip:"Studien har St. Olavs som senter"},{k:"sorec",l:"Rekrutterer ved St. Olavs",tip:"Åpen studie med St. Olavs som senter"},{k:"open",l:"🟢 Åpne"},{k:"unc",l:"🟡 Uavklart"},{k:"closed",l:"🔴 Lukket"}];
+const DEFAULT_STAT=["open","unc"];
+const F={types:new Set(),drv:false,site:new Set(),stat:new Set(DEFAULT_STAT)};
+const q=document.getElementById("q");
+const typeRow=document.getElementById("typeRow"), phRow=document.getElementById("phRow"), recRow=document.getElementById("recRow");
+function chk(row,key,html,title){const l=document.createElement("label"); l.className="chk phchk"; if(title) l.title=title;
+  l.innerHTML=`<input type="checkbox" data-f="${key}"> ${html}`; row.appendChild(l);}
+TYPEF.forEach(t=>chk(typeRow,"type:"+t.k, t.tag!=null?`<span class="tag t${t.tag}">${t.l}</span>`:`<span class="fchip">${t.l}</span>`));
+PHF.forEach(i=>chk(phRow,"ph:"+i,`<span class="tag t${i}">${PHS[PH[i]]}</span>`,PH[i]));
+RECF.forEach(r=>chk(recRow,"rec:"+r.k,`<span class="fchip">${r.l}</span>`,r.tip));
+function isOn(key){const [g,k]=key.split(":");
+  if(g==="type") return k==="drv"?F.drv:F.types.has(k);
+  if(g==="ph") return phases.has(+k);
+  return (k==="so"||k==="sorec")?F.site.has(k):F.stat.has(k);}
+function toggle(key,on){const [g,k]=key.split(":"); const set=(S,v)=>on?S.add(v):S.delete(v);
+  if(g==="type"){ if(k==="drv") F.drv=on; else set(F.types,k); }
+  else if(g==="ph") set(phases,+k);
+  else if(k==="so"||k==="sorec") set(F.site,k); else set(F.stat,k);}
+function sync(){document.querySelectorAll(".controls input[data-f]").forEach(c=>c.checked=isOn(c.dataset.f));}
+function update(){render(); buildOverview();}
+document.querySelector(".controls").addEventListener("change",e=>{const c=e.target.closest("input[data-f]"); if(!c) return; toggle(c.dataset.f,c.checked); update();});
+q.addEventListener("input",update);
+document.addEventListener("click",e=>{
+  const t=e.target.closest("button.tag[data-ph]"); if(t){e.preventDefault(); const i=+t.dataset.ph;
+    const key= i===3?"type:drv": i===6?"type:Støtte og screening":"ph:"+i; toggle(key,!isOn(key)); sync(); update(); return;}
+  const tc=e.target.closest("button.tchip[data-type]"); if(tc){e.preventDefault(); const key="type:"+tc.dataset.type; toggle(key,!isOn(key)); sync(); update(); return;}
+  if(e.target.id==="resetAll") resetAll();
+});
+function resetAll(){q.value=""; F.types.clear(); F.drv=false; F.site.clear(); F.stat.clear(); phases.clear(); sync(); update();}
+function anyFilter(){return q.value.trim()||F.types.size||F.drv||F.site.size||F.stat.size||phases.size;}
+function matches(d){const term=q.value.trim().toLowerCase();
+  const siteOk=!F.site.size || (F.site.has("so")&&d.so) || (F.site.has("sorec")&&d.so&&d.st==="open");
+  return (!F.types.size||F.types.has(d.t)) && (!F.drv||d.tg.includes(3))
+    && (!phases.size||d.tg.some(i=>phases.has(i))) && siteOk && (!F.stat.size||F.stat.has(d.st))
+    && (!term||Object.values(d).join(" ").toLowerCase().includes(term));}
+sync();
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const order={open:0,unc:1,closed:2};
+
+function render(){
+  const rows=D.filter(matches);
+  document.getElementById("count").textContent = rows.length+" studiekort vises"+(anyFilter()?" (filtrert)":"");
+  const out=document.getElementById("out");
+  if(!rows.length){out.innerHTML='<div class="empty">Ingen studier passer filteret.</div>';return;}
+  const groups=TYPES.slice(1);
+  out.innerHTML=groups.map(g=>{
+    const r=rows.filter(d=>d.t===g).sort((a,b)=>order[a.st]-order[b.st]||b.so-a.so||a.m.localeCompare(b.m,"nb"));
+    if(!r.length) return "";
+    return `<section class="group"><h2>${esc(g)}</h2><div class="grid">${r.map(card).join("")}</div></section>`;
+  }).join("");
+}
+function card(d){
+  const s=S[d.st];
+  const [sa,hn]=L[d.n]||[null,null];
+  const lk=(u,t,miss)=>u?`<a href="${u}">${t}</a>`:`<span class="miss">${miss}</span>`;
+  const links=`<div class="links">
+    ${lk(sa,"studieapp","ikke i studieapp")}
+    ${lk(hn,"helsenorge / sykehusets studieside","ikke på helsenorge")}
+    ${lk(d.nct?"https://clinicaltrials.gov/study/"+d.nct:null,"ClinicalTrials.gov "+d.nct,"ikke på ClinicalTrials.gov")}
+  </div>`;
+  return `<article class="card ${d.st==="closed"?"closed":""}" id="${d.id}">
+    <div class="top"><div class="name">${esc(d.n)}${d.so?'<span class="stolav">St. Olavs</span>':""}</div><span class="badge ${s.cls}">${s.txt}</span></div>
+    <div><span class="marker">${esc(d.m)}</span> ${tagHtml(d)}</div>
+    <div class="row"><b>Setting:</b> ${esc(d.set)}</div>
+    <div class="row"><b>Intervensjon:</b> ${esc(d.iv)}</div>
+    <div class="row"><b>Sentre:</b> ${esc(d.sites)}</div>
+    <div class="row"><b>Kontakt:</b> ${esc(d.k)}</div>
+    ${d.note?`<div class="note">${esc(d.note)}</div>`:""}
+    <div class="src"><span>${esc(d.src)}</span></div>
+    ${links}
+  </article>`;
+}
+render();
+buildOverview();
+function goHash(){const h=decodeURIComponent(location.hash.slice(1)); if(!h) return;
+  let el=document.getElementById(h); if(!el && D.some(d=>d.id===h)){ resetAll(); el=document.getElementById(h);} 
+  if(el){setTimeout(()=>{el.scrollIntoView({behavior:"smooth",block:"center"}); el.classList.add("flash"); setTimeout(()=>el.classList.remove("flash"),2000);},100);}}
+window.addEventListener("hashchange",goHash); goHash();
+</script>
+</body>
+</html>
