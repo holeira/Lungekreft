@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+<html lang="nb">
+<head>
+<meta charset="utf-8"/>
+<meta content="noindex, nofollow" name="robots"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Bivirkninger og komplikasjoner ved lungekreft</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#fff; --ink:#1c2430; --muted:#5b6675; --line:#e2e6ec;
+  --accent:#0b5c8a; --accent-soft:#e6f0f7;
+  --red:#9b2c2c; --red-bg:#f9e6e6; --amber:#9a6400; --amber-bg:#fdf3dc; --green:#1f7a4d; --green-bg:#e5f4ec;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#12161c; --card:#1b2129; --ink:#e7ebf0; --muted:#9aa5b4; --line:#2c343f;
+    --accent:#6fb4e0; --accent-soft:#1d2d3a; --red:#f08a8a; --red-bg:#3a1d1d; --amber:#f0c060; --amber-bg:#3a2f15; --green:#6fd19d; --green-bg:#173226; }
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px}
+body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;font-size:16px}
+a{color:var(--accent)}
+header{padding:28px 20px 6px;max-width:1180px;margin:0 auto}
+h1{margin:0 0 4px;font-size:1.7rem}
+.sub{color:var(--muted);margin:0}
+main{max-width:1180px;margin:0 auto;padding:0 20px 48px}
+.meta{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:10px 16px;margin:14px 0 0;font-size:.93rem}
+.meta summary{cursor:pointer;font-weight:700;color:var(--accent)}
+.meta ol{margin:6px 0 0;padding-left:22px}
+.meta li{margin:2px 0}
+.warn{background:var(--red-bg);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:10px;padding:10px 16px;margin:12px 0 0;font-size:.95rem}
+.controls{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.controls nav{display:flex;flex-wrap:wrap;gap:4px}
+.controls nav a{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:5px 11px;border-radius:999px;font-size:.9rem;text-decoration:none}
+.controls nav a:hover{border-color:var(--accent);color:var(--accent)}
+.controls nav a.akutt{border-color:var(--red);color:var(--red);font-weight:700}
+input[type=search]{flex:1;min-width:200px;padding:7px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+.count{color:var(--muted);font-size:.9rem}
+section.grp{margin-top:26px}
+details.sec>summary h2.x,section.grp>h2{font-size:1.25rem;margin:0 0 4px;padding-bottom:4px;border-bottom:2px solid var(--accent)}
+section.grp>p.lead{margin:6px 0 12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 16px;display:flex;flex-direction:column;gap:6px}
+.card.red{border-left:5px solid var(--red)}
+.card h3{margin:0;font-size:1.06rem}
+.card .when{font-size:.9rem;color:var(--muted)}
+.card ul{margin:2px 0;padding-left:20px}
+.card li{margin:2px 0}
+.lab{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-top:4px}
+.lab.now{color:var(--red)}
+details.more{border-top:1px dashed var(--line);padding-top:6px;margin-top:4px}
+details.more summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:.92rem}
+.src{display:flex;gap:5px;flex-wrap:wrap;font-size:.78rem;color:var(--muted);margin-top:auto;padding-top:4px}
+.src span,.src a{border:1px solid var(--line);border-radius:5px;padding:0 6px;text-decoration:none;color:var(--muted)}
+.src a:hover{color:var(--accent);border-color:var(--accent)}
+.tag-std{background:var(--amber-bg);color:var(--amber)!important}
+.tag-fs{background:var(--red-bg);color:var(--red)!important}
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th{background:var(--accent-soft);text-align:left;padding:7px 9px;font-weight:700;position:sticky;top:0}
+td{padding:7px 9px;border-top:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700;white-space:nowrap}
+tr.hide,.card.hide,section.grp.hide{display:none}
+.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.lnk{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 14px;text-decoration:none;color:var(--ink);display:block}
+.lnk b{color:var(--accent);display:block}
+.lnk span{font-size:.9rem;color:var(--muted)}
+.lnk:hover{border-color:var(--accent)}
+.keys{font-size:.9rem}
+.keys dt{font-weight:700;float:left;width:120px;clear:left}
+.keys dd{margin:0 0 4px 124px}
+details.sec>summary{list-style:none;cursor:pointer}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary h2{font-size:1.25rem;margin:0 0 4px;padding-bottom:4px;border-bottom:2px solid var(--accent);display:flex;align-items:center;gap:8px}
+details.sec>summary h2::before{content:"▸";color:var(--accent);font-size:.9em;transition:transform .15s}
+details.sec[open]>summary h2::before{transform:rotate(90deg)}
+details.sec:not([open])>summary h2{border-bottom-color:var(--line)}
+details.beh{border-top:1px dashed var(--line);padding-top:6px;margin-top:2px}
+details.beh>summary{cursor:pointer;color:var(--accent);font-weight:700;font-size:.92rem}
+details.beh[open]>summary{margin-bottom:4px}
+.card.red details.beh>summary{color:var(--red)}
+details.kilde{margin-top:4px}
+details.kilde>summary{cursor:pointer;color:var(--muted);font-weight:600;font-size:.85rem}
+details.kilde ul{margin:4px 0;padding-left:18px;font-size:.88rem}
+details.kilde p{margin:4px 0;font-size:.85rem;color:var(--muted)}
+details.tiltak>summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:.88rem;white-space:nowrap}
+details.tiltak[open]>summary{margin-bottom:4px}
+.controls .oc{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--card);color:var(--accent);border-radius:999px;padding:4px 11px;cursor:pointer}
+.medf{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--green);border-radius:10px;padding:10px 16px;margin:12px 0 0}
+.medf>summary{cursor:pointer;font-weight:700;color:var(--green)}
+.medf .row{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center;margin:6px 0}
+.medf .gl{font-weight:700;color:var(--muted);font-size:.88rem;min-width:118px}
+.mchip{font:inherit;font-size:.86rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:3px 10px;border-radius:999px;cursor:pointer}
+.mchip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+@media (prefers-color-scheme: dark){.mchip[aria-pressed="true"]{color:#0d1720}}
+.mchip.pre{border-style:dashed}
+.medf .opts{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:.9rem;margin-top:6px}
+.medf .opts button{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--card);color:var(--accent);border-radius:999px;padding:3px 12px;cursor:pointer}
+#medsum{margin-top:8px;font-size:.92rem}
+#medsum ul{margin:4px 0;padding-left:20px}
+.factive{font-size:.88rem;color:var(--green);font-weight:600}
+.factive button{font:inherit;font-size:.8rem;margin-left:4px;border:1px solid var(--line);background:var(--card);color:var(--accent);border-radius:999px;padding:1px 8px;cursor:pointer}
+.card.rel{border-color:var(--green);box-shadow:0 0 0 2px var(--green-bg)}
+.card .relb{display:none;font-size:.75rem;font-weight:700;color:var(--green);background:var(--green-bg);border-radius:5px;padding:1px 7px;align-self:flex-start}
+.card.rel .relb{display:inline-block}
+mark.mm{background:var(--green-bg);color:inherit;font-weight:700;border-radius:3px;padding:0 2px}
+tr.fhide,.card.fhide{display:none}
+@media print{.controls,.sitenav,.medf{display:none}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav aria-label="Sider" class="sitenav"><style>
+.sitenav{background:#16384f;font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:14px;line-height:1.3}
+.sitenav ul{list-style:none;margin:0 auto;padding:0 12px;max-width:1180px;display:flex;flex-wrap:wrap;gap:2px}
+.sitenav li{margin:0}
+.sitenav a{display:block;padding:10px 14px;color:#dce9f2;text-decoration:none;border-bottom:3px solid transparent}
+.sitenav a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.sitenav a[aria-current="page"]{color:#fff;font-weight:600;border-bottom-color:#7fb6dd}
+.sitenav a:focus-visible{outline:2px solid #7fb6dd;outline-offset:-2px}
+@media print{.sitenav{display:none}}
+</style><ul><li><a data-sn="portal" href="https://holeira.github.io/Lungekreft/">Arbeidsportal</a></li><li><a data-sn="biomarkorer" href="https://holeira.github.io/Lungekreft/biomarkorer/">Biomarkører og målrettet behandling</a></li><li><a data-sn="immunterapi" href="https://holeira.github.io/Lungekreft/immunterapi/">Immunterapibivirkninger</a></li><li><a data-sn="medikamenter" href="https://holeira.github.io/Lungekreft/medikamenter/">Medikamentell behandling</a></li><li><a aria-current="page" data-sn="bivirkninger" href="https://holeira.github.io/Lungekreft/bivirkninger/">Bivirkninger og komplikasjoner</a></li><li><a data-sn="studier" href="https://holeira.github.io/Lungekreft/studier/">Lungekreftstudier</a></li></ul></nav>
+<header>
+<h1>Bivirkninger og komplikasjoner ved lungekreft</h1>
+<p class="sub">Øyeblikkelig hjelp, komplikasjoner av sykdommen, strålebivirkninger, prosedyrekomplikasjoner og «symptom → årsak» · Håkon Olav Leira, Lungemedisinsk avdeling, St. Olavs hospital</p>
+</header>
+<main>
+<details class="meta">
+<summary>Sist oppdatert 8. november 2026 og kilder</summary>
+<p>Versjon 1, 8. november 2026. Siden er hovedkilde for komplikasjoner og øyeblikkelig hjelp (flyttet hit fra portalen 12.4) og for tabellen «Symptom → årsak» (flyttet hit fra Medikamentell behandling, Kombinasjonskurer A4, og utvidet med sykdom, stråling og prosedyrer). Immunrelaterte bivirkninger, bivirkninger av målrettet behandling og kurskjema står på sine egne sider, og lenkes herfra.</p>
+<p>Privat arbeidsverktøy under Håkon Olav Leiras faglige ansvar. Doser og terskler skal kontrolleres mot gjeldende preparatomtale og lokale prosedyrer.</p>
+<dl class="keys">
+<dt>[HP 14.x]</dt><dd>Nasjonalt handlingsprogram for lungekreft, mesoteliom og thymom, kapittel 14 Komplikasjoner og øyeblikkelig hjelp (kapitlet sist faglig endret 26. mai 2026; 14.2 19. november 2024; 14.5 19. januar 2026). Lest 8. november 2026.</dd>
+<dt>[HP 8.x]</dt><dd>Handlingsprogrammet kapittel 8 (8.6 immunterapi, 8.9 palliativ bronkoskopisk behandling, 8.10 kontroll).</dd>
+<dt>[Hdir AB]</dt><dd>Antibiotikaveileder for sykehus: Nasjonal faglig retningslinje for antibiotika i sykehus (Helsedirektoratet).</dd>
+<dt>[BTS-B]</dt><dd>Du Rand IA m.fl. British Thoracic Society guideline for diagnostic flexible bronchoscopy in adults. Thorax 2013;68:i1–i44.</dd>
+<dt>[BTS-CT]</dt><dd>Manhire A m.fl. Guidelines for radiologically guided lung biopsy. Thorax 2003;58:920–36.</dd>
+<dt>[BTS-P]</dt><dd>Roberts ME m.fl. British Thoracic Society guideline for pleural disease. Thorax 2023;78(Suppl 3):s1–s42.</dd>
+<dt>[NEF]</dt><dd><b>Prioritert kilde.</b> Nasjonal veileder i endokrinologi (Norsk endokrinologisk forening), <a href="https://metodebok.no/bok/endokrinologi/endokrinologi-(nef)">Metodebok</a>: hyponatremi og SIAD, hyperkalsemi, hypokalemi, binyrebarksvikt, endokrinopatier ved immunterapi.</dd>
+      <dt>[MB-E]</dt><dd><b>Prioritert kilde.</b> <a href="https://metodebok.no/index.php?action=book&amp;book=elektrolytt">Elektrolyttveileder (Diakonhjemmet)</a>, Metodebok, sist oppdatert 12. februar 2026.</dd>
+      <dt>[EHG]</dt><dd>Spasovski G m.fl. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol 2014;170:G1–G47.</dd>
+<dt>[FK]</dt><dd>Felleskatalogen / preparatomtale.</dd>
+<dt>[Standard]</dt><dd>Etablert klinisk praksis, ikke kildekontrollert punkt for punkt. Skal sjekkes.</dd>
+<dt>[Forslag]</dt><dd>Eget forslag. Skal avklares lokalt.</dd>
+</dl>
+</details>
+<div class="warn"><b>Mistenkt immunrelatert bivirkning?</b> Bruk vaktkortet på <a href="https://holeira.github.io/Lungekreft/immunterapi/#vakt">Immunterapibivirkninger</a>. Steroid skal ikke utsettes fordi kjemo eller progresjon også kan forklare bildet.</div>
+<div class="controls">
+<nav aria-label="Innhold">
+<a class="akutt" href="#akutt">Akutt</a>
+<a href="#symptom">Symptom → årsak</a>
+<a href="#sykdom">Sykdommen</a>
+<a href="#behandling">Behandlingen</a>
+<a href="#stråling">Stråling</a>
+<a href="#prosedyrer">Prosedyrer</a>
+<a href="#lenker">Andre sider</a>
+</nav>
+<input aria-label="Søk" id="q" placeholder="Søk, f.eks. natrium, hemoptyse, pneumothorax, øsofagitt" type="search"/>
+<button type="button" class="oc" id="openall">Åpne alle</button><button type="button" class="oc" id="closeall">Lukk alle</button>
+<span class="count" id="count"></span>
+<span class="factive" id="factive"></span>
+</div>
+<details class="medf" id="medfilter" open="">
+<summary>Filtrer etter legemidlene pasienten bruker</summary>
+<p style="margin:6px 0;font-size:.92rem;color:var(--muted)">Velg legemidlene pasienten bruker, og eventuelt strålebehandling. «Symptom → årsak» viser da bare radene der noe av det valgte kan være årsaken, og treffene markeres i teksten. Kort som gjelder valget, markeres grønt. Kortene for øyeblikkelig hjelp skjules aldri. Filteret er en hjelp til å tenke bredt, ikke en fullstendig bivirkningsliste: sjekk preparatomtalen.</p>
+<div class="opts" style="margin:4px 0 8px">
+<label><input id="hidecards" type="checkbox"/> Skjul også kort uten treff (unntatt øyeblikkelig hjelp)</label>
+<button id="medclear" type="button">Nullstill filter</button>
+</div>
+<div id="medrows"></div>
+
+<div id="medsum"></div>
+</details>
+<!-- ============ AKUTT ============ -->
+<section class="grp" id="akutt"><details class="sec" open=""><summary><h2>Øyeblikkelig hjelp</h2></summary>
+
+<p class="lead">Første tiltak de første timene. Fullstendig omtale står i kortet under «Sykdommen» eller på siden det lenkes til.</p>
+<div class="grid">
+<article class="card red" data-med="kjemo osi ami" id="nf">
+<h3>Nøytropen feber</h3>
+<div class="when">Feber hos nøytropen pasient: enkeltmåling ≥ 38,3 °C eller ≥ 38,0 °C i mer enn én time. Nadir dag 10–15 etter kur. Blodkulturer (før antibiotika), nøytrofile, CRP, kreatinin, laktat.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul>
+<li>Behandle som nøytropen feber til det motsatte er vist. Ikke vent på nøytrofile.</li>
+<li>Blodkulturer, deretter antibiotika innen én time fra symptomdebut.</li>
+<li>Ved septisk sjokk: egen anbefaling i <a href="https://www.helsedirektoratet.no/retningslinjer/antibiotika-i-sykehus/sepsis/septisk-sjokk">Antibiotikaveileder for sykehus</a>.</li>
+</ul>
+<div class="lab">Anbefalt kur (Antibiotikaveileder for sykehus)</div>
+<ul>
+<li><b>Standard, lav og høy risiko:</b> benzylpenicillin 2,4 g × 6 iv + gentamicin 6–7 mg/kg × 1 iv.</li>
+<li>Vurder risiko for akutt nyreskade før aminoglykosid. Unngå ved GFR &lt; 30 ml/min og myelomatose.</li>
+<li><b>Aminoglykosid kan ikke brukes:</b> piperacillin. Høy risiko for ESBL: meropenem.</li>
+<li><b>Særlig høy risiko for alvorlig forløp:</b> piperacillin-tazobaktam eller meropenem.</li>
+<li><b>Penicillinallergi:</b> klindamycin + gentamicin, alternativt meropenem. Ved ikke-straksallergisk reaksjon: vurder om allergimerkingen er riktig.</li>
+<li>Doser for alternativene og ved nedsatt nyrefunksjon: se veilederen.</li>
+</ul>
+<div class="lab">Videre</div>
+<ul><li>Ved neste kur: vurder dosereduksjon eller G-CSF (se <a href="https://holeira.github.io/Lungekreft/medikamenter/#dosejustering">dosejustering</a>).</li>
+<li>Pasienten skal ha termometer, ringe ved feber og ikke ta febernedsettende før måling (portalen 12.2).</li></ul>
+</details>
+<details class="kilde"><summary>Kilder og sist sjekket</summary>
+<ul>
+<li><a href="https://www.helsedirektoratet.no/retningslinjer/antibiotika-i-sykehus/febril-noytropeni">Antibiotikaveileder for sykehus, kap. 5 Febril nøytropeni</a> (Helsedirektoratet), siste faglige endring 18. februar 2026.</li>
+<li><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/infeksjonsbehandling-og-vaksinering">Handlingsprogrammet 14.6</a>: prøver og første dose antibiotika innen én time.</li>
+<li>Definisjon av feber: portalen 12.2 og lokal praksis.</li>
+</ul>
+<p>Sist sjekket mot kildene 8. november 2026 av Håkon Olav Leira (med Claude).</p>
+</details>
+<div class="src"><a href="https://www.helsedirektoratet.no/retningslinjer/antibiotika-i-sykehus/febril-noytropeni">Antibiotikaveileder for sykehus</a><a href="#k-infeksjon">HP 14.6</a></div>
+</article>
+<article class="card red" id="a-vcss">
+<h3>Vena cava superior-syndrom</h3>
+<div class="when">Hevelse i ansikt, hals og armer, venestase, dyspné, hodepine. Oftest SCLC eller sentral tumor.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>Sitt opp, oksygen ved behov.</li>
+<li>Høydose steroid med protonpumpehemmer (se kortet). Ta histologi først hvis det går, særlig ved mistanke om lymfom.</li>
+<li>Diskuter samme dag: SCLC → kjemo ± immunterapi. NSCLC, ukjent histologi eller kjemoresistent SCLC med betydelige plager → stent, deretter strålebehandling.</li></ul>
+</details><div class="src"><a href="#k-vcss">Fullstendig omtale</a><span>HP 14.1</span></div>
+</article>
+<article class="card red" id="a-luftvei">
+<h3>Sentral luftveisobstruksjon</h3>
+<div class="when">Stridor, økende dyspné, takypné. Kan feiltolkes som KOLS-forverring. Flow-volumkurve kan gi mistanke.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>Steroid straks (deksametason 4 mg × 4 eller 8 mg × 2, eller metylprednisolon 16 mg × 4) med protonpumpehemmer. Ved mistanke om lymfom: biopsi før steroid.</li>
+<li>NSCLC eller uavklart: kontakt intervensjonsbronkoskopi (gjøres ved St. Olavs).</li></ul>
+</details><div class="src"><a href="#k-luftvei">Fullstendig omtale</a><span>HP 14.2</span></div>
+</article>
+<article class="card red" id="a-medulla">
+<h3>Malign medullakompresjon</h3>
+<div class="when">Ryggsmerter, kraftsvikt eller nummenhet i beina, urinretensjon, inkontinens. Paralyse over 24 timer er sjelden reversibel. MR hele columna (eventuelt CT) som øyeblikkelig hjelp.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>Høydose steroid straks (som over) med protonpumpehemmer.</li>
+
+<li>Akutt vurdering av onkolog, nevrokirurg og ortoped. Strålebehandling innen 24 timer.</li></ul>
+</details><div class="src"><a href="#k-medulla">Fullstendig omtale</a><span>HP 14.3</span></div>
+</article>
+<article class="card red" id="a-hyperkalsemi" data-med="bis">
+<h3>Hyperkalsemi</h3>
+<div class="when">Konfusjon, somnolens, kvalme, polyuri, tørste, obstipasjon, dehydrering. Kan ligne progresjon. Mål fritt (ionisert) kalsium, eventuelt totalt kalsium. Kreatinin, Na, K, Mg, fosfat. EKG ved symptomer eller fritt kalsium &gt; 1,7 mmol/l. Hyperkalsemisk krise: fritt kalsium &gt; 2,0 mmol/l.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>NaCl 9 mg/ml 200–300 ml/time. Juster til diurese 100–150 ml/time.</li>
+<li>Kjent eller mistenkt kreft: zoledronsyre 4 mg iv over minst 15 minutter, når pasienten er godt hydrert.</li>
+<li>Hyperkalsemisk krise: overvåkingsavdeling.</li></ul>
+</details>
+<div class="src"><a href="#k-hyperkalsemi">Fullstendig omtale</a><a href="https://metodebok.no/emne/MQphgENj/hyperkalsemi/endokrinologi-(nef)">NEF</a><span>HP 14.4</span></div>
+</article>
+<article class="card red" data-med="ang ak" id="a-hemoptyse">
+<h3>Massiv hemoptyse</h3>
+<div class="when">Livstruende fordi blodet fyller luftveiene, ikke på grunn av blodtapet.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>Leie med blødende side ned. Oksygen. Sikre luftvei: tidlig anestesi, intubasjon med stor tube.</li>
+<li>Tranexamsyre iv. Korriger koagulasjon og stopp antikoagulasjon.</li>
+<li>CT-angiografi hvis pasienten er stabil. Bronkoskopi (helst rigid) og bronkialarterieembolisering.</li>
+<li>Avklar tidlig om tiltak er i tråd med pasientens ønske og prognose. Ha beroligende og mørke håndklær klare ved terminal blødning.</li></ul>
+</details><div class="src"><a href="#k-hemoptyse">Fullstendig omtale</a><span class="tag-std">Standard</span></div>
+</article>
+<article class="card red" data-med="io rt" id="a-tamponade">
+<h3>Perikardvæske med tamponade</h3>
+<div class="when">Dyspné, takykardi, hypotensjon, halsvenestase, pulsus paradoxus, lav spenning på EKG. Ekkokardiografi straks.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>Perikardiocentese ved tamponade. Kontakt kardiolog.</li>
+<li>Husk differensialdiagnosen myokarditt ved immunterapi: troponin og NT-proBNP.</li></ul>
+</details><div class="src"><a href="#k-perikard">Fullstendig omtale</a><span class="tag-std">Standard</span></div>
+</article>
+<article class="card red" data-med="io karbo vin" id="a-natrium">
+<h3>Alvorlig symptomatisk hyponatremi</h3>
+<div class="when">Kramper, koma, respirasjonssvikt eller uttalt forvirring gir mistanke om hjerneødem. Ofte SIAD ved SCLC. Ta Na, K, glukose, kreatinin, osmolalitet, kortisol og TSH, og spoturin (Na, K, osmolalitet), men behandlingen skal ikke vente på prøvene.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>Hypertont NaCl 500 mmol/l (≈ 3 %): 100 ml bolus over 10 minutter (øker Na 2–4 mmol/l). Kan gjentas 1–2 ganger med 10 minutters mellomrom ved vedvarende symptomer. Bolus kan gis i perifer vene.</li>
+<li>Deretter kontinuerlig infusjon: ml/time = ønsket stigning (mmol/l/time) × vekt (kg).</li>
+<li>Mål: Na-stigning 1,5–2 mmol/l/time de første 3–4 timene eller til symptomene letter. Høyst 10–12 mmol/l første døgn; høyst 8 mmol/l ved risiko for osmotisk demyelinisering (Na &gt; 120 ved første måling, kronisk hyponatremi, alkohol, underernæring, hypokalemi).</li>
+<li>S-Na hver time og etter hver bolus.</li>
+<li>Mulig binyrebarksvikt (immunterapi): ta kortisol og ACTH, og gi hydrokortison uten å vente på svar.</li></ul>
+</details>
+<div class="src"><a href="#k-natrium">Fullstendig omtale</a><a href="https://metodebok.no/emne/6Naq7zH6/hyponatremi/endokrinologi-(nef)">NEF</a></div>
+</article>
+<article class="card red" data-med="io ster" id="a-binyre">
+<h3>Binyrebarkkrise</h3>
+<div class="when">Hypotensjon eller sirkulasjonskollaps, kvalme, oppkast, magesmerter, forvirring, feber, hyponatremi, hyperkalemi, hypoglykemi. Etter hypofysitt eller adrenalitt ved immunterapi, eller brå seponering av steroider. Ta kortisol og ACTH (og aldosteron og renin) før behandling hvis mulig, men behandlingen skal ikke vente.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>Hydrokortison (Solu-Cortef) 100 mg iv over 0,5–1 minutt, deretter 50 mg hver 6. time første døgn.</li>
+<li>NaCl 9 mg/ml, ofte 3–4 liter første døgn. Glukose 50 mg/ml ved hypoglykemi.</li>
+<li>Skriv i journalen om prøvene ble tatt før behandling.</li></ul>
+<div class="lab">Videre</div>
+<ul><li>Ved bedring: halver dosen hvert døgn til vedlikehold peroralt. Parenteralt så lenge pasienten har mage-tarmsymptomer.</li>
+<li>Fludrokortison er ikke nødvendig så lenge hydrokortison er over 100 mg/døgn.</li>
+<li>ACTH-svikt etter immunterapi er nesten alltid varig: steroidkort, doseøkning ved sykdom, og henvisning til endokrinolog.</li></ul>
+</details>
+<details class="kilde"><summary>Kilder og sist sjekket</summary>
+<ul>
+<li><a href="https://metodebok.no/emne/qH3Abfhk/primær-binyrebarksvikt/endokrinologi-(nef)">Nasjonal veileder i endokrinologi (NEF), Primær binyrebarksvikt</a>, Metodebok, oppdatert 12. august 2026. Hovedkilde.</li>
+<li><a href="https://metodebok.no/emne/SkPscKQQ/endokrinopatier-ved-immuno-onkologisk-behandling/endokrinologi-(nef)">NEF, Endokrinopatier ved immuno-onkologisk behandling</a>, oppdatert 29. april 2024.</li>
+<li><a href="https://metodebok.no/emne/uqsLjVHX/glukokortikoidindusert-(iatrogen)-binyrebarksvikt/endokrinologi-(nef)">NEF, Glukokortikoidindusert (iatrogen) binyrebarksvikt</a>.</li>
+<li><a href="https://metodebok.no/emne/NvWp2S8Q/binyrebarksvikt/elektrolyttveileder-(diakonhjemmet)">Elektrolyttveileder (Diakonhjemmet), Binyrebarksvikt</a>, oppdatert 10. mars 2025. Samme anbefalinger.</li>
+</ul><p>Sist sjekket mot kildene 8. november 2026 av Håkon Olav Leira (med Claude).</p>
+</details>
+<div class="src"><a href="https://metodebok.no/emne/qH3Abfhk/primær-binyrebarksvikt/endokrinologi-(nef)">NEF</a><a href="https://holeira.github.io/Lungekreft/immunterapi/#o-hypofysitt">Immunterapi: hypofysitt</a></div>
+</article>
+<article class="card red" data-med="karbo pac nab doc ami io" id="a-anafylaksi">
+<h3>Infusjonsreaksjon og anafylaksi</h3>
+<div class="when">Paklitaksel, amivantamab (særlig første dose), karboplatin etter mange kurer.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>Stopp infusjonen.</li>
+<li>Anafylaksi: adrenalin 0,5 mg im (voksen) i lårets lateralside, kan gjentas etter 5 minutter. Væske, oksygen.</li>
+<li>Mildere reaksjon: antihistamin og steroid, gjenoppta langsommere etter avtale.</li></ul>
+<div class="lab">Videre</div>
+<ul><li>Dokumenter hvilket legemiddel. Kryssreaksjoner mellom platinapreparater er beskrevet [FK].</li></ul>
+</details><div class="src"><a href="https://holeira.github.io/Lungekreft/immunterapi/#o-irr">Immunterapi: infusjonsreaksjon</a><span class="tag-std">Standard</span><span>FK</span></div>
+</article>
+<article class="card red" id="a-ptx">
+<h3>Pneumothorax etter prosedyre</h3>
+<div class="when">Brystsmerter, dyspné eller fall i SpO₂ etter CT-veiledet biopsi, transbronkial biopsi eller pleuratapping. Røntgen eller ultralyd thorax. Oksygen.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul>
+<li>Symptomgivende eller økende: aspirasjon eller dren. Spenningspneumothorax: nålavlastning.</li></ul>
+</details><div class="src"><a href="#p-ct">Fullstendig omtale</a><span>BTS-CT</span><span>BTS-B</span></div>
+</article>
+<article class="card red" data-med="kjemo" id="a-ekstra">
+<h3>Ekstravasering av cellegift</h3>
+<div class="when">Smerte, svie eller hevelse ved innstikkstedet under infusjon.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab now">Gjør nå</div>
+<ul><li>Stopp infusjonen, la kanylen sitte og aspirer, og følg lokal prosedyre.</li>
+<li>Taksaner: kjøling. Vinorelbin (vinkaalkaloider): varme.</li></ul>
+</details><div class="src"><a href="#k-ekstravasering">Fullstendig omtale</a><span>HP 14.7</span></div>
+</article>
+</div>
+</details></section>
+<!-- ============ SYMPTOM ============ -->
+<section class="grp" id="symptom"><details class="sec" open=""><summary><h2>Symptom → årsak</h2></summary>
+
+<p class="lead">Når et symptom oppstår under eller etter behandling, må alle komponenter og andre årsaker vurderes: legemidlene, stråling, sykdommen selv, infeksjon og prosedyrer. Tidspunktet i forhold til kur og stråling er ofte det som skiller.</p>
+<div class="tblwrap"><table id="symt">
+<thead><tr><th>Symptom eller funn</th><th>Mulige årsaker</th><th>Det som skiller</th><th>Første tiltak</th></tr></thead>
+<tbody>
+<tr><td>Ny eller økende dyspné</td><td>Pneumonitt (immunterapi, TKI, stråling), lungeemboli, pleuravæske, perikardvæske, sentral luftveisobstruksjon, pneumoni, lymfangitt, anemi, hjertesvikt eller myokarditt, progresjon</td><td>Akutt debut taler for emboli eller pneumothorax. Stridor taler for sentral obstruksjon. Ødem og lav spenning på EKG: perikard</td><td><details class="tiltak"><summary>Tiltak</summary><div>SpO₂, CT thorax med kontrast (lungeemboli-protokoll), ultralyd pleura og hjerte, Hb, CRP, troponin og NT-proBNP ved immunterapi</div></details></td></tr>
+<tr><td>Pneumonitt / ILD</td><td>Immunterapi, osimertinib, amivantamab, gemcitabin, paklitaksel, (pemetreksed), strålepneumonitt (1–6 mnd etter RT, i strålefeltet), infeksjon (inkl. PJP ved steroid), lymfangitt, progresjon, hjertesvikt</td><td>Utenfor strålefeltet taler for legemiddel eller immunterapi. Osimertinib etter immunterapi gir økt risiko. Gemcitabin gis ikke samtidig med RT (≥ 7 dager mellomrom) [FK]</td><td><details class="tiltak"><summary>Tiltak</summary><div>HRCT, SpO₂, infeksjonsutredning, BAL tidlig ved grad ≥ 2. Pause alle legemidler som kan være årsaken. Steroid ved grad ≥ 2. Se <a href="https://holeira.github.io/Lungekreft/immunterapi/#o-pneumonitt">immunterapi</a>, <a href="https://holeira.github.io/Lungekreft/biomarkorer/#ae-ild">TKI</a>, <a href="#r-pneumonitt">stråling</a></div></details></td></tr>
+<tr><td>Hemoptyse</td><td>Tumor (særlig sentral plateepitel), angiogenesehemmere (bevacizumab, ramucirumab), antikoagulasjon, trombocytopeni, lungeemboli med infarkt, infeksjon, etter biopsi</td><td>Mengde og om pasienten klarer å hoste opp</td><td><details class="tiltak"><summary>Tiltak</summary><div>Se <a href="#k-hemoptyse">hemoptyse</a>. Stopp angiogenesehemmer. Vurder antikoagulasjon og trombocytter</div></details></td></tr>
+<tr><td>Hevelse i ansikt, hals eller arm</td><td>Vena cava superior-syndrom, armvenetrombose (port eller PICC), lymfødem</td><td>Bilateral og ansikt taler for VCSS. Ensidig arm med port taler for trombose</td><td><details class="tiltak"><summary>Tiltak</summary><div>CT thorax med kontrast eller ultralyd. Se <a href="#k-vcss">VCSS</a>, <a href="#k-vte">tromboembolisme</a></div></details></td></tr>
+<tr><td>Ryggsmerter, kraftsvikt i beina</td><td>Medullakompresjon, skjelettmetastase, sammenfall, sjelden immunrelatert nevropati (Guillain-Barré)</td><td>Nattlige smerter, båndsmerter, nevrologiske utfall, blære</td><td><details class="tiltak"><summary>Tiltak</summary><div>Øyeblikkelig hjelp: steroid og MR. Se <a href="#k-medulla">medullakompresjon</a></div></details></td></tr>
+<tr><td>Hodepine, forvirring, kramper</td><td>Hjernemetastaser, leptomeningeal spredning, hyponatremi, hyperkalsemi, hypofysitt, encefalitt (immunterapi), hypoglykemi, opioider, infeksjon</td><td>Fokale utfall taler for metastaser. Elektrolytter avklarer mye</td><td><details class="tiltak"><summary>Tiltak</summary><div>Na, Ca, glukose, CT eller MR caput. Se <a href="https://holeira.github.io/Lungekreft/#beh-spes">portalen kap. 10</a></div></details></td></tr>
+<tr><td>Diaré</td><td>Pemetreksed, irinotekan, osimertinib (doseavhengig, tidlig, mild), lazertinib/amivantamab, immunrelatert kolitt (CTLA-4 &gt; PD-1), infeksjon (C. difficile), nøytropen enterokolitt</td><td>Kjemodiaré kommer som regel i dagene etter kur og går over. Kolitt ved immunterapi vedvarer eller tiltar, ofte med magesmerter, slim, blod eller feber, og kommer etter uker til måneder. TKI-diaré kommer tidlig og er stabil</td><td><details class="tiltak"><summary>Tiltak</summary><div>Avføringsprøver inkl. C. difficile, kalprotektin (høy taler for kolitt). Ved grad ≥ 2 og mistanke om immunterapi: pause og steroid (se <a href="https://holeira.github.io/Lungekreft/immunterapi/#o-kolitt">kolitt</a>). Loperamid ved TKI- eller kjemodiaré</div></details></td></tr>
+<tr><td>Utslett og kløe</td><td>Pemetreksed (hindres av deksametason), immunterapi (makulopapuløst, kløe, lichenoid), EGFR-TKI/amivantamab (akneiformt), paklitaksel (overfølsomhet), allopurinol, antibiotika, stråledermatitt</td><td>Akneiformt i ansikt og øvre del av truncus taler for EGFR. Makulopapuløst og kløende taler for immunterapi eller pemetreksed. Blemmer og slimhinner: SJS/TEN, akutt</td><td><details class="tiltak"><summary>Tiltak</summary><div>Grader etter CTCAE. Lokale steroider. Har pasienten tatt deksametason rundt pemetreksed? Se <a href="https://holeira.github.io/Lungekreft/immunterapi/#o-hud">immunterapi</a>, <a href="https://holeira.github.io/Lungekreft/biomarkorer/#ae-hud">TKI</a></div></details></td></tr>
+<tr><td>Transaminasestigning</td><td>Immunrelatert hepatitt, pemetreksed, paklitaksel, gemcitabin, TKI (osimertinib, lazertinib, ALK-hemmere), statiner, antibiotika (inkl. trimetoprim-sulfa), levermetastaser, galleveisobstruksjon</td><td>Tidspunkt. Stigning i bilirubin og INR gir alvor. Hepatitt ved immunterapi er ofte isolert transaminasestigning 6–14 uker etter oppstart</td><td><details class="tiltak"><summary>Tiltak</summary><div>Stopp levertoksiske legemidler. Hepatitt grad ≥ 2 ved immunterapi: steroid (ikke infliksimab). Se <a href="https://holeira.github.io/Lungekreft/immunterapi/#o-hepatitt">hepatitt</a></div></details></td></tr>
+<tr><td>Kreatininstigning</td><td>Pemetreksed (kumulativ, tubulær), immunrelatert nefritt, NSAID, iv-kontrast, dehydrering (diaré, oppkast), obstruksjon, hyperkalsemi, tepotinib og kapmatinib (pseudoøkning)</td><td>Urinsediment og protein/albumin. Gå gjennom NSAID og kontrast</td><td><details class="tiltak"><summary>Tiltak</summary><div>Hydrering. Pemetreksed stoppes ved ClCR &lt; 45. Unngå NSAID 2 dager før til 2 dager etter pemetreksed (5 dager for langtidsvirkende) ved ClCR 45–79 [FK]. Steroid ved nefritt grad ≥ 2</div></details></td></tr>
+<tr><td>Cytopeni / nøytropen feber</td><td>Kjemo (nadir dag 10–15), FLAURA2 (osimertinib forsterker), amivantamab + kjemo, stråling mot store margvolum, sjelden immunterapi (immun-ITP, AIHA, aplasi), benmargsinfiltrasjon</td><td>Kjemocytopeni følger nadir og kommer seg. Isolert trombocytopeni eller hemolyse uten sammenheng med kur taler for immunterapi</td><td><details class="tiltak"><summary>Tiltak</summary><div>Nøytropen feber er øyeblikkelig hjelp, se <a href="#nf">over</a>. Dosereduksjon eller G-CSF ved neste kur</div></details></td></tr>
+<tr><td>Perifer nevropati</td><td>Paklitaksel, nab-paklitaksel, vinorelbin, lorlatinib, paraneoplastisk (anti-Hu ved SCLC). Sjelden immunterapi (Guillain-Barré, myasteni)</td><td>Kjemonevropati er sensorisk, distal, symmetrisk og kumulativ. Rask motorisk svakhet, arefleksi, ptose, dobbeltsyn eller svelgevansker: immunrelatert nevrologisk, akutt</td><td><details class="tiltak"><summary>Tiltak</summary><div>Kjemo: dosereduksjon (paklitaksel −20 % ved alvorlig nevropati [FK]). Immunterapi: se <a href="https://holeira.github.io/Lungekreft/immunterapi/#o-myositt">myositt og myasteni</a></div></details></td></tr>
+<tr><td>Proksimal muskelsvakhet</td><td>Lambert-Eaton (SCLC), myositt eller myasteni (immunterapi), steroidmyopati, hypokalemi (ektopisk ACTH)</td><td>Lambert-Eaton: bedres ved gjentatt kraftanstrengelse, autonome symptomer. Myositt: CK høy, troponin? Myasteni: ptose og dobbeltsyn</td><td><details class="tiltak"><summary>Tiltak</summary><div>CK, troponin, K, kortisol. Se <a href="#k-paraneo">paraneoplastiske</a> og <a href="https://holeira.github.io/Lungekreft/immunterapi/#o-myositt">immunterapi</a></div></details></td></tr>
+<tr><td>Slapphet, kvalme, hypotensjon, hyponatremi</td><td>Hypofysitt eller binyrebarksvikt (immunterapi), hypotyreose (immunterapi), seponering av deksametason, kjemofatigue, SIAD (SCLC, vinorelbin, karboplatin, opioider, SSRI), hjernemetastaser, hyperkalsemi</td><td>Morgenkortisol + ACTH, TSH/fT4, osmolalitet, Ca</td><td><details class="tiltak"><summary>Tiltak</summary><div>Mistenkt binyrebarksvikt: hydrokortison 100 mg iv før prøvesvar, og journalen viser om prøvene ble tatt før start [NEF]. Se <a href="#a-binyre">binyrebarkkrise</a> og <a href="#k-natrium">hyponatremi</a></div></details></td></tr>
+<tr><td>Hyperglykemi</td><td>Deksametason (premedikasjon), immunrelatert diabetes (rask, ketoacidose), lorlatinib/brigatinib, ektopisk ACTH</td><td>Immunrelatert diabetes: rask debut, ketoner, lav C-peptid</td><td><details class="tiltak"><summary>Tiltak</summary><div>Ketoacidose: innleggelse og insulin. Ikke høydose steroid ved immunrelatert diabetes</div></details></td></tr>
+<tr><td>Feber</td><td>Nøytropen feber, infeksjon (også postobstruktiv pneumoni og empyem), immunrelatert bivirkning, infusjonsreaksjon, dabrafenib, tumorfeber, etter EBUS (mediastinitt)</td><td>Alltid nøytrofile først</td><td><details class="tiltak"><summary>Tiltak</summary><div>Se <a href="#nf">nøytropen feber</a> og <a href="#k-infeksjon">infeksjon</a></div></details></td></tr>
+<tr><td>Ødem, hypoalbuminemi</td><td>Amivantamab, pemetreksed, MET-TKI, lorlatinib, hjertesvikt (myokarditt ved immunterapi), VCSS, DVT, ektopisk ACTH</td><td>Ved ny dyspné eller ødem under immunterapi: troponin og NT-proBNP</td><td><details class="tiltak"><summary>Tiltak</summary><div>Se <a href="https://holeira.github.io/Lungekreft/biomarkorer/#ae-odem">TKI: ødem</a></div></details></td></tr>
+<tr><td>Svelgesmerter, øsofagitt og mukositt</td><td>Kjemoradioterapi (mest), gemcitabin + RT, pemetreksed, afatinib, candida (steroider), sjelden tumorinnvekst</td><td>Tidspunkt i forhold til RT (2–3 uker inn i behandlingen)</td><td><details class="tiltak"><summary>Tiltak</summary><div>Se <a href="#r-osofagitt">strålingsøsofagitt</a></div></details></td></tr>
+<tr><td>Infusjonsreaksjon</td><td>Paklitaksel (Cremophor), amivantamab (særlig iv dose 1), karboplatin (overfølsomhet etter mange kurer, særlig ved rebehandling), immunterapi (sjelden)</td><td>Tidspunkt i infusjonen, og hvilket legemiddel som gikk</td><td><details class="tiltak"><summary>Tiltak</summary><div>Stopp infusjonen [FK]. Se <a href="#a-anafylaksi">anafylaksi</a>. Risikoen for karboplatinallergi øker ved gjentatt eksponering, særlig fra seks kurer. Ved karboplatinallergi: desensibilisering eller bytte av kur [Standard]</div></details></td></tr>
+</tbody>
+</table></div>
+<div class="card" style="margin-top:12px">
+<h3>Generelle råd ved alvorlig toksisitet <span class="src" style="display:inline-flex"><span class="tag-fs">Forslag</span></span></h3>
+<ul><li>Pause alle legemidler som kan være årsaken. Gjeninnfør dem ett og ett, med den minst sannsynlige årsaken først.</li>
+<li>Dokumenter i journalen hvilken komponent du mener er årsaken. Det styrer dosereduksjon (kjemo), pause eller seponering (immunterapi) og senere rebehandling.</li>
+<li>Ved mistanke om immunrelatert toksisitet skal Immunterapibivirkninger følges, selv om kjemo kan være medvirkende. Steroid skal ikke utsettes.</li>
+<li>Grader etter CTCAE (tabellen står i <a href="https://holeira.github.io/Lungekreft/medikamenter/#malrettet-oversikt">Medikamentell behandling</a>).</li></ul>
+</div>
+</details></section>
+<!-- ============ SYKDOMMEN ============ -->
+<section class="grp" id="sykdom"><details class="sec"><summary><h2>Komplikasjoner av sykdommen</h2></summary>
+
+<p class="lead">Diagnosen er ikke alltid sikker før akuttbehandlingen må starte. Ved kjent lungekreft kan akuttbehandlingen bygge på tidligere histologi hvis residiv eller progresjon kommer innen to år [HP 14]. Røykehistorie, KOLS, emfysem og høy alder øker mistanken om lungekreft. SCLC: sentral tumor, mye N2/N3, høy NSE eller proGRP.</p>
+<div class="grid">
+<article class="card" id="k-vcss">
+<h3>Vena cava superior-syndrom (Stokes krage)</h3><div class="when">Hevelse i ansikt, hals og armer, utvidede vener på hals og brystvegg, dyspné, hodepine. CT thorax med kontrast. Histologi før behandling hvis mulig.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li>Opp i sittende stilling og oksygen etter behov.</li>
+<li>Høydose deksametason (4 mg × 4 eller 8 mg × 2) eller metylprednisolon 16 mg × 4 straks, med protonpumpehemmer. Histologi før behandling hvis mulig.</li>
+<li>Mistenkt eller påvist SCLC: kjemoterapi, eventuelt med immunterapi.</li>
+<li>Kjemoresistent SCLC, ukjent histologi eller NSCLC med betydelige plager: øyeblikkelig hjelp-stenting av vena cava, deretter strålebehandling.</li>
+<li>Strålebehandling: 3 Gy × 10 eller 2,8 Gy × 15. De to første fraksjonene gis på to påfølgende dager.</li>
+</ul>
+</details><div class="src"><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/vena-cava-superior-syndrom-vcss-stokes-krage">HP 14.1</a></div>
+</article>
+<article class="card" id="k-luftvei">
+<h3>Kompresjon og okklusjon av sentrale luftveier</h3><div class="when">Dyspné, stridor, takypné og ofte hoste. Kan utvikle seg gradvis og feiltolkes som forverring av obstruktiv lungesykdom. Klinisk undersøkelse og CT thorax. Flow-volumkurve kan gi mistanke. Sikre histologi eller cytologi hvis mulig.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li>Steroid straks: deksametason 4 mg × 4 eller 8 mg × 2, eller metylprednisolon 16 mg × 4, med protonpumpehemmer.</li>
+<li>Ved mistanke om lymfom: biopsi eller cytologi før steroid.</li>
+<li>NSCLC eller uavklart histologi: intervensjonsbronkoskopi (laser og/eller stent), deretter strålebehandling som starter etter få dager: 3 Gy × 10 eller 8,5 Gy × 2, tilpasset allmenntilstand og målvolum.</li>
+<li>SCLC: primært kjemoterapi, eventuelt med immunterapi hos kjemonaive. Strålebehandling hvis kjemo er kontraindisert.</li>
+<li>Residiv i tidligere bestrålt område: intervensjonsbronkoskopi med stent og/eller laser. Endobronkial strålebehandling har ikke vist effekt utover ekstern strålebehandling eller laser.</li>
+<li>Intervensjonsbronkoskopi gjøres ved Haukeland, OUS Rikshospitalet og St. Olavs. Kryorekanalisering tilbys blant annet ved Stavanger universitetssjukehus.</li>
+<li>Stadieinndel: SCLC i begrenset stadium kan behandles kurativt.</li>
+</ul>
+</details><div class="src"><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/kompresjon-og-okklusjon-av-sentrale-luftveier">HP 14.2</a><span>HP 8.9</span></div>
+</article>
+<article class="card" id="k-medulla">
+<h3>Malign medullakompresjon</h3><div class="when">Kraftsvikt eller nummenhet i ekstremitetene, ryggsmerter, inkontinens, urinretensjon, koordinasjonsvansker. Kan utvikle seg over uker eller få dager. MR (eventuelt CT); varigheten styrer bildediagnostikken.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+
+<li>Høydose deksametason (4 mg × 4 eller 8 mg × 2) eller metylprednisolon 16 mg × 4 straks, med protonpumpehemmer.</li>
+<li>Hastehenvisning til onkolog, nevrokirurg og ortoped. MR (eventuelt CT).</li>
+<li>Strålebehandling er primærbehandling ved bedring på steroider eller inoperabilitet, og starter innen 24 timer. Ellers vurderes kirurgisk dekompresjon.</li>
+<li>Fraksjonering etter forventet levetid: under 6 måneder 8 Gy × 1 (best dokumentert, større behov for re-bestråling); 6–12 måneder 4 Gy × 5; over 12 måneder 3 Gy × 10. Minst to påfølgende dager, også i helg.</li>
+<li>Forverring under strålebehandling: ny vurdering av nevrokirurg eller ortoped.</li>
+</ul>
+</details><div class="src"><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/malign-medullakompresjon">HP 14.3</a></div>
+</article>
+<article class="card" data-med="bis" id="k-hyperkalsemi">
+<h3>Hyperkalsemi</h3><div class="when">Konfusjon, somnolens, kvalme og brekninger, muskelsvakhet, polyuri, tørste, obstipasjon, dehydrering, bradykardi, kort QTc. Mål fritt (ionisert) kalsium; albuminjustert kalsium er ikke bedre enn totalt kalsium. Gradering etter fritt kalsium: lett 1,29–1,50, moderat 1,51–1,70, alvorlig 1,71–2,00, krise &gt; 2,00 mmol/l. Prøver: Na, K, Mg, fosfat, kreatinin, karbamid, PTH (lav ved malign hyperkalsemi), eventuelt PTHrP. EKG ved symptomer eller fritt kalsium &gt; 1,7.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li><b>1. Rehydrering</b> (første og viktigste tiltak): NaCl 9 mg/ml 200–300 ml/time, juster til diurese 100–150 ml/time. Loop-diuretikum (furosemid 20–40 mg iv) bare ved overhydrering og etter oppnådd normovolemi.</li>
+<li><b>2. Bisfosfonat</b> ved kjent eller mistenkt kreft (virker etter 2–4 dager, i 3–4 uker): zoledronsyre 4 mg i 100 ml NaCl over minst 15 minutter, 30–60 minutter ved eGFR 30–60. Ved eGFR &lt; 30 bare etter nytte-risikovurdering, eventuelt redusert dose. Kan gjentas etter 3–4 uker (minst én uke mellom). Akuttfasereaksjon hos opptil 30 %: paracetamol 1 g × 3, eventuelt deksametason 4 mg × 1 i 3 dager.</li>
+<li><b>3. Denosumab</b> ved manglende effekt av bisfosfonat etter 3 dager eller eGFR &lt; 30: 120 mg sc ukentlig i 4 uker, deretter månedlig, etter samråd med onkolog eller endokrinolog. Følg fritt kalsium ukentlig (hypokalsemi).</li>
+<li><b>4. Kalsitonin</b> (virker etter 4–6 timer, kortvarig) ved hyperkalsemisk krise: 100 E sc eller im hver 6.–8. time.</li>
+<li>Monitorering: fritt kalsium, fosfat, K, Mg og kreatinin minst to ganger per døgn. Rytmeovervåking ved nye EKG-forandringer, fritt kalsium &gt; 2,0, K &lt; 3,0 eller Mg &lt; 0,5.</li>
+<li>Bedres ikke CNS-symptomene: MR caput for å utelukke hjernemetastaser [HP].</li>
+</ul>
+</details>
+<details class="kilde"><summary>Kilder og sist sjekket</summary>
+<ul>
+<li><a href="https://metodebok.no/emne/MQphgENj/hyperkalsemi/endokrinologi-(nef)">Nasjonal veileder i endokrinologi (NEF), Hyperkalsemi</a>, Metodebok. Hovedkilde.</li>
+<li><a href="https://metodebok.no/emne/b3zEqEts/hyperkalsemi/elektrolyttveileder-(diakonhjemmet)">Elektrolyttveileder (Diakonhjemmet), Hyperkalsemi</a>, Metodebok, oppdatert 28. mai 2025. Samme anbefalinger.</li>
+<li><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/hyperkalsemi">Handlingsprogrammet 14.4</a> (siste faglige endring 26. mai 2026): NaCl 2000 ml/døgn og zoledronat 4 mg eller pamidronat 90 mg, ny dose etter 7–10 dager. Avviker fra NEF på væskemengde og intervall; NEF er valgt.</li>
+</ul><p>Sist sjekket mot kildene 8. november 2026 av Håkon Olav Leira (med Claude).</p>
+</details>
+<div class="src"><a href="https://metodebok.no/emne/MQphgENj/hyperkalsemi/endokrinologi-(nef)">NEF</a><a href="https://metodebok.no/emne/b3zEqEts/hyperkalsemi/elektrolyttveileder-(diakonhjemmet)">Diakonhjemmet</a><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/hyperkalsemi">HP 14.4</a></div>
+</article>
+<article class="card" data-med="ak" id="k-vte">
+<h3>Venøs tromboembolisme</h3><div class="when">Hevelse og smerter i bein eller arm, dyspné, brystsmerter, takykardi. Ultralyd eller CT med lungeemboli-protokoll.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li>Dyp venetrombose og lungeemboli behandles med DOAK (apiksaban, edoksaban eller rivaroksaban).</li>
+<li>Apiksaban 10 mg × 2 i 7 dager, deretter 5 mg × 2. Best dokumentert hos lungekreftpasienter (Caravaggio: like få tilbakefall og like lite alvorlig blødning som dalteparin).</li>
+<li>Hjernemetastaser var ikke med i studien. Her kan lavmolekylært heparin vurderes.</li>
+<li>Ved sykdom som ikke kan kureres bør antikoagulasjonen være livslang.</li>
+<li>Sjekk interaksjoner med TKI (CYP3A4 og P-gp), se <a href="https://holeira.github.io/Lungekreft/biomarkorer/#felles">Felles råd</a>. Vurder blødningsrisiko ved sentral tumor og angiogenesehemmere.</li>
+<li>Mer: Norsk selskap for trombose og hemostase (MAGICapp).</li>
+</ul>
+</details><div class="src"><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/tromboembolisk-sykdom-hos-kreftpasienter">HP 14.5</a></div>
+</article>
+<article class="card" data-med="kjemo ster" id="k-infeksjon">
+<h3>Infeksjon</h3><div class="when">Feber, hoste, purulent ekspektorat, CRP-stigning. Ta alltid nøytrofile ved feber under kjemoterapi. Vurder alvorlighet med CRB-65.</div><details class="beh"><summary>Behandling</summary>
+<div class="lab">Pneumoni, samfunnservervet (Antibiotikaveileder for sykehus)</div>
+<ul>
+<li><b>Mild/moderat (CRB-65 0–2):</b> benzylpenicillin 1,2 g × 4 iv. Overgang til fenoksymetylpenicillin 1 g × 4 peroralt. 5 døgn ved ukomplisert forløp. Penicillinallergi: makrolid.</li>
+<li><b>Alvorlig (CRB-65 3–4, sengepost):</b> benzylpenicillin 3 g × 4 iv + gentamicin 6 mg/kg × 1 iv. Revurder gentamicin etter 1–2 døgn. 7 døgn. Nedsatt nyrefunksjon eller ikke-straksallergi mot penicillin: cefotaksim. Straksallergi: klindamycin.</li>
+<li><b>Svært alvorlig (intensivbehov):</b> cefotaksim 2 g × 3 iv + ciprofloksacin 400 mg × 3 iv.</li>
+<li>Ved mistanke om sepsis og tvil om fokus: behandle som sepsis med ukjent fokus.</li>
+</ul>
+<div class="lab">Pneumoni, sykehuservervet (&gt; 48 timer etter innleggelse)</div>
+<ul><li><b>Ukomplisert:</b> benzylpenicillin 1,2 g × 4 iv + gentamicin 6 mg/kg × 1 iv. 5 døgn. Aminoglykosid utover 3 døgn er sjelden indisert.</li></ul>
+<div class="lab">Lungekreftspesifikt (handlingsprogrammet)</div>
+<ul>
+<li>Andrevalg: ciprofloksacin 400 mg × 2 iv eller 500 mg × 2 po (fullstendig opptak, kan gis peroralt fra start hvis pasienten kan svelge).</li>
+<li>Tumor som klemmer av bronkier (risiko for postobstruktiv pneumoni og abscess): piperacillin/tazobaktam 4 g/0,5 g × 3 iv ved svikt på penicillin.</li>
+</ul>
+<div class="lab">Febril nøytropeni</div>
+<ul><li>Se <a href="#nf">kortet Nøytropen feber</a>.</li></ul>
+<p style="margin:6px 0 0;font-size:.92rem">Vaksinering står nå i portalen under <a href="https://holeira.github.io/Lungekreft/#vaksinering">Verktøy → Vaksinering</a>.</p>
+</details>
+<details class="kilde"><summary>Kilder og sist sjekket</summary>
+<ul>
+<li><a href="https://www.helsedirektoratet.no/retningslinjer/antibiotika-i-sykehus/luftveisinfeksjoner-nedre/pneumoni-samfunnservervet">Antibiotikaveileder for sykehus, 9.1 Pneumoni, samfunnservervet</a> (mild/moderat og alvorlig, ukjent agens), siste faglige endring 8. november 2023.</li>
+<li><a href="https://www.helsedirektoratet.no/retningslinjer/antibiotika-i-sykehus/luftveisinfeksjoner-nedre/pneumoni-sykehuservervet/pneumoni-sykehuservervet-ukomplisert">Antibiotikaveileder for sykehus, 9.2 Pneumoni, sykehuservervet, ukomplisert</a>.</li>
+<li><a href="https://antibiotika.fnsp.nhn.no/4a9ae4/contentassets/2163f5b67f47420389dc1aa6318d5734/antibiotikabruk-i-sykehus_hefte-a5_1og4-og-2og3_061123.pdf">Nasjonalt senter for antibiotikabruk i sykehus (NSAS): Standardbehandling antibiotika, utdrag</a> (oral dose ved overgang, svært alvorlig pneumoni).</li>
+<li><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/infeksjonsbehandling-og-vaksinering">Handlingsprogrammet 14.6 Infeksjonsbehandling og vaksinering</a> (andrevalg og postobstruktiv pneumoni). Handlingsprogrammet oppgir benzylpenicillin 2 mill IE × 4, som tilsvarer 1,2 g × 4.</li>
+</ul>
+<p>Sist sjekket mot kildene 8. november 2026 av Håkon Olav Leira (med Claude). Doser ved nedsatt nyrefunksjon og for alternativene: se veilederen.</p>
+</details>
+<div class="src"><a href="https://www.helsedirektoratet.no/retningslinjer/antibiotika-i-sykehus">Antibiotikaveileder for sykehus</a><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/infeksjonsbehandling-og-vaksinering">HP 14.6</a></div>
+</article>
+<article class="card" data-med="ang ak" id="k-hemoptyse">
+<h3>Hemoptyse</h3><div class="when">Spør om mengde, frekvens og antikoagulasjon. Hb, trombocytter, INR. CT thorax med kontrast.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li>Mindre hemoptyse er vanlig. Ved ny hemoptyse hos tidligere frisk: henvisning, se <a href="https://holeira.github.io/Lungekreft/#henvisning">portalen kap. 1</a>.</li>
+<li>Moderat: tranexamsyre peroralt eller inhalert, stopp eller reduser antikoagulasjon, korriger trombocytter. Vurder palliativ strålebehandling eller bronkoskopisk behandling (argonplasma, laser) [HP 8.9].</li>
+<li>Angiogenesehemmere (bevacizumab, ramucirumab) er kontraindisert ved betydelig hemoptyse [FK].</li>
+<li>Massiv: se <a href="#a-hemoptyse">akuttkortet</a>. Bronkialarterieembolisering er ofte mest effektivt.</li>
+</ul>
+</details><div class="src"><span class="tag-std">Standard</span><span>HP 8.9</span><span>FK</span></div>
+</article>
+<article class="card" id="k-pleura">
+<h3>Malign pleuravæske</h3><div class="when">Dyspné, dempning og nedsatt respirasjonslyd. Ultralyd thorax. Tolking av væsken (Lights kriterier m.m.): se <a href="https://holeira.github.io/Lungekreft/#pleura">portalen 3, pleura</a>.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li>Symptomgivende væske: terapeutisk tapping. Avbryt ved hoste, brystsmerter eller ubehag.</li>
+<li>Residiverende væske med utspilt lunge: talkpleurodese eller inneliggende pleurakateter (IPC), etter pasientens ønske.</li>
+<li>«Trapped lung» (lungen utvider seg ikke): IPC.</li>
+
+<li>Ved driver-mutasjon kan væsken avta på målrettet behandling. Vurder å vente med pleurodese.</li>
+</ul>
+</details><div class="src"><span>BTS-P</span><span class="tag-std">Standard</span></div>
+</article>
+<article class="card" data-med="io rt" id="k-perikard">
+<h3>Malign perikardvæske</h3><div class="when">Dyspné, takykardi, ødem, hypotensjon eller forstørret hjerteskygge, lav spenning på EKG. Ekkokardiografi.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+
+<li>Tamponade: perikardiocentese, eventuelt med kateter. Residiv: perikardvindu.</li>
+<li>Under immunterapi: tenk også på immunrelatert perikarditt og myokarditt (troponin, NT-proBNP, EKG). Se <a href="https://holeira.github.io/Lungekreft/immunterapi/#o-myokarditt">myokarditt</a>.</li>
+<li>Etter thoraxbestråling: strålingsperikarditt.</li>
+</ul>
+</details><div class="src"><span class="tag-std">Standard</span></div>
+</article>
+<article class="card" data-med="io karbo vin" id="k-natrium">
+<h3>Hyponatremi og SIAD</h3><div class="when">Kvalme, hodepine, slapphet, ustøhet, forvirring, kramper. Grad: lett 130–136, moderat 125–129, alvorlig &lt; 125 mmol/l. Prøver før behandling: Na, K, glukose, kreatinin, karbamid, urinsyre, albumin, kortisol, TSH, fritt T4, og spoturin med Na, K og osmolalitet. SIAD: effektiv osmolalitet &lt; 275, U-osmolalitet &gt; 100 mosmol/kg, U-Na &gt; 30 mmol/l, normovolemi, ikke hypotyreose eller binyrebarksvikt, ikke diuretika.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li><b>Årsaker ved lungekreft:</b> SCLC (vanligst), pneumoni, cytostatika (vinorelbin, karboplatin, cisplatin, syklofosfamid), opioider, SSRI og andre antidepressiva, protonpumpehemmer, kvalme og smerter. Binyrebarksvikt og hypofysitt ved immunterapi gir samme bilde.</li>
+<li><b>Alvorlige symptomer:</b> hypertont NaCl, se <a href="#a-natrium">akuttkortet</a>.</li>
+<li><b>Moderat og alvorlig hyponatremi (Na &lt; 130)</b> behandles også uten symptomer.</li>
+<li><b>Væskerestriksjon</b> (førstelinje ved SIAD): 0,5–1,5 liter/døgn, om lag 500 ml under døgndiuresen. (U-Na + U-K)/S-Na &gt; 1 betyr at restriksjon ikke vil virke. Behandle årsaken; ved SCLC bedres SIAD ofte på kjemoterapi.</li>
+<li><b>Tolvaptan</b> når restriksjon ikke virker eller ikke lar seg gjennomføre: startes i sykehus, først når Na ≥ 125. Start 7,5 mg × 1, doble om Na ikke stiger ≥ 4 mmol/l på 1–2 døgn. Ingen væskerestriksjon samtidig. Na hver 6. time til stabilt. Leverprøver før og etter oppstart.</li>
+<li><b>Korreksjonsgrense:</b> høyst 10 mmol/l per døgn uten alvorlige symptomer, 8 mmol/l ved risiko for osmotisk demyelinisering. Samtidig kaliumtilskudd øker Na.</li>
+<li><b>For rask korrigering:</b> stopp natriumtilførsel og tolvaptan, gi vann peroralt eller glukose 50 mg/ml iv tilsvarende timediuresen, eventuelt desmopressin 1–2 µg iv.</li>
+</ul>
+</details>
+<details class="kilde"><summary>Kilder og sist sjekket</summary>
+<ul>
+<li><a href="https://metodebok.no/emne/6Naq7zH6/hyponatremi/endokrinologi-(nef)">Nasjonal veileder i endokrinologi (NEF), Hyponatremi</a> (med SIAD), Metodebok, oppdatert 24. juni 2025. Hovedkilde.</li>
+<li><a href="https://metodebok.no/emne/JGScVkXX/hyponatremi/elektrolyttveileder-(diakonhjemmet)">Elektrolyttveileder (Diakonhjemmet), Hyponatremi</a> og <a href="https://metodebok.no/emne/DnDZW7Ce/syndrome-of-inappropriate-antidiuresis-(siad)/elektrolyttveileder-(diakonhjemmet)">SIAD</a>, Metodebok, oppdatert 27. mai 2024. Samme anbefalinger, med liste over legemidler som gir SIAD.</li>
+<li>Spasovski m.fl. (europeisk retningslinje 2014) er brukt i de norske veilederne. Bolus er her endret fra 150 ml over 20 minutter (europeisk) til 100 ml over 10 minutter (NEF).</li>
+</ul><p>Sist sjekket mot kildene 8. november 2026 av Håkon Olav Leira (med Claude).</p>
+</details>
+<div class="src"><a href="https://metodebok.no/emne/6Naq7zH6/hyponatremi/endokrinologi-(nef)">NEF</a><a href="https://metodebok.no/emne/DnDZW7Ce/syndrome-of-inappropriate-antidiuresis-(siad)/elektrolyttveileder-(diakonhjemmet)">Diakonhjemmet</a></div>
+</article>
+<article class="card" id="k-paraneo">
+<h3>Paraneoplastiske syndromer</h3><div class="when">Mistenk ved uforklarte nevrologiske plager, muskelsvakhet, hypokalemi, hyperglykemi eller hyperkalsemi, særlig ved SCLC. Prøver etter bildet: K, glukose, kortisol, ACTH, Ca, antistoffer.</div><details class="beh"><summary>Syndromer og behandling</summary>
+<ul>
+<li><b>Ektopisk ACTH</b> (SCLC, karsinoid): hypokalemi, hyperglykemi, ødem, muskelsvakhet, hypertensjon, høy infeksjonsrisiko. Prøver: kortisol, ACTH, K. Behandle tumor. Vurder blokade av kortisolsyntesen med endokrinolog. Kaliumtilskudd: se <a href="https://metodebok.no/emne/apVqukZM/hypokalemi/endokrinologi-(nef)">NEF, Hypokalemi</a>.</li>
+<li><b>Lambert-Eaton</b> (SCLC): proksimal svakhet i beina, autonome plager, svekkede reflekser. Anti-VGCC-antistoffer, nevrografi. Behandle tumor. Amifampridin etter nevrolog.</li>
+<li><b>Anti-Hu og andre nevrologiske</b> (SCLC): sensorisk nevronopati, encefalitt, cerebellær degenerasjon. Nevrolog. Skill fra immunrelatert nevrotoksisitet.</li>
+<li><b>Hyperkalsemi</b> (PTHrP, særlig plateepitelkarsinom): se <a href="#k-hyperkalsemi">over</a>.</li>
+<li><b>Hypertrofisk osteoartropati</b>: klubbefingre, leddsmerter. Bisfosfonat og NSAID kan lindre.</li>
+</ul>
+</details><div class="src"><span class="tag-std">Standard</span></div>
+</article>
+<article class="card" data-med="karbo eto" id="k-tls">
+<h3>Tumorlysesyndrom</h3><div class="when">Høy urat, kalium og fosfat, lavt kalsium, stigende kreatinin, i dagene etter første kur. Størst risiko ved SCLC med stor tumorbyrde og høy LD.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+
+
+<li>Hyperkalemi: se <a href="https://metodebok.no/emne/LRDThj58/hyperkalemi/elektrolyttveileder-(diakonhjemmet)">Elektrolyttveileder (Diakonhjemmet), Hyperkalemi</a>.</li>
+<li>Forebygging ved høy risiko: rikelig hydrering og allopurinol. Rasburikase ved etablert syndrom eller svært høy risiko (ikke ved G6PD-mangel).</li>
+</ul>
+</details><div class="src"><span class="tag-std">Standard</span></div>
+</article>
+<article class="card" data-med="ster" id="k-hjerne">
+<h3>Hjernemetastaser</h3><div class="when">Hodepine, kvalme, fokale utfall, kramper, kognitiv svikt. MR caput.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li>Symptomgivende ødem: deksametason. Laveste effektive dose, og trapp ned så snart det er mulig.</li>
+<li>Kramper: antiepileptikum. Ikke profylaktisk uten kramper.</li>
+<li>Behandlingsvalg (stereotaksi, TKI, helhjernebestråling): se <a href="https://holeira.github.io/Lungekreft/#beh-spes">portalen kap. 10</a>.</li>
+<li>Førerkort: se portalen under Annet.</li>
+</ul>
+</details><div class="src"><span>Portalen kap. 10</span><span class="tag-std">Standard</span></div>
+</article>
+</div>
+</details></section>
+<!-- ============ BEHANDLINGEN ============ -->
+<section class="grp" id="behandling"><details class="sec"><summary><h2>Bivirkninger av medikamentell behandling</h2></summary>
+
+<p class="lead">Hver legemiddelgruppe har én hovedkilde. Her er veiviseren. Bruk «Symptom → årsak» når det er usikkert hvilken komponent som gir plagen.</p>
+<div class="links">
+<a class="lnk" href="https://holeira.github.io/Lungekreft/immunterapi/#vakt"><b>Immunterapi: vaktkort</b><span>Mistenkt irAE første døgn, alvorlige tilstander</span></a>
+<a class="lnk" href="https://holeira.github.io/Lungekreft/immunterapi/#organ"><b>Immunterapi: organ for organ</b><span>Tiltak per grad, steroider, rebehandling</span></a>
+<a class="lnk" href="https://holeira.github.io/Lungekreft/biomarkorer/#bivirkninger"><b>Målrettet behandling (TKI)</b><span>ILD, QTc, lever, hud, diaré, ødem, CNS, bradykardi m.m.</span></a>
+<a class="lnk" href="https://holeira.github.io/Lungekreft/biomarkorer/#kontroller"><b>Kontrollplan TKI</b><span>Blodprøver, EKG, MR caput</span></a>
+<a class="lnk" href="https://holeira.github.io/Lungekreft/medikamenter/#kvalme"><b>Kvalme og antiemetika</b><span>Kombinasjonskurer</span></a>
+<a class="lnk" href="https://holeira.github.io/Lungekreft/medikamenter/#dosejustering"><b>Dosejustering kjemoterapi</b><span>Hematologisk og ikke-hematologisk toksisitet</span></a>
+<a class="lnk" href="https://holeira.github.io/Lungekreft/medikamenter/#stottebehandling"><b>Støttebehandling</b><span>Premedikasjon, vitaminer ved pemetreksed, G-CSF</span></a>
+<a class="lnk" href="https://holeira.github.io/Lungekreft/medikamenter/#malrettet-oversikt"><b>CTCAE-gradering</b><span>Medikamentell behandling → Målrettet behandling</span></a>
+</div>
+<div class="grid" style="margin-top:12px">
+<article class="card" data-med="kjemo" id="k-ekstravasering">
+<h3>Ekstravasering av cellegift</h3><div class="when">Smerte, svie, rødme eller hevelse ved innstikkstedet under eller etter infusjon.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li>Stopp infusjonen og følg lokal prosedyre.</li>
+<li>Vevstoksiske: taksaner (docetaksel, paklitaksel): kjøling. Vinkaalkaloider (vinorelbin, vinkristin): varme.</li>
+<li>ACO-kur: doksorubicin skal kjøles og vinkristin varmes. Vær oppmerksom på at de krever motsatt behandling.</li>
+<li>Mindre vevstoksiske: platinapreparater, pemetreksed, gemcitabin, syklofosfamid og etoposid.</li>
+</ul>
+</details><div class="src"><a href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner/ekstravasering-av-cellegift">HP 14.7</a></div>
+</article>
+<article class="card" data-med="kjemo io rt" id="k-seneffekter">
+<h3>Seneffekter etter avsluttet behandling</h3><div class="when">Plager som kommer eller vedvarer etter avsluttet behandling: nevropati, hørselstap, endokrin svikt, dyspné, armsmerter.</div><details class="beh"><summary>Omtale</summary>
+<ul>
+<li>Kjemoterapi: nevropati, nyre- og øretoksisitet kan komme eller vedvare etter avsluttet behandling.</li>
+<li>Immunterapi: endokrin svikt (hypotyreose, binyrebarksvikt) er ofte varig. Immunrelaterte bivirkninger kan debutere måneder etter siste dose.</li>
+<li>Strålebehandling: lungefibrose, pleksopati (Pancoast), øsofagusstriktur, perikarditt.</li>
+<li>Kontrollopplegg etter behandling: portalen <a href="https://holeira.github.io/Lungekreft/#oppfolging">kap. 12</a>.</li>
+</ul>
+</details><div class="src"><span>HP 7.6</span><span>HP 8.6</span></div>
+</article>
+</div>
+</details></section>
+<!-- ============ STRÅLING ============ -->
+<section class="grp" id="stråling"><details class="sec"><summary><h2>Bivirkninger av strålebehandling mot thorax</h2></summary>
+
+<p class="lead">Skrevet for lungeleger som møter pasientene under og etter behandling. Ved alvorlige plager: kontakt behandlende onkolog.</p>
+<div class="grid">
+<article class="card" data-med="rt gem pem afa" id="r-osofagitt">
+<h3>Øsofagitt</h3>
+<div class="when">Starter typisk 2–3 uker inn i behandlingen, verst ved samtidig kjemoterapi, og går over 2–4 uker etter avsluttet behandling.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li>Smertelindring trinnvis, inkludert lokalbedøvende miksturer før måltid. Paracetamol flytende, opioider ved behov.</li>
+<li>Protonpumpehemmer. Behandle candida ved belegg eller ved steroidbruk.</li>
+<li>Ernæring: myk kost, næringsdrikker, kontakt ernæringsfysiolog tidlig. Vurder sonde eller PEG ved stort vekttap.</li>
+<li>Feber, sterke smerter eller blødning: tenk perforasjon eller fistel.</li>
+</ul>
+</details><div class="src"><span class="tag-std">Standard</span></div>
+</article>
+<article class="card" data-med="rt io ster" id="r-pneumonitt">
+<h3>Strålepneumonitt</h3>
+<div class="when">1–6 måneder etter behandling. Tørrhoste, dyspné, lav feber. Forandringer som oftest tilsvarende strålefeltet.</div><details class="beh"><summary>Behandling</summary>
+<ul>
+<li>Utelukk infeksjon, lungeemboli og progresjon. Utenfor strålefeltet: tenk immunterapi (særlig ved durvalumab etter kjemoradioterapi) eller legemiddel.</li>
+<li>Grad 1: observasjon.</li>
+<li>Grad ≥ 2: prednisolon om lag 0,5–1 mg/kg (ofte 40–60 mg), med langsom nedtrapping over minst 6–8 uker. For rask nedtrapping gir tilbakefall.</li>
+<li>Ved konsoliderende durvalumab: pause og vurder etter Immunterapibivirkninger, <a href="https://holeira.github.io/Lungekreft/immunterapi/#o-pneumonitt">pneumonitt</a>.</li>
+<li>PJP-profylakse ved langvarig steroid, se <a href="https://holeira.github.io/Lungekreft/immunterapi/#steroider">steroider</a>.</li>
+</ul>
+</details><div class="src"><span class="tag-std">Standard</span></div>
+</article>
+<article class="card" data-med="rt" id="r-andre">
+<h3>Andre strålebivirkninger</h3><div class="when">Hudreaksjon i strålefeltet, fatigue, armsmerter etter bestråling av lungetoppen, brystveggsmerter etter stereotaksi.</div><details class="beh"><summary>Omtale og tiltak</summary>
+<ul>
+<li>Hudreaksjon i strålefeltet: fuktighetskrem, unngå sol og gnaging.</li>
+<li>Fatigue: vanlig, kan vare uker til måneder.</li>
+<li>Pleksopati etter bestråling av lungetoppen (Pancoast): nevropatiske smerter og kraftsvikt i armen, ofte måneder til år etter. Skill fra residiv med MR.</li>
+<li>Ribbensbrudd etter stereotaksi mot perifere svulster: brystveggsmerter.</li>
+<li>Strålingsperikarditt og senere hjertesykdom.</li>
+</ul>
+</details><div class="src"><span class="tag-std">Standard</span></div>
+</article>
+</div>
+</details></section>
+<!-- ============ PROSEDYRER ============ -->
+<section class="grp" id="prosedyrer"><details class="sec"><summary><h2>Komplikasjoner ved diagnostiske prosedyrer</h2></summary>
+
+<p class="lead">Forberedelse før inngrep (blodfortynnende, blodprøver): se <a href="https://holeira.github.io/Lungekreft/#forberedelse">portalen 3.5</a>.</p>
+<div class="grid">
+<article class="card" data-med="ak" id="p-bronk">
+<h3>Bronkoskopi og transbronkial biopsi</h3><div class="when">Blødning, pneumothorax, feber, hypoksi under sedasjon, tegn på lidokaintoksisitet. Røntgen thorax ved symptomer.</div><details class="beh"><summary>Komplikasjoner og tiltak</summary>
+<ul>
+<li>Alvorlige komplikasjoner er sjeldne.</li>
+<li>Blødning: mest etter transbronkial og endobronkial biopsi. Kald saltvannsskylling, adrenalin lokalt, wedge av bronkoskopet, ballong. Leie med blødende side ned.</li>
+<li>Pneumothorax etter transbronkial biopsi: få prosent. Røntgen thorax ved symptomer.</li>
+<li>Lidokain: total dose bør holdes under 8,2 mg/kg. Tenk toksisitet ved uro, perioral nummenhet eller kramper.</li>
+<li>Feber de første timene etter bronkoskopi er vanlig og forbigående. Feber etter mer enn ett døgn: tenk pneumoni.</li>
+<li>Sedasjon: hypoksi, hypotensjon. Overvåk SpO₂, ha antidot tilgjengelig.</li>
+</ul>
+</details><div class="src"><span>BTS-B</span></div>
+</article>
+<article class="card" id="p-ebus">
+<h3>EBUS-TBNA og EUS-B</h3><div class="when">Feber, brystsmerter og stigende CRP dager etter: tenk mediastinitt eller abscess. CT thorax.</div><details class="beh"><summary>Komplikasjoner og tiltak</summary>
+<ul>
+<li>Svært lav komplikasjonsrate (godt under 1 % alvorlige).</li>
+<li>Infeksjon: mediastinitt, perikarditt eller abscess, særlig etter punksjon av nekrotiske eller cystiske lesjoner. Feber, brystsmerter og stigende CRP dager etter: CT thorax.</li>
+<li>Blødning: oftest beskjeden. Pneumothorax: sjelden.</li>
+<li>Vurder antibiotikaprofylakse ved punksjon av cystiske lesjoner.</li>
+</ul>
+</details><div class="src"><span class="tag-std">Standard</span></div>
+</article>
+<article class="card" data-med="ak" id="p-ct">
+<h3>CT-veiledet nålebiopsi</h3><div class="when">Brystsmerter, dyspné, fall i SpO₂, hemoptyse. Pneumothorax hos om lag 20 %. Røntgen thorax etter biopsi.</div><details class="beh"><summary>Komplikasjoner og tiltak</summary>
+<ul>
+<li>Pneumothorax hos om lag 20 %. Dren trengs hos få (om lag 3 %). Risikoen øker med emfysem, liten og dyptliggende lesjon og flere pleurapassasjer.</li>
+<li>Kontroll med røntgen thorax etter biopsi. Små og asymptomatiske kan observeres. Symptomgivende eller økende: aspirasjon eller dren.</li>
+<li>Blødning og hemoptyse: oftest selvbegrensende. Leie med biopsiside ned.</li>
+<li>Luftemboli: sjelden, men alvorlig (nevrologiske utfall, hjertestans). Venstre sideleie og Trendelenburg, 100 % oksygen, kontakt hyperbarmedisin.</li>
+</ul>
+</details><div class="src"><span>BTS-CT</span></div>
+</article>
+<article class="card" id="p-pleura">
+<h3>Pleuratapping og dren</h3><div class="when">Hoste, brystsmerter, dyspné eller ubehag under eller etter tapping. Ultralyd ved alle prosedyrer.</div><details class="beh"><summary>Komplikasjoner og tiltak</summary>
+<ul>
+
+<li>Re-ekspansjonsødem: sjeldent. Avbryt tappingen ved hoste, brystsmerter eller ubehag.</li>
+<li>Pneumothorax, blødning (interkostalarterien), infeksjon. Vasovagal reaksjon.</li>
+<li>Inneliggende pleurakateter: infeksjon og tunnelinfeksjon, blokkering, metastase i stikkanalen.</li>
+</ul>
+</details><div class="src"><span>BTS-P</span></div>
+</article>
+</div>
+</details></section>
+<!-- ============ LENKER ============ -->
+<section class="grp" id="lenker"><details class="sec"><summary><h2>Andre sider</h2></summary>
+
+<div class="links">
+<a class="lnk" href="https://holeira.github.io/Lungekreft/#oppfolging"><b>Portalen kap. 12</b><span>Oppfølging og kontroller</span></a>
+<a class="lnk" href="https://holeira.github.io/Lungekreft/#journaltekster"><b>Journaltekster</b><span>Bl.a. febermåling hjemme</span></a>
+<a class="lnk" href="https://www.helsedirektoratet.no/retningslinjer/lungekreft-mesoteliom-og-thymom-handlingsprogram/komplikasjoner-ved-lungekreft-og-oyeblikkelig-hjelp-situasjoner"><b>HP kapittel 14</b><span>Komplikasjoner og øyeblikkelig hjelp</span></a>
+<a class="lnk" href="https://www.helsedirektoratet.no/retningslinjer/antibiotika-i-sykehus"><b>Antibiotikaveileder for sykehus</b><span>Nasjonal faglig retningslinje (Helsedirektoratet)</span></a>
+</div>
+<details class="meta" id="logg" style="margin-top:14px">
+<summary>Endringslogg</summary>
+<ul>
+<li>8. nov 2026: Legemiddelfilteret: avkrysningsfeltet og «Nullstill filter» står nå øverst, over legemidlene.</li>
+        <li>8. nov 2026: Nye prioriterte kilder: Nasjonal veileder i endokrinologi (NEF) og Elektrolyttveileder (Diakonhjemmet) i Metodebok. Hyponatremi og SIAD, hyperkalsemi og binyrebarkkrise er skrevet om etter dem, med «Kilder og sist sjekket». Endret: hypertont NaCl 100 ml over 10 minutter (før 150 ml over 20), korreksjonsmål, tolvaptan; hyperkalsemi gradert etter fritt kalsium, NaCl 200–300 ml/time (HP: 2000 ml/døgn), denosumab og kalsitonin; hydrokortison 50 mg hver 6. time og NaCl 3–4 liter.</li>
+        <li>8. nov 2026: Nøytropen feber og Infeksjon: kort utdrag av anbefalte kurer fra Antibiotikaveileder for sykehus (febril nøytropeni, samfunns- og sykehuservervet pneumoni), og sammenfoldbart avsnitt «Kilder og sist sjekket». Vaksinering er flyttet til portalen, Verktøy.</li>
+        <li>8. nov 2026: Hurtigvalgene for ferdige kurer er fjernet fra legemiddelfilteret. Legemidlene velges ett og ett.</li>
+        <li>8. nov 2026: Avsnittene kan foldes sammen (Akutt og Symptom → årsak åpne ved oppstart), med «Åpne alle» og «Lukk alle». På hvert kort står symptomer og målinger åpent, mens behandlingen ligger sammenfoldet. I «Symptom → årsak» er «Første tiltak» sammenfoldet. Lenker og søk åpner riktig sted.</li>
+        <li>8. nov 2026: Filter etter legemidlene pasienten bruker (enkeltpreparater, stråling, steroider, antikoagulasjon og ferdige kurer). Viser relevante rader i «Symptom → årsak», markerer treffene og løfter fram kortene som gjelder, med lenke til hovedkilden for hvert valg.</li>
+<li>8. nov 2026: Versjon 1. Komplikasjoner og øyeblikkelig hjelp flyttet hit fra portalen 12.4 og kontrollert mot HP kapittel 14 (lest 8. november 2026). Nytt fra HP: strålefraksjonering ved VCSS og luftveisobstruksjon, pneumonibehandling, pneumokokkvaksine og levende vaksiner, LMWH ved hjernemetastaser og livslang antikoagulasjon. «Symptom → årsak» flyttet hit fra Kombinasjonskurer A4 og utvidet. Nye avsnitt: hemoptyse, pleura- og perikardvæske, hyponatremi, paraneoplastiske syndromer, tumorlyse, strålebivirkninger og prosedyrekomplikasjoner.</li>
+</ul>
+</details>
+</details></section>
+</main>
+<script>
+(function(){
+const B="https://holeira.github.io/Lungekreft/";
+const KJ=["kjemo","cellegift","nadir"];            /* felles for kjemoterapi */
+const IO=["immunterapi","immunrelatert","irAE","PD-1","PD-(L)1","PD-L1","durvalumab","pembrolizumab","nivolumab","atezolizumab","cemiplimab","serplulimab"];
+const TKI=["TKI"];
+/* hvert legemiddel: navn, søkeord (små og store bokstaver likt), ord som må ha riktige store bokstaver, lenke til hovedkilden */
+const G=[
+ ["Kjemoterapi",[
+  {k:"karbo",n:"Karboplatin",w:["karboplatin","platina"].concat(KJ),l:["Kombinasjonskurer",B+"medikamenter/#kurer-oversikt"]},
+  {k:"pem",n:"Pemetreksed",w:["pemetreksed"].concat(KJ),l:["Karbo/pemetreksed",B+"medikamenter/#kur-karbo-pemetreksed"]},
+  {k:"pac",n:"Paklitaksel",w:["paklitaksel","taksan","Cremophor"].concat(KJ),l:["Karbo/paklitaksel",B+"medikamenter/#kur-karbo-paklitaksel"]},
+  {k:"nab",n:"Nab-paklitaksel",w:["nab-paklitaksel","taksan"].concat(KJ),l:["Kombinasjonskurer",B+"medikamenter/#kurer-oversikt"]},
+  {k:"doc",n:"Docetaksel",w:["docetaksel","taksan"].concat(KJ),l:["Senere linjer",B+"medikamenter/#kur-senere-linjer"]},
+  {k:"gem",n:"Gemcitabin",w:["gemcitabin"].concat(KJ),l:["Karbo/gemcitabin",B+"medikamenter/#kur-karbo-gemcitabin"]},
+  {k:"vin",n:"Vinorelbin",w:["vinorelbin","vinka"].concat(KJ),l:["Karbo/vinorelbin",B+"medikamenter/#kur-karbo-vinorelbin"]},
+  {k:"eto",n:"Etoposid",w:["etoposid"].concat(KJ),l:["Karbo/etoposid",B+"medikamenter/#kur-karbo-etoposid"]},
+  {k:"iri",n:"Irinotekan",w:["irinotekan"].concat(KJ),l:["Senere linjer",B+"medikamenter/#kur-senere-linjer"]}]],
+ ["Immunterapi",[
+  {k:"pd1",n:"PD-1/PD-L1-hemmer",w:IO,l:["Immunterapibivirkninger, organ for organ",B+"immunterapi/#organ"]},
+  {k:"ctla4",n:"CTLA-4-hemmer (ipilimumab, tremelimumab)",w:IO.concat(["CTLA-4","ipilimumab","tremelimumab"]),l:["Immunterapibivirkninger, preparater",B+"immunterapi/#preparater"]}]],
+ ["Målrettet",[
+  {k:"osi",n:"Osimertinib",w:["osimertinib","FLAURA2"],c:["EGFR"].concat(TKI),l:["Legemiddelkort",B+"biomarkorer/#lm-osimertinib"]},
+  {k:"afa",n:"Afatinib",w:["afatinib"],c:["EGFR"].concat(TKI),l:["Legemiddelkort",B+"biomarkorer/#lm-afatinib"]},
+  {k:"ami",n:"Amivantamab ± lazertinib",w:["amivantamab","lazertinib"],c:["EGFR"],l:["Legemiddelkort",B+"biomarkorer/#lm-amivantamab"]},
+  {k:"ale",n:"Alektinib",w:["alektinib","ALK-hemmere"],c:["ALK"].concat(TKI),l:["Legemiddelkort",B+"biomarkorer/#lm-alektinib"]},
+  {k:"bri",n:"Brigatinib",w:["brigatinib","ALK-hemmere"],c:["ALK"].concat(TKI),l:["Legemiddelkort",B+"biomarkorer/#lm-brigatinib"]},
+  {k:"lor",n:"Lorlatinib",w:["lorlatinib","ALK-hemmere"],c:["ALK"].concat(TKI),l:["Legemiddelkort",B+"biomarkorer/#lm-lorlatinib"]},
+  {k:"kri",n:"Krizotinib",w:["krizotinib","ALK-hemmere"],c:["ALK","ROS1"].concat(TKI),l:["Legemiddelkort",B+"biomarkorer/#lm-krizotinib"]},
+  {k:"ent",n:"Entrektinib / repotrektinib",w:["entrektinib","repotrektinib"],c:["ROS1","NTRK"].concat(TKI),l:["Legemiddelkort",B+"biomarkorer/#lm-entrektinib"]},
+  {k:"tep",n:"Tepotinib",w:["tepotinib","MET-TKI"],c:TKI,l:["Legemiddelkort",B+"biomarkorer/#lm-tepotinib"]},
+  {k:"sel",n:"Selperkatinib",w:["selperkatinib"],c:["RET"].concat(TKI),l:["Legemiddelkort",B+"biomarkorer/#lm-selperkatinib"]},
+  {k:"dab",n:"Dabrafenib + trametinib",w:["dabrafenib","trametinib"],c:["BRAF"],l:["Legemiddelkort",B+"biomarkorer/#lm-dabrafenib"]}]],
+ ["Annet",[
+  {k:"ang",n:"Angiogenesehemmer (bevacizumab, ramucirumab, nintedanib)",w:["angiogenese","bevacizumab","ramucirumab","nintedanib"],l:["Medikamentell behandling",B+"medikamenter/#a6-progresjon-etter-førstelinje-angiogenesehemmere-og-beinresorpsjonshemmere-kap-85-87-88"]},
+  {k:"rt",n:"Strålebehandling thorax",w:["stråle","stråling","bestrål","kjemoradioterapi","strålefelt"],c:["RT"],l:["Strålebivirkninger",B+"bivirkninger/#stråling"]},
+  {k:"ster",n:"Steroider",w:["steroid","deksametason","prednisolon","metylprednisolon","kortison","hydrokortison"],l:["Steroider ved immunterapi",B+"immunterapi/#steroider"]},
+  {k:"ak",n:"Antikoagulasjon",w:["antikoagul","DOAK","apiksaban","heparin","dalteparin"],l:["Tromboembolisme",B+"bivirkninger/#k-vte"]},
+  {k:"bis",n:"Bisfosfonat / denosumab",w:["bisfosfonat","zoledronat","pamidronat","denosumab"],l:["Hyperkalsemi",B+"bivirkninger/#k-hyperkalsemi"]}]]
+];
+
+const D={};G.forEach(g=>g[1].forEach(d=>D[d.k]=d));
+const esc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+function rx(keys){
+  const ci=[],cs=[];
+  keys.forEach(k=>{const d=D[k];(d.w||[]).forEach(w=>ci.push(esc(w)));(d.c||[]).forEach(w=>cs.push(esc(w)));});
+  const r={};
+  if(ci.length)r.ci=new RegExp("("+[...new Set(ci)].sort((a,b)=>b.length-a.length).join("|")+")","gi");
+  if(cs.length)r.cs=new RegExp("(?<![A-Za-zÆØÅæøå0-9])("+[...new Set(cs)].sort((a,b)=>b.length-a.length).join("|")+")(?![A-Za-zÆØÅæøå])","g");
+  return r;
+}
+/* ---- bygg knappene ---- */
+const rows=document.getElementById("medrows");
+let html='';
+G.forEach(g=>{html+=`<div class="row"><span class="gl">${g[0]}</span>`+g[1].map(d=>`<button type="button" class="mchip" data-k="${d.k}" aria-pressed="false">${d.n}</button>`).join("")+"</div>";});
+rows.innerHTML=html;
+const sel=new Set();
+/* ---- elementene som filtreres ---- */
+const q=document.getElementById("q"),cnt=document.getElementById("count"),fa=document.getElementById("factive"),hide=document.getElementById("hidecards"),sum=document.getElementById("medsum");
+const items=[...document.querySelectorAll("article.card, #symt tbody tr")];
+items.forEach(el=>{el._h=el.innerHTML;el._t=el.textContent.toLowerCase();
+  if(el.tagName==="ARTICLE"){const h=el.querySelector("h3");if(h){const b=document.createElement("span");b.className="relb";b.textContent="Gjelder valgt behandling";h.after(b);el._h=el.innerHTML;}}});
+function mark(el,r){
+  const tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentNode.closest("a,.relb,.src,mark")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  const ns=[];while(tw.nextNode())ns.push(tw.currentNode);
+  ns.forEach(n=>{
+    const raw=n.nodeValue.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+    let s=raw;
+    if(r.ci)s=s.replace(new RegExp(r.ci.source,"gi"),'<mark class="mm">$1</mark>');
+    if(r.cs)s=s.replace(new RegExp(r.cs.source,"g"),'<mark class="mm">$1</mark>');
+    if(s!==raw){const tmp=document.createElement("span");tmp.innerHTML=s;n.replaceWith(...tmp.childNodes);}
+  });
+}
+function matches(el,r){const t=el.textContent;return (r.ci&&new RegExp(r.ci.source,"gi").test(t))||(r.cs&&new RegExp(r.cs.source,"g").test(t));}
+const KJEMO=["karbo","pem","pac","nab","doc","gem","vin","eto","iri"];
+function hasMed(el,keys){const m=(el.dataset.med||"").split(/\s+/).flatMap(x=>x==="kjemo"?KJEMO:x==="io"?["pd1","ctla4"]:[x]);return keys.some(k=>m.includes(k));}
+function run(){
+  const v=q.value.trim().toLowerCase(),keys=[...sel],r=keys.length?rx(keys):null;
+  let n=0,nr=0;
+  items.forEach(el=>{
+    const op=[...el.querySelectorAll("details")].map(d=>d.open);
+    el.innerHTML=el._h;
+    el.querySelectorAll("details").forEach((d,i)=>{d.open=!!op[i];});
+    const sHit=!v||el._t.includes(v);
+    el.classList.toggle("hide",!sHit);
+    let fHit=true;
+    if(r){if(el.tagName==="ARTICLE"){fHit=hasMed(el,keys);}else fHit=!!matches(el,r);if(fHit)mark(el,r);}
+    const isRow=el.tagName==="TR", inAkutt=!!el.closest("#akutt");
+    el.classList.toggle("rel",!!r&&fHit&&!isRow);
+    el.classList.toggle("fhide",!!r&&!fHit&&(isRow||(hide.checked&&!inAkutt)));
+    if(v&&sHit){el.querySelectorAll("details").forEach(d=>{if(d.textContent.toLowerCase().includes(v))d.open=true;});const sec=el.closest("details.sec");if(sec)sec.open=true;}
+    if(sHit&&!el.classList.contains("fhide")){if(v)n++;if(r&&isRow)nr++;}
+  });
+  document.querySelectorAll("section.grp").forEach(s=>{
+    s.classList.toggle("hide",!!v&&!s.querySelector("article.card:not(.hide):not(.fhide), #symt tbody tr:not(.hide):not(.fhide)"));
+  });
+  cnt.textContent=v?(n+" treff"):"";
+  document.querySelectorAll(".mchip[data-k]").forEach(b=>b.setAttribute("aria-pressed",String(sel.has(b.dataset.k))));
+  if(keys.length){
+    fa.innerHTML="Filter: "+keys.map(k=>D[k].n.replace(/ \(.*\)/,"")).join(", ")+` · ${nr} rader i Symptom → årsak <button type="button" id="fclear">×</button>`;
+    document.getElementById("fclear").onclick=clear;
+    sum.innerHTML="<b>Hovedkilder for valgt behandling:</b><ul>"+keys.map(k=>`<li>${D[k].n}: <a href="${D[k].l[1]}">${D[k].l[0]}</a></li>`).join("")+
+      '</ul><span style="color:var(--muted)">Ved kombinasjoner: vurder alle komponentene, se <a href="#symptom">Symptom → årsak</a> og de generelle rådene under tabellen.</span>';
+  }else{fa.innerHTML="";sum.innerHTML="";}
+}
+function clear(){sel.clear();run();}
+rows.addEventListener("click",e=>{
+  const b=e.target.closest(".mchip");if(!b)return;
+  const k=b.dataset.k;sel.has(k)?sel.delete(k):sel.add(k);
+  run();
+});
+document.getElementById("medclear").onclick=clear;
+function reveal(id,openBeh){
+  const el=document.getElementById(decodeURIComponent(id));if(!el)return;
+  let p=el;while(p){if(p.tagName==="DETAILS")p.open=true;p=p.parentElement;}
+  const sec=el.querySelector(":scope>details.sec");if(sec)sec.open=true;
+  if(openBeh&&el.matches("article.card")){const b=el.querySelector("details.beh");if(b)b.open=true;}
+  el.scrollIntoView({block:"start"});
+}
+document.addEventListener("click",e=>{
+  const a=e.target.closest('a[href^="#"]');if(!a)return;
+  const id=a.getAttribute("href").slice(1);if(!id)return;
+  e.preventDefault();reveal(id,true);try{history.replaceState(null,"","#"+id);}catch(_){}
+});
+window.addEventListener("hashchange",()=>reveal(location.hash.slice(1),true));
+if(location.hash)setTimeout(()=>reveal(location.hash.slice(1),true),0);
+document.getElementById("openall").onclick=()=>document.querySelectorAll("details.sec,details.beh,details.tiltak,details.kilde").forEach(d=>d.open=true);
+document.getElementById("closeall").onclick=()=>document.querySelectorAll("details.sec,details.beh,details.tiltak,details.kilde").forEach(d=>d.open=false);
+hide.addEventListener("change",run);
+q.addEventListener("input",run);
+})();
+</script>
+</body>
+</html>
