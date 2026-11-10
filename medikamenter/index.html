@@ -57,7 +57,7 @@ body.sok .ttoc{display:none}
 @media (prefers-color-scheme:dark){.lis-box,p.lisline{background:#183126}}
 .note{background:var(--warn-soft);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:14px}
 @media print{.bar,.ttoc{display:none}.tab[hidden]{display:block!important}.tab{border:none;padding:0}}
-#kurark{max-width:900px;margin:0 auto;padding:8px 16px 40px}.ark-head h2{font-family:var(--display);font-size:28px;margin:4px 0 6px}.ark-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.ark-nav{font-size:14px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.ark-nav button{font:inherit;font-size:13px;padding:3px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer}.ark-sec{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:14px 0}.ark-sec>h3{margin:0 0 8px;color:var(--accent)}.ark-sec .blk{border:0;padding:0;margin:0;background:none}mark.ark-io{background:var(--mark);padding:0 2px;border-radius:2px}.ark-det{border-top:1px solid var(--line);padding:6px 0}.ark-det summary{cursor:pointer;font-weight:600}.ark-liste{background:var(--accent-soft);border-radius:8px;padding:8px 12px;margin:8px 0;font-size:14px;line-height:1.7}@media print{.arkmodus .ark-nav,.arkmodus .sitenav,.arkmodus header.ph{display:none!important}.ark-det{display:block}.ark-det>*{display:block}}</style>
+#kurark{max-width:900px;margin:0 auto;padding:8px 16px 40px}.ark-head h2{font-family:var(--display);font-size:28px;margin:4px 0 6px}.ark-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.ark-nav{font-size:14px;margin-bottom:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}.ark-nav button{font:inherit;font-size:13px;padding:3px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer}.ark-sec{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:14px 0}.ark-sec>h3{margin:0 0 8px;color:var(--accent)}.ark-sec .blk{border:0;padding:0;margin:0;background:none}mark.ark-io{background:var(--mark);padding:0 2px;border-radius:2px}.ark-det{border-top:1px solid var(--line);padding:6px 0}.ark-det summary{cursor:pointer;font-weight:600}.ark-liste{background:var(--accent-soft);border-radius:8px;padding:8px 12px;margin:8px 0;font-size:14px;line-height:1.7}.ark-sec h4{margin:12px 0 4px;font-size:15px}.ark-sec .tw{overflow-x:auto}.ark-sec table{font-size:14px}.ark-dose td:nth-child(2){font-size:13px;color:var(--muted)}.ark-dub{background:var(--accent-soft);border-radius:8px;padding:6px 10px}.ark-besk{width:100%;box-sizing:border-box;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg,#fff);color:inherit;resize:vertical}.ark-kopi{font:inherit;font-size:13px;padding:4px 12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer}.ark-kopi-ok{color:var(--accent);font-size:13px}tr:target td{background:var(--mark)}@media print{.ark-kopi{display:none}.ark-besk{border:0;height:auto}}@media print{.arkmodus .ark-nav,.arkmodus .sitenav,.arkmodus header.ph{display:none!important}.ark-det{display:block}.ark-det>*{display:block}}</style>
 </head>
 <body>
 <nav class="sitenav" aria-label="Sider"><style>
@@ -170,7 +170,7 @@ body.sok .ttoc{display:none}
 <li><strong>[FK-int]</strong> Interaksjonsoppslaget i Felleskatalogen, lest 31.10.2026</li>
 <li><strong>[Label]</strong> Amerikansk preparatomtale (FDA). Brukes bare der EU-tekst ikke var tilgjengelig.</li>
 <li><strong>[Label-IL]</strong> Produsentens preparatomtale i en annen versjon (godkjent i Israel, samme tekstgrunnlag som tidlig EU-tekst). Brukt for tepotinib.</li>
-<li><strong>[CTCAE]</strong> NCI CTCAE v5.0, se A8</li>
+<li><strong>[CTCAE]</strong> NCI CTCAE v5.0, se <a href="#malrettet-9">CTCAE-gradering – fellestabell</a></li>
 <li><strong>[LIS]</strong> Sykehusinnkjøp, «Anbefalinger legemidler, onkologi», rev. 3, 03.11.2026 (gyldig 01.10.2026–30.09.2027). Rangeringen står i fanen Beslutningsforum og LIS</li>
 <li><strong>[Forslag]</strong> Mitt forslag til lokal praksis, uten kilde</li>
 </ul>
@@ -303,7 +303,7 @@ body.sok .ttoc{display:none}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="ctcae-alat">
 <td><strong>ALAT/ASAT økt</strong></td>
 <td>&gt; ULN–3 × ULN</td>
 <td>&gt; 3–5 × ULN</td>
@@ -311,7 +311,7 @@ body.sok .ttoc{display:none}
 <td>&gt; 20 × ULN</td>
 <td>Alle, særlig alektinib, brigatinib, krizotinib, selperkatinib, lazertinib</td>
 </tr>
-<tr>
+<tr id="ctcae-bilirubin">
 <td><strong>Bilirubin økt</strong></td>
 <td>&gt; ULN–1,5 × ULN</td>
 <td>&gt; 1,5–3 × ULN</td>
@@ -327,7 +327,7 @@ body.sok .ttoc{display:none}
 <td>&gt; 20 × ULN</td>
 <td>–</td>
 </tr>
-<tr>
+<tr id="ctcae-kreatinin">
 <td><strong>Kreatinin økt</strong></td>
 <td>&gt; ULN–1,5 × ULN</td>
 <td>&gt; 1,5–3 × baseline eller ULN</td>
@@ -391,7 +391,7 @@ body.sok .ttoc{display:none}
 <td>Livstruende</td>
 <td>Entrektinib</td>
 </tr>
-<tr>
+<tr id="ctcae-anemi">
 <td><strong>Hb lav (anemi)</strong></td>
 <td>&lt; LLN–10 g/dl</td>
 <td>&lt; 10–8 g/dl</td>
@@ -399,7 +399,7 @@ body.sok .ttoc{display:none}
 <td>Livstruende</td>
 <td>Alektinib (hemolyse), repotrektinib</td>
 </tr>
-<tr>
+<tr id="ctcae-noytrofile">
 <td><strong>Nøytrofile lave</strong></td>
 <td>&lt; LLN–1,5 × 10⁹/l</td>
 <td>&lt; 1,5–1,0</td>
@@ -407,7 +407,15 @@ body.sok .ttoc{display:none}
 <td>&lt; 0,5</td>
 <td>Osimertinib, krizotinib, dabrafenib, kombinasjon med kjemo</td>
 </tr>
-<tr>
+<tr id="ctcae-febril-noytropeni">
+<td><strong>Febril nøytropeni</strong></td>
+<td>–</td>
+<td>–</td>
+<td>Nøytrofile &lt; 1,0 og temp. ≥ 38,3 °C én gang eller ≥ 38,0 °C i over 1 time</td>
+<td>Livstruende, akutt behandling</td>
+<td>All kjemoterapi</td>
+</tr>
+<tr id="ctcae-trombocytter">
 <td><strong>Trombocytter lave</strong></td>
 <td>&lt; LLN–75 × 10⁹/l</td>
 <td>&lt; 75–50</td>
@@ -415,7 +423,7 @@ body.sok .ttoc{display:none}
 <td>&lt; 25</td>
 <td>Osimertinib, selperkatinib, kombinasjon med kjemo</td>
 </tr>
-<tr>
+<tr id="ctcae-kalium">
 <td><strong>Kalium lavt</strong></td>
 <td>&lt; LLN–3,0 mmol/l</td>
 <td>&lt; LLN–3,0 med symptomer eller tiltak</td>
@@ -423,7 +431,15 @@ body.sok .ttoc{display:none}
 <td>&lt; 2,5, livstruende</td>
 <td>Afatinib, amivantamab (QTc-risiko)</td>
 </tr>
-<tr>
+<tr id="ctcae-natrium">
+<td><strong>Natrium lavt</strong></td>
+<td>&lt; LLN–130 mmol/l</td>
+<td>125–129 uten symptomer</td>
+<td>125–129 med symptomer, eller 120–124 uansett</td>
+<td>&lt; 120, livstruende</td>
+<td>Karboplatin, SCLC (SIADH), immunterapi (binyre, hypofyse)</td>
+</tr>
+<tr id="ctcae-magnesium">
 <td><strong>Magnesium lavt</strong></td>
 <td>&lt; LLN–0,5 mmol/l</td>
 <td>&lt; 0,5–0,4</td>
@@ -486,7 +502,7 @@ body.sok .ttoc{display:none}
 <td>&lt; 20 %</td>
 <td>Dabrafenib/trametinib, osimertinib, entrektinib</td>
 </tr>
-<tr>
+<tr id="ctcae-vte">
 <td><strong>Tromboembolisk hendelse</strong></td>
 <td>Ikke tiltak (f.eks. overfladisk)</td>
 <td>Medisinsk tiltak indisert</td>
@@ -494,7 +510,7 @@ body.sok .ttoc{display:none}
 <td>Livstruende, hemodynamisk eller nevrologisk ustabil</td>
 <td>Amivantamab + lazertinib</td>
 </tr>
-<tr>
+<tr id="ctcae-pneumonitt">
 <td><strong>Pneumonitt/ILD</strong></td>
 <td>Asymptomatisk, bare radiologiske funn</td>
 <td>Symptomatisk, behandling indisert, begrenser instrumentell ADL</td>
@@ -502,7 +518,7 @@ body.sok .ttoc{display:none}
 <td>Livstruende respirasjonssvikt</td>
 <td>Alle</td>
 </tr>
-<tr>
+<tr id="ctcae-irr">
 <td><strong>Infusjonsreaksjon (IRR)</strong></td>
 <td>Mild og forbigående, ikke avbrudd</td>
 <td>Avbrudd, men rask respons på behandling. Profylakse ≤ 24 t</td>
@@ -510,7 +526,7 @@ body.sok .ttoc{display:none}
 <td>Livstruende</td>
 <td>Amivantamab</td>
 </tr>
-<tr>
+<tr id="ctcae-odem">
 <td><strong>Ødem i ekstremiteter</strong></td>
 <td>5–10 % forskjell mellom ekstremitetene, synlig ved nær inspeksjon</td>
 <td>&gt; 10–30 %, tydelig, pitting, begrenser instrumentell ADL</td>
@@ -518,7 +534,7 @@ body.sok .ttoc{display:none}
 <td>–</td>
 <td>Tepotinib, amivantamab, lorlatinib, alektinib, krizotinib</td>
 </tr>
-<tr>
+<tr id="ctcae-feber">
 <td><strong>Feber</strong></td>
 <td>38,0–39,0 °C</td>
 <td>&gt; 39,0–40,0 °C</td>
@@ -541,13 +557,21 @@ body.sok .ttoc{display:none}
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr id="ctcae-akne">
 <td><strong>Akneiformt utslett</strong></td>
 <td>&lt; 10 % av kroppsoverflaten</td>
 <td>10–30 % av kroppsoverflaten, psykososial belastning, begrenser instrumentell ADL, eller &gt; 30 % med milde symptomer</td>
 <td>&gt; 30 % med moderate eller alvorlige symptomer, begrenser egenomsorg, lokal superinfeksjon (perorale antibiotika)</td>
 <td>Livstruende, utbredt superinfeksjon med iv antibiotika</td>
 <td>EGFR-hemmere</td>
+</tr>
+<tr id="ctcae-makulopapulost">
+<td><strong>Makulopapuløst utslett</strong></td>
+<td>&lt; 10 % av kroppsoverflaten</td>
+<td>10–30 % med symptomer, begrenser instrumentell ADL; eller &gt; 30 % med lette symptomer</td>
+<td>&gt; 30 % med moderate eller sterke symptomer, begrenser egenomsorg</td>
+<td>–</td>
+<td>Pemetreksed, immunterapi</td>
 </tr>
 <tr>
 <td><strong>Paronyki</strong></td>
@@ -557,7 +581,7 @@ body.sok .ttoc{display:none}
 <td>–</td>
 <td>EGFR-hemmere, særlig amivantamab</td>
 </tr>
-<tr>
+<tr id="ctcae-mukositt">
 <td><strong>Oral mukositt/stomatitt</strong></td>
 <td>Lite eller ingen symptomer</td>
 <td>Moderat smerte eller sår, kan spise med tilpasset kost</td>
@@ -565,7 +589,7 @@ body.sok .ttoc{display:none}
 <td>Livstruende</td>
 <td>Afatinib, osimertinib, amivantamab</td>
 </tr>
-<tr>
+<tr id="ctcae-diare">
 <td><strong>Diaré</strong></td>
 <td>&lt; 4 avføringer/døgn over baseline</td>
 <td>4–6 over baseline, begrenser instrumentell ADL</td>
@@ -573,13 +597,21 @@ body.sok .ttoc{display:none}
 <td>Livstruende</td>
 <td>Afatinib, osimertinib, selperkatinib</td>
 </tr>
-<tr>
+<tr id="ctcae-kvalme">
 <td><strong>Kvalme</strong></td>
 <td>Nedsatt matlyst, uendret spisemønster</td>
 <td>Redusert inntak uten vekttap eller dehydrering</td>
 <td>Utilstrekkelig inntak, sondeernæring, TPN eller innleggelse</td>
 <td>–</td>
 <td>Krizotinib, tepotinib, dabrafenib</td>
+</tr>
+<tr id="ctcae-oppkast">
+<td><strong>Oppkast</strong></td>
+<td>Behandling ikke nødvendig</td>
+<td>Poliklinisk iv-væske eller medisinsk behandling</td>
+<td>Sondeernæring, TPN eller innleggelse</td>
+<td>Livstruende</td>
+<td>Kjemoterapi</td>
 </tr>
 <tr>
 <td><strong>Dysgeusi</strong></td>
@@ -620,7 +652,7 @@ body.sok .ttoc{display:none}
 <td>–</td>
 <td>Repotrektinib, entrektinib</td>
 </tr>
-<tr>
+<tr id="ctcae-nevropati">
 <td><strong>Perifer sensorisk nevropati</strong></td>
 <td>Asymptomatisk</td>
 <td>Moderate symptomer, begrenser instrumentell ADL</td>
@@ -636,13 +668,21 @@ body.sok .ttoc{display:none}
 <td>Visus ≤ 20/200 (0,1)</td>
 <td>Krizotinib, brigatinib, dabrafenib/trametinib</td>
 </tr>
-<tr>
+<tr id="ctcae-fatigue">
 <td><strong>Fatigue</strong></td>
 <td>Lindres av hvile</td>
 <td>Lindres ikke av hvile, begrenser instrumentell ADL</td>
 <td>Lindres ikke av hvile, begrenser egenomsorg</td>
 <td>–</td>
 <td>Alle</td>
+</tr>
+<tr id="ctcae-myalgi">
+<td><strong>Myalgi og artralgi</strong></td>
+<td>Lette smerter</td>
+<td>Moderate smerter, begrenser instrumentell ADL</td>
+<td>Sterke smerter, begrenser egenomsorg</td>
+<td>–</td>
+<td>Paklitaksel, immunterapi (myositt, artritt)</td>
 </tr>
 </tbody>
 </table>
@@ -1052,7 +1092,7 @@ body.sok .ttoc{display:none}
 </ul>
 </li>
 <li>[ ] <strong>Amivantamab:</strong> premedikasjon etter preparatomtalen (antihistamin, paracetamol, deksametason; første dose med deksametason 20 mg iv). Hudprofylakse etter COCOON [FK], [HP].</li>
-<li>[ ] <strong>Kvalmeprofylakse:</strong> se A3.</li>
+<li>[ ] <strong>Kvalmeprofylakse:</strong> se <a href="#kvalme">A3 Kvalmeprofylakse</a>.</li>
 <li>[ ] <strong>G-CSF:</strong> kan vurderes ved grad 4-nøytropeni [HP]. <strong>Ikke</strong> rutinemessig under kjemoradioterapi [HP].</li>
 <li>[ ] <strong>Vaksiner:</strong> influensa og pneumokokk [HP].</li>
 </ul>
@@ -1090,7 +1130,7 @@ body.sok .ttoc{display:none}
 <ul>
 <li><strong>Langvarig vedlikehold med pemetreksed gir gradvis fallende eGFR.</strong> Følg kreatinin. Ved ClCR &lt; 45 stoppes pemetreksed, og IO kan eventuelt fortsette alene [FK], [Forslag].</li>
 <li>Tretthet og anemi i vedlikeholdsfasen skyldes oftest pemetreksed. Sjekk likevel TSH og kortisol (IO).</li>
-<li><strong>NSAID</strong> ved smerter: se A5.</li>
+<li><strong>NSAID</strong> ved smerter: NSAID og høydose ASA hemmer utskillelsen av pemetreksed. Ved ClCR 45–79 ml/min gis ingen NSAID fra 2 dager før til 2 dager etter kur (langtidsvirkende: 5 dager før). Se <a href="#kombi-6">A5 Interaksjoner innen kombinasjonene</a>.</li>
 </ul>
 </section><section class="blk" id="kombi-10"><span id="kur-karbo-paklitaksel" class="anchor"></span><h3>B2. Karboplatin + paklitaksel / nab-paklitaksel ± PD-1/PD-L1-hemmer (plateepitel)</h3>
 <p><em>Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen · [Standard] etablert praksis, ikke kildekontrollert · [Forslag] eget forslag, skal avklares lokalt.</em></p>
@@ -1129,7 +1169,7 @@ body.sok .ttoc{display:none}
 </ul>
 <p><strong>Fallgruver:</strong></p>
 <ul>
-<li>Nevropati kan forveksles med <strong>IO-nevrologisk bivirkning</strong> (se A4). Rask, motorisk eller kranialnerveaffeksjon må tas på alvor.</li>
+<li>Nevropati kan forveksles med <strong>IO-nevrologisk bivirkning</strong> (se <a href="https://holeira.github.io/Lungekreft/bivirkninger/#symptom">Symptom → årsak</a>). Rask, motorisk eller kranialnerveaffeksjon må tas på alvor.</li>
 <li>Myalgi etter paklitaksel (dag 2–5) kan forveksles med <strong>IO-myositt</strong>. <strong>Ta CK</strong> hvis plagene varer eller kommer utenfor det vanlige tidsvinduet [Forslag].</li>
 </ul>
 </section><section class="blk" id="kombi-11"><span id="kur-karbo-gemcitabin" class="anchor"></span><h3>B3. Karboplatin + gemcitabin (± IO)</h3>
@@ -1679,38 +1719,245 @@ body.sok .ttoc{display:none}
 <script>
 (function(){
 const P='https://holeira.github.io/Lungekreft/';
-const ARK={
- 'ark-pem-pembrolizumab':{t:'Karboplatin + pemetreksed + pembrolizumab',bruk:'Adenokarsinom (ikke-plateepitel) uten driver, PD-L1 < 1 % (LIS 2026/27)',kur:'kur-karbo-pemetreksed',io:'Pembrolizumab'},
- 'ark-pem-cemiplimab':{t:'Karboplatin + pemetreksed + cemiplimab',bruk:'Adenokarsinom (ikke-plateepitel) uten driver, PD-L1 1–49 % (LIS 2026/27)',kur:'kur-karbo-pemetreksed',io:'Cemiplimab'},
- 'ark-pem-tislelizumab':{t:'Karboplatin + pemetreksed + tislelizumab',bruk:'Adenokarsinom (ikke-plateepitel) uten driver, PD-L1 ≥ 50 % (LIS 2026/27)',kur:'kur-karbo-pemetreksed',io:'Tislelizumab'},
- 'ark-pakl-tislelizumab':{t:'Karboplatin + paklitaksel/nab-paklitaksel + tislelizumab',bruk:'Plateepitelkarsinom uten driver (LIS 2026/27)',kur:'kur-karbo-paklitaksel',io:'Tislelizumab'},
- 'ark-etop-tislelizumab':{t:'Karboplatin + etoposid + tislelizumab',bruk:'SCLC utbredt sykdom, og inoperabel/metastatisk LCNEC (LIS 2026/27)',kur:'kur-karbo-etoposid',io:'Tislelizumab'},
- 'ark-poseidon':{t:'Karboplatindublett + durvalumab + tremelimumab (POSEIDON)',bruk:'NSCLC uten EGFR/ALK, plateepitel og ikke-plateepitel, uavhengig av PD-L1 (HP okt. 2026)',kur:'kur-poseidon',io:'Durvalumab',io2:'Tremelimumab'},
- 'ark-periop-nivolumab':{t:'Neoadjuvant karboplatindublett + nivolumab (CheckMate 816)',bruk:'Operabel NSCLC stadium II–III uten EGFR/ALK, PD-L1 ≥ 1 %. 3 kurer før operasjon, ingen immunterapi etter rutinemessig (HP 7.3)',kur:'kur-perioperativ',io:'Nivolumab'},
- 'ark-periop-tislelizumab':{t:'Perioperativ karboplatindublett + tislelizumab (RATIONALE-315)',bruk:'Operabel NSCLC stadium II–III uten EGFR/ALK, PD-L1 &lt; 1 %. 4 kurer før operasjon, tislelizumab etter kan vurderes (HP 7.3, LIS 2026/27)',kur:'kur-perioperativ',io:'Tislelizumab'},
- 'ark-atezolizumab':{t:'Atezolizumab monoterapi',bruk:'NSCLC uten driver, PD-L1 ≥ 50 % (LIS-førstevalg), eller ikke egnet for platinum uavhengig av PD-L1',kur:null,io:'Atezolizumab'}
+const C=(id,t)=>'<a href="#ctcae-'+id+'">'+(t||'CTCAE')+'</a>';
+const B=(id,t)=>'<a href="'+P+'bivirkninger/#'+id+'">'+t+'</a>';
+const I=(id,t)=>'<a href="'+P+'immunterapi/#'+id+'">'+t+'</a>';
+const K=(id,t)=>'<a href="#'+id+'">'+t+'</a>';
+const ADL='<p class="note"><b>ADL i CTCAE:</b> <em>instrumentell ADL</em> = lage mat, handle, bruke telefon, håndtere penger. <em>Egenomsorg</em> = vaske seg, kle på seg, spise, gå på toalettet, ta medisiner, ikke sengeliggende. Grad 2 begrenser instrumentell ADL, grad 3 begrenser egenomsorg. Gradene følger CTCAE v5.0, som preparatomtalene bruker: '+K('malrettet-9','hele CTCAE-tabellen')+'.</p>';
+
+// ---------- CTCAE-definisjoner (v5.0) brukt i dosetabellene ----------
+const D={
+ n4:'Nøytrofile < 0,5 × 10⁹/l = grad 4 nøytropeni ('+C('noytrofile')+')',
+ n4u:'Nøytrofile < 0,5 × 10⁹/l i ≥ 7 dager = grad 4 nøytropeni som varer minst en uke ('+C('noytrofile')+')',
+ fn:'Feber ≥ 38,3 °C én gang eller ≥ 38,0 °C i over 1 time, med nøytrofile < 1,0 = febril nøytropeni grad 3 ('+C('febril-noytropeni')+')',
+ t50:'Trombocytter < 50 × 10⁹/l = grad 3 (25–49) eller grad 4 (< 25) ('+C('trombocytter')+')',
+ diare:'Grad 3: ≥ 7 avføringer/døgn over baseline, behov for innleggelse eller begrenser egenomsorg. Grad 4: livstruende ('+C('diare')+')',
+ muk:'Grad 3: sterke smerter som hindrer inntak av mat og drikke. Grad 4: livstruende, akutt behandling nødvendig ('+C('mukositt')+')',
+ annen:'For eksempel: <b>kvalme</b> med utilstrekkelig inntak, sonde, TPN eller innleggelse ('+C('kvalme','CTCAE')+') · <b>oppkast</b> med behov for sonde, TPN eller innleggelse ('+C('oppkast','CTCAE')+') · <b>utslett</b> over > 30 % av kroppsoverflaten med moderate/sterke symptomer ('+C('makulopapulost','CTCAE')+') · <b>fatigue</b> som ikke lindres av hvile og begrenser egenomsorg ('+C('fatigue','CTCAE')+') · <b>ALAT/ASAT</b> > 5 × ULN ('+C('alat','CTCAE')+') · <b>bilirubin</b> > 3 × ULN ('+C('bilirubin','CTCAE')+') · <b>kreatinin</b> > 3 × baseline eller > 3 × ULN ('+C('kreatinin','CTCAE')+') · <b>ødem</b> som begrenser egenomsorg ('+C('odem','CTCAE')+')',
+ nevro2:'Grad 2: moderate symptomer som begrenser instrumentell ADL ('+C('nevropati')+')',
+ nevro3:'Grad 3: sterke symptomer som begrenser egenomsorg. Grad 4: livstruende ('+C('nevropati')+')',
+ hud23:'Grad 2: utslett over 10–30 % av kroppsoverflaten med symptomer. Grad 3: > 30 % med moderate/sterke symptomer ('+C('makulopapulost')+')'
 };
+
+// ---------- Kjemoryggrader ----------
+const FOLAT=[['Folsyre 1 mg tablett','1 tablett daglig. Start minst 7 dager før kur 1 (minst 5 doser de siste 7 dagene). Fortsett til 21 dager etter siste pemetreksed','Felleskatalogen angir 350–1000 µg daglig','FK'],
+ ['Cyanokobalamin (vitamin B12) 1 mg/ml injeksjon','1 mg im i uken før kur 1, deretter hver 3. kur (ca. hver 9. uke). Kan gis samme dag som pemetreksed','','FK'],
+ ['Deksametason 4 mg tablett','1 tablett × 2 dagen før, kurdagen og dagen etter (6 tabletter per kur)','Forebygger hudreaksjon. Dekker også deksametasonbehovet i kvalmeprofylaksen','FK, HSØ']];
+const AKY=['Netupitant/palonosetron (Akynzeo) 300 mg/0,5 mg kapsel','1 kapsel ca. 1 time før kur, dag 1','NK1 + 5-HT3 i én kapsel. Hever deksametasonnivået 2–3 ganger og hemmer CYP3A4','FK, HSØ'];
+const MCP=['Metoklopramid 10 mg tablett','1 tablett inntil × 3 daglig ved behov','Maks 30 mg/døgn og maks 5 dager','FK, HSØ'];
+const OLZ=['Olanzapin 5 mg tablett','1 tablett om kvelden ved gjennombruddskvalme, inntil 10 mg','Gjennombrudd eller refraktær kvalme','HSØ'];
+const ALT=['<i>Alternativ uten Akynzeo:</i> aprepitant 125/80 mg kapsel + ondansetron 8 mg tablett','Aprepitant 125 mg 1 time før kur dag 1, 80 mg dag 2 og 3. Ondansetron 8 mg × 2 dag 1–3','Ondansetron gir QT-forlengelse (iv høyst 16 mg som enkeltdose). Korriger K og Mg først. Unngå ved QT-forlengende legemidler','FK, ESMO'];
+const OBS=['Makrogol (Movicol) pulver','1–2 poser daglig ved behov','5-HT3- og NK1-hemmere gir ofte forstoppelse','Forslag'];
+
+const KUR={
+ pem:{navn:'Karboplatin + pemetreksed',
+  dager:[['1','Pemetreksed','500 mg/m²','iv over 10 min'],['1','Karboplatin','AUC 5 (Calvert), maks 750 mg','iv over 15–60 min, etter pemetreksed']],
+  premed:[...FOLAT,AKY,MCP,OLZ,ALT,OBS],
+  kravX:[['Kreatininclearance','≥ 45 ml/min (pemetreksed)','FK'],['Bilirubin','≤ 1,5 × ULN','FK'],['ALAT/ASAT/ALP','≤ 3 × ULN (≤ 5 × ULN ved levermetastaser)','FK']],
+  biv:[
+   'Nøytropeni og nøytropen feber, nadir rundt dag 15 · '+B('nf','håndtering av nøytropen feber')+' · '+C('noytrofile','CTCAE nøytrofile')+' · '+C('febril-noytropeni','CTCAE febril nøytropeni'),
+   'Anemi, særlig i vedlikeholdsfasen · '+C('anemi','CTCAE anemi'),
+   'Trombocytopeni · '+C('trombocytter','CTCAE trombocytter'),
+   '<b>Kumulativ nyrepåvirkning</b> av pemetreksed i vedlikehold · '+C('kreatinin','CTCAE kreatinin'),
+   'Utslett (forebygges med deksametason) · '+C('makulopapulost','CTCAE utslett'),
+   'Mukositt · '+C('mukositt','CTCAE mukositt'),
+   'Kvalme og oppkast · '+C('kvalme','CTCAE kvalme')+' · '+C('oppkast','CTCAE oppkast'),
+   'Fatigue · '+C('fatigue','CTCAE fatigue')+'. Ødem og konjunktivitt · '+C('odem','CTCAE ødem'),
+   'Hyponatremi, hypomagnesemi og hypokalemi (karboplatin) · '+B('k-natrium','hyponatremi og SIAD')+' · '+C('natrium','CTCAE natrium')+' · '+C('magnesium','CTCAE magnesium'),
+   'Overfølsomhet for karboplatin, oftest etter mange kurer · '+C('irr','CTCAE infusjonsreaksjon')+' · '+B('a-anafylaksi','anafylaksi')],
+  dose:[{t:'Pemetreksed og karboplatin [FK]',note:'Gjelder neste kur, ut fra laveste blodverdi (nadir) eller verste ikke-hematologiske toksisitet i forrige kur. Ved ikke-hematologisk toksisitet grad ≥ 3 holdes pemetreksed tilbake til pasienten er tilbake på grad ≤ 1 eller baseline. <b>Seponer pemetreksed</b> ved ny grad 3–4-toksisitet etter to dosereduksjoner, og straks ved nevrotoksisitet grad 3–4. Preparatomtalen gir prosentsatsen for cisplatin. Karboplatin justeres på samme måte [Forslag].',
+   head:['Toksisitet i forrige kur','Hva det betyr (CTCAE v5.0)','Pemetreksed','Karboplatin'],
+   rows:[['Nøytrofile nadir < 0,5 og trombocytter ≥ 50',D.n4,'75 %','75 %'],
+    ['Trombocytter nadir < 50, uansett nøytrofile',D.t50,'75 %','75 %'],
+    ['Trombocytter nadir < 50 med blødning','Trombocytopeni grad 3–4 og blødning grad ≥ 2 (behov for medisinsk tiltak)','50 %','50 %'],
+    ['Diaré grad 3–4, eller diaré som krever innleggelse',D.diare,'75 %','75 %'],
+    ['Mukositt grad 3–4',D.muk,'50 %','100 %'],
+    ['Annen ikke-hematologisk toksisitet grad 3–4',D.annen,'75 %','75 %'],
+    ['Nevrotoksisitet grad 2',D.nevro2,'100 %','50 %'],
+    ['Nevrotoksisitet grad 3–4',D.nevro3,'Seponer','Seponer'],
+    ['Kreatininclearance < 45 ml/min','Ikke en CTCAE-grad. Beregnet clearance (Cockcroft-Gault)','Seponer','Ny dose etter Calvert']]}],
+  fall:['<b>Fallende eGFR i vedlikeholdsfasen.</b> Pemetreksed skilles ut gjennom nyrene og gir kumulativ nyreskade. Følg kreatinin før hver kur. Ved ClCR < 45 stoppes pemetreksed, og immunterapien kan eventuelt fortsette alene [FK], [Forslag].',
+   '<b>NSAID og høydose ASA hemmer utskillelsen av pemetreksed</b> og gir mer benmargs-, nyre- og slimhinnetoksisitet. Ved ClCR 45–79 ml/min: ingen NSAID 2 dager før, på kurdagen og 2 dager etter. Langtidsvirkende NSAID (f.eks. piroksikam) stoppes 5 dager før. Bruk paracetamol eller opioid [FK]. Se '+K('kombi-6','Interaksjoner innen kombinasjonene')+'.',
+   '<b>Nefrotoksiske legemidler</b> (aminoglykosider, jodkontrast, høydose loop-diuretika) forsterker nyrepåvirkningen. Ta kreatinin etter kontrast-CT før neste kur [FK].',
+   '<b>Folsyre og B12 må være startet</b> minst 7 dager før første kur. Uten tilskudd øker risikoen for alvorlig nøytropeni og mukositt kraftig [FK].',
+   'Tretthet og anemi i vedlikeholdsfasen skyldes oftest pemetreksed. Ta likevel TSH, fT4 og morgenkortisol, fordi hypotyreose og binyrebarksvikt (immunterapi) gir samme bilde.'],
+  vedl:'Pemetreksed 500 mg/m² iv dag 1 hver 3. uke',
+  besk:{dag1:'pemetreksed 500 mg/m² iv og karboplatin AUC 5 iv (maks 750 mg)',premed:'Folsyre 1 mg × 1 fra minst 7 dager før kur 1 til 21 dager etter siste pemetreksed. Vitamin B12 1 mg im uken før kur 1, deretter hver 9. uke. Deksametason 4 mg × 2 dagen før, kurdagen og dagen etter.',kvalme:'Netupitant/palonosetron (Akynzeo) 300/0,5 mg 1 kapsel 1 time før kur dag 1. Metoklopramid 10 mg inntil × 3 ved behov.',krav:'Nøytrofile ≥ 1,5, trombocytter ≥ 100, ClCR ≥ 45 ml/min, bilirubin ≤ 1,5 × ULN, ALAT/ASAT ≤ 3 × ULN.',obs:'Ingen NSAID 2 dager før til 2 dager etter pemetreksed ved ClCR 45–79 ml/min.'}},
+
+ pakl:{navn:'Karboplatin + paklitaksel eller nab-paklitaksel',
+  dager:[['1','Paklitaksel','175 mg/m²','iv over 3 timer, før karboplatin','P'],['1','Karboplatin','AUC 5 (Calvert), maks 750 mg','iv over 15–60 min','P'],['','<i>eller</i>','','','B'],['1, 8, 15','Nab-paklitaksel','100 mg/m²','iv over 30 min','N'],['1','Karboplatin','AUC 5 (Calvert), maks 750 mg','iv over 15–60 min, rett etter nab-paklitaksel','N']],
+  premed:[['<b>Bare vanlig paklitaksel:</b> deksametason','20 mg iv 30–60 min før paklitaksel, eller 20 mg per os ca. 12 og 6 timer før','Forebygger overfølsomhetsreaksjon. Erstatter deksametason 12 mg i kvalmeprofylaksen dag 1','FK','P'],
+   ['<b>Bare vanlig paklitaksel:</b> antihistamin (H1)','Klemastin 2 mg iv 30–60 min før, eller cetirizin 10 mg per os 60 min før','Preparatomtalen angir difenhydramin 50 mg iv «eller tilsvarende antihistamin». Cetirizin per os var like trygt som klemastin iv i H1-Switch-studien','FK, Forslag','P'],
+   ['<b>Bare vanlig paklitaksel:</b> H2-blokker','Famotidin 40 mg per os 60 min før','Preparatomtalen angir cimetidin 300 mg eller ranitidin 50 mg iv, som ikke er markedsført i Norge. Følg lokal kurprotokoll','FK, Forslag','P'],
+   ['<b>Nab-paklitaksel:</b> deksametason','12 mg per os eller iv dag 1 (med Akynzeo)','Nab-paklitaksel krever ingen allergipremedikasjon','FK, HSØ','N'],
+   AKY,['Deksametason 4 mg tablett','8 mg dag 2 (vurder også dag 3)','Flere HSØ-kurer har deksametason dag 2','HSØ'],
+   ['Nab-paklitaksel dag 8 og 15','Ingen fast kvalmeprofylakse. Metoklopramid ved behov','Lavt emetogent','HSØ','N'],MCP,OLZ,OBS],
+  kravX:[['Nab-paklitaksel dag 8 og 15','Nøytrofile ≥ 0,5 og trombocytter > 50. Ellers utsettes dosen','FK','N'],['Bilirubin','Paklitaksel: ved bilirubin > 1,5 × ULN, se preparatomtalen (dosereduksjon eller ikke gi)','FK','P']],
+  biv:[
+   '<b>Perifer sensorisk nevropati</b>, kumulativ · '+C('nevropati','CTCAE nevropati'),
+   'Nøytropeni og nøytropen feber, nadir rundt dag 8–11 for paklitaksel · '+B('nf','håndtering av nøytropen feber')+' · '+C('noytrofile','CTCAE nøytrofile')+' · '+C('febril-noytropeni','CTCAE febril nøytropeni'),
+   '<b>Overfølsomhetsreaksjon</b> de første minuttene av paklitaksel-infusjonen · '+C('irr','CTCAE infusjonsreaksjon')+' · '+B('a-anafylaksi','anafylaksi'),
+   'Artralgi og myalgi dag 2–5 · '+C('myalgi','CTCAE myalgi/artralgi'),
+   'Mukositt · '+C('mukositt','CTCAE mukositt')+'. Diaré · '+C('diare','CTCAE diaré'),
+   'Anemi og trombocytopeni · '+C('anemi','CTCAE anemi')+' · '+C('trombocytter','CTCAE trombocytter'),
+   'Alopesi (nesten alle)',
+   'Hyponatremi og hypomagnesemi (karboplatin) · '+B('k-natrium','hyponatremi og SIAD')+' · '+C('natrium','CTCAE natrium'),
+   'Ekstravasasjon: paklitaksel er vevsirriterende · '+B('k-ekstravasering','ekstravasasjon')],
+  dose:[{v:'P',t:'Paklitaksel 175 mg/m² hver 3. uke [FK]',note:'Gjelder resten av kurene. Karboplatin følger de generelle reglene under.',
+   head:['Toksisitet','Hva det betyr (CTCAE v5.0)','Paklitaksel','Kilde'],
+   rows:[['Alvorlig nøytropeni',D.n4u,'−20 % (til 140 mg/m²)','FK'],
+    ['Febril nøytropeni',D.fn,'−20 %','CCO'],
+    ['Alvorlig perifer nevropati',D.nevro3,'−20 %. Grad 4: seponer','FK, CCO'],
+    ['Annen ikke-hematologisk toksisitet grad 3',D.annen,'−20 %','CCO'],
+    ['Annen ikke-hematologisk toksisitet grad 4','Livstruende, akutt behandling nødvendig','Seponer','CCO']]},
+   {v:'N',t:'Nab-paklitaksel 100 mg/m² dag 1, 8, 15 [FK]',note:'Dag 1: gis bare ved nøytrofile ≥ 1,5 og trombocytter ≥ 100. Dag 8 og 15: gis bare ved nøytrofile ≥ 0,5 og trombocytter > 50, ellers utsettes dosen. Reduksjonen er permanent. Preparatomtalen reduserer karboplatin fra AUC 6 til 4,5 og 3. Med AUC 5 tilsvarer det 75 % og 50 % [FK], [Forslag].',
+   head:['Toksisitet','Hva det betyr (CTCAE v5.0)','1. gang','2. gang','3. gang'],
+   rows:[['Nøytrofile < 0,5 med feber > 38 °C, eller nøytrofile < 0,5 i mer enn 1 uke, eller ny kur utsatt fordi nøytrofile er < 1,5',D.fn+'. '+D.n4u,'Nab 75 mg/m², karbo 75 %','Nab 50 mg/m², karbo 50 %','Seponer'],
+    ['Trombocytter < 50',D.t50,'Nab 75 mg/m², karbo 75 %','Seponer','–'],
+    ['Perifer nevropati grad ≥ 3 (hold til grad ≤ 1)',D.nevro3,'Nab 75 mg/m², karbo 75 %','Nab 50 mg/m², karbo 50 %','Seponer'],
+    ['Hudtoksisitet grad 2–3, diaré grad 3 eller mukositt grad 3 (hold til grad ≤ 1)',D.hud23+'. '+D.diare+'. '+D.muk,'Nab 75 mg/m², karbo 75 %','Nab 50 mg/m², karbo 50 %','Seponer'],
+    ['Annen ikke-hematologisk toksisitet grad 3–4 (hold til grad ≤ 2)',D.annen,'Nab 75 mg/m², karbo 75 %','Nab 50 mg/m², karbo 50 %','Seponer'],
+    ['Hudtoksisitet, diaré eller mukositt grad 4','Livstruende','Seponer','–','–']]}],
+  fall:['<b>Nevropati eller immunrelatert nevrologisk bivirkning?</b> Taksannevropati er symmetrisk, sensorisk, starter distalt og kommer gradvis. Rask utvikling, motorisk svakhet, ataksi eller kranialnerveutfall tyder på immunrelatert nevropati (Guillain-Barré-lignende) eller myasteni. Se '+I('organ','immunterapi organ for organ')+' og '+B('symptom','Symptom → årsak')+'.',
+   '<b>Myalgi eller myositt?</b> Myalgi etter paklitaksel kommer dag 2–5 og går over. Varer plagene, kommer de utenfor dette vinduet eller følges de av svakhet eller ptose: ta CK og troponin (myositt og myokarditt ved immunterapi) [Forslag].',
+   '<b>Klopidogrel</b> hemmer CYP2C8 og øker risikoen for paklitakselnevropati 2–12 ganger. Bytt til en annen platehemmer etter avtale med kardiolog [FK-int]. Se '+K('kombi-6','Interaksjoner innen kombinasjonene')+'.',
+   'Ved overfølsomhetsreaksjon på paklitaksel: stopp infusjonen. Mange tåler ny infusjon med lav hastighet etter ekstra premedikasjon. Ved alvorlig reaksjon: bytt til nab-paklitaksel [Standard].'],
+  vedl:null,
+  besk:{dag1:'paklitaksel 175 mg/m² iv over 3 timer og karboplatin AUC 5 iv (maks 750 mg)',premed:'Deksametason 20 mg iv, klemastin 2 mg iv (eller cetirizin 10 mg po) og famotidin 40 mg po 30–60 min før paklitaksel.',kvalme:'Akynzeo 300/0,5 mg 1 kapsel 1 time før kur dag 1 (deksametason 20 mg som over dekker dag 1), deksametason 8 mg dag 2. Metoklopramid 10 mg inntil × 3 ved behov.',krav:'Nøytrofile ≥ 1,5 og trombocytter ≥ 100.',obs:'Følg nevropati før hver kur. Klopidogrel bør byttes (CYP2C8).'},
+  beskN:{dag1:'nab-paklitaksel 100 mg/m² iv dag 1, 8 og 15 og karboplatin AUC 5 iv dag 1 (maks 750 mg)',premed:'Ingen allergipremedikasjon (nab-paklitaksel).',kvalme:'Akynzeo 300/0,5 mg 1 kapsel 1 time før kur og deksametason 12 mg dag 1, deksametason 8 mg dag 2. Dag 8 og 15: metoklopramid 10 mg inntil × 3 ved behov.',krav:'Dag 1: nøytrofile ≥ 1,5 og trombocytter ≥ 100. Dag 8 og 15: nøytrofile ≥ 0,5 og trombocytter > 50.',obs:'Følg nevropati før hver kur.'}},
+
+ gem:{navn:'Karboplatin + gemcitabin',
+  dager:[['1, 8','Gemcitabin','1000 mg/m²','iv over 30 min'],['1','Karboplatin','AUC 5 (Calvert), maks 750 mg','iv over 15–60 min, etter gemcitabin']],
+  premed:[AKY,['Deksametason','12 mg per os eller iv dag 1','Med Akynzeo','HSØ'],['Dag 8','Ingen fast kvalmeprofylakse. Metoklopramid ved behov','Lavt emetogent','HSØ'],MCP,OLZ,OBS],
+  kravX:[['Gemcitabin dag 8','Nøytrofile > 1,0 og trombocytter > 100: full dose. Nøytrofile 0,5–1,0 eller trombocytter 50–100: 75 %. Nøytrofile < 0,5 eller trombocytter < 50: ikke gi','FK']],
+  biv:['Trombocytopeni og nøytropeni · '+C('trombocytter','CTCAE trombocytter')+' · '+C('noytrofile','CTCAE nøytrofile')+' · '+B('nf','nøytropen feber'),
+   'Influensalignende symptomer og feber dagen etter · '+C('feber','CTCAE feber'),
+   'Pneumonitt (sjelden, alvorlig) · '+C('pneumonitt','CTCAE pneumonitt'),
+   'Ødem og forhøyede levertransaminaser · '+C('odem','CTCAE ødem')+' · '+C('alat','CTCAE ALAT')],
+  dose:[{t:'Gemcitabin [FK]',note:'Gemcitabin skal ikke gis samtidig med thoraksstråling. Hold minst 7 dager mellomrom.',
+   head:['Toksisitet','Hva det betyr (CTCAE v5.0)','Gemcitabin'],
+   rows:[['Dag 8: nøytrofile 0,5–1,0 eller trombocytter 50–100','Nøytropeni grad 3 (0,5–0,99) eller trombocytopeni grad 1–2','75 %'],['Dag 8: nøytrofile < 0,5 eller trombocytter < 50',D.n4+'. '+D.t50,'Ikke gi'],['Ikke-hematologisk toksisitet grad 3–4, unntatt kvalme og oppkast',D.annen,'Hold tilbake, eller −50 %']]}],
+  fall:['Gemcitabin og <b>thoraksstråling</b> gir alvorlig øsofagitt og pneumonitt. Minst 7 dager mellomrom [FK]. Se '+K('kombi-6','Interaksjoner innen kombinasjonene')+'.'],
+  vedl:null,
+  besk:{dag1:'gemcitabin 1000 mg/m² iv dag 1 og 8 og karboplatin AUC 5 iv dag 1 (maks 750 mg)',premed:'Ingen spesiell premedikasjon.',kvalme:'Akynzeo 300/0,5 mg 1 kapsel og deksametason 12 mg dag 1. Metoklopramid 10 mg inntil × 3 ved behov.',krav:'Dag 1: nøytrofile ≥ 1,5 og trombocytter ≥ 100. Dag 8: full dose ved nøytrofile > 1,0 og trombocytter > 100.',obs:'Ikke samtidig thoraksstråling.'}},
+
+ etop:{navn:'Karboplatin + etoposid',
+  dager:[['1','Karboplatin','AUC 5 (Calvert), maks 750 mg','iv over 15–60 min'],['1–3','Etoposid','100 mg/m² per dag (maks 220 mg/dag ved overflate > 2,2 m²)','iv over 60 min'],['','<i>eller peroralt:</i>',''],['1','Etoposid','100 mg/m²','iv'],['2–4','Etoposid kapsler','200 mg/m² per dag, rundet av til nærmeste 50 mg. Over 200 mg deles dosen morgen og kveld','per os på tom mage']],
+  premed:[AKY,['Deksametason','12 mg dag 1, deretter 8 mg dag 2–4','HSØ regner kuren som høyt emetogen. Akynzeo hemmer CYP3A4 og kan øke etoposideksponeringen litt','HSØ, FK'],
+   ['Allopurinol 300 mg tablett','1–2 tabletter daglig fra 1–2 dager før kur 1, i 7–10 dager. <b>Bare ved høy risiko for tumorlysesyndrom</b>','Høy risiko: stor tumorbyrde, levermetastaser, høy LD eller urinsyre. Gi også 2–3 liter væske i døgnet','Hdir, Forslag'],MCP,OLZ,ALT,OBS],
+  kravX:[['Kreatininclearance','Etoposid: 75 % av dosen ved ClCR 15–50 ml/min, både iv og per os','FK'],['Før kur 1','Urinsyre, fosfat, kalium, kalsium og LD (tumorlysesyndrom)','Hdir']],
+  biv:['<b>Nøytropeni og nøytropen feber</b>, nadir dag 10–14 · '+B('nf','håndtering av nøytropen feber')+' · '+C('noytrofile','CTCAE nøytrofile')+' · '+C('febril-noytropeni','CTCAE febril nøytropeni'),
+   'Trombocytopeni og anemi · '+C('trombocytter','CTCAE trombocytter')+' · '+C('anemi','CTCAE anemi'),
+   'Kvalme og oppkast · '+C('kvalme','CTCAE kvalme')+' · '+C('oppkast','CTCAE oppkast'),
+   'Alopesi og mukositt · '+C('mukositt','CTCAE mukositt'),
+   '<b>Hyponatremi</b>: SIADH ved SCLC, karboplatin eller binyrebarksvikt (IO) · '+B('k-natrium','hyponatremi og SIAD')+' · '+C('natrium','CTCAE natrium'),
+   'Tumorlysesyndrom ved stor tumorbyrde · '+B('k-tls','tumorlysesyndrom'),
+   'Paraneoplastiske nevrologiske syndromer kan forveksles med IO-toksisitet · '+B('k-paraneo','paraneoplastiske syndromer')],
+  dose:[{t:'Karboplatin og etoposid [HP], [HSØ], [FK]',note:'Preparatomtalene har ingen egen dosetabell for denne kombinasjonen. Handlingsprogrammet gir de generelle reglene, og HSØ gir faste trinn. Reduksjonen beholdes videre.',
+   head:['Funn','Hva det betyr (CTCAE v5.0)','Tiltak'],
+   rows:[['Dag 1: nøytrofile < 1,5 eller trombocytter < 100','Nøytropeni grad 2 eller dårligere, trombocytopeni grad 1 eller dårligere','Utsett 0,5–1 uke [HP]'],
+    ['Dag 1: nøytrofile 1,0–1,49 eller trombocytter 75–99','Nøytropeni grad 2, trombocytopeni grad 1','75 % [HSØ]'],
+    ['Dag 1: trombocytter < 75','Trombocytopeni grad 2 eller dårligere','Utsett 1 uke, deretter −20 % [HSØ]'],
+    ['Utsettelse > 1 uke','–','−15–20 % av kjemoterapien [HP]'],
+    ['Nøytropeni grad 4 eller febril nøytropeni i forrige kur',D.n4+'. '+D.fn,'Reduser kjemodosen ved neste kur. Vurder G-CSF [HP]'],
+    ['ClCR 15–50 ml/min','Ikke en CTCAE-grad','Etoposid 75 % [FK]. Karboplatin etter Calvert'],
+    ['Karboplatin, maks reduksjon','–','Høyst 40 % (aldri under 60 %). Trengs mer: seponer karboplatin [HSØ]']]}],
+  fall:['<b>Hyponatremi</b> ved SCLC: skill SIADH fra binyrebarksvikt og hypofysitt (immunterapi). Ta kortisol, TSH, fT4, serum- og urinosmolalitet og urin-natrium før behandling. Se '+B('k-natrium','hyponatremi og SIAD')+'.',
+   '<b>Peroral etoposid:</b> biotilgjengeligheten er ca. 50 % og varierer. Dosen per os er derfor det dobbelte av iv-dosen. Ved kurativ intensjon anbefaler preparatomtalen iv [FK].',
+   '<b>Paraneoplastiske syndromer</b> (LEMS, anti-Hu, encefalitt) kan forverres av immunterapi. Kartlegg nevrologiske symptomer før start. Se '+B('k-paraneo','paraneoplastiske syndromer')+'.'],
+  vedl:null,
+  besk:{dag1:'karboplatin AUC 5 iv (maks 750 mg) dag 1 og etoposid 100 mg/m² iv dag 1–3. Peroral variant: etoposid 100 mg/m² iv dag 1, deretter 200 mg/m² per os dag 2–4',premed:'Allopurinol 300–600 mg daglig og rikelig væske ved høy risiko for tumorlysesyndrom.',kvalme:'Akynzeo 300/0,5 mg 1 kapsel 1 time før kur dag 1, deksametason 12 mg dag 1 og 8 mg dag 2–4. Metoklopramid 10 mg inntil × 3 ved behov.',krav:'Nøytrofile ≥ 1,5 og trombocytter ≥ 100. Etoposid 75 % ved ClCR 15–50 ml/min.',obs:'Følg natrium tett (SIADH).'}}
+};
+
+// ---------- Immunterapi ----------
+const IO={
+ Pembrolizumab:{dose:'200 mg iv over 30 min hver 3. uke (eller 400 mg hver 6. uke). Subkutant: 395 mg hver 3. uke eller 790 mg hver 6. uke',kort:'pembrolizumab 200 mg iv',vedl:'pembrolizumab 200 mg hver 3. uke (eller 400 mg hver 6. uke), i inntil 2 år'},
+ Cemiplimab:{dose:'350 mg iv over 30 min hver 3. uke',kort:'cemiplimab 350 mg iv',vedl:'cemiplimab 350 mg hver 3. uke, i inntil 2 år'},
+ Tislelizumab:{dose:'200 mg iv hver 3. uke (første infusjon over 60 min, deretter 30 min). I vedlikehold kan 400 mg hver 6. uke brukes',kort:'tislelizumab 200 mg iv',vedl:'tislelizumab 200 mg hver 3. uke (eller 400 mg hver 6. uke), i inntil 2 år'},
+ Durvalumab:{dose:'1500 mg iv over 60 min hver 3. uke med kjemo, deretter hver 4. uke',kort:'durvalumab 1500 mg iv',vedl:'durvalumab 1500 mg hver 4. uke'},
+ Tremelimumab:{dose:'75 mg iv over 60 min, gis før durvalumab, hver 3. uke × 4, og dose 5 i uke 16 (inntil 5 doser totalt)',kort:'tremelimumab 75 mg iv'},
+ Nivolumab:{dose:'360 mg iv over 30 min hver 3. uke',kort:'nivolumab 360 mg iv'},
+ Atezolizumab:{dose:'1200 mg iv hver 3. uke, eller 1680 mg iv hver 4. uke, eller 1875 mg subkutant hver 3. uke',kort:'atezolizumab 1200 mg iv',vedl:'atezolizumab 1200 mg hver 3. uke, i inntil 2 år'}
+};
+
+// ---------- Kurarkene ----------
+const ARK={
+ 'ark-pem-pembrolizumab':{t:'Karboplatin + pemetreksed + pembrolizumab',bruk:'Adenokarsinom (ikke-plateepitel) uten driver, PD-L1 < 1 % (LIS 2026/27)',kur:['pem'],io:'Pembrolizumab',ant:'4 kurer'},
+ 'ark-pem-cemiplimab':{t:'Karboplatin + pemetreksed + cemiplimab',bruk:'Adenokarsinom (ikke-plateepitel) uten driver, PD-L1 1–49 % (LIS 2026/27)',kur:['pem'],io:'Cemiplimab',ant:'4 kurer'},
+ 'ark-pem-tislelizumab':{t:'Karboplatin + pemetreksed + tislelizumab',bruk:'Adenokarsinom (ikke-plateepitel) uten driver, PD-L1 ≥ 50 % (LIS 2026/27)',kur:['pem'],io:'Tislelizumab',ant:'4 kurer'},
+ 'ark-pakl-tislelizumab':{t:'Karboplatin + paklitaksel/nab-paklitaksel + tislelizumab',bruk:'Plateepitelkarsinom uten driver (LIS 2026/27)',kur:['pakl'],valg:[['Paklitaksel','pakl','P'],['Nab-paklitaksel','pakl','N']],io:'Tislelizumab',ant:'4 kurer',vedlIO:'Tislelizumab 200 mg alene hver 3. uke (eller 400 mg hver 6. uke), i inntil 2 år'},
+ 'ark-etop-tislelizumab':{t:'Karboplatin + etoposid + tislelizumab',bruk:'SCLC utbredt sykdom, og inoperabel/metastatisk LCNEC (LIS 2026/27)',kur:['etop'],io:'Tislelizumab',ant:'4 kurer',vedlIO:'Tislelizumab 200 mg alene hver 3. uke til progresjon eller uakseptabel toksisitet'},
+ 'ark-poseidon':{t:'Karboplatindublett + durvalumab + tremelimumab (POSEIDON)',bruk:'NSCLC uten EGFR/ALK, plateepitel og ikke-plateepitel, uavhengig av PD-L1 (HP okt. 2026)',kur:['pem','pakl','gem'],v:'N',valg:[['Pemetreksed (ikke-plateepitel)','pem'],['Nab-paklitaksel (begge)','pakl','N'],['Gemcitabin (plateepitel)','gem']],dublett:'Velg dublett: <b>pemetreksed</b> ved ikke-plateepitel, <b>gemcitabin</b> ved plateepitel, <b>nab-paklitaksel</b> ved begge. Bruk tabellene for den valgte dubletten.',io:'Durvalumab',io2:'Tremelimumab',ant:'4 kurer',vedlIO:'Durvalumab 1500 mg hver 4. uke (pluss pemetreksed 500 mg/m² hver 4. uke ved ikke-plateepitel). Tremelimumab dose 5 i uke 16'},
+ 'ark-periop-nivolumab':{t:'Neoadjuvant karboplatindublett + nivolumab (CheckMate 816)',bruk:'Operabel NSCLC stadium II–III uten EGFR/ALK, PD-L1 ≥ 1 %. 3 kurer før operasjon, ingen immunterapi etter rutinemessig (HP 7.3)',kur:['pem','pakl'],v:'P',valg:[['Pemetreksed (ikke-plateepitel)','pem'],['Paklitaksel (plateepitel)','pakl','P']],dublett:'Velg dublett: <b>pemetreksed</b> ved ikke-plateepitel, <b>paklitaksel</b> ved plateepitel. Karboplatin i stedet for cisplatin.',io:'Nivolumab',ant:'3 kurer før operasjon',vedlIO:'Ingen rutinemessig behandling etter operasjonen. Kirurgi innen ca. 6 uker etter siste kur',periop:1},
+ 'ark-periop-tislelizumab':{t:'Perioperativ karboplatindublett + tislelizumab (RATIONALE-315)',bruk:'Operabel NSCLC stadium II–III uten EGFR/ALK, PD-L1 &lt; 1 %. 4 kurer før operasjon, tislelizumab etter kan vurderes (HP 7.3, LIS 2026/27)',kur:['pem','pakl'],v:'P',valg:[['Pemetreksed (ikke-plateepitel)','pem'],['Paklitaksel (plateepitel)','pakl','P']],dublett:'Velg dublett: <b>pemetreksed</b> ved ikke-plateepitel, <b>paklitaksel</b> ved plateepitel. Karboplatin i stedet for cisplatin.',io:'Tislelizumab',ant:'4 kurer før operasjon',vedlIO:'Etter operasjonen kan tislelizumab 400 mg iv hver 6. uke × 8 vurderes (LIS 2026/27)',periop:1},
+ 'ark-atezolizumab':{t:'Atezolizumab monoterapi',bruk:'NSCLC uten driver, PD-L1 ≥ 50 % (LIS-førstevalg), eller ikke egnet for platinum uavhengig av PD-L1',kur:[],io:'Atezolizumab',ant:null,vedlIO:'Til progresjon eller uakseptabel toksisitet, i inntil 2 år'}
+};
+
 const box=document.getElementById('kurark'),bar=document.querySelector('.bar'),main=document.querySelector('main');
-function strip(n){n.removeAttribute('id');n.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));return n}
-function blk(anchor){const a=document.getElementById(anchor);return a?strip(a.closest('.blk').cloneNode(true)):null}
-function det(title,anchor,open){const b=blk(anchor);if(!b)return '';const d=document.createElement('details');if(open)d.open=true;d.className='ark-det';d.innerHTML='<summary>'+title+'</summary>';b.querySelector('h3')&&b.querySelector('h3').remove();d.append(b);return d}
-function ioRow(name){const t=document.getElementById('io-legemidler').closest('.blk').querySelector('table');const r=[...t.tBodies[0].rows].find(r=>(r.cells[0].textContent||'').trim().startsWith(name));if(!r)return null;const tb=document.createElement('table');tb.append(t.tHead.cloneNode(true));const bo=document.createElement('tbody');bo.append(strip(r.cloneNode(true)));tb.append(bo);return tb}
-function mark(root,word){const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const ns=[];while(w.nextNode())ns.push(w.currentNode);const re=new RegExp('('+word+')','gi');ns.forEach(n=>{if(!re.test(n.nodeValue))return;re.lastIndex=0;const sp=document.createElement('span');sp.innerHTML=n.nodeValue.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])).replace(re,'<mark class="ark-io">$1</mark>');n.replaceWith(...sp.childNodes)})}
+const esc=s=>s;
+function tab(head,rows,cls){return '<div class="tw"><table class="'+(cls||'')+'"><thead><tr>'+head.map(h=>'<th>'+h+'</th>').join('')+'</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map((c,i)=>(r.length<head.length&&i===r.length-1)?'<td colspan="'+(head.length-r.length+1)+'">'+c+'</td>':'<td>'+c+'</td>').join('')+'</tr>').join('')+'</tbody></table></div>'}
+function sec(n,title,html,id){return '<section class="ark-sec"'+(id?' id="'+id+'"':'')+'><h3>'+n+'. '+title+'</h3>'+html+'</section>'}
+function uniq(a){const s=new Set();return a.filter(x=>{const k=x[0]+'|'+x[1];if(s.has(k))return false;s.add(k);return true})}
+function strip5(r){return (r.length>=5&&/^[PNB]$/.test(r[r.length-1]))?r.slice(0,-1):r}
+function plain(h){const d=document.createElement('div');d.innerHTML=h;return d.textContent.replace(/\s+/g,' ').trim()}
+
+function besk(k,o){
+ const io=IO[k.io],io2=k.io2?IO[k.io2]:null;const L=[];
+ L.push('Kur: '+plain(k.t)+'.');
+ L.push('Indikasjon: '+plain(k.bruk)+'.');
+ if(!k.kur.length){L.push(io.dose+'. '+plain(k.vedlIO)+'.');L.push('Ingen premedikasjon eller kvalmeprofylakse.');L.push('Før hver kur: blodstatus, kreatinin, elektrolytter, leverprøver, glukose, TSH og fT4. Immunterapi dosereduseres ikke.');return L.join('\n')}
+ const key=o?o[1]:k.kur[0],x=KUR[key],b=(o&&o[2]==='N')?x.beskN:x.besk;
+ L.push('Dag 1, hver 3. uke × '+(k.ant||'').replace(/ kurer.*/,'')+(k.periop?' før operasjon':'')+': '+io.kort+(io2?' og '+io2.kort+' (tremelimumab før durvalumab)':'')+', deretter '+b.dag1+'.');
+ if(k.vedlIO)L.push('Deretter: '+plain(k.vedlIO)+'.');else L.push('Deretter vedlikehold: '+x.vedl.charAt(0).toLowerCase()+x.vedl.slice(1)+' + '+io.vedl+'.');
+ L.push('Premedikasjon: '+b.premed);L.push('Kvalmeprofylakse: '+b.kvalme);
+ L.push('Krav før kur: '+b.krav+' TSH og fT4 før hver kur.');L.push('OBS: '+b.obs+' Immunterapi dosereduseres ikke.');
+ return L.join('\n');
+}
 window.visArk=function(id){const k=ARK[id];if(!k)return false;
- box.innerHTML='';
- const h=document.createElement('div');h.className='ark-head';
- h.innerHTML='<div class="ark-nav"><a href="'+P+(k.kur==='kur-perioperativ'?'#neoadjuvant">← Arbeidsportal kap. 7.2':'#uten-driver">← Arbeidsportal kap. 9.2')+'</a> · <a href="#kombi">Alle kombinasjonskurer</a> · <button type="button" onclick="window.print()">Skriv ut</button></div><div class="ark-kicker">Kurark</div><h2>'+k.t+'</h2><p><strong>Brukes ved:</strong> '+k.bruk+'</p>';
- box.append(h);
- if(k.kur){const s=document.createElement('section');s.className='ark-sec';s.innerHTML='<h3>1. Kurskjema, prøver, bivirkninger og fallgruver</h3>';const b=blk(k.kur);b.querySelector('h3').remove();mark(b,k.io);if(k.io2)mark(b,k.io2);s.append(b);box.append(s)}
- const s2=document.createElement('section');s2.className='ark-sec';s2.innerHTML='<h3>'+(k.kur?'2':'1')+'. '+k.io+(k.io2?' + '+k.io2.toLowerCase():'')+': dosering</h3>';const r=ioRow(k.io);if(r){if(k.io2){const r2=ioRow(k.io2);if(r2)r.tBodies[0].append(r2.tBodies[0].rows[0])}s2.append(r)}
- s2.insertAdjacentHTML('beforeend','<p class="note">Immunterapi dosereduseres aldri. Den gis eller settes på pause. Valg av preparat: <a href="#lis-oversikt">LIS-rangering</a>.</p>');box.append(s2);
- const s3=document.createElement('section');s3.className='ark-sec';s3.innerHTML='<h3>'+(k.kur?'3':'2')+'. Immunrelaterte bivirkninger og kontroller</h3><p>Samlet i ett oppslagsverk: <a href="'+P+'immunterapi/#prover">Prøver og kontroller</a> · <a href="'+P+'immunterapi/#vakt">Vakt (hastegrad)</a> · <a href="'+P+'immunterapi/#organ">Organ for organ</a> · <a href="'+P+'immunterapi/#steroider">Steroider</a> · <a href="'+P+'immunterapi/#pasient">Pasientinformasjon</a></p>';box.append(s3);
- if(k.kur){const s4=document.createElement('section');s4.className='ark-sec';s4.innerHTML='<h3>4. Felles for kombinasjonskurene</h3><p class="note">Klikk for å åpne. Kurforløp og risikouka for nøytropen feber: <a href="'+P+'#kurforlop">arbeidsportal 11.3</a>.</p>';
-  [['Prøver før hver kur, utsettelse og dosereduksjon','dosejustering'],['Kvalmeprofylakse','kvalme'],['Hvem forårsaker hva? (overlappende toksisitet)','hvem-forarsaker-hva'],['Støttebehandling – sjekkliste','stottebehandling']].forEach(([t,a])=>{const d=det(t,a);if(d)s4.append(d)});box.append(s4)}
+ const ks=k.kur.map(x=>KUR[x]);let n=0,h='';
+ h+='<div class="ark-head"><div class="ark-nav"><a href="'+P+(k.periop?'#neoadjuvant">← Arbeidsportal kap. 7.2':'#uten-driver">← Arbeidsportal kap. 9.2')+'</a> · <a href="#kombi">Alle kombinasjonskurer</a> · <a href="#ark-besk">Kort kurbeskrivelse</a> · <button type="button" onclick="window.print()">Skriv ut</button></div><div class="ark-kicker">Kurark</div><h2>'+k.t+'</h2><p><strong>Brukes ved:</strong> '+k.bruk+'</p>'+(k.dublett?'<p class="ark-dub">'+k.dublett+'</p>':'')+'</div>';
+ // 1 Kurskjema
+ let rows=[];const io=IO[k.io],io2=k.io2?IO[k.io2]:null;
+ if(io2)rows.push(['1',k.io2,io2.dose,'Først']);
+ rows.push(['1',k.io,io.dose,ks.length?'Før kjemoterapien':'']);
+ ks.forEach((x,i)=>{if(ks.length>1)rows.push(['<b>'+(x===KUR.pakl&&k.v==='N'?'Karboplatin + nab-paklitaksel':x===KUR.pakl&&k.v==='P'?'Karboplatin + paklitaksel':x.navn)+'</b>']);x.dager.filter(r=>!(k.v&&r.length>=5&&r[4]!==k.v)).forEach(r=>rows.push(strip5(r)))});
+ let s1=tab(['Dag','Legemiddel','Dose','Gis slik'],rows,'ark-skjema');
+ if(ks.length)s1+='<p><strong>Syklus:</strong> hver 3. uke (21 dager), '+k.ant+'. <strong>Deretter:</strong> '+(k.vedlIO||(ks[0].vedl+' + '+k.io.toLowerCase()+' '+IO[k.io].vedl.replace(/^[a-zæøå]+ /i,'')))+'.</p>';
+ else s1+='<p><strong>Varighet:</strong> '+k.vedlIO+'.</p>';
+ s1+='<p class="note">Karboplatin: dose (mg) = AUC × (GFR + 25), med GFR begrenset til 125 ml/min (maks 750 mg ved AUC 5). Kroppsoverflate begrenses til 2,2 m². Kurforløp og risikouka for nøytropen feber: <a href="'+P+'#kurforlop">arbeidsportal 11.3</a> [HP], [HSØ].</p>';
+ h+=sec(++n,'Kurskjema',s1);
+ // 2 Premedikasjon
+ if(ks.length){const pm=uniq([].concat(...ks.map(x=>x.premed)).filter(r=>!(k.v&&r.length>=5&&r[4]!==k.v)).map(strip5));
+  h+=sec(++n,'Premedikasjon og støtte – medisinliste',tab(['Legemiddel','Dosering og tidspunkt','Merknad','Kilde'],pm.map(r=>[r[0],r[1],r[2],'['+r[3]+']']),'ark-resept')+'<p class="note">Doseforslag kontrollert mot Felleskatalogen (preparatomtalene for pemetreksed, paklitaksel, Akynzeo, ondansetron og metoklopramid) og Kurbibliotek HSØ. Lokal kurprotokoll (Cytodose) gjelder ved avvik. Interaksjoner med antiemetika: '+K('kvalme','Kvalmeprofylakse')+'.</p>')}
+ // 3 Prøver
+ let pr='<ul class="ark-prover"><li><b>Blodstatus:</b> hemoglobin, leukocytter med differensialtelling (nøytrofile), trombocytter</li><li><b>Nyre:</b> kreatinin og eGFR. Beregn kreatininclearance (Cockcroft-Gault) for karboplatindosen</li><li><b>Elektrolytter:</b> natrium, kalium, kalsium, magnesium, albumin</li><li><b>Lever:</b> bilirubin, ALAT, ASAT, ALP, γGT, LD</li><li><b>Annet:</b> CRP, glukose</li><li><b>Immunterapi:</b> TSH og fritt T4 før hver kur. Morgenkortisol (før kl. 9) ved oppstart og ved symptomer. Troponin T og EKG før kur 2, 3 og 4 (ESC, lokal praksis ikke avklart)'+(io2?'. Ved tremelimumab: leverprøver og TSH før hver dose, troponin er standard ved kombinasjonsimmunterapi':'')+'</li>'+(k.kur.includes('etop')?'<li><b>SCLC før kur 1:</b> urinsyre, fosfat og LD (tumorlysesyndrom). Ved lav natrium: serum- og urinosmolalitet og urin-natrium</li>':'')+'<li><b>Før første kur i tillegg:</b> HbA1c, hepatitt B og C, HIV, NT-proBNP, urinstiks og albumin/kreatinin-ratio. Se '+I('prover','Immunterapi: prøver og kontroller')+'</li></ul>';
+ const krav=[['Nøytrofile','≥ 1,5 × 10⁹/l','FK, HP'],['Trombocytter','≥ 100 × 10⁹/l','FK, HP']].concat(...ks.map(x=>(x.kravX||[]).filter(r=>!(k.v&&r.length>=4&&r[3]&&r[3]!==k.v)).map(r=>r.slice(0,3))));
+ if(ks.length)pr+='<p><strong>Krav for å gi kur dag 1:</strong></p>'+tab(['Prøve','Krav','Kilde'],uniq(krav).map(r=>[r[0],r[1],'['+r[2]+']']));
+ pr+='<p class="note">Korriger natrium, kalium, kalsium og magnesium før kur. Kalium og magnesium skal være normale før ondansetron og QT-forlengende legemidler. Ny kroppsoverflate ved vektendring ≥ 10 %.</p>';
+ h+=sec(++n,'Før hver kur – blodprøver og krav',pr);
+ // 4 Bivirkninger
+ let bv='';ks.forEach(x=>{bv+=(ks.length>1?'<p><strong>'+x.navn+'</strong></p>':'')+'<ul>'+x.biv.map(b=>'<li>'+b+'</li>').join('')+'</ul>'});
+ bv+='<p><strong>Immunterapi ('+k.io.toLowerCase()+(io2?' + '+k.io2.toLowerCase():'')+'):</strong> '+I('vakt','Vakt og hastegrad')+' · '+I('organ','Organ for organ')+' · '+I('steroider','Steroider')+' · '+I('pasient','Pasientinformasjon')+(io2?'. CTLA-4-kombinasjonen gir mer kolitt, hypofysitt og hudbivirkninger. Ved ALAT/ASAT 5–10 × ULN pauses durvalumab, og tremelimumab seponeres permanent [FK]':'')+'.</p>';
+ bv+='<p class="note">Lenkene «CTCAE» går til graderingstabellen. Hvilket legemiddel gir hva: '+B('symptom','Symptom → årsak')+'.</p>';
+ h+=sec(++n,'Viktigste bivirkninger',bv);
+ // 5 Dosejustering
+ let dj='';ks.forEach(x=>x.dose.filter(d=>!(k.v&&d.v&&d.v!==k.v)).forEach(d=>{dj+='<h4>'+d.t+'</h4>'+tab(d.head,d.rows,'ark-dose')+'<p class="note">'+d.note+'</p>'}));
+ dj+='<h4>Immunterapi</h4><p>Dosereduseres aldri. Den gis, settes på pause eller seponeres etter grad og organ: '+I('organ','Organ for organ')+'. Avvik mellom preparatene: '+I('preparater','Preparater og doser')+'.</p>';
+ if(ks.length)dj+='<h4>Generelle regler for alle kombinasjonskurer [HP]</h4><ul><li>Nøytrofile &lt; 1,5 eller trombocytter &lt; 100 dag 1: utsett 0,5–1 uke.</li><li>Utsettelse &gt; 1 uke: vurder 15–20 % dosereduksjon av kjemoterapien.</li><li>Nøytropeni grad 4 (&lt; 0,5) eller febril nøytropeni: reduser neste kur. G-CSF kan vurderes, men ikke under kjemoradioterapi.</li><li>Øk ikke dosen igjen etter reduksjon. Vurder å avslutte hvis det trengs mer enn to reduksjoner.</li></ul><p class="note">Mer: '+K('dosejustering','Prøver før hver kur, utsettelse og dosereduksjon')+'.</p>';
+ dj+=ADL;
+ h+=sec(++n,'Dosejustering',dj);
+ // 6 Fallgruver
+ let fg='<ul>'+[].concat(...ks.map(x=>x.fall)).map(f=>'<li>'+f+'</li>').join('')+'<li><b>Deksametason og immunterapi:</b> kortvarig deksametason mot kvalme er brukt i alle de store kjemo-IO-studiene og skal ikke fjernes. Unngå høye doser over tid [HP], [Forslag].</li>'+(k.periop?'<li><b>Før operasjon:</b> lungefunksjon (fall i DLCO?), TSH, fT4 og morgenkortisol (binyrebarksvikt kan gi perioperativ krise) og CT med tanke på pneumonitt. Pneumonitt eller hepatitt kan utsette operasjonen. Kontakt thoraxkirurg tidlig. Kirurgi innen ca. 6 uker etter siste kur [HP], [Forslag].</li>':'')+(io2?'<li><b>Tremelimumab:</b> gis det færre enn 4 kjemokurer, gis resten av tremelimumabdosene (til sammen inntil 5) i vedlikeholdsfasen [FK].</li>':'')+'</ul>';
+ h+=sec(++n,'Fallgruver og interaksjoner',fg);
+ // 7 Kurbeskrivelse
+ h+=sec(++n,'Kort kurbeskrivelse – til journal eller henvisning',(k.valg?'<p><label>Dublett: <select class="ark-valg">'+k.valg.map((o,i)=>'<option value="'+i+'">'+o[0]+'</option>').join('')+'</select></label></p>':'')+'<textarea class="ark-besk" readonly rows="16">'+besk(k,k.valg?k.valg[0]:null).replace(/</g,'&lt;')+'</textarea><p><button type="button" class="ark-kopi">Kopier</button> <span class="ark-kopi-ok" aria-live="polite"></span></p><p class="note">Teksten er et forslag. Kontroller doser mot Cytodose og pasientens vekt, høyde og nyrefunksjon.</p>','ark-besk');
+ h+='<p class="note">Kilder: [HP] Nasjonalt handlingsprogram · [FK] Felleskatalogen/preparatomtaler · [FK-int] Felleskatalogens interaksjonsoppslag · [HSØ] Kurbibliotek HSØ · [Hdir] Helsedirektoratet · [ESMO] MASCC/ESMO · [CCO] Cancer Care Ontario · [CTCAE] NCI CTCAE v5.0 · [Forslag] eget forslag, skal avklares lokalt. Sist oppdatert 11. november 2026.</p>';
+ box.innerHTML=h;
+ const vs=box.querySelector('.ark-valg');if(vs)vs.onchange=function(){box.querySelector('.ark-besk').value=besk(k,k.valg[+vs.value]);box.querySelector('.ark-kopi-ok').textContent=''};
+ const kb=box.querySelector('.ark-kopi');if(kb)kb.onclick=function(){const ta=box.querySelector('.ark-besk');const ok=box.querySelector('.ark-kopi-ok');const done=()=>{ok.textContent='Kopiert'};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(done,()=>{ta.select();try{document.execCommand('copy');done()}catch(e){}})}else{ta.select();try{document.execCommand('copy');done()}catch(e){}}};
  box.hidden=false;bar.style.display='none';main.hidden=true;document.body.classList.add('arkmodus');document.title=k.t+' – kurark';window.scrollTo({top:0});return true};
 window.skjulArk=function(){if(box.hidden)return;box.hidden=true;bar.style.display='';main.hidden=false;document.body.classList.remove('arkmodus');document.title=document.querySelector('h1').textContent};
-// oversikt over kurark i fanen Kombinasjonskurer
-const ov=document.getElementById('kurer-oversikt');if(ov){const d=document.createElement('div');d.className='ark-liste';d.innerHTML='<strong>Kurark (alt for én kur på ett ark):</strong> '+Object.entries(ARK).map(([id,k])=>'<a href="#'+id+'">'+k.t+'</a>').join(' · ');ov.closest('.blk').querySelector('h3').after(d)}
+const ov=document.getElementById('kurer-oversikt');if(ov){const d=document.createElement('div');d.className='ark-liste';d.innerHTML='<strong>Kurark (alt for én kur på ett ark, med medisinliste, prøver, dosejustering og kopierbar kurbeskrivelse):</strong> '+Object.entries(ARK).map(([id,k])=>'<a href="#'+id+'">'+k.t+'</a>').join(' · ');ov.closest('.blk').querySelector('h3').after(d)}
 })();
 </script>
 <script>
